@@ -11,7 +11,14 @@
  */
 import { useMemo } from "react";
 import type { StageData } from "../HomeStage";
-import { RECOVERABILITY_ORDER, RecoverabilityMarker, asRecoverability, recoverabilityColor, recoverabilityWord, type Recoverability } from "../grammar";
+import {
+  RECOVERABILITY_ORDER,
+  RecoverabilityMarker,
+  asRecoverability,
+  recoverabilityColor,
+  recoverabilityWord,
+  type Recoverability,
+} from "../grammar";
 import { mulberry32 } from "../seeded";
 
 const X_ROOT = 120;
@@ -62,7 +69,10 @@ function cubicAt([p0, p1, p2, p3]: Cubic, t: number): P {
   const b = 3 * u * u * t;
   const c = 3 * u * t * t;
   const d = t * t * t;
-  return [a * p0[0] + b * p1[0] + c * p2[0] + d * p3[0], a * p0[1] + b * p1[1] + c * p2[1] + d * p3[1]];
+  return [
+    a * p0[0] + b * p1[0] + c * p2[0] + d * p3[0],
+    a * p0[1] + b * p1[1] + c * p2[1] + d * p3[1],
+  ];
 }
 
 function buildTies(branches: Branch[], count: number, r: () => number): string[] {
@@ -120,7 +130,14 @@ function buildTree(data: StageData, seed: number) {
         [lx - 80 + jitter(20), ly],
         [lx, ly],
       ];
-      return { id: s.id, title: `${s.id} — ${s.name}; ${recoverabilityWord(s.recoverability)}`, recoverability: s.recoverability, x: lx, y: ly, d: pathOf(c) };
+      return {
+        id: s.id,
+        title: `${s.id} — ${s.name}; ${recoverabilityWord(s.recoverability)}`,
+        recoverability: s.recoverability,
+        x: lx,
+        y: ly,
+        d: pathOf(c),
+      };
     });
     return {
       key: g.key,
@@ -141,7 +158,13 @@ function delay(seconds: number) {
   return { animationDelay: `${seconds.toFixed(2)}s` };
 }
 
-export function BranchingScene({ data, reducedMotion }: { data: StageData; reducedMotion: boolean }) {
+export function BranchingScene({
+  data,
+  reducedMotion,
+}: {
+  data: StageData;
+  reducedMotion: boolean;
+}) {
   const seed = data.seed ?? 7;
   const tree = useMemo(() => buildTree(data, seed), [data, seed]);
   return (
@@ -155,19 +178,60 @@ export function BranchingScene({ data, reducedMotion }: { data: StageData; reduc
       <text x={X_ROOT} y={CY - 18} className="branch-label">
         now
       </text>
-      <path d={`M ${X_ROOT} ${CY} L ${X_TRUNK} ${CY}`} pathLength={1} className="branch-path" stroke="var(--c-text-2)" strokeWidth={tree.trunkWidth} strokeOpacity={0.85} />
+      <path
+        d={`M ${X_ROOT} ${CY} L ${X_TRUNK} ${CY}`}
+        pathLength={1}
+        className="branch-path"
+        stroke="var(--c-text-2)"
+        strokeWidth={tree.trunkWidth}
+        strokeOpacity={0.85}
+      />
       {tree.branches.map((b, gi) => (
         <g key={b.key}>
-          <path d={b.d} pathLength={1} className="branch-path" stroke={b.color} strokeWidth={b.width} strokeOpacity={0.9} style={delay(0.45)} />
-          <text x={X_GROUP - 8} y={b.y - b.width / 2 - 7} textAnchor="end" className="branch-label branch-fade" style={delay(1.1 + gi * 0.05)}>
+          <path
+            d={b.d}
+            pathLength={1}
+            className="branch-path"
+            stroke={b.color}
+            strokeWidth={b.width}
+            strokeOpacity={0.9}
+            style={delay(0.45)}
+          />
+          <text
+            x={X_GROUP - 8}
+            y={b.y - b.width / 2 - 7}
+            textAnchor="end"
+            className="branch-label branch-fade"
+            style={delay(1.1 + gi * 0.05)}
+          >
             {b.word}
           </text>
           {b.leaves.map((l, li) => (
             <g key={l.id}>
               <title>{l.title}</title>
-              <path d={l.d} pathLength={1} className="branch-path" stroke={b.color} strokeWidth={1.6} strokeOpacity={0.75} style={delay(1 + gi * 0.08 + li * 0.04)} />
-              <RecoverabilityMarker x={l.x} y={l.y} r={4.5} recoverability={l.recoverability} className="branch-fade" style={delay(1.8 + gi * 0.08 + li * 0.04)} />
-              <text x={l.x + 9} y={l.y + 3.5} className="branch-id branch-fade" style={delay(1.9 + gi * 0.08 + li * 0.04)}>
+              <path
+                d={l.d}
+                pathLength={1}
+                className="branch-path"
+                stroke={b.color}
+                strokeWidth={1.6}
+                strokeOpacity={0.75}
+                style={delay(1 + gi * 0.08 + li * 0.04)}
+              />
+              <RecoverabilityMarker
+                x={l.x}
+                y={l.y}
+                r={4.5}
+                recoverability={l.recoverability}
+                className="branch-fade"
+                style={delay(1.8 + gi * 0.08 + li * 0.04)}
+              />
+              <text
+                x={l.x + 9}
+                y={l.y + 3.5}
+                className="branch-id branch-fade"
+                style={delay(1.9 + gi * 0.08 + li * 0.04)}
+              >
                 {l.id}
               </text>
             </g>

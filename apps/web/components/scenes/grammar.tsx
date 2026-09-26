@@ -11,7 +11,9 @@ export const RECOVERABILITY_ORDER = ["high", "moderate", "low", "none", "unknown
 export type Recoverability = (typeof RECOVERABILITY_ORDER)[number];
 
 export function asRecoverability(v: string): Recoverability {
-  return (RECOVERABILITY_ORDER as readonly string[]).includes(v) ? (v as Recoverability) : "unknown";
+  return (RECOVERABILITY_ORDER as readonly string[]).includes(v)
+    ? (v as Recoverability)
+    : "unknown";
 }
 
 const COLOR: Record<Recoverability, string> = {
@@ -60,10 +62,31 @@ export function RecoverabilityMarker({ x, y, r, recoverability, className, style
   const kind = asRecoverability(recoverability);
   const fill = COLOR[kind];
   if (kind === "unknown") {
-    return <circle cx={x} cy={y} r={r} fill="none" stroke={fill} strokeWidth={1.5} className={className} style={style} />;
+    return (
+      <circle
+        cx={x}
+        cy={y}
+        r={r}
+        fill="none"
+        stroke={fill}
+        strokeWidth={1.5}
+        className={className}
+        style={style}
+      />
+    );
   }
   if (kind === "none") {
-    return <rect x={x - r} y={y - r} width={r * 2} height={r * 2} fill={fill} className={className} style={style} />;
+    return (
+      <rect
+        x={x - r}
+        y={y - r}
+        width={r * 2}
+        height={r * 2}
+        fill={fill}
+        className={className}
+        style={style}
+      />
+    );
   }
   if (kind === "low") {
     return (

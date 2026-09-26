@@ -76,7 +76,9 @@ export function deriveModel(data: StageData, particleScale: number, halo: boolea
     seed: data.seed ?? 7,
     interval: clamp(data.intervalWidth ?? 0.2, 0, 1),
     bright: clamp((data.brightness ?? 50) / 100, 0, 1),
-    particles: Math.round(clamp((data.particles ?? 140) * particleScale, PARTICLE_MIN, PARTICLE_CAP)),
+    particles: Math.round(
+      clamp((data.particles ?? 140) * particleScale, PARTICLE_MIN, PARTICLE_CAP),
+    ),
     safeguards: Math.round(clamp(data.safeguards ?? 0, 0, 12)),
     halo,
     curve: data.researchCurve ?? [],
@@ -160,7 +162,14 @@ function buildCurveGeometry(curve: SceneModel["curve"]): BufferGeometry | null {
       [c.high, 1.3, 0.3],
     ];
     for (const [v, size, alpha] of rows) {
-      points.push({ radius: RING_RADIUS * (1.5 + 0.45 * clamp(v, 0, 1)), angle, speed: 0, size, alpha, height: 0 });
+      points.push({
+        radius: RING_RADIUS * (1.5 + 0.45 * clamp(v, 0, 1)),
+        angle,
+        speed: 0,
+        size,
+        alpha,
+        height: 0,
+      });
     }
   });
   return pointGeometry(points);
@@ -270,24 +279,53 @@ function rimMaterial(): { material: SpriteMaterial | null; texture: CanvasTextur
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, 256, 256);
   const texture = new CanvasTexture(canvas);
-  const material = new SpriteMaterial({ map: texture, transparent: true, depthWrite: false, blending: AdditiveBlending, opacity: 0 });
+  const material = new SpriteMaterial({
+    map: texture,
+    transparent: true,
+    depthWrite: false,
+    blending: AdditiveBlending,
+    opacity: 0,
+  });
   return { material, texture };
 }
 
-export function World({ model, palette, reduced, intro }: { model: SceneModel; palette: Palette; reduced: boolean; intro: RefObject<IntroControl> }) {
+export function World({
+  model,
+  palette,
+  reduced,
+  intro,
+}: {
+  model: SceneModel;
+  palette: Palette;
+  reduced: boolean;
+  intro: RefObject<IntroControl>;
+}) {
   const invalidate = useThree((s) => s.invalidate);
   const dpr = useThree((s) => s.viewport.dpr);
 
   const particleGeo = useMemo(() => buildParticleGeometry(model.seed), [model.seed]);
   const curveGeo = useMemo(() => buildCurveGeometry(model.curve), [model.curve]);
-  const arcs = useMemo(() => buildArcs(model.seed, model.safeguards), [model.seed, model.safeguards]);
+  const arcs = useMemo(
+    () => buildArcs(model.seed, model.safeguards),
+    [model.seed, model.safeguards],
+  );
   const particles = useMemo(() => pointMaterial(palette.evidence), [palette.evidence]);
   const curve = useMemo(() => pointMaterial(palette.uncertainty), [palette.uncertainty]);
-  const band = useMemo(() => bandMaterial(palette.evidence, model.interval), [palette.evidence, model.interval]);
+  const band = useMemo(
+    () => bandMaterial(palette.evidence, model.interval),
+    [palette.evidence, model.interval],
+  );
   const glow = useMemo(() => glowMaterial(), []);
   const rim = useMemo(() => rimMaterial(), []);
   const arcMaterial = useMemo(
-    () => new MeshBasicMaterial({ color: palette.safeguard, transparent: true, opacity: 0, depthWrite: false, side: DoubleSide }),
+    () =>
+      new MeshBasicMaterial({
+        color: palette.safeguard,
+        transparent: true,
+        opacity: 0,
+        depthWrite: false,
+        side: DoubleSide,
+      }),
     [palette.safeguard],
   );
   const horizonMaterial = useMemo(() => new MeshBasicMaterial({ color: "#000000" }), []);
@@ -384,10 +422,19 @@ export function World({ model, palette, reduced, intro }: { model: SceneModel; p
     <group ref={worldRef}>
       <mesh geometry={geometries.horizon} material={horizonMaterial} />
       {rim.material ? <sprite material={rim.material} scale={[RIM_SCALE, RIM_SCALE, 1]} /> : null}
-      {model.halo ? <mesh geometry={geometries.glow} material={glow.material} rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]} /> : null}
+      {model.halo ? (
+        <mesh
+          geometry={geometries.glow}
+          material={glow.material}
+          rotation={[-Math.PI / 2, 0, 0]}
+          position={[0, -0.02, 0]}
+        />
+      ) : null}
       <mesh geometry={geometries.band} material={band.material} rotation={[-Math.PI / 2, 0, 0]} />
       <points geometry={particleGeo} material={particles.material} frustumCulled={false} />
-      {curveGeo ? <points geometry={curveGeo} material={curve.material} frustumCulled={false} /> : null}
+      {curveGeo ? (
+        <points geometry={curveGeo} material={curve.material} frustumCulled={false} />
+      ) : null}
       {arcs.map((a, i) => (
         <group
           key={i}
@@ -396,7 +443,11 @@ export function World({ model, palette, reduced, intro }: { model: SceneModel; p
           }}
           rotation={[a.tilt, a.start, 0]}
         >
-          <mesh geometry={geometries.arcs[i]} material={arcMaterial} rotation={[-Math.PI / 2, 0, 0]} />
+          <mesh
+            geometry={geometries.arcs[i]}
+            material={arcMaterial}
+            rotation={[-Math.PI / 2, 0, 0]}
+          />
         </group>
       ))}
     </group>

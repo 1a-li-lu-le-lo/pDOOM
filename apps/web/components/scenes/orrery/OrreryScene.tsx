@@ -134,8 +134,24 @@ export function OrreryScene({ data, reducedMotion }: { data: StageData; reducedM
       <circle cx={CX} cy={CY} r={SAFEGUARD_R} className="orrery-guide" />
 
       {/* the withheld official object: hollow, dashed, text-free */}
-      <circle cx={CX} cy={CY} r={CENTRE_R} fill="var(--c-bg)" stroke="var(--c-insufficient)" strokeWidth={1.5} strokeDasharray="7 7" />
-      <circle cx={CX} cy={CY} r={CENTRE_R - 14} fill="none" stroke="var(--c-insufficient)" strokeOpacity={0.35} strokeDasharray="2 6" />
+      <circle
+        cx={CX}
+        cy={CY}
+        r={CENTRE_R}
+        fill="var(--c-bg)"
+        stroke="var(--c-insufficient)"
+        strokeWidth={1.5}
+        strokeDasharray="7 7"
+      />
+      <circle
+        cx={CX}
+        cy={CY}
+        r={CENTRE_R - 14}
+        fill="none"
+        stroke="var(--c-insufficient)"
+        strokeOpacity={0.35}
+        strokeDasharray="2 6"
+      />
 
       {/* inner orbit: indexes */}
       <g className="orrery-orbit orrery-period-inner">
@@ -143,11 +159,24 @@ export function OrreryScene({ data, reducedMotion }: { data: StageData; reducedM
           <g key={p.id} className="orrery-upright orrery-period-inner" style={origin(p.x, p.y)}>
             <title>{p.label}</title>
             {p.hollow ? (
-              <circle cx={p.x} cy={p.y} r={p.size} fill="none" stroke="var(--c-insufficient)" strokeWidth={1.5} strokeDasharray="3 3" />
+              <circle
+                cx={p.x}
+                cy={p.y}
+                r={p.size}
+                fill="none"
+                stroke="var(--c-insufficient)"
+                strokeWidth={1.5}
+                strokeDasharray="3 3"
+              />
             ) : (
               <circle cx={p.x} cy={p.y} r={p.size} fill="var(--c-evidence)" />
             )}
-            <text x={p.left ? p.x - p.size - 6 : p.x + p.size + 6} y={p.y + 4} textAnchor={p.left ? "end" : "start"} className="orrery-label">
+            <text
+              x={p.left ? p.x - p.size - 6 : p.x + p.size + 6}
+              y={p.y + 4}
+              textAnchor={p.left ? "end" : "start"}
+              className="orrery-label"
+            >
               {p.label}
             </text>
           </g>
@@ -160,7 +189,12 @@ export function OrreryScene({ data, reducedMotion }: { data: StageData; reducedM
           <g key={n.id} className="orrery-upright orrery-period-middle" style={origin(n.x, n.y)}>
             <title>{n.title}</title>
             <RecoverabilityMarker x={n.x} y={n.y} r={5} recoverability={n.recoverability} />
-            <text x={n.left ? n.x - 9 : n.x + 9} y={n.y + 3.5} textAnchor={n.left ? "end" : "start"} className="orrery-id">
+            <text
+              x={n.left ? n.x - 9 : n.x + 9}
+              y={n.y + 3.5}
+              textAnchor={n.left ? "end" : "start"}
+              className="orrery-id"
+            >
               {n.id}
             </text>
           </g>

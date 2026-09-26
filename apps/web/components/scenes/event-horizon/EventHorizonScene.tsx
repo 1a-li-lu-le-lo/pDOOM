@@ -14,7 +14,15 @@
  * frame; a WebGL failure or a lost context unmounts the canvas quietly.
  */
 import { Canvas, useFrame, useThree, type Frameloop } from "@react-three/fiber";
-import { Component, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import {
+  Component,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import type { StageData } from "../HomeStage";
 import { World, deriveModel, type IntroControl, type Palette } from "./World";
 
@@ -27,7 +35,12 @@ const MEASURE_SECONDS = 2;
 const MIN_FPS = 45;
 const MEASURE_MAX_DELTA = 0.5;
 
-const FALLBACK_PALETTE: Palette = { bg: "#050508", evidence: "#f5f5f7", safeguard: "#5fd6ea", uncertainty: "#e8b45a" };
+const FALLBACK_PALETTE: Palette = {
+  bg: "#050508",
+  evidence: "#f5f5f7",
+  safeguard: "#5fd6ea",
+  uncertainty: "#e8b45a",
+};
 
 interface Quality {
   dpr: number | [number, number];
@@ -60,14 +73,19 @@ function readPalette(): Palette {
 
 function prefersReducedMotion(): boolean {
   try {
-    return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    return (
+      typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
   } catch {
     return false;
   }
 }
 
 /** Renders nothing if anything inside the canvas throws, so the static disk beneath stays. */
-class SceneBoundary extends Component<{ children: ReactNode; onError: () => void }, { failed: boolean }> {
+class SceneBoundary extends Component<
+  { children: ReactNode; onError: () => void },
+  { failed: boolean }
+> {
   override state = { failed: false };
   static getDerivedStateFromError() {
     return { failed: true };
@@ -123,7 +141,10 @@ export function EventHorizonScene({ data }: { data: StageData }) {
   const [hidden, setHidden] = useState(false);
   const [quality, setQuality] = useState<Quality>(FULL_QUALITY);
   const [palette] = useState(readPalette);
-  const model = useMemo(() => deriveModel(data, quality.particleScale, quality.halo), [data, quality.particleScale, quality.halo]);
+  const model = useMemo(
+    () => deriveModel(data, quality.particleScale, quality.halo),
+    [data, quality.particleScale, quality.halo],
+  );
 
   // (d) reduced motion: still frame, no intro, and follow changes while mounted.
   useEffect(() => {
@@ -192,13 +213,26 @@ export function EventHorizonScene({ data }: { data: StageData }) {
   if (failed) return null;
   const frameloop: Frameloop = reduced ? "demand" : inView && !hidden ? "always" : "never";
   return (
-    <div ref={wrapRef} className="scene-canvas" aria-hidden="true" data-ready={ready ? "true" : "false"} data-skipped={skipped ? "true" : "false"}>
+    <div
+      ref={wrapRef}
+      className="scene-canvas"
+      aria-hidden="true"
+      data-ready={ready ? "true" : "false"}
+      data-skipped={skipped ? "true" : "false"}
+    >
       <SceneBoundary onError={fail}>
         <Canvas
           frameloop={frameloop}
           dpr={quality.dpr}
           flat
-          gl={{ antialias: false, alpha: false, stencil: false, depth: true, powerPreference: "high-performance", failIfMajorPerformanceCaveat: false }}
+          gl={{
+            antialias: false,
+            alpha: false,
+            stencil: false,
+            depth: true,
+            powerPreference: "high-performance",
+            failIfMajorPerformanceCaveat: false,
+          }}
           camera={{ position: [0, 3.33, 7.49], fov: 36, near: 0.5, far: 60 }}
           onCreated={(state) => {
             try {
