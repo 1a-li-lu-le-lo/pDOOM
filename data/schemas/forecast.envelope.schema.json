@@ -151,41 +151,48 @@
             ]
           },
           "quantiles": {
-            "additionalProperties": false,
-            "description": "Any subset of p05..p95 (probabilities)",
-            "properties": {
-              "p05": {
-                "description": "Probability in [0, 1]",
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
+            "anyOf": [
+              {
+                "additionalProperties": false,
+                "description": "Any subset of p05..p95 (probabilities)",
+                "properties": {
+                  "p05": {
+                    "description": "Probability in [0, 1]",
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "p25": {
+                    "description": "Probability in [0, 1]",
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "p50": {
+                    "description": "Probability in [0, 1]",
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "p75": {
+                    "description": "Probability in [0, 1]",
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "p95": {
+                    "description": "Probability in [0, 1]",
+                    "maximum": 1,
+                    "minimum": 0,
+                    "type": "number"
+                  }
+                },
+                "type": "object"
               },
-              "p25": {
-                "description": "Probability in [0, 1]",
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
-              },
-              "p50": {
-                "description": "Probability in [0, 1]",
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
-              },
-              "p75": {
-                "description": "Probability in [0, 1]",
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
-              },
-              "p95": {
-                "description": "Probability in [0, 1]",
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
+              {
+                "type": "null"
               }
-            },
-            "type": "object"
+            ]
           },
           "response_rate": {
             "anyOf": [

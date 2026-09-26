@@ -1,0 +1,49 @@
+<!-- Copyright NU Cybernetics. p(DOOM) — research prototype. -->
+# Model card — release {{.Manifest.ReleaseID}}
+
+**Data snapshot:** {{.Manifest.DataSnapshot}} (source cutoff {{.Manifest.SourceCutoff}})
+**Generated:** {{.Manifest.GeneratedAt}} · **Code commit:** {{.Manifest.CodeCommit}}
+**Model versions:** {{range $i, $v := .Manifest.ModelVersions}}{{if $i}}, {{end}}`{{$v}}`{{end}}
+**Editorial risk level:** {{.Manifest.EditorialRiskLevel}} · **Uncertainty score:** {{if .Manifest.UncertaintyScore}}{{printf "%.0f" (deref .Manifest.UncertaintyScore)}}{{else}}n/a{{end}} / 100
+
+## Intended use
+Public-interest inspection of evidence relevant to catastrophic and existential risk from advanced AI: comparing named external forecasts, reading structured indexes of capability, control, incidents and evidence movement, exploring a clearly labelled research-mode decomposition, and finding interventions. Every number is shown with its outcome definition, horizon, conditioning, interval, disagreement and data cutoff.
+
+## Prohibited uses
+Financial trading; military decision-making; emergency-alert triggering; individual mental-health assessment; insurance pricing; legal proof; claims of scientific consensus; predicting a specific catastrophe date; presenting any index as a probability; presenting the research-mode estimate as the official value.
+
+## Outcome definition
+{{.Manifest.OutcomeDefinition}}
+
+## Horizons
+{{range .Manifest.Horizons}}`{{.}}` {{end}}— measured from the forecast origin date; "2100" is a calendar endpoint and "eventual" has no endpoint and is never displayed as a date.
+
+## Architecture
+1. **Official object** — `pdoom-model/official-index-only`: publishes no probability (status `insufficiently_calibrated`).
+2. **External forecast aggregate** — `pdoom-model/external-aggregate`: compatibility groups of named forecasts aggregated under {{len .Aggregations}} method results; preferred method unweighted median; original wording shown beside every value.
+3. **Research-mode experimental model** — `{{index .Manifest.ModelVersions 2}}`: P(O_i ≤ T) = P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with logit-normal factors fitted to documented {p05,p50,p95} judgments, one common latent factor, Monte Carlo with a fixed seed.
+4. **Indexes** — `pdoom-model/indexes`: capability pressure, control strength, incident pressure, evidence pressure, agentic infrastructure risk, uncertainty score, attention (not computed). None is a probability.
+
+## Data and sources
+{{.Manifest.DataSummary.SourceCount}} sources, {{.Manifest.DataSummary.ForecastCount}} forecast records, {{.Manifest.DataSummary.IncidentCount}} incidents in snapshot `{{.Manifest.DataSnapshot}}`. Only items with `verification.status` verified_fetch/verified_search and `model_use_status` eligible/used feed computations; tier 4–5 sources never do. External forecast sources: {{range $i, $v := .Manifest.ExternalForecasts.SourceIDs}}{{if $i}}, {{end}}`{{$v}}`{{end}}.
+
+## Priors, assumptions and dependencies
+All research-mode parameters are documented judgments stored in `model_spec.json` (see `priors` in the manifest). Dependence: single common factor with loading λ = {{printf "%.2f" .Lambda}}. Not modelled: feedback loops, time-varying hazards, explicit competing risks.
+
+## Fitting, calibration and evaluation
+No parameters are fitted to outcome data: existential outcomes have not occurred in a way that permits calibration. Proxy calibration (benchmark milestones, policy events, incident occurrence) is planned in `docs/method/calibration.md` and is not yet available; nothing here claims calibration.
+
+## Sensitivity (largest influences)
+{{range .Manifest.Sensitivity}}- `{{.RunID}}` ({{.Kind}}) on `{{.TargetID}}`: Δ {{printf "%+.4f" .Delta}}
+{{end}}
+## Estimates published
+{{range .Manifest.Estimates}}- `{{.EstimateID}}` [{{.Status}}] {{.Horizon}}: {{.Display}}
+{{end}}
+## Known limitations and biases
+{{range .Manifest.KnownLimitations}}- {{.}}
+{{end}}
+## Governance and revision policy
+Promotion requires signed reviewer approvals (ed25519), byte-for-byte reproducibility of the candidate from its snapshot, invariant checks, and acknowledgement of heightened-review triggers by a second reviewer. Changes are recorded in `delta.json` and `changelog.md`; releases are immutable and rollback moves only the `CURRENT` pointer. See `docs/governance/update-governance.md`.
+
+## Contact and license
+Authored by NU Cybernetics. Corrections: `docs/governance/corrections-and-appeals.md`. License: see `NOTICE`.

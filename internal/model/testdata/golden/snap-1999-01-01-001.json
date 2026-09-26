@@ -1,0 +1,5013 @@
+{
+  "Aggregations": [
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-unweighted_median",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "unweighted_median",
+      "n": 4,
+      "note": "Median of member central values; the preferred method because it is robust to a single extreme forecast.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": true,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.04,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-linear_pool",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "linear_pool",
+      "n": 4,
+      "note": "Arithmetic mean of member central values.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.0585,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-log_odds_pool",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "log_odds_pool",
+      "n": 4,
+      "note": "Mean on the log-odds scale, mapped back to a probability.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.031733,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-trimmed_mean",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "trimmed_mean",
+      "n": 4,
+      "note": "Mean after trimming 20% from each end; falls back to the median when fewer than five members.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.04,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-tier_weighted",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "tier_weighted",
+      "n": 4,
+      "note": "Weighted by source tier multiplier (tier 1 = 1.0, tier 2 = 0.9, tier 3 = 0.5); no member above the single-figure cap.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.0585,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-recency_weighted",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "recency_weighted",
+      "n": 4,
+      "note": "Weighted by 0.5^(age in years / 3) relative to the newest member; no member above the single-figure cap.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.064457,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.2859,
+        "fc-fixture-survey-2025-safety": 0.2859,
+        "fc-fixture-tournament-experts": 0.2141,
+        "fc-fixture-tournament-superforecasters": 0.2141
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-equal_weight_by_population",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "equal_weight_by_population",
+      "n": 4,
+      "note": "Mean of per-population medians so that a large survey and a small superforecaster panel count equally.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.0585,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    }
+  ],
+  "DataSummary": {
+    "benchmark_definitions": {
+      "bm-fixture-horizon": "1c5f4e604f0c8d12"
+    },
+    "forecast_count": 5,
+    "forecast_source_ids": [
+      "src-fixture-survey-2025",
+      "src-fixture-tournament-2024"
+    ],
+    "incident_count": 2,
+    "scenario_ids": [
+      "S1",
+      "S3"
+    ],
+    "source_count": 6
+  },
+  "Delta": {
+    "estimate_changes": [
+      {
+        "change_points": null,
+        "estimate_id": "est-official-P_DOOM-1y",
+        "new_display": "Insufficiently calibrated",
+        "new_p50": null,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "insufficiently_calibrated"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-official-P_DOOM-3y",
+        "new_display": "Insufficiently calibrated",
+        "new_p50": null,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "insufficiently_calibrated"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-official-P_DOOM-5y",
+        "new_display": "Insufficiently calibrated",
+        "new_p50": null,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "insufficiently_calibrated"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-official-P_DOOM-10y",
+        "new_display": "Insufficiently calibrated",
+        "new_p50": null,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "insufficiently_calibrated"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-official-P_DOOM-25y",
+        "new_display": "Insufficiently calibrated",
+        "new_p50": null,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "insufficiently_calibrated"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-official-P_DOOM-2100",
+        "new_display": "Insufficiently calibrated",
+        "new_p50": null,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "insufficiently_calibrated"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-official-P_DOOM-eventual",
+        "new_display": "Insufficiently calibrated",
+        "new_p50": null,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "insufficiently_calibrated"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-external-G-FIX-EXT-2100",
+        "new_display": "4%",
+        "new_p50": 0.04,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "external_aggregate"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-P_DOOM-5y",
+        "new_display": "1%",
+        "new_p50": 0.005028,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-O3-5y",
+        "new_display": "<1%",
+        "new_p50": 0.001825,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-P_COLLAPSE-5y",
+        "new_display": "<1%",
+        "new_p50": 0.001559,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-O6-5y",
+        "new_display": "<1%",
+        "new_p50": 0.00045,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-O7-5y",
+        "new_display": "<1%",
+        "new_p50": 0.000185,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-P_DOOM-10y",
+        "new_display": "1%",
+        "new_p50": 0.008291,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-O3-10y",
+        "new_display": "<1%",
+        "new_p50": 0.002985,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-P_COLLAPSE-10y",
+        "new_display": "<1%",
+        "new_p50": 0.002526,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-O6-10y",
+        "new_display": "<1%",
+        "new_p50": 0.000729,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-O7-10y",
+        "new_display": "<1%",
+        "new_p50": 0.000304,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-P_DOOM-25y",
+        "new_display": "1%",
+        "new_p50": 0.011594,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-O3-25y",
+        "new_display": "<1%",
+        "new_p50": 0.004077,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-P_COLLAPSE-25y",
+        "new_display": "<1%",
+        "new_p50": 0.003462,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-O6-25y",
+        "new_display": "<1%",
+        "new_p50": 0.001012,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      },
+      {
+        "change_points": null,
+        "estimate_id": "est-research-O7-25y",
+        "new_display": "<1%",
+        "new_p50": 0.000418,
+        "previous_display": "",
+        "previous_p50": null,
+        "status": "research_mode"
+      }
+    ],
+    "generated_at": "2026-09-26T12:00:00Z",
+    "heightened_review_triggers": [
+      "first_release",
+      "single_laboratory_evidence"
+    ],
+    "index_changes": [
+      {
+        "delta": null,
+        "index_id": "evidence_pressure",
+        "new": 50,
+        "previous": null
+      },
+      {
+        "delta": null,
+        "index_id": "capability_pressure",
+        "new": 61.2,
+        "previous": null
+      },
+      {
+        "delta": null,
+        "index_id": "control_strength",
+        "new": 27.5,
+        "previous": null
+      },
+      {
+        "delta": null,
+        "index_id": "incident_pressure",
+        "new": 2.4538,
+        "previous": null
+      },
+      {
+        "delta": null,
+        "index_id": "uncertainty",
+        "new": 24.5069,
+        "previous": null
+      },
+      {
+        "delta": null,
+        "index_id": "agentic_infrastructure_risk",
+        "new": 61.55,
+        "previous": null
+      },
+      {
+        "delta": null,
+        "index_id": "attention",
+        "new": null,
+        "previous": null
+      }
+    ],
+    "kind": "delta_record",
+    "model_version_changed": false,
+    "new_forecast_source_ids": [],
+    "new_scenario_ids": [],
+    "notes": [
+      "First release: no previous estimate to compare against."
+    ],
+    "previous_release_id": null,
+    "previous_snapshot_id": null,
+    "redefined_benchmark_ids": [],
+    "release_id": null,
+    "schema_version": 1,
+    "snapshot_id": "snap-1999-01-01-001"
+  },
+  "DriversExplained": {
+    "as_of": "2026-09-26",
+    "items": [
+      {
+        "confidence": 0.7,
+        "counterevidence": null,
+        "direction": "raises_pressure",
+        "driver": "D1.swe_bench",
+        "driver_family": "D1",
+        "index_id": "capability_pressure",
+        "last_updated": "2026-08-01",
+        "magnitude": 24.5,
+        "model_role": "weighted component (weight 0.35, tier 1)",
+        "sensitivity": 4.7385,
+        "source_ids": [
+          "src-fixture-lab-card"
+        ]
+      },
+      {
+        "confidence": 0.7,
+        "counterevidence": null,
+        "direction": "raises_pressure",
+        "driver": "D1.task_horizon_50pct",
+        "driver_family": "D1",
+        "index_id": "capability_pressure",
+        "last_updated": "2026-08-01",
+        "magnitude": 21.7,
+        "model_role": "weighted component (weight 0.35, tier 1)",
+        "sensitivity": 0.4308,
+        "source_ids": [
+          "src-fixture-eval-report"
+        ]
+      },
+      {
+        "confidence": 0.7,
+        "counterevidence": null,
+        "direction": "raises_pressure",
+        "driver": "D2.unattended_duration",
+        "driver_family": "D2",
+        "index_id": "capability_pressure",
+        "last_updated": "2026-08-01",
+        "magnitude": 15,
+        "model_role": "weighted component (weight 0.30, tier 1)",
+        "sensitivity": -4.8,
+        "source_ids": [
+          "src-fixture-eval-report"
+        ]
+      },
+      {
+        "confidence": 0.7,
+        "counterevidence": null,
+        "direction": "strengthens_control",
+        "driver": "D5.control_evaluations",
+        "driver_family": "D5",
+        "index_id": "control_strength",
+        "last_updated": "2026-08-01",
+        "magnitude": 15,
+        "model_role": "weighted component (weight 0.35, tier 1)",
+        "sensitivity": 2.5,
+        "source_ids": [
+          "src-fixture-eval-report"
+        ]
+      },
+      {
+        "confidence": 0.7,
+        "counterevidence": null,
+        "direction": "strengthens_control",
+        "driver": "D6.mcp_registry_signing",
+        "driver_family": "D6",
+        "index_id": "control_strength",
+        "last_updated": "2026-08-01",
+        "magnitude": 12.5,
+        "model_role": "weighted component (weight 0.35, tier 1)",
+        "sensitivity": -2.5,
+        "source_ids": [
+          "src-fixture-eval-report"
+        ]
+      },
+      {
+        "confidence": 0.7,
+        "counterevidence": null,
+        "direction": "raises_pressure",
+        "driver": "D2.unattended_duration",
+        "driver_family": "D2",
+        "index_id": "agentic_infrastructure_risk",
+        "last_updated": "2026-08-01",
+        "magnitude": 17,
+        "model_role": "weighted component (weight 0.34, tier 1)",
+        "sensitivity": -5.95,
+        "source_ids": [
+          "src-fixture-eval-report"
+        ]
+      },
+      {
+        "confidence": 0.7,
+        "counterevidence": null,
+        "direction": "raises_pressure",
+        "driver": "D3.tool_permission_scope",
+        "driver_family": "D3",
+        "index_id": "agentic_infrastructure_risk",
+        "last_updated": "2026-08-01",
+        "magnitude": 19.8,
+        "model_role": "weighted component (weight 0.33, tier 1)",
+        "sensitivity": -0.7634,
+        "source_ids": [
+          "src-fixture-eval-report"
+        ]
+      },
+      {
+        "confidence": 0.7,
+        "counterevidence": null,
+        "direction": "raises_pressure",
+        "driver": "D6.mcp_registry_signing",
+        "driver_family": "D6",
+        "index_id": "agentic_infrastructure_risk",
+        "last_updated": "2026-08-01",
+        "magnitude": 24.75,
+        "model_role": "weighted component (weight 0.33, tier 1)",
+        "sensitivity": 6.6246,
+        "source_ids": [
+          "src-fixture-eval-report"
+        ]
+      }
+    ],
+    "kind": "drivers_explained",
+    "notes": [
+      "Contributions are shares of a 0–100 index, not probabilities.",
+      "Sensitivity is the change in the index when the signal is removed and the remaining weights are renormalized.",
+      "Causal attribution of probability changes to individual drivers is not available in this model version; the research-mode estimate depends on judgment-based parameters documented in the model specification."
+    ],
+    "release_id": null,
+    "schema_version": 1
+  },
+  "EditorialRiskLevel": "elevated",
+  "Estimates": [
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-1y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "1y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-3y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "3y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-eventual",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "eventual",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Members share outcome set, horizon and conditioning (compatibility group G-FIX-EXT-2100).",
+        "Central value is the unweighted median; alternative methods are published alongside.",
+        "Original question wording is shown beside every transformed value."
+      ],
+      "conditioning": "unconditional",
+      "disagreement": "extreme",
+      "display": {
+        "central": "4%",
+        "interval": "<1%–15%",
+        "note": "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: linear_pool 6%; log_odds_pool 3%; trimmed_mean 4%; tier_weighted 6%; recency_weighted 6%; equal_weight_by_population 6%"
+      },
+      "estimate_id": "est-external-G-FIX-EXT-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.0585,
+      "method_ref": "docs/method/aggregation.md",
+      "model_confidence": "aggregation_of_named_sources",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/external-aggregate@0.1.0",
+      "quantiles": {
+        "p05": 0.004,
+        "p25": 0.004,
+        "p50": 0.04,
+        "p75": 0.05,
+        "p95": 0.15
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 4,
+        "population_count": 4,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "external_aggregate",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "1%",
+        "interval": "<1%–6%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.014217,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000185,
+        "p25": 0.001471,
+        "p50": 0.005028,
+        "p75": 0.015608,
+        "p95": 0.062732
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.005254,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000064,
+        "p25": 0.000514,
+        "p50": 0.001825,
+        "p75": 0.005721,
+        "p95": 0.021665
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.004752,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000052,
+        "p25": 0.000414,
+        "p50": 0.001559,
+        "p75": 0.004813,
+        "p95": 0.01993
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.001706,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000014,
+        "p25": 0.000115,
+        "p50": 0.00045,
+        "p75": 0.001598,
+        "p95": 0.007413
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.000754,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000005,
+        "p25": 0.000046,
+        "p50": 0.000185,
+        "p75": 0.000638,
+        "p95": 0.003294
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "1%",
+        "interval": "<1%–9%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.021023,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000335,
+        "p25": 0.002576,
+        "p50": 0.008291,
+        "p75": 0.023991,
+        "p95": 0.086493
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–3%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.007782,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000116,
+        "p25": 0.000885,
+        "p50": 0.002985,
+        "p75": 0.008933,
+        "p95": 0.032313
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–3%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.00703,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000092,
+        "p25": 0.00071,
+        "p50": 0.002526,
+        "p75": 0.007716,
+        "p95": 0.028993
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.002524,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000024,
+        "p25": 0.000196,
+        "p50": 0.000729,
+        "p75": 0.002478,
+        "p95": 0.010937
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.001107,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.00001,
+        "p25": 0.000077,
+        "p50": 0.000304,
+        "p75": 0.000988,
+        "p95": 0.004776
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "1%",
+        "interval": "<1%–11%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.027048,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.00048,
+        "p25": 0.003704,
+        "p50": 0.011594,
+        "p75": 0.031609,
+        "p95": 0.107759
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–4%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.010025,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000174,
+        "p25": 0.001274,
+        "p50": 0.004077,
+        "p75": 0.011787,
+        "p95": 0.039803
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–4%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.009051,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000134,
+        "p25": 0.001005,
+        "p50": 0.003462,
+        "p75": 0.010074,
+        "p95": 0.037172
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.003246,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000034,
+        "p25": 0.000278,
+        "p50": 0.001012,
+        "p75": 0.003309,
+        "p95": 0.014211
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 4000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-01",
+      "mean": 0.001418,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000014,
+        "p25": 0.00011,
+        "p50": 0.000418,
+        "p75": 0.001323,
+        "p95": 0.006019
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_1",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-fixture-survey-2025",
+          "src-fixture-tournament-2024"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "low"
+    }
+  ],
+  "GeneratedAt": "2026-09-26T12:00:00Z",
+  "Groups": [
+    {
+      "Conditioning": "unconditional",
+      "Forecasts": [
+        {
+          "calibration": null,
+          "conditions": "unconditional",
+          "date": "2025-06-01",
+          "expertise": "fixture",
+          "forecaster_or_survey": "Fixture survey 2025",
+          "framing_effects": null,
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "horizon_end_year": null,
+          "horizon_note": null,
+          "human_review_status": "reviewed",
+          "id": "fc-fixture-survey-2025-researchers",
+          "mean": 0.09,
+          "median": 0.05,
+          "model_use_status": "eligible",
+          "outcome_set": [
+            "O6"
+          ],
+          "paraphrase": false,
+          "population": "general_ai_researchers",
+          "quantiles": null,
+          "question_wording_original": "What probability do you give to the fixture outcome by 2100?",
+          "response_rate": null,
+          "sample_size": 120,
+          "selection_effects": null,
+          "source_id": "src-fixture-survey-2025",
+          "status": "current",
+          "transformation_note": null,
+          "verification": {
+            "checked_at": "2026-08-15",
+            "method": "fixture",
+            "note": "synthetic",
+            "status": "verified_fetch"
+          }
+        },
+        {
+          "calibration": null,
+          "conditions": "unconditional",
+          "date": "2025-06-01",
+          "expertise": "fixture",
+          "forecaster_or_survey": "Fixture survey 2025 (safety subgroup)",
+          "framing_effects": null,
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "horizon_end_year": null,
+          "horizon_note": null,
+          "human_review_status": "reviewed",
+          "id": "fc-fixture-survey-2025-safety",
+          "mean": null,
+          "median": 0.15,
+          "model_use_status": "eligible",
+          "outcome_set": [
+            "O6"
+          ],
+          "paraphrase": false,
+          "population": "ai_safety_researchers",
+          "quantiles": null,
+          "question_wording_original": "What probability do you give to the fixture outcome by 2100?",
+          "response_rate": null,
+          "sample_size": 40,
+          "selection_effects": null,
+          "source_id": "src-fixture-survey-2025",
+          "status": "current",
+          "transformation_note": null,
+          "verification": {
+            "checked_at": "2026-08-15",
+            "method": "fixture",
+            "note": "synthetic",
+            "status": "verified_fetch"
+          }
+        },
+        {
+          "calibration": null,
+          "conditions": "unconditional",
+          "date": "2024-03-01",
+          "expertise": "fixture",
+          "forecaster_or_survey": "Fixture tournament (experts)",
+          "framing_effects": null,
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "horizon_end_year": null,
+          "horizon_note": null,
+          "human_review_status": "reviewed",
+          "id": "fc-fixture-tournament-experts",
+          "mean": null,
+          "median": 0.03,
+          "model_use_status": "eligible",
+          "outcome_set": [
+            "O6"
+          ],
+          "paraphrase": true,
+          "population": "domain_experts",
+          "quantiles": null,
+          "question_wording_original": "Probability of the fixture outcome by 2100",
+          "response_rate": null,
+          "sample_size": 30,
+          "selection_effects": null,
+          "source_id": "src-fixture-tournament-2024",
+          "status": "current",
+          "transformation_note": null,
+          "verification": {
+            "checked_at": "2026-08-15",
+            "method": "fixture",
+            "note": "synthetic",
+            "status": "verified_fetch"
+          }
+        },
+        {
+          "calibration": null,
+          "conditions": "unconditional",
+          "date": "2024-03-01",
+          "expertise": "fixture",
+          "forecaster_or_survey": "Fixture tournament",
+          "framing_effects": null,
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "horizon_end_year": null,
+          "horizon_note": null,
+          "human_review_status": "reviewed",
+          "id": "fc-fixture-tournament-superforecasters",
+          "mean": null,
+          "median": 0.004,
+          "model_use_status": "eligible",
+          "outcome_set": [
+            "O6"
+          ],
+          "paraphrase": true,
+          "population": "superforecasters",
+          "quantiles": null,
+          "question_wording_original": "Probability of the fixture outcome by 2100",
+          "response_rate": null,
+          "sample_size": 80,
+          "selection_effects": null,
+          "source_id": "src-fixture-tournament-2024",
+          "status": "current",
+          "transformation_note": null,
+          "verification": {
+            "checked_at": "2026-08-15",
+            "method": "fixture",
+            "note": "synthetic",
+            "status": "verified_fetch"
+          }
+        }
+      ],
+      "Horizon": "2100",
+      "ID": "G-FIX-EXT-2100",
+      "IQRLogOdds": 2.573013917298267,
+      "OutcomeSet": [
+        "O6"
+      ],
+      "Preferred": 0.04,
+      "Results": [
+        {
+          "aggregation_id": "agg-g-fix-ext-2100-unweighted_median",
+          "conditioning": "unconditional",
+          "forecast_ids": [
+            "fc-fixture-survey-2025-researchers",
+            "fc-fixture-survey-2025-safety",
+            "fc-fixture-tournament-experts",
+            "fc-fixture-tournament-superforecasters"
+          ],
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "method": "unweighted_median",
+          "n": 4,
+          "note": "Median of member central values; the preferred method because it is robust to a single extreme forecast.",
+          "outcome_set": [
+            "O6"
+          ],
+          "population_count": 4,
+          "preferred": true,
+          "source_ids": [
+            "src-fixture-survey-2025",
+            "src-fixture-tournament-2024"
+          ],
+          "transformation_note": "No transformation applied; members answer the same question in the same units.",
+          "value": 0.04,
+          "weights": {
+            "fc-fixture-survey-2025-researchers": 0.25,
+            "fc-fixture-survey-2025-safety": 0.25,
+            "fc-fixture-tournament-experts": 0.25,
+            "fc-fixture-tournament-superforecasters": 0.25
+          },
+          "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+        },
+        {
+          "aggregation_id": "agg-g-fix-ext-2100-linear_pool",
+          "conditioning": "unconditional",
+          "forecast_ids": [
+            "fc-fixture-survey-2025-researchers",
+            "fc-fixture-survey-2025-safety",
+            "fc-fixture-tournament-experts",
+            "fc-fixture-tournament-superforecasters"
+          ],
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "method": "linear_pool",
+          "n": 4,
+          "note": "Arithmetic mean of member central values.",
+          "outcome_set": [
+            "O6"
+          ],
+          "population_count": 4,
+          "preferred": false,
+          "source_ids": [
+            "src-fixture-survey-2025",
+            "src-fixture-tournament-2024"
+          ],
+          "transformation_note": "No transformation applied; members answer the same question in the same units.",
+          "value": 0.0585,
+          "weights": {
+            "fc-fixture-survey-2025-researchers": 0.25,
+            "fc-fixture-survey-2025-safety": 0.25,
+            "fc-fixture-tournament-experts": 0.25,
+            "fc-fixture-tournament-superforecasters": 0.25
+          },
+          "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+        },
+        {
+          "aggregation_id": "agg-g-fix-ext-2100-log_odds_pool",
+          "conditioning": "unconditional",
+          "forecast_ids": [
+            "fc-fixture-survey-2025-researchers",
+            "fc-fixture-survey-2025-safety",
+            "fc-fixture-tournament-experts",
+            "fc-fixture-tournament-superforecasters"
+          ],
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "method": "log_odds_pool",
+          "n": 4,
+          "note": "Mean on the log-odds scale, mapped back to a probability.",
+          "outcome_set": [
+            "O6"
+          ],
+          "population_count": 4,
+          "preferred": false,
+          "source_ids": [
+            "src-fixture-survey-2025",
+            "src-fixture-tournament-2024"
+          ],
+          "transformation_note": "No transformation applied; members answer the same question in the same units.",
+          "value": 0.031733,
+          "weights": {
+            "fc-fixture-survey-2025-researchers": 0.25,
+            "fc-fixture-survey-2025-safety": 0.25,
+            "fc-fixture-tournament-experts": 0.25,
+            "fc-fixture-tournament-superforecasters": 0.25
+          },
+          "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+        },
+        {
+          "aggregation_id": "agg-g-fix-ext-2100-trimmed_mean",
+          "conditioning": "unconditional",
+          "forecast_ids": [
+            "fc-fixture-survey-2025-researchers",
+            "fc-fixture-survey-2025-safety",
+            "fc-fixture-tournament-experts",
+            "fc-fixture-tournament-superforecasters"
+          ],
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "method": "trimmed_mean",
+          "n": 4,
+          "note": "Mean after trimming 20% from each end; falls back to the median when fewer than five members.",
+          "outcome_set": [
+            "O6"
+          ],
+          "population_count": 4,
+          "preferred": false,
+          "source_ids": [
+            "src-fixture-survey-2025",
+            "src-fixture-tournament-2024"
+          ],
+          "transformation_note": "No transformation applied; members answer the same question in the same units.",
+          "value": 0.04,
+          "weights": {
+            "fc-fixture-survey-2025-researchers": 0.25,
+            "fc-fixture-survey-2025-safety": 0.25,
+            "fc-fixture-tournament-experts": 0.25,
+            "fc-fixture-tournament-superforecasters": 0.25
+          },
+          "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+        },
+        {
+          "aggregation_id": "agg-g-fix-ext-2100-tier_weighted",
+          "conditioning": "unconditional",
+          "forecast_ids": [
+            "fc-fixture-survey-2025-researchers",
+            "fc-fixture-survey-2025-safety",
+            "fc-fixture-tournament-experts",
+            "fc-fixture-tournament-superforecasters"
+          ],
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "method": "tier_weighted",
+          "n": 4,
+          "note": "Weighted by source tier multiplier (tier 1 = 1.0, tier 2 = 0.9, tier 3 = 0.5); no member above the single-figure cap.",
+          "outcome_set": [
+            "O6"
+          ],
+          "population_count": 4,
+          "preferred": false,
+          "source_ids": [
+            "src-fixture-survey-2025",
+            "src-fixture-tournament-2024"
+          ],
+          "transformation_note": "No transformation applied; members answer the same question in the same units.",
+          "value": 0.0585,
+          "weights": {
+            "fc-fixture-survey-2025-researchers": 0.25,
+            "fc-fixture-survey-2025-safety": 0.25,
+            "fc-fixture-tournament-experts": 0.25,
+            "fc-fixture-tournament-superforecasters": 0.25
+          },
+          "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+        },
+        {
+          "aggregation_id": "agg-g-fix-ext-2100-recency_weighted",
+          "conditioning": "unconditional",
+          "forecast_ids": [
+            "fc-fixture-survey-2025-researchers",
+            "fc-fixture-survey-2025-safety",
+            "fc-fixture-tournament-experts",
+            "fc-fixture-tournament-superforecasters"
+          ],
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "method": "recency_weighted",
+          "n": 4,
+          "note": "Weighted by 0.5^(age in years / 3) relative to the newest member; no member above the single-figure cap.",
+          "outcome_set": [
+            "O6"
+          ],
+          "population_count": 4,
+          "preferred": false,
+          "source_ids": [
+            "src-fixture-survey-2025",
+            "src-fixture-tournament-2024"
+          ],
+          "transformation_note": "No transformation applied; members answer the same question in the same units.",
+          "value": 0.064457,
+          "weights": {
+            "fc-fixture-survey-2025-researchers": 0.2859,
+            "fc-fixture-survey-2025-safety": 0.2859,
+            "fc-fixture-tournament-experts": 0.2141,
+            "fc-fixture-tournament-superforecasters": 0.2141
+          },
+          "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+        },
+        {
+          "aggregation_id": "agg-g-fix-ext-2100-equal_weight_by_population",
+          "conditioning": "unconditional",
+          "forecast_ids": [
+            "fc-fixture-survey-2025-researchers",
+            "fc-fixture-survey-2025-safety",
+            "fc-fixture-tournament-experts",
+            "fc-fixture-tournament-superforecasters"
+          ],
+          "group_id": "G-FIX-EXT-2100",
+          "horizon": "2100",
+          "method": "equal_weight_by_population",
+          "n": 4,
+          "note": "Mean of per-population medians so that a large survey and a small superforecaster panel count equally.",
+          "outcome_set": [
+            "O6"
+          ],
+          "population_count": 4,
+          "preferred": false,
+          "source_ids": [
+            "src-fixture-survey-2025",
+            "src-fixture-tournament-2024"
+          ],
+          "transformation_note": "No transformation applied; members answer the same question in the same units.",
+          "value": 0.0585,
+          "weights": {
+            "fc-fixture-survey-2025-researchers": 0.25,
+            "fc-fixture-survey-2025-safety": 0.25,
+            "fc-fixture-tournament-experts": 0.25,
+            "fc-fixture-tournament-superforecasters": 0.25
+          },
+          "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+        }
+      ],
+      "Values": [
+        0.05,
+        0.15,
+        0.03,
+        0.004
+      ]
+    }
+  ],
+  "Indexes": [
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [],
+      "coverage": 1,
+      "index_id": "evidence_pressure",
+      "is_probability": false,
+      "label": "Evidence Pressure Index",
+      "method_ref": "docs/method/indexes.md#evidence-pressure",
+      "note": "Baseline release: evidence pressure is defined as 50 (no movement) for the first release; later releases show movement relative to this baseline.",
+      "scale": "0–100, 50 = no movement since the baseline release",
+      "value": 50
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 24.5,
+          "signal_id": "D1.swe_bench",
+          "tier": 1,
+          "value_normalized": 0.7,
+          "weight": 0.35
+        },
+        {
+          "contribution": 21.7,
+          "signal_id": "D1.task_horizon_50pct",
+          "tier": 1,
+          "value_normalized": 0.62,
+          "weight": 0.35
+        },
+        {
+          "contribution": 15,
+          "signal_id": "D2.unattended_duration",
+          "tier": 1,
+          "value_normalized": 0.5,
+          "weight": 0.3
+        }
+      ],
+      "coverage": 1,
+      "index_id": "capability_pressure",
+      "is_probability": false,
+      "label": "Capability Pressure Index",
+      "method_ref": "docs/method/indexes.md#capability-pressure",
+      "note": "",
+      "scale": "0–100, higher = more capability pressure",
+      "value": 61.2
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 15,
+          "signal_id": "D5.control_evaluations",
+          "tier": 1,
+          "value_normalized": 0.3,
+          "weight": 0.35
+        },
+        {
+          "contribution": 12.5,
+          "signal_id": "D6.mcp_registry_signing",
+          "tier": 1,
+          "value_normalized": 0.25,
+          "weight": 0.35
+        }
+      ],
+      "coverage": 0.7,
+      "index_id": "control_strength",
+      "is_probability": false,
+      "label": "Control Strength Index",
+      "method_ref": "docs/method/indexes.md#control-strength",
+      "note": "Computed over 70% of the specified signal weight; missing signals are listed in the coverage gaps.",
+      "scale": "0–100, higher = stronger safeguards and institutions",
+      "value": 27.5
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 2.3836,
+          "signal_id": "inc-fixture-agent-deletion",
+          "tier": 1,
+          "value_normalized": 0.15,
+          "weight": 0.0724
+        },
+        {
+          "contribution": 0.0691,
+          "signal_id": "inc-fixture-chatbot-error",
+          "tier": 1,
+          "value_normalized": 0.01,
+          "weight": 0.0021
+        }
+      ],
+      "coverage": 1,
+      "index_id": "incident_pressure",
+      "is_probability": false,
+      "label": "Incident Pressure Index",
+      "method_ref": "docs/method/indexes.md#incident-pressure",
+      "note": "2 eligible incidents; raw pressure 0.075 squashed with k = 3.0. Counts one underlying event once; media volume is the separate attention index.",
+      "scale": "0–100, higher = more verified incident pressure",
+      "value": 2.4538
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 3,
+          "signal_id": "coverage_gap",
+          "tier": 1,
+          "value_normalized": 0.1,
+          "weight": 0.3
+        },
+        {
+          "contribution": 12.866,
+          "signal_id": "forecast_disagreement",
+          "tier": 1,
+          "value_normalized": 0.6433,
+          "weight": 0.2
+        },
+        {
+          "contribution": 0,
+          "signal_id": "low_tier_share",
+          "tier": 1,
+          "value_normalized": 0,
+          "weight": 0.15
+        },
+        {
+          "contribution": 1.142,
+          "signal_id": "sensitivity_spread",
+          "tier": 1,
+          "value_normalized": 0.0571,
+          "weight": 0.2
+        },
+        {
+          "contribution": 7.5,
+          "signal_id": "unknown_dependencies",
+          "tier": 1,
+          "value_normalized": 0.5,
+          "weight": 0.15
+        }
+      ],
+      "coverage": 1,
+      "index_id": "uncertainty",
+      "is_probability": false,
+      "label": "Uncertainty Score",
+      "method_ref": "docs/method/indexes.md#uncertainty-score",
+      "note": "Weighted mean of coverage gap, external-forecast disagreement, low-tier evidence share, sensitivity spread and a constant unknown-dependency term. Not a probability.",
+      "scale": "0–100, higher = less is known",
+      "value": 24.5069
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 17,
+          "signal_id": "D2.unattended_duration",
+          "tier": 1,
+          "value_normalized": 0.5,
+          "weight": 0.34
+        },
+        {
+          "contribution": 19.8,
+          "signal_id": "D3.tool_permission_scope",
+          "tier": 1,
+          "value_normalized": 0.6,
+          "weight": 0.33
+        },
+        {
+          "contribution": 24.75,
+          "signal_id": "D6.mcp_registry_signing",
+          "tier": 1,
+          "value_normalized": 0.75,
+          "weight": 0.33
+        }
+      ],
+      "coverage": 1,
+      "index_id": "agentic_infrastructure_risk",
+      "is_probability": false,
+      "label": "Agentic Infrastructure Risk Index",
+      "method_ref": "docs/method/indexes.md#agentic-infrastructure-risk",
+      "note": "",
+      "scale": "0–100, higher = more exposure from agent infrastructure",
+      "value": 61.55
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [],
+      "coverage": 0,
+      "index_id": "attention",
+      "is_probability": false,
+      "label": "Attention Index",
+      "method_ref": "docs/method/indexes.md#attention-index",
+      "note": "Not computed: the prototype ingests no media-volume data. Article counts are never used as incident counts.",
+      "scale": "0–100, media volume per underlying event",
+      "value": null
+    }
+  ],
+  "ModelVersions": [
+    "pdoom-model/official-index-only@0.1.0",
+    "pdoom-model/external-aggregate@0.1.0",
+    "pdoom-model/experimental-causal@0.1.0",
+    "pdoom-model/indexes@0.1.0"
+  ],
+  "Research": {
+    "10y": {
+      "Factors": {
+        "A": {
+          "p05": 0.2,
+          "p50": 0.5,
+          "p95": 0.8
+        },
+        "C": {
+          "p05": 0.246606,
+          "p50": 0.6,
+          "p95": 0.872998
+        },
+        "E": {
+          "p05": 0.104458,
+          "p50": 0.3,
+          "p95": 0.611601
+        },
+        "F": {
+          "p05": 0.054243,
+          "p50": 0.2,
+          "p95": 0.521468
+        }
+      },
+      "Outcomes": {
+        "O3": {
+          "mean": 0.007782,
+          "p05": 0.000116,
+          "p25": 0.000885,
+          "p50": 0.002985,
+          "p75": 0.008933,
+          "p95": 0.032313
+        },
+        "O4": {
+          "mean": 0.004502,
+          "p05": 0.00005,
+          "p25": 0.000404,
+          "p50": 0.001511,
+          "p75": 0.004795,
+          "p95": 0.019006
+        },
+        "O5": {
+          "mean": 0.002528,
+          "p05": 0.000024,
+          "p25": 0.000194,
+          "p50": 0.000743,
+          "p75": 0.002488,
+          "p95": 0.010711
+        },
+        "O6": {
+          "mean": 0.002524,
+          "p05": 0.000024,
+          "p25": 0.000196,
+          "p50": 0.000729,
+          "p75": 0.002478,
+          "p95": 0.010937
+        },
+        "O7": {
+          "mean": 0.001107,
+          "p05": 0.00001,
+          "p25": 0.000077,
+          "p50": 0.000304,
+          "p75": 0.000988,
+          "p95": 0.004776
+        },
+        "O8": {
+          "mean": 0.002579,
+          "p05": 0.000026,
+          "p25": 0.000202,
+          "p50": 0.000747,
+          "p75": 0.002509,
+          "p95": 0.011737
+        },
+        "P_COLLAPSE": {
+          "mean": 0.00703,
+          "p05": 0.000092,
+          "p25": 0.00071,
+          "p50": 0.002526,
+          "p75": 0.007716,
+          "p95": 0.028993
+        },
+        "P_DOOM": {
+          "mean": 0.021023,
+          "p05": 0.000335,
+          "p25": 0.002576,
+          "p50": 0.008291,
+          "p75": 0.023991,
+          "p95": 0.086493
+        }
+      }
+    },
+    "25y": {
+      "Factors": {
+        "A": {
+          "p05": 0.304141,
+          "p50": 0.7,
+          "p95": 0.925687
+        },
+        "C": {
+          "p05": 0.246606,
+          "p50": 0.6,
+          "p95": 0.872998
+        },
+        "E": {
+          "p05": 0.104458,
+          "p50": 0.3,
+          "p95": 0.611601
+        },
+        "F": {
+          "p05": 0.054243,
+          "p50": 0.2,
+          "p95": 0.521468
+        }
+      },
+      "Outcomes": {
+        "O3": {
+          "mean": 0.010025,
+          "p05": 0.000174,
+          "p25": 0.001274,
+          "p50": 0.004077,
+          "p75": 0.011787,
+          "p95": 0.039803
+        },
+        "O4": {
+          "mean": 0.005802,
+          "p05": 0.000072,
+          "p25": 0.000573,
+          "p50": 0.002045,
+          "p75": 0.006403,
+          "p95": 0.024197
+        },
+        "O5": {
+          "mean": 0.003248,
+          "p05": 0.000036,
+          "p25": 0.000275,
+          "p50": 0.001017,
+          "p75": 0.003292,
+          "p95": 0.013545
+        },
+        "O6": {
+          "mean": 0.003246,
+          "p05": 0.000034,
+          "p25": 0.000278,
+          "p50": 0.001012,
+          "p75": 0.003309,
+          "p95": 0.014211
+        },
+        "O7": {
+          "mean": 0.001418,
+          "p05": 0.000014,
+          "p25": 0.00011,
+          "p50": 0.000418,
+          "p75": 0.001323,
+          "p95": 0.006019
+        },
+        "O8": {
+          "mean": 0.003307,
+          "p05": 0.000038,
+          "p25": 0.000282,
+          "p50": 0.001019,
+          "p75": 0.003331,
+          "p95": 0.014845
+        },
+        "P_COLLAPSE": {
+          "mean": 0.009051,
+          "p05": 0.000134,
+          "p25": 0.001005,
+          "p50": 0.003462,
+          "p75": 0.010074,
+          "p95": 0.037172
+        },
+        "P_DOOM": {
+          "mean": 0.027048,
+          "p05": 0.00048,
+          "p25": 0.003704,
+          "p50": 0.011594,
+          "p75": 0.031609,
+          "p95": 0.107759
+        }
+      }
+    },
+    "5y": {
+      "Factors": {
+        "A": {
+          "p05": 0.104458,
+          "p50": 0.3,
+          "p95": 0.611601
+        },
+        "C": {
+          "p05": 0.246606,
+          "p50": 0.6,
+          "p95": 0.872998
+        },
+        "E": {
+          "p05": 0.104458,
+          "p50": 0.3,
+          "p95": 0.611601
+        },
+        "F": {
+          "p05": 0.054243,
+          "p50": 0.2,
+          "p95": 0.521468
+        }
+      },
+      "Outcomes": {
+        "O3": {
+          "mean": 0.005254,
+          "p05": 0.000064,
+          "p25": 0.000514,
+          "p50": 0.001825,
+          "p75": 0.005721,
+          "p95": 0.021665
+        },
+        "O4": {
+          "mean": 0.003039,
+          "p05": 0.000029,
+          "p25": 0.000238,
+          "p50": 0.000932,
+          "p75": 0.003077,
+          "p95": 0.013116
+        },
+        "O5": {
+          "mean": 0.001713,
+          "p05": 0.000014,
+          "p25": 0.000116,
+          "p50": 0.000457,
+          "p75": 0.001566,
+          "p95": 0.007445
+        },
+        "O6": {
+          "mean": 0.001706,
+          "p05": 0.000014,
+          "p25": 0.000115,
+          "p50": 0.00045,
+          "p75": 0.001598,
+          "p95": 0.007413
+        },
+        "O7": {
+          "mean": 0.000754,
+          "p05": 0.000005,
+          "p25": 0.000046,
+          "p50": 0.000185,
+          "p75": 0.000638,
+          "p95": 0.003294
+        },
+        "O8": {
+          "mean": 0.001751,
+          "p05": 0.000014,
+          "p25": 0.000119,
+          "p50": 0.00045,
+          "p75": 0.001603,
+          "p95": 0.007957
+        },
+        "P_COLLAPSE": {
+          "mean": 0.004752,
+          "p05": 0.000052,
+          "p25": 0.000414,
+          "p50": 0.001559,
+          "p75": 0.004813,
+          "p95": 0.01993
+        },
+        "P_DOOM": {
+          "mean": 0.014217,
+          "p05": 0.000185,
+          "p25": 0.001471,
+          "p50": 0.005028,
+          "p75": 0.015608,
+          "p95": 0.062732
+        }
+      }
+    }
+  },
+  "Sensitivity": [
+    {
+      "baseline_value": 0.04,
+      "delta": -0.01,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-FIX-EXT-2100 without fc-fixture-survey-2025-researchers (Fixture survey 2025).",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-fixture-survey-2025-researchers",
+      "rank": 8,
+      "removed_id": "fc-fixture-survey-2025-researchers",
+      "run_id": "sens-loo-G-FIX-EXT-2100-fc-fixture-survey-2025-researchers",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.03
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": -0.01,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-FIX-EXT-2100 without fc-fixture-survey-2025-safety (Fixture survey 2025 (safety subgroup)).",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-fixture-survey-2025-safety",
+      "rank": 9,
+      "removed_id": "fc-fixture-survey-2025-safety",
+      "run_id": "sens-loo-G-FIX-EXT-2100-fc-fixture-survey-2025-safety",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.03
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": 0.01,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-FIX-EXT-2100 without fc-fixture-tournament-experts (Fixture tournament (experts)).",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-fixture-tournament-experts",
+      "rank": 10,
+      "removed_id": "fc-fixture-tournament-experts",
+      "run_id": "sens-loo-G-FIX-EXT-2100-fc-fixture-tournament-experts",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": 0.01,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-FIX-EXT-2100 without fc-fixture-tournament-superforecasters (Fixture tournament).",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-fixture-tournament-superforecasters",
+      "rank": 11,
+      "removed_id": "fc-fixture-tournament-superforecasters",
+      "run_id": "sens-loo-G-FIX-EXT-2100-fc-fixture-tournament-superforecasters",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": -0.023,
+      "horizon": "2100",
+      "kind": "leave_one_survey_out",
+      "note": "Removes every forecast drawn from one source document.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove all 2 forecasts from src-fixture-survey-2025",
+      "rank": 3,
+      "removed_id": "src-fixture-survey-2025",
+      "run_id": "sens-loso-G-FIX-EXT-2100-src-fixture-survey-2025",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.017
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": 0.06,
+      "horizon": "2100",
+      "kind": "leave_one_survey_out",
+      "note": "Removes every forecast drawn from one source document.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove all 2 forecasts from src-fixture-tournament-2024",
+      "rank": 1,
+      "removed_id": "src-fixture-tournament-2024",
+      "run_id": "sens-loso-G-FIX-EXT-2100-src-fixture-tournament-2024",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.1
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": 0.0185,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method linear_pool",
+      "rank": 5,
+      "removed_id": null,
+      "run_id": "sens-method-G-FIX-EXT-2100-linear_pool",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0585
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": -0.008267,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method log_odds_pool",
+      "rank": 13,
+      "removed_id": null,
+      "run_id": "sens-method-G-FIX-EXT-2100-log_odds_pool",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.031733
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method trimmed_mean",
+      "rank": 132,
+      "removed_id": null,
+      "run_id": "sens-method-G-FIX-EXT-2100-trimmed_mean",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.04
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": 0.0185,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method tier_weighted",
+      "rank": 6,
+      "removed_id": null,
+      "run_id": "sens-method-G-FIX-EXT-2100-tier_weighted",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0585
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": 0.024457,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method recency_weighted",
+      "rank": 2,
+      "removed_id": null,
+      "run_id": "sens-method-G-FIX-EXT-2100-recency_weighted",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.064457
+    },
+    {
+      "baseline_value": 0.04,
+      "delta": 0.0185,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method equal_weight_by_population",
+      "rank": 4,
+      "removed_id": null,
+      "run_id": "sens-method-G-FIX-EXT-2100-equal_weight_by_population",
+      "target_id": "G-FIX-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0585
+    },
+    {
+      "baseline_value": 0.005028,
+      "delta": -0.002862,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 26,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.002166
+    },
+    {
+      "baseline_value": 0.001825,
+      "delta": -0.001056,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 49,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.000769
+    },
+    {
+      "baseline_value": 0.001559,
+      "delta": -0.000898,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 56,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.000661
+    },
+    {
+      "baseline_value": 0.00045,
+      "delta": -0.000258,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 88,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000192
+    },
+    {
+      "baseline_value": 0.000185,
+      "delta": -0.000106,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 113,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000079
+    },
+    {
+      "baseline_value": 0.005028,
+      "delta": 0.005106,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 18,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.010134
+    },
+    {
+      "baseline_value": 0.001825,
+      "delta": 0.001819,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 39,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.003644
+    },
+    {
+      "baseline_value": 0.001559,
+      "delta": 0.001528,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 44,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.003087
+    },
+    {
+      "baseline_value": 0.00045,
+      "delta": 0.000432,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 77,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000882
+    },
+    {
+      "baseline_value": 0.000185,
+      "delta": 0.000184,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 102,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000369
+    },
+    {
+      "baseline_value": 0.005028,
+      "delta": -0.00204,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 36,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.002988
+    },
+    {
+      "baseline_value": 0.001825,
+      "delta": -0.000762,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 63,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.001063
+    },
+    {
+      "baseline_value": 0.001559,
+      "delta": -0.00063,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 71,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.000929
+    },
+    {
+      "baseline_value": 0.00045,
+      "delta": -0.000184,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 103,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000266
+    },
+    {
+      "baseline_value": 0.000185,
+      "delta": -0.000076,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 123,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000109
+    },
+    {
+      "baseline_value": 0.005028,
+      "delta": 0.002727,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 29,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.007755
+    },
+    {
+      "baseline_value": 0.001825,
+      "delta": 0.00096,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 54,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.002785
+    },
+    {
+      "baseline_value": 0.001559,
+      "delta": 0.0008,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 61,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.002359
+    },
+    {
+      "baseline_value": 0.00045,
+      "delta": 0.000235,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 96,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000685
+    },
+    {
+      "baseline_value": 0.000185,
+      "delta": 0.000098,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 117,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000283
+    },
+    {
+      "baseline_value": 0.005028,
+      "delta": -0.002213,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 34,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.002815
+    },
+    {
+      "baseline_value": 0.001825,
+      "delta": -0.000822,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 59,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.001003
+    },
+    {
+      "baseline_value": 0.001559,
+      "delta": -0.000708,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 67,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.000851
+    },
+    {
+      "baseline_value": 0.00045,
+      "delta": -0.000206,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 97,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000244
+    },
+    {
+      "baseline_value": 0.000185,
+      "delta": -0.000082,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 120,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000103
+    },
+    {
+      "baseline_value": 0.005028,
+      "delta": 0.003199,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 23,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.008227
+    },
+    {
+      "baseline_value": 0.001825,
+      "delta": 0.001147,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 47,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.002972
+    },
+    {
+      "baseline_value": 0.001559,
+      "delta": 0.001009,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 51,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.002568
+    },
+    {
+      "baseline_value": 0.00045,
+      "delta": 0.000277,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 86,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000727
+    },
+    {
+      "baseline_value": 0.000185,
+      "delta": 0.00012,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 111,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000305
+    },
+    {
+      "baseline_value": 0.005028,
+      "delta": -0.000174,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 105,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.004854
+    },
+    {
+      "baseline_value": 0.001825,
+      "delta": -0.000173,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 107,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.001652
+    },
+    {
+      "baseline_value": 0.001559,
+      "delta": -0.000096,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 118,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.001463
+    },
+    {
+      "baseline_value": 0.00045,
+      "delta": -0.000036,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 128,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000414
+    },
+    {
+      "baseline_value": 0.000185,
+      "delta": -0.000021,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 131,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000164
+    },
+    {
+      "baseline_value": 0.005028,
+      "delta": 0.000299,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 84,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.005327
+    },
+    {
+      "baseline_value": 0.001825,
+      "delta": 0.000247,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 91,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.002072
+    },
+    {
+      "baseline_value": 0.001559,
+      "delta": 0.000113,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 112,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.001672
+    },
+    {
+      "baseline_value": 0.00045,
+      "delta": 0.000079,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 122,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000529
+    },
+    {
+      "baseline_value": 0.000185,
+      "delta": 0.000024,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 130,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000209
+    },
+    {
+      "baseline_value": 0.008291,
+      "delta": -0.004757,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 19,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.003534
+    },
+    {
+      "baseline_value": 0.002985,
+      "delta": -0.00174,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 41,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.001245
+    },
+    {
+      "baseline_value": 0.002526,
+      "delta": -0.001453,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 45,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.001073
+    },
+    {
+      "baseline_value": 0.000729,
+      "delta": -0.000417,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 78,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.000312
+    },
+    {
+      "baseline_value": 0.000304,
+      "delta": -0.000174,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 106,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.00013
+    },
+    {
+      "baseline_value": 0.008291,
+      "delta": 0.008277,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 12,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.016568
+    },
+    {
+      "baseline_value": 0.002985,
+      "delta": 0.003023,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 24,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.006008
+    },
+    {
+      "baseline_value": 0.002526,
+      "delta": 0.002532,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 31,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.005058
+    },
+    {
+      "baseline_value": 0.000729,
+      "delta": 0.000715,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 65,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.001444
+    },
+    {
+      "baseline_value": 0.000304,
+      "delta": 0.000303,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 83,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000607
+    },
+    {
+      "baseline_value": 0.008291,
+      "delta": -0.002785,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 28,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.005506
+    },
+    {
+      "baseline_value": 0.002985,
+      "delta": -0.000988,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 52,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.001997
+    },
+    {
+      "baseline_value": 0.002526,
+      "delta": -0.000819,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 60,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.001707
+    },
+    {
+      "baseline_value": 0.000729,
+      "delta": -0.000237,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 95,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.000492
+    },
+    {
+      "baseline_value": 0.000304,
+      "delta": -0.000103,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 114,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000201
+    },
+    {
+      "baseline_value": 0.008291,
+      "delta": 0.002906,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 25,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.011197
+    },
+    {
+      "baseline_value": 0.002985,
+      "delta": 0.001025,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 50,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.00401
+    },
+    {
+      "baseline_value": 0.002526,
+      "delta": 0.000841,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 57,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.003367
+    },
+    {
+      "baseline_value": 0.000729,
+      "delta": 0.000257,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 89,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.000986
+    },
+    {
+      "baseline_value": 0.000304,
+      "delta": 0.000102,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 115,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000406
+    },
+    {
+      "baseline_value": 0.008291,
+      "delta": -0.003694,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 21,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.004597
+    },
+    {
+      "baseline_value": 0.002985,
+      "delta": -0.001349,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 46,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.001636
+    },
+    {
+      "baseline_value": 0.002526,
+      "delta": -0.001125,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 48,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.001401
+    },
+    {
+      "baseline_value": 0.000729,
+      "delta": -0.000331,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 82,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.000398
+    },
+    {
+      "baseline_value": 0.000304,
+      "delta": -0.000136,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 110,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000168
+    },
+    {
+      "baseline_value": 0.008291,
+      "delta": 0.005238,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 16,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.013529
+    },
+    {
+      "baseline_value": 0.002985,
+      "delta": 0.001863,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 38,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.004848
+    },
+    {
+      "baseline_value": 0.002526,
+      "delta": 0.00165,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 42,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.004176
+    },
+    {
+      "baseline_value": 0.000729,
+      "delta": 0.000469,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 74,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.001198
+    },
+    {
+      "baseline_value": 0.000304,
+      "delta": 0.000187,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 101,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000491
+    },
+    {
+      "baseline_value": 0.008291,
+      "delta": -0.000339,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 81,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.007952
+    },
+    {
+      "baseline_value": 0.002985,
+      "delta": -0.000242,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 93,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.002743
+    },
+    {
+      "baseline_value": 0.002526,
+      "delta": -0.00016,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 108,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.002366
+    },
+    {
+      "baseline_value": 0.000729,
+      "delta": -0.000055,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 125,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.000674
+    },
+    {
+      "baseline_value": 0.000304,
+      "delta": -0.000035,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 129,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000269
+    },
+    {
+      "baseline_value": 0.008291,
+      "delta": 0.000556,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 73,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.008847
+    },
+    {
+      "baseline_value": 0.002985,
+      "delta": 0.000433,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 76,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.003418
+    },
+    {
+      "baseline_value": 0.002526,
+      "delta": 0.000242,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 92,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.002768
+    },
+    {
+      "baseline_value": 0.000729,
+      "delta": 0.000149,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 109,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.000878
+    },
+    {
+      "baseline_value": 0.000304,
+      "delta": 0.000036,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 127,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.00034
+    },
+    {
+      "baseline_value": 0.011594,
+      "delta": -0.006725,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 15,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.004869
+    },
+    {
+      "baseline_value": 0.004077,
+      "delta": -0.00233,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 32,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.001747
+    },
+    {
+      "baseline_value": 0.003462,
+      "delta": -0.001982,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 37,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.00148
+    },
+    {
+      "baseline_value": 0.001012,
+      "delta": -0.000574,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 72,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.000438
+    },
+    {
+      "baseline_value": 0.000418,
+      "delta": -0.000239,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 94,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000179
+    },
+    {
+      "baseline_value": 0.011594,
+      "delta": 0.011418,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 7,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.023012
+    },
+    {
+      "baseline_value": 0.004077,
+      "delta": 0.00423,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 20,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.008307
+    },
+    {
+      "baseline_value": 0.003462,
+      "delta": 0.003426,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 22,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.006888
+    },
+    {
+      "baseline_value": 0.001012,
+      "delta": 0.00098,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 53,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.001992
+    },
+    {
+      "baseline_value": 0.000418,
+      "delta": 0.000409,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 79,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000827
+    },
+    {
+      "baseline_value": 0.011594,
+      "delta": -0.002844,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 27,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.00875
+    },
+    {
+      "baseline_value": 0.004077,
+      "delta": -0.000952,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 55,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.003125
+    },
+    {
+      "baseline_value": 0.003462,
+      "delta": -0.000797,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 62,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.002665
+    },
+    {
+      "baseline_value": 0.001012,
+      "delta": -0.000256,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 90,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.000756
+    },
+    {
+      "baseline_value": 0.000418,
+      "delta": -0.000101,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 116,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000317
+    },
+    {
+      "baseline_value": 0.011594,
+      "delta": 0.002149,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 35,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.013743
+    },
+    {
+      "baseline_value": 0.004077,
+      "delta": 0.000826,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 58,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.004903
+    },
+    {
+      "baseline_value": 0.003462,
+      "delta": 0.000643,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 69,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.004105
+    },
+    {
+      "baseline_value": 0.001012,
+      "delta": 0.000205,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 98,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.001217
+    },
+    {
+      "baseline_value": 0.000418,
+      "delta": 0.00008,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 121,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000498
+    },
+    {
+      "baseline_value": 0.011594,
+      "delta": -0.005236,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 17,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.006358
+    },
+    {
+      "baseline_value": 0.004077,
+      "delta": -0.001818,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 40,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.002259
+    },
+    {
+      "baseline_value": 0.003462,
+      "delta": -0.001563,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 43,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.001899
+    },
+    {
+      "baseline_value": 0.001012,
+      "delta": -0.000466,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 75,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.000546
+    },
+    {
+      "baseline_value": 0.000418,
+      "delta": -0.000188,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 100,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.00023
+    },
+    {
+      "baseline_value": 0.011594,
+      "delta": 0.007154,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 14,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.018748
+    },
+    {
+      "baseline_value": 0.004077,
+      "delta": 0.002559,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 30,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.006636
+    },
+    {
+      "baseline_value": 0.003462,
+      "delta": 0.002214,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 33,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.005676
+    },
+    {
+      "baseline_value": 0.001012,
+      "delta": 0.000636,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 70,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.001648
+    },
+    {
+      "baseline_value": 0.000418,
+      "delta": 0.000266,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 87,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000684
+    },
+    {
+      "baseline_value": 0.011594,
+      "delta": -0.000708,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 66,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.010886
+    },
+    {
+      "baseline_value": 0.004077,
+      "delta": -0.000283,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 85,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.003794
+    },
+    {
+      "baseline_value": 0.003462,
+      "delta": -0.000182,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 104,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.00328
+    },
+    {
+      "baseline_value": 0.001012,
+      "delta": -0.000088,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 119,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.000924
+    },
+    {
+      "baseline_value": 0.000418,
+      "delta": -0.00005,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 126,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000368
+    },
+    {
+      "baseline_value": 0.011594,
+      "delta": 0.000747,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 64,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.012341
+    },
+    {
+      "baseline_value": 0.004077,
+      "delta": 0.000674,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 68,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.004751
+    },
+    {
+      "baseline_value": 0.003462,
+      "delta": 0.000344,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 80,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.003806
+    },
+    {
+      "baseline_value": 0.001012,
+      "delta": 0.000193,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 99,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.001205
+    },
+    {
+      "baseline_value": 0.000418,
+      "delta": 0.000058,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 124,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000476
+    }
+  ],
+  "SnapshotID": "snap-1999-01-01-001",
+  "UncertaintyLabel": "low",
+  "UncertaintyScore": 24.5069,
+  "Warnings": []
+}

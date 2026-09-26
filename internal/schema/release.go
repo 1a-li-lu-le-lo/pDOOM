@@ -283,6 +283,7 @@ type ReleaseManifest struct {
 	Approval            *ApprovalPolicy         `json:"approval"`
 	KnownLimitations    []string                `json:"known_limitations"`
 	ReproductionCommand string                  `json:"reproduction_command"`
+	Files               []SnapshotFile          `json:"files"`
 	Signature           string                  `json:"signature"`
 	Published           *string                 `json:"published"`
 	Superseded          *Superseded             `json:"superseded"`

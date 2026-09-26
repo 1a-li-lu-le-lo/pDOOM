@@ -273,7 +273,7 @@ export const ForecastSchema = z
     conditions: z.string(),
     mean: Probability.nullable(),
     median: Probability.nullable(),
-    quantiles: PartialQuantilesSchema,
+    quantiles: PartialQuantilesSchema.nullable(),
     response_rate: UnitInterval.nullable(),
     selection_effects: z.string().nullable(),
     framing_effects: z.string().nullable(),
@@ -295,6 +295,7 @@ export const ForecastSchema = z
     }
     if (
       value.median !== null &&
+      value.quantiles !== null &&
       value.quantiles.p50 !== undefined &&
       Math.abs(value.median - value.quantiles.p50) > 1e-9
     ) {
