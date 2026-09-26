@@ -1,0 +1,1293 @@
+# Copyright NU Cybernetics. p(DOOM) — research prototype.
+openapi: 3.1.0
+info:
+  title: p(DOOM) public API
+  version: 0.1.0
+  summary: Read-only access to the promoted p(DOOM) release, plus the Scenario Lab and public submissions.
+  description: |
+    The AI Existential and Civilizational Risk Observatory publishes its data through this
+    API. Every response is served from the **current promoted release** in `data/releases`
+    and from the sealed data snapshot that release was computed from. Handlers never compute
+    or alter an estimate.
+
+    Guarantees:
+
+    * **Release-backed.** Every data response embeds a `meta` object naming the release,
+      the snapshot, the source cutoff, the model versions and the release's known
+      limitations. Estimate objects always carry `status`, `producer`, `horizon`,
+      `outcome_set` and `conditioning`.
+    * **No official probability.** In this release line the official object has status
+      `insufficiently_calibrated` and publishes no number. External forecast aggregates,
+      the research-mode model, the 0–100 indexes and the editorial level are separate
+      objects and are never blended. Indexes are not probabilities.
+    * **No automatic publication.** Nothing reachable over HTTP changes a release.
+      Submissions are appended to the human review queue only. The Scenario Lab returns
+      results labelled `user_scenario` that are computed per request and stored nowhere.
+    * **No administrative endpoints.** Promotion, rollback, review and key management are
+      CLI-only (`pdoomctl`, ADR-004). This specification deliberately contains no such routes.
+    * **Caching.** GET responses carry a strong `ETag` (SHA-256 of the body) and
+      `Cache-Control: public, max-age=60`; `If-None-Match` yields `304 Not Modified`.
+    * **Rate limits.** Token buckets per client (IPv4 address or IPv6 /64 prefix): read
+      routes 120 burst / 600 per minute, Scenario Lab 10 burst / 30 per minute, submissions
+      5 burst / 10 per minute.
+      `RateLimit-Limit`, `RateLimit-Remaining` and, on `429`, `Retry-After` are set.
+    * **CORS.** GET is open to any origin. POST is accepted from the same origin (an
+      `https://` origin on the request's own host counts, even behind a TLS-terminating
+      proxy) or from origins allowlisted with `PDOOM_CORS_ORIGINS`; any other browser origin
+      receives `403`.
+    * **Request limits.** Bodies are limited to 64 KiB, request lines to 2048 bytes.
+      Control characters are stripped from submitted text.
+  contact:
+    name: NU Cybernetics
+  license:
+    name: Copyright NU Cybernetics
+servers:
+  - url: http://localhost:8080
+    description: Local development (cmd/pdoom-api --addr :8080)
+tags:
+  - name: meter
+    description: The current release summary and its history.
+  - name: reference
+    description: Static vocabularies (outcomes, horizons) and methodology documents.
+  - name: data
+    description: Snapshot entities served as promoted.
+  - name: releases
+    description: Promoted releases.
+  - name: scenario-lab
+    description: User scenarios evaluated with the experimental model (never official).
+  - name: submissions
+    description: Public submissions to the human review queue.
+  - name: health
+    description: Liveness and readiness.
+paths:
+  /healthz:
+    get:
+      tags: [health]
+      summary: Liveness
+      operationId: healthz
+      responses:
+        "200":
+          description: The process is running.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+  /readyz:
+    get:
+      tags: [health]
+      summary: Readiness
+      description: Ready only when a promoted release and its snapshot are loaded.
+      operationId: readyz
+      responses:
+        "200":
+          description: A release is loaded.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+        "503":
+          description: No release is loaded yet.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+  /v1/meter:
+    get:
+      tags: [meter]
+      summary: Current release summary
+      description: |
+        Manifest fields, the official object (status `insufficiently_calibrated`, no
+        probability), external forecast aggregates, research-mode estimates, the seven
+        indexes, the editorial risk level, the uncertainty score, data cutoff, last review
+        and publication timestamps, model versions and known limitations.
+      operationId: getMeter
+      responses:
+        "200":
+          description: The current release.
+          headers:
+            ETag:
+              $ref: "#/components/headers/ETag"
+            Cache-Control:
+              $ref: "#/components/headers/CacheControl"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MeterResponse"
+        "304":
+          description: Not modified.
+        "503":
+          $ref: "#/components/responses/Unavailable"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /v1/meter/history:
+    get:
+      tags: [meter]
+      summary: Release history
+      description: |
+        Every published release in id order with a per-release headline object. Directories
+        under `data/releases` that cannot be read or are not marked published are omitted.
+      operationId: getMeterHistory
+      responses:
+        "200":
+          description: Headlines in chronological order.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HistoryResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/outcomes:
+    get:
+      tags: [reference]
+      summary: Outcome definitions O0–O8 with derived sets
+      operationId: getOutcomes
+      responses:
+        "200":
+          description: Outcome vocabulary.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OutcomesResponse"
+  /v1/horizons:
+    get:
+      tags: [reference]
+      summary: Horizon definitions
+      operationId: getHorizons
+      responses:
+        "200":
+          description: Horizon vocabulary.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HorizonsResponse"
+  /v1/drivers:
+    get:
+      tags: [data]
+      summary: Driver families, signals, observations and the release's "why this number" rows
+      operationId: getDrivers
+      responses:
+        "200":
+          description: Drivers and observations.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DriversResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/scenarios:
+    get:
+      tags: [data]
+      summary: Scenarios S1–S18 and their edges
+      operationId: listScenarios
+      responses:
+        "200":
+          description: Scenarios.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScenariosResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/scenarios/{id}:
+    get:
+      tags: [data]
+      summary: One scenario with its edges and interventions
+      operationId: getScenario
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: "^S[0-9]{1,3}$"
+          example: S3
+      responses:
+        "200":
+          description: The scenario.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScenarioResponse"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/forecasts:
+    get:
+      tags: [data]
+      summary: Forecast records, compatibility-group aggregations and external aggregate estimates
+      operationId: getForecasts
+      responses:
+        "200":
+          description: Forecasts.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForecastsResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/capabilities:
+    get:
+      tags: [data]
+      summary: Benchmarks and benchmark results
+      operationId: getCapabilities
+      responses:
+        "200":
+          description: Benchmarks.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CapabilitiesResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/incidents:
+    get:
+      tags: [data]
+      summary: Incident records (non-graphic, registry-referenced)
+      operationId: getIncidents
+      responses:
+        "200":
+          description: Incidents.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IncidentsResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/safeguards:
+    get:
+      tags: [data]
+      summary: Interventions (safeguards)
+      operationId: getSafeguards
+      responses:
+        "200":
+          description: Interventions.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SafeguardsResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/sources:
+    get:
+      tags: [data]
+      summary: Source records with filters and pagination
+      operationId: listSources
+      parameters:
+        - name: tier
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 5
+          description: Exact source tier.
+        - name: topic
+          in: query
+          schema:
+            type: string
+            maxLength: 100
+          description: Case-insensitive exact match against the source's topic list.
+        - name: q
+          in: query
+          schema:
+            type: string
+            maxLength: 200
+          description: Case-insensitive substring over id, title, publisher, authors, citation, evidence summary and URL.
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 200
+            default: 50
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+      responses:
+        "200":
+          description: A page of sources.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SourcesResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/sources/{id}:
+    get:
+      tags: [data]
+      summary: One source with its claims
+      operationId: getSource
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: "^src-[a-z0-9]+(-[a-z0-9]+)*$"
+      responses:
+        "200":
+          description: The source.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SourceResponse"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/methodology:
+    get:
+      tags: [reference]
+      summary: Methodology documents (docs/method/*.md)
+      operationId: listMethodology
+      responses:
+        "200":
+          description: Document list with titles.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MethodologyResponse"
+  /v1/methodology/{slug}:
+    get:
+      tags: [reference]
+      summary: One methodology document as Markdown
+      operationId: getMethodologyDoc
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: "^[a-z0-9][a-z0-9_-]{0,63}$"
+      responses:
+        "200":
+          description: The document.
+          content:
+            text/markdown:
+              schema:
+                type: string
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v1/releases:
+    get:
+      tags: [releases]
+      summary: List promoted releases
+      description: |
+        Every published release in id order, plus the current id. Directories under
+        `data/releases` that cannot be read or are not marked published are omitted. Served
+        from memory once a release is loaded.
+      operationId: listReleases
+      responses:
+        "200":
+          description: Release summaries and the current id.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReleasesResponse"
+  /v1/releases/{id}:
+    get:
+      tags: [releases]
+      summary: One promoted release in full
+      description: |
+        Manifest, estimates, indexes, aggregations, sensitivity runs, delta record, drivers
+        explained and approvals, exactly as promoted. Only published, readable release
+        directories are served; any other id is `404`.
+      operationId: getRelease
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: "^rel-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3}$"
+      responses:
+        "200":
+          description: The release.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReleaseResponse"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v1/definitions:
+    get:
+      tags: [data]
+      summary: Glossary definitions
+      operationId: getDefinitions
+      responses:
+        "200":
+          description: Definitions.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DefinitionsResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/organizations:
+    get:
+      tags: [data]
+      summary: Organizations
+      operationId: getOrganizations
+      responses:
+        "200":
+          description: Organizations.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OrganizationsResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/actions:
+    get:
+      tags: [data]
+      summary: Audience-specific actions
+      operationId: getActions
+      responses:
+        "200":
+          description: Actions.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ActionsResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/scenario-lab/evaluate:
+    post:
+      tags: [scenario-lab]
+      summary: Evaluate a user scenario
+      description: |
+        Runs the experimental research-mode model with the caller's sliders using the
+        `model_spec.experimental_causal` specification of the **current** release's snapshot.
+        The response is labelled `user_scenario`, carries the mandated disclaimer and is
+        never an official estimate. The computation is deterministic for a given release,
+        parameters, sample count and seed; nothing is stored. Rate limited (10 burst / 30 per minute).
+      operationId: evaluateScenario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ScenarioLabRequest"
+      responses:
+        "200":
+          description: The user scenario result.
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              description: Always `no-store`.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScenarioLabResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/OriginNotAllowed"
+        "413":
+          $ref: "#/components/responses/PayloadTooLarge"
+        "415":
+          $ref: "#/components/responses/UnsupportedMediaType"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+        "503":
+          $ref: "#/components/responses/Unavailable"
+  /v1/submissions/sources:
+    post:
+      tags: [submissions]
+      summary: Suggest a source
+      description: |
+        Appends a `source` submission to `data/review-queue/submissions.jsonl` for human
+        review. Never modifies snapshots or releases. Body ≤ 64 KiB; unknown fields are
+        rejected; control characters are stripped. Rate limited (5 burst / 10 per minute).
+      operationId: submitSource
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SourceSubmissionRequest"
+      responses:
+        "202":
+          description: Queued for review.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/OriginNotAllowed"
+        "413":
+          $ref: "#/components/responses/PayloadTooLarge"
+        "415":
+          $ref: "#/components/responses/UnsupportedMediaType"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+  /v1/submissions/corrections:
+    post:
+      tags: [submissions]
+      summary: Suggest a correction
+      description: |
+        Appends a `correction` submission to `data/review-queue/submissions.jsonl` for human
+        review. Never modifies snapshots or releases. Same limits as source submissions.
+      operationId: submitCorrection
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CorrectionSubmissionRequest"
+      responses:
+        "202":
+          description: Queued for review.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubmissionResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "403":
+          $ref: "#/components/responses/OriginNotAllowed"
+        "413":
+          $ref: "#/components/responses/PayloadTooLarge"
+        "415":
+          $ref: "#/components/responses/UnsupportedMediaType"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+components:
+  headers:
+    ETag:
+      description: Strong validator, the SHA-256 of the body in quotes.
+      schema:
+        type: string
+    CacheControl:
+      description: "`public, max-age=60` on every GET."
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: The request is malformed; `detail` lists every problem found.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    NotFound:
+      description: No such resource.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    OriginNotAllowed:
+      description: Cross-origin POST from an origin that is not allowlisted.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    PayloadTooLarge:
+      description: The body exceeds 64 KiB.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    UnsupportedMediaType:
+      description: Content-Type is not application/json.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    RateLimited:
+      description: The per-client token bucket is empty; retry after `Retry-After` seconds.
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Unavailable:
+      description: No promoted release is loaded.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+  schemas:
+    Error:
+      type: object
+      required: [error, detail]
+      properties:
+        error:
+          type: string
+          description: Short machine-readable code (not_found, bad_request, rate_limited, payload_too_large, unsupported_media_type, origin_not_allowed, method_not_allowed, uri_too_long, unavailable, internal).
+        detail:
+          type: string
+    Health:
+      type: object
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [ok, ready, not_ready]
+        release_id:
+          type: string
+        detail:
+          type: string
+    Meta:
+      type: object
+      description: Release provenance embedded in every data response.
+      required: [release_id, data_snapshot, data_cutoff, generated_at, published, model_versions, limitations]
+      properties:
+        release_id:
+          type: string
+        data_snapshot:
+          type: string
+        data_cutoff:
+          type: string
+          format: date
+        generated_at:
+          type: string
+          format: date-time
+        published:
+          type: [string, "null"]
+          format: date-time
+        model_versions:
+          type: array
+          items:
+            type: string
+        limitations:
+          type: array
+          items:
+            type: string
+    Outcome:
+      type: string
+      enum: [O0, O1, O2, O3, O4, O5, O6, O7, O8]
+    Horizon:
+      type: string
+      enum: [1y, 3y, 5y, 10y, 25y, "2100", eventual]
+    EstimateStatus:
+      type: string
+      enum: [official, insufficiently_calibrated, external_aggregate, research_mode, user_scenario]
+    UncertaintyLabel:
+      type: string
+      enum: [low, moderate, high, extreme]
+    Quantiles:
+      type: object
+      required: [p05, p25, p50, p75, p95]
+      properties:
+        p05: { type: number, minimum: 0, maximum: 1 }
+        p25: { type: number, minimum: 0, maximum: 1 }
+        p50: { type: number, minimum: 0, maximum: 1 }
+        p75: { type: number, minimum: 0, maximum: 1 }
+        p95: { type: number, minimum: 0, maximum: 1 }
+    Estimate:
+      type: object
+      description: A release estimate object (build-spec §3.6). `quantiles` and `mean` are null for the official insufficiently_calibrated object. Exact contract in data/schemas/estimate.schema.json.
+      required: [estimate_id, producer, status, outcome_set, outcome_label, horizon, conditioning, forecast_origin_date, last_evidence_date, quantiles, uncertainty, display, assumptions, method_ref]
+      properties:
+        estimate_id: { type: string }
+        producer: { type: string, description: "pdoom-model/<family>@<semver>" }
+        status: { $ref: "#/components/schemas/EstimateStatus" }
+        outcome_set:
+          type: array
+          items: { $ref: "#/components/schemas/Outcome" }
+        outcome_label: { type: string }
+        horizon: { type: string }
+        horizon_note: { type: [string, "null"] }
+        conditioning: { type: string }
+        forecast_origin_date: { type: string, format: date }
+        last_evidence_date: { type: string, format: date }
+        quantiles:
+          oneOf:
+            - $ref: "#/components/schemas/Quantiles"
+            - type: "null"
+        mean: { type: [number, "null"] }
+        disagreement:
+          oneOf:
+            - $ref: "#/components/schemas/UncertaintyLabel"
+            - type: "null"
+        uncertainty: { $ref: "#/components/schemas/UncertaintyLabel" }
+        model_confidence: { type: string }
+        source_coverage:
+          type: object
+          properties:
+            forecast_count: { type: integer }
+            population_count: { type: integer }
+            source_ids:
+              type: array
+              items: { type: string }
+        previous:
+          type: [object, "null"]
+        reason_for_change: { type: string }
+        rounding_rule: { type: string }
+        display:
+          type: object
+          properties:
+            central: { type: string }
+            interval: { type: string }
+            note: { type: string }
+        assumptions:
+          type: array
+          items: { type: string }
+        method_ref: { type: string }
+        group_id: { type: [string, "null"] }
+    IndexValue:
+      type: object
+      description: A 0–100 index. `is_probability` is always false; indexes are never converted to probabilities. Exact contract in data/schemas/index_value.schema.json.
+      required: [index_id, value, label, scale, is_probability, components, coverage, as_of, method_ref]
+      properties:
+        index_id:
+          type: string
+          enum: [evidence_pressure, capability_pressure, control_strength, incident_pressure, uncertainty, agentic_infrastructure_risk, attention]
+        value: { type: [number, "null"], minimum: 0, maximum: 100 }
+        label: { type: string }
+        scale: { type: string }
+        is_probability: { type: boolean, const: false }
+        baseline: { type: [object, "null"] }
+        components:
+          type: array
+          items: { type: object }
+        coverage: { type: number }
+        as_of: { type: string, format: date }
+        method_ref: { type: string }
+        note: { type: string }
+    EstimateSummary:
+      type: object
+      required: [estimate_id, status, outcome_set, horizon, p50, interval, display]
+      properties:
+        estimate_id: { type: string }
+        status: { $ref: "#/components/schemas/EstimateStatus" }
+        outcome_set:
+          type: array
+          items: { $ref: "#/components/schemas/Outcome" }
+        horizon: { type: string }
+        p50: { type: [number, "null"] }
+        interval:
+          oneOf:
+            - $ref: "#/components/schemas/Quantiles"
+            - type: "null"
+        display: { type: string }
+    IndexHeadline:
+      type: object
+      required: [index_id, value, label, is_probability]
+      properties:
+        index_id: { type: string }
+        value: { type: [number, "null"] }
+        label: { type: string }
+        is_probability: { type: boolean, const: false }
+    Headline:
+      type: object
+      description: Compact per-release summary.
+      required: [release_id, data_snapshot, data_cutoff, generated_at, published, superseded, is_current, model_versions, editorial_risk_level, uncertainty_score, official, external_aggregates, research_mode, indexes, changes, heightened_review_triggers]
+      properties:
+        release_id: { type: string }
+        data_snapshot: { type: string }
+        data_cutoff: { type: string, format: date }
+        generated_at: { type: string, format: date-time }
+        published: { type: [string, "null"], format: date-time }
+        superseded:
+          type: [object, "null"]
+          properties:
+            by: { type: string }
+            at: { type: string, format: date-time }
+        is_current: { type: boolean }
+        model_versions:
+          type: array
+          items: { type: string }
+        editorial_risk_level:
+          type: string
+          enum: [very_low, low, guarded, elevated, high, severe_uncertainty, insufficient_evidence]
+        uncertainty_score: { type: [number, "null"] }
+        official:
+          type: array
+          items: { $ref: "#/components/schemas/EstimateSummary" }
+        external_aggregates:
+          type: array
+          items: { $ref: "#/components/schemas/EstimateSummary" }
+        research_mode:
+          type: array
+          items: { $ref: "#/components/schemas/EstimateSummary" }
+        indexes:
+          type: array
+          items: { $ref: "#/components/schemas/IndexHeadline" }
+        changes:
+          type: array
+          items: { type: string }
+        heightened_review_triggers:
+          type: array
+          items: { type: string }
+    ReleaseManifest:
+      type: object
+      description: data/releases/<id>/manifest.json as promoted. Exact contract in data/schemas/release_manifest.schema.json.
+      additionalProperties: true
+      required: [release_id, model_versions, code_commit, data_snapshot, source_cutoff, generated_at, outcome_definition, horizons, estimates, editorial_risk_level, known_limitations, reproduction_command, signature, published]
+      properties:
+        release_id: { type: string }
+        candidate_id: { type: string }
+        previous_release_id: { type: [string, "null"] }
+        model_versions:
+          type: array
+          items: { type: string }
+        code_commit: { type: string }
+        data_snapshot: { type: string }
+        source_cutoff: { type: string, format: date }
+        generated_at: { type: string, format: date-time }
+        outcome_definition: { type: string }
+        horizons:
+          type: array
+          items: { type: string }
+        estimates:
+          type: array
+          items: { $ref: "#/components/schemas/EstimateSummary" }
+        editorial_risk_level: { type: string }
+        uncertainty_score: { type: [number, "null"] }
+        reviewers:
+          type: array
+          items: { type: string }
+        approval: { type: [object, "null"] }
+        known_limitations:
+          type: array
+          items: { type: string }
+        reproduction_command: { type: string }
+        signature: { type: string }
+        published: { type: [string, "null"], format: date-time }
+        superseded: { type: [object, "null"] }
+    MeterResponse:
+      type: object
+      required: [meta, manifest, official, external_aggregates, research_mode, indexes, editorial_risk_level, uncertainty_score, uncertainty_label, data_cutoff, last_reviewed, last_published, model_versions, limitations, headline]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        manifest: { $ref: "#/components/schemas/ReleaseManifest" }
+        official:
+          type: array
+          description: One object per horizon with status insufficiently_calibrated and null quantiles.
+          items: { $ref: "#/components/schemas/Estimate" }
+        external_aggregates:
+          type: array
+          items: { $ref: "#/components/schemas/Estimate" }
+        research_mode:
+          type: array
+          items: { $ref: "#/components/schemas/Estimate" }
+        indexes:
+          type: array
+          items: { $ref: "#/components/schemas/IndexValue" }
+        editorial_risk_level: { type: string }
+        uncertainty_score: { type: [number, "null"], description: "0–100 score; not a probability." }
+        uncertainty_label: { $ref: "#/components/schemas/UncertaintyLabel" }
+        data_cutoff: { type: string, format: date }
+        last_reviewed: { type: [string, "null"], format: date-time, description: "Latest reviewer signature." }
+        last_published: { type: [string, "null"], format: date-time }
+        model_versions:
+          type: array
+          items: { type: string }
+        limitations:
+          type: array
+          items: { type: string }
+        headline: { $ref: "#/components/schemas/Headline" }
+    HistoryResponse:
+      type: object
+      required: [meta, releases]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        releases:
+          type: array
+          items: { $ref: "#/components/schemas/Headline" }
+    OutcomesResponse:
+      type: object
+      required: [outcomes, derived_sets, note]
+      properties:
+        outcomes:
+          type: array
+          items:
+            type: object
+            required: [code, slug, label, description, included_in]
+            properties:
+              code: { $ref: "#/components/schemas/Outcome" }
+              slug: { type: string }
+              label: { type: string }
+              description: { type: string }
+              included_in:
+                type: object
+                properties:
+                  pdoom: { type: boolean }
+                  extinction: { type: boolean }
+                  disempowerment: { type: boolean }
+                  collapse: { type: boolean }
+                  biosphere: { type: boolean }
+        derived_sets:
+          type: array
+          items:
+            type: object
+            required: [key, label, outcomes, note]
+            properties:
+              key: { type: string, enum: [P_DOOM, P_EXTINCTION, P_DISEMPOWERMENT, P_COLLAPSE, P_BIOSPHERE] }
+              label: { type: string }
+              outcomes:
+                type: array
+                items: { $ref: "#/components/schemas/Outcome" }
+              note: { type: string }
+        note: { type: string }
+    HorizonsResponse:
+      type: object
+      required: [horizons, note]
+      properties:
+        horizons:
+          type: array
+          items:
+            type: object
+            required: [key, label, years, kind, note]
+            properties:
+              key: { $ref: "#/components/schemas/Horizon" }
+              label: { type: string }
+              years: { type: [integer, "null"] }
+              kind: { type: string, enum: [duration, calendar_year, open_ended] }
+              note: { type: string }
+        note: { type: string }
+    Entity:
+      type: object
+      description: A snapshot entity exactly as stored (build-spec Appendix A). The exact per-kind contract is data/schemas/<kind>.schema.json.
+      additionalProperties: true
+      required: [id]
+      properties:
+        id: { type: string }
+    DriversResponse:
+      type: object
+      required: [meta, drivers, observations, drivers_explained]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        drivers:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+        observations:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+        drivers_explained:
+          type: object
+          additionalProperties: true
+    ScenariosResponse:
+      type: object
+      required: [meta, scenarios, edges, note]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        scenarios:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+        edges:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+        note: { type: string }
+    ScenarioResponse:
+      type: object
+      required: [meta, scenario, edges, interventions, note]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        scenario: { $ref: "#/components/schemas/Entity" }
+        edges:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+        interventions:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+        note: { type: string }
+    ForecastsResponse:
+      type: object
+      required: [meta, status, producer, forecasts, aggregations, estimates, note]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        status: { type: string, const: external_aggregate }
+        producer: { type: string }
+        forecasts:
+          type: array
+          description: Forecast records with original question wording, outcome_set, horizon and conditions.
+          items: { $ref: "#/components/schemas/Entity" }
+        aggregations:
+          type: array
+          description: One row per compatibility group × method; each carries outcome_set, horizon and conditioning.
+          items:
+            type: object
+            additionalProperties: true
+        estimates:
+          type: array
+          items: { $ref: "#/components/schemas/Estimate" }
+        note: { type: string }
+    CapabilitiesResponse:
+      type: object
+      required: [meta, benchmarks, results]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        benchmarks:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+        results:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+    IncidentsResponse:
+      type: object
+      required: [meta, incidents]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        incidents:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+    SafeguardsResponse:
+      type: object
+      required: [meta, interventions]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        interventions:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+    SourcesResponse:
+      type: object
+      required: [meta, total, limit, offset, sources]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        total: { type: integer }
+        limit: { type: integer }
+        offset: { type: integer }
+        sources:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+    SourceResponse:
+      type: object
+      required: [meta, source, claims]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        source: { $ref: "#/components/schemas/Entity" }
+        claims:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+    MethodologyResponse:
+      type: object
+      required: [documents]
+      properties:
+        documents:
+          type: array
+          items:
+            type: object
+            required: [slug, path, title]
+            properties:
+              slug: { type: string }
+              path: { type: string }
+              title: { type: string }
+    ReleaseSummary:
+      type: object
+      required: [release_id, data_snapshot, model_versions, published, superseded, is_current]
+      properties:
+        release_id: { type: string }
+        data_snapshot: { type: string }
+        model_versions:
+          type: array
+          items: { type: string }
+        published: { type: [string, "null"], format: date-time }
+        superseded: { type: [object, "null"] }
+        is_current: { type: boolean }
+    ReleasesResponse:
+      type: object
+      required: [current, releases]
+      properties:
+        current: { type: string }
+        releases:
+          type: array
+          items: { $ref: "#/components/schemas/ReleaseSummary" }
+    ReleaseResponse:
+      type: object
+      required: [meta, is_current, release]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        is_current: { type: boolean }
+        release:
+          type: object
+          required: [manifest, estimates, indexes, aggregations, sensitivity, delta, drivers_explained, approvals]
+          properties:
+            manifest: { $ref: "#/components/schemas/ReleaseManifest" }
+            estimates:
+              type: array
+              items: { $ref: "#/components/schemas/Estimate" }
+            indexes:
+              type: array
+              items: { $ref: "#/components/schemas/IndexValue" }
+            aggregations:
+              type: array
+              items: { type: object, additionalProperties: true }
+            sensitivity:
+              type: array
+              items: { type: object, additionalProperties: true }
+            delta: { type: object, additionalProperties: true }
+            drivers_explained: { type: object, additionalProperties: true }
+            approvals:
+              type: array
+              items: { type: object, additionalProperties: true }
+    DefinitionsResponse:
+      type: object
+      required: [meta, definitions]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        definitions:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+    OrganizationsResponse:
+      type: object
+      required: [meta, organizations]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        organizations:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+    ActionsResponse:
+      type: object
+      required: [meta, actions]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        actions:
+          type: array
+          items: { $ref: "#/components/schemas/Entity" }
+    Slider:
+      type: integer
+      minimum: -2
+      maximum: 2
+      description: Integer slider position, -2 (much lower than baseline) to +2 (much higher).
+    ScenarioLabRequest:
+      type: object
+      description: UserScenarioParams (packages/schemas/src/lab.ts) plus optional samples and seed. Every slider is required; unknown fields are rejected.
+      additionalProperties: false
+      required: [horizon, capability_timeline, autonomy_growth, access_level, safety_progress, governance_strength, model_security, open_weight_diffusion, international_coordination, incident_frequency, resilience]
+      properties:
+        horizon: { $ref: "#/components/schemas/Horizon" }
+        capability_timeline: { $ref: "#/components/schemas/Slider" }
+        autonomy_growth: { $ref: "#/components/schemas/Slider" }
+        access_level: { $ref: "#/components/schemas/Slider" }
+        safety_progress: { $ref: "#/components/schemas/Slider" }
+        governance_strength: { $ref: "#/components/schemas/Slider" }
+        model_security: { $ref: "#/components/schemas/Slider" }
+        open_weight_diffusion: { $ref: "#/components/schemas/Slider" }
+        international_coordination: { $ref: "#/components/schemas/Slider" }
+        incident_frequency: { $ref: "#/components/schemas/Slider" }
+        resilience: { $ref: "#/components/schemas/Slider" }
+        samples:
+          type: integer
+          minimum: 1
+          maximum: 50000
+          description: Monte Carlo samples; capped by the release's model_spec sample count.
+        seed:
+          type: integer
+          minimum: 0
+          maximum: 4294967295
+          description: RNG seed; 0 or absent uses the release's seed.
+    SummaryStats:
+      type: object
+      required: [p05, p25, p50, p75, p95, mean]
+      properties:
+        p05: { type: number }
+        p25: { type: number }
+        p50: { type: number }
+        p75: { type: number }
+        p95: { type: number }
+        mean: { type: number }
+    TriQuantile:
+      type: object
+      required: [p05, p50, p95]
+      properties:
+        p05: { type: number }
+        p50: { type: number }
+        p95: { type: number }
+    UserScenarioResult:
+      type: object
+      description: Mirrors UserScenarioResultSchema in packages/schemas/src/lab.ts.
+      required: [label, disclaimer, horizon, outcome_estimates, factor_summary, flags, params_echo, spec_version]
+      properties:
+        label: { type: string, const: user_scenario }
+        disclaimer: { type: string }
+        horizon: { $ref: "#/components/schemas/Horizon" }
+        outcome_estimates:
+          type: object
+          description: Keyed by O3..O8, P_DOOM and P_COLLAPSE.
+          additionalProperties: { $ref: "#/components/schemas/SummaryStats" }
+        factor_summary:
+          type: object
+          additionalProperties: { $ref: "#/components/schemas/TriQuantile" }
+        flags:
+          type: array
+          items: { type: string }
+        params_echo:
+          type: object
+          additionalProperties: true
+        spec_version: { type: string }
+    ScenarioLabResponse:
+      type: object
+      required: [label, status, disclaimer, horizon, outcome_set, outcome_sets, producer, model_version, release_id, data_snapshot, data_cutoff, samples, seed, result, limitations]
+      properties:
+        label: { type: string, const: user_scenario }
+        status: { type: string, const: user_scenario }
+        disclaimer: { type: string }
+        horizon: { $ref: "#/components/schemas/Horizon" }
+        outcome_set:
+          type: array
+          description: The combined p(DOOM) set O3–O8; per-key sets are in outcome_sets.
+          items: { $ref: "#/components/schemas/Outcome" }
+        outcome_sets:
+          type: object
+          additionalProperties:
+            type: array
+            items: { $ref: "#/components/schemas/Outcome" }
+        producer: { type: string }
+        model_version: { type: string }
+        release_id: { type: string }
+        data_snapshot: { type: string }
+        data_cutoff: { type: string, format: date }
+        samples: { type: integer }
+        seed: { type: integer }
+        result: { $ref: "#/components/schemas/UserScenarioResult" }
+        limitations:
+          type: array
+          items: { type: string }
+    SourceSubmissionPayload:
+      type: object
+      description: Mirrors SourceSubmissionPayloadSchema in packages/schemas/src/lab.ts.
+      additionalProperties: false
+      required: [canonical_url, title, why_relevant, claimed_evidence]
+      properties:
+        canonical_url: { type: string, format: uri, maxLength: 2048 }
+        title: { type: string, minLength: 1, maxLength: 500 }
+        publisher: { type: string, maxLength: 500 }
+        date_published: { type: string, pattern: "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$" }
+        why_relevant: { type: string, maxLength: 4000 }
+        claimed_evidence: { type: string, maxLength: 4000 }
+    CorrectionSubmissionPayload:
+      type: object
+      description: Mirrors CorrectionSubmissionPayloadSchema in packages/schemas/src/lab.ts.
+      additionalProperties: false
+      required: [target_id, correction]
+      properties:
+        target_id: { type: string, minLength: 1, maxLength: 200, description: "Id of the entity or estimate being corrected." }
+        field: { type: string, pattern: "^[a-z][a-z0-9_.]{0,99}$" }
+        correction: { type: string, minLength: 1, maxLength: 4000 }
+        evidence_url: { type: string, format: uri, maxLength: 2048 }
+    SourceSubmissionRequest:
+      type: object
+      additionalProperties: false
+      required: [payload]
+      properties:
+        payload: { $ref: "#/components/schemas/SourceSubmissionPayload" }
+        contact: { type: string, maxLength: 320, description: "Optional contact for reviewers; stored with the submission only." }
+    CorrectionSubmissionRequest:
+      type: object
+      additionalProperties: false
+      required: [payload]
+      properties:
+        payload: { $ref: "#/components/schemas/CorrectionSubmissionPayload" }
+        contact: { type: string, maxLength: 320 }
+    SubmissionResponse:
+      type: object
+      required: [id, kind, submitted_at, status, note]
+      properties:
+        id: { type: string, pattern: "^sub-[a-f0-9]{16}$", description: "Unique per submission: a per-request nonce enters the hash, so identical payloads sent in the same second still receive distinct ids." }
+        kind: { type: string, enum: [source, correction] }
+        submitted_at: { type: string, format: date-time, description: "Server clock; a submission is a runtime request, not part of a release." }
+        status: { type: string, const: received }
+        note: { type: string }
