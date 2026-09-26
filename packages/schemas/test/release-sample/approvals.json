@@ -1,0 +1,18 @@
+[
+  {
+    "conflicts_declared": "none declared",
+    "key_id": "reviewer-a",
+    "manifest_sha256": "5d23bd6226e24e00e1b685aae8979f649efb8b6c07568a0ecdec70eea2d36aff",
+    "reviewer_id": "reviewer-a",
+    "signature_base64": "qWFGTkWNgOFx3/Y6k6jv1XzvSQzZBs5PwFD0JPj1HVEZIoSIMeyKyzarhArgzWIP2OuzIGLwOrrROUYSJBY1Aw==",
+    "signed_at": "2026-09-26T12:30:00Z"
+  },
+  {
+    "conflicts_declared": "none declared",
+    "key_id": "reviewer-b",
+    "manifest_sha256": "5d23bd6226e24e00e1b685aae8979f649efb8b6c07568a0ecdec70eea2d36aff",
+    "reviewer_id": "reviewer-b",
+    "signature_base64": "wkLvKPf4IjCykrQqgzk5nN2jwPTRDWsnE9TgLPUnqDGn7zIvvXW2qo8ds2smT9GjlCi6gEinNhmLUY+fSaHPCA==",
+    "signed_at": "2026-09-26T12:31:00Z"
+  }
+]

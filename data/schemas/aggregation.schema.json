@@ -4,9 +4,28 @@
   "additionalProperties": false,
   "description": "Aggregate of one compatibility group under one method",
   "properties": {
+    "aggregation_id": {
+      "minLength": 1,
+      "type": "string"
+    },
     "group_id": {
       "minLength": 1,
       "type": "string"
+    },
+    "method": {
+      "enum": [
+        "unweighted_median",
+        "linear_pool",
+        "log_odds_pool",
+        "trimmed_mean",
+        "tier_weighted",
+        "recency_weighted",
+        "equal_weight_by_population"
+      ],
+      "type": "string"
+    },
+    "preferred": {
+      "type": "boolean"
     },
     "outcome_set": {
       "items": {
@@ -39,16 +58,7 @@
       ],
       "type": "string"
     },
-    "method": {
-      "enum": [
-        "unweighted_median",
-        "linear_pool",
-        "log_odds_pool",
-        "trimmed_mean",
-        "tier_weighted",
-        "recency_weighted",
-        "equal_weight_by_population"
-      ],
+    "conditioning": {
       "type": "string"
     },
     "value": {
@@ -57,60 +67,16 @@
       "minimum": 0,
       "type": "number"
     },
-    "quantiles": {
-      "additionalProperties": false,
-      "description": "Five-point quantiles (probabilities)",
-      "properties": {
-        "p05": {
-          "description": "Probability in [0, 1]",
-          "maximum": 1,
-          "minimum": 0,
-          "type": "number"
-        },
-        "p25": {
-          "description": "Probability in [0, 1]",
-          "maximum": 1,
-          "minimum": 0,
-          "type": "number"
-        },
-        "p50": {
-          "description": "Probability in [0, 1]",
-          "maximum": 1,
-          "minimum": 0,
-          "type": "number"
-        },
-        "p75": {
-          "description": "Probability in [0, 1]",
-          "maximum": 1,
-          "minimum": 0,
-          "type": "number"
-        },
-        "p95": {
-          "description": "Probability in [0, 1]",
-          "maximum": 1,
-          "minimum": 0,
-          "type": "number"
-        }
-      },
-      "required": [
-        "p05",
-        "p25",
-        "p50",
-        "p75",
-        "p95"
-      ],
-      "type": "object"
-    },
     "n": {
       "maximum": 9007199254740991,
-      "minimum": 0,
+      "minimum": 2,
       "type": "integer"
     },
-    "weights_note": {
-      "type": "string"
-    },
-    "wording_note": {
-      "type": "string"
+    "forecast_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
     },
     "source_ids": {
       "items": {
@@ -119,18 +85,48 @@
         "type": "string"
       },
       "type": "array"
+    },
+    "population_count": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "weights": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "wording_note": {
+      "type": "string"
+    },
+    "transformation_note": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
     }
   },
   "required": [
+    "aggregation_id",
     "group_id",
+    "method",
+    "preferred",
     "outcome_set",
     "horizon",
-    "method",
+    "conditioning",
     "value",
     "n",
-    "weights_note",
+    "forecast_ids",
+    "source_ids",
+    "population_count",
+    "weights",
     "wording_note",
-    "source_ids"
+    "transformation_note",
+    "note"
   ],
   "title": "p(DOOM) Aggregation",
   "type": "object"

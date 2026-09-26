@@ -59,8 +59,9 @@
                 "additionalProperties": false,
                 "properties": {
                   "snapshot_id": {
-                    "description": "snapshot id, e.g. snap-2026-09-26-001",
-                    "pattern": "^snap-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
+                    "type": "string"
+                  },
+                  "release_id": {
                     "type": "string"
                   },
                   "value": {
@@ -79,6 +80,7 @@
                 },
                 "required": [
                   "snapshot_id",
+                  "release_id",
                   "value"
                 ],
                 "type": "object"
@@ -93,28 +95,20 @@
               "additionalProperties": false,
               "properties": {
                 "signal_id": {
-                  "description": "signal id, e.g. D1.task_horizon_50pct",
-                  "pattern": "^D(?:[1-9]|10)\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
+                  "description": "Signal id, incident id or component name",
+                  "minLength": 1,
                   "type": "string"
                 },
                 "weight": {
                   "type": "number"
                 },
                 "value_normalized": {
-                  "description": "Value in [0, 1]",
-                  "maximum": 1,
-                  "minimum": 0,
                   "type": "number"
                 },
                 "tier": {
-                  "enum": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5
-                  ],
-                  "type": "number"
+                  "maximum": 5,
+                  "minimum": 0,
+                  "type": "integer"
                 },
                 "contribution": {
                   "type": "number"

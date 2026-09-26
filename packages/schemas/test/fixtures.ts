@@ -4,6 +4,8 @@
  * reserved example.org domain and no real source, organisation or figure is
  * represented. They exist only to exercise the schemas.
  */
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import type { Kind, Verification } from "../src/index";
 
 const SHA = "a".repeat(64);
@@ -369,227 +371,29 @@ export const snapshot_manifest = {
   notes: "fixture",
 };
 
-export const estimate = {
-  estimate_id: "est-external-O6-2100",
-  producer: "pdoom-model/external-aggregate@0.1.0",
-  status: "external_aggregate",
-  outcome_set: ["O6"],
-  outcome_label: "Human extinction",
-  horizon: "2100",
-  conditioning: "Unconditional.",
-  forecast_origin_date: "2026-09-26",
-  last_evidence_date: "2026-09-01",
-  quantiles: { p05: 0.003, p25: 0.01, p50: 0.05, p75: 0.1, p95: 0.3 },
-  mean: 0.08,
-  disagreement: "high",
-  uncertainty: "extreme",
-  model_confidence: "low",
-  source_coverage: { forecast_count: 6, population_count: 3, source_ids: ["src-fixture-survey-2025"] },
-  previous: null,
-  reason_for_change: "first release",
-  rounding_rule: "nearest_5",
-  display: { central: "5%", interval: "0%–30%", note: "fixture" },
-  assumptions: ["fixture assumption"],
-  method_ref: "docs/method/aggregation.md",
-};
-
-export const official_estimate = {
-  estimate_id: "est-official-P_DOOM-10y",
-  producer: "pdoom-model/indexes@0.1.0",
-  status: "insufficiently_calibrated",
-  outcome_set: ["O3", "O4", "O5", "O6", "O7", "O8"],
-  outcome_label: "p(DOOM) (O3–O8)",
-  horizon: "10y",
-  conditioning: "Unconditional.",
-  forecast_origin_date: "2026-09-26",
-  last_evidence_date: "2026-09-01",
-  quantiles: null,
-  mean: null,
-  disagreement: "extreme",
-  uncertainty: "extreme",
-  model_confidence: "low",
-  source_coverage: { forecast_count: 0, population_count: 0, source_ids: [] },
-  previous: null,
-  reason_for_change: "first release",
-  rounding_rule: "not_applicable",
-  display: { central: "Insufficiently calibrated", interval: null, note: "No official probability is published." },
-  assumptions: [],
-  method_ref: "docs/method/official-status.md",
-};
-
-export const index_value = {
-  index_id: "capability_pressure",
-  value: 62,
-  label: "Capability Pressure Index",
-  scale: "0-100, higher = more pressure",
-  is_probability: false,
-  baseline: { snapshot_id: "snap-2026-09-26-001", value: 62 },
-  components: [
-    { signal_id: "D1.task_horizon_50pct", weight: 0.2, value_normalized: 0.7, tier: 1, contribution: 14 },
-  ],
-  coverage: 0.8,
-  as_of: "2026-09-26",
-  method_ref: "docs/method/indexes.md#capability-pressure",
-  note: "",
-};
-
-export const aggregation = {
-  group_id: "grp-fixture-O6-2100-unconditional",
-  outcome_set: ["O6"],
-  horizon: "2100",
-  method: "unweighted_median",
-  value: 0.05,
-  quantiles: { p05: 0.003, p25: 0.01, p50: 0.05, p75: 0.1, p95: 0.3 },
-  n: 6,
-  weights_note: "Each forecast counted once.",
-  wording_note: "Original wordings shown beside the aggregate.",
-  source_ids: ["src-fixture-survey-2025"],
-};
-
-export const sensitivity_run = {
-  id: "sens-loo-src-fixture-survey-2025",
-  kind: "leave_one_source_out",
-  target_estimate_id: "est-external-O6-2100",
-  baseline_p50: 0.05,
-  perturbed_p50: 0.04,
-  delta: -0.01,
-  description: "Fixture leave-one-out run.",
-};
-
-export const drivers_explained = {
-  driver: "D1",
-  signal_id: "D1.task_horizon_50pct",
-  index_id: "capability_pressure",
-  direction: "increases",
-  magnitude: 14,
-  source_ids: ["src-fixture-survey-2025"],
-  confidence: "moderate",
-  model_role: "index_component",
-  last_updated: "2026-09-26",
-  sensitivity: { leave_one_out_delta: -14, note: "Fixture sensitivity note." },
-  counterevidence: null,
-};
-
-export const sensitivity_summary = {
-  run_count: 1,
-  max_abs_delta: 0.01,
-  most_sensitive_kind: "leave_one_source_out",
-  note: "fixture",
-};
-
-export const delta_record = {
-  previous_estimate: null,
-  new_candidate: {
-    artifact_id: "cand-2026-09-26-001",
-    estimate_id: "est-external-O6-2100",
-    status: "external_aggregate",
-    p50: 0.05,
-  },
-  absolute_change: null,
-  relative_change: null,
-  affected_horizons: ["2100"],
-  affected_outcomes: ["O6"],
-  sources_added: ["src-fixture-survey-2025"],
-  sources_removed: [],
-  model_changes: ["first release"],
-  weight_changes: [],
-  data_corrections: [],
-  sensitivity_summary,
-  heightened_review_triggers: [],
-  reviewer: null,
-  approval: null,
-  release: null,
-};
-
-export const approval = {
-  reviewer_id: "reviewer-fixture",
-  key_id: "fixture-key-01",
-  signed_at: "2026-09-26T00:00:00Z",
-  manifest_sha256: SHA,
-  signature_base64: SIG,
-  conflicts_declared: [],
-};
-
-export const release_manifest = {
-  release_id: "rel-2026-09-26-001",
-  model_versions: [
-    "pdoom-model/external-aggregate@0.1.0",
-    "pdoom-model/experimental-causal@0.1.0",
-    "pdoom-model/indexes@0.1.0",
-  ],
-  code_commit: "0123456789abcdef0123456789abcdef01234567",
-  data_snapshot: "snap-2026-09-26-001",
-  source_cutoff: "2026-09-01",
-  outcome_definition: {
-    label: "p(DOOM)",
-    outcome_set: ["O3", "O4", "O5", "O6", "O7", "O8"],
-    text: "Fixture outcome definition text.",
-    definition_ids: ["def-fixture-term"],
-  },
-  horizons: ["1y", "3y", "5y", "10y", "25y", "2100", "eventual"],
-  priors: {
-    description: "fixture",
-    model_spec_id: "pdoom-model-spec@0.1.0",
-    experimental_causal_version: "0.1.0",
-    method_ref: "docs/method/experimental-model.md",
-  },
-  weights: {
-    description: "fixture",
-    tier_multipliers: { "1": 1, "2": 0.9, "3": 0.5, "4": 0, "5": 0 },
-    weight_bounds: [0, 0.35],
-    method_ref: "docs/method/indexes.md",
-  },
-  dependencies: {
-    description: "fixture",
-    common_factor_loading: 0.5,
-    method_ref: "docs/method/experimental-model.md",
-  },
-  estimates_summary: [
-    {
-      estimate_id: "est-external-O6-2100",
-      status: "external_aggregate",
-      outcome_set: ["O6"],
-      horizon: "2100",
-      p50: 0.05,
-      display_central: "5%",
-    },
-  ],
-  intervals_summary: [
-    {
-      estimate_id: "est-external-O6-2100",
-      p05: 0.003,
-      p95: 0.3,
-      display_interval: "0%–30%",
-      uncertainty: "extreme",
-    },
-  ],
-  sensitivity_summary,
-  external_forecasts_summary: {
-    forecast_count: 6,
-    group_count: 1,
-    population_count: 3,
-    source_count: 1,
-    note: "fixture",
-  },
-  changes: ["first release"],
-  reviewers: [{ reviewer_id: "reviewer-fixture", role: "method", conflicts_declared: [] }],
-  approval: {
-    status: "approved",
-    required_approvals: 1,
-    received_approvals: 1,
-    approved_at: "2026-09-26T00:00:00Z",
-  },
-  known_limitations: ["fixture limitation"],
-  reproduction_command:
-    "go run ./cmd/pdoomctl model run --snapshot data/snapshots/snap-2026-09-26-001 --out data/candidates/cand-2026-09-26-001",
-  signature: {
-    algorithm: "ed25519",
-    key_id: "fixture-key-01",
-    signed_at: "2026-09-26T00:00:00Z",
-    signature_base64: SIG,
-  },
-  published: "2026-09-26T00:00:00Z",
-  superseded: null,
+// Release objects are loaded from test/release-sample, which `pdoomctl` generated
+// from the synthetic fixture snapshot; this pins the Go → TypeScript contract.
+const sampleDir = fileURLToPath(new URL("./release-sample/", import.meta.url));
+const sample = (name: string) => JSON.parse(readFileSync(`${sampleDir}${name}`, "utf8"));
+export const release_manifest = sample("manifest.json");
+export const delta_record = sample("delta.json");
+export const drivers_explained = sample("drivers_explained.json");
+const estimatesFile = sample("estimates.json");
+export const official_estimate = estimatesFile.items.find(
+  (e: { status: string }) => e.status === "insufficiently_calibrated",
+);
+export const estimate = estimatesFile.items.find((e: { status: string }) => e.status === "external_aggregate");
+export const research_estimate = estimatesFile.items.find((e: { status: string }) => e.status === "research_mode");
+export const index_value = sample("indexes.json").items[1];
+export const aggregation = sample("aggregations.json").items[0];
+export const sensitivity_run = sample("sensitivity.json").items[0];
+export const approval = sample("approvals.json")[0];
+export const release_sample_files = {
+  estimates: estimatesFile,
+  indexes: sample("indexes.json"),
+  aggregations: sample("aggregations.json"),
+  sensitivity: sample("sensitivity.json"),
+  approvals: sample("approvals.json"),
 };
 
 export const user_scenario_params = {

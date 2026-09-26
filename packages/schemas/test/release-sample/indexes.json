@@ -1,0 +1,207 @@
+{
+  "items": [
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [],
+      "coverage": 1,
+      "index_id": "evidence_pressure",
+      "is_probability": false,
+      "label": "Evidence Pressure Index",
+      "method_ref": "docs/method/indexes.md#evidence-pressure",
+      "note": "Baseline release: evidence pressure is defined as 50 (no movement) for the first release; later releases show movement relative to this baseline.",
+      "scale": "0–100, 50 = no movement since the baseline release",
+      "value": 50
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 24.5,
+          "signal_id": "D1.swe_bench",
+          "tier": 1,
+          "value_normalized": 0.7,
+          "weight": 0.35
+        },
+        {
+          "contribution": 21.7,
+          "signal_id": "D1.task_horizon_50pct",
+          "tier": 1,
+          "value_normalized": 0.62,
+          "weight": 0.35
+        },
+        {
+          "contribution": 15,
+          "signal_id": "D2.unattended_duration",
+          "tier": 1,
+          "value_normalized": 0.5,
+          "weight": 0.3
+        }
+      ],
+      "coverage": 1,
+      "index_id": "capability_pressure",
+      "is_probability": false,
+      "label": "Capability Pressure Index",
+      "method_ref": "docs/method/indexes.md#capability-pressure",
+      "note": "",
+      "scale": "0–100, higher = more capability pressure",
+      "value": 61.2
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 15,
+          "signal_id": "D5.control_evaluations",
+          "tier": 1,
+          "value_normalized": 0.3,
+          "weight": 0.35
+        },
+        {
+          "contribution": 12.5,
+          "signal_id": "D6.mcp_registry_signing",
+          "tier": 1,
+          "value_normalized": 0.25,
+          "weight": 0.35
+        }
+      ],
+      "coverage": 0.7,
+      "index_id": "control_strength",
+      "is_probability": false,
+      "label": "Control Strength Index",
+      "method_ref": "docs/method/indexes.md#control-strength",
+      "note": "Computed over 70% of the specified signal weight; missing signals are listed in the coverage gaps.",
+      "scale": "0–100, higher = stronger safeguards and institutions",
+      "value": 27.5
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 2.3836,
+          "signal_id": "inc-fixture-agent-deletion",
+          "tier": 1,
+          "value_normalized": 0.15,
+          "weight": 0.0724
+        },
+        {
+          "contribution": 0.0691,
+          "signal_id": "inc-fixture-chatbot-error",
+          "tier": 1,
+          "value_normalized": 0.01,
+          "weight": 0.0021
+        }
+      ],
+      "coverage": 1,
+      "index_id": "incident_pressure",
+      "is_probability": false,
+      "label": "Incident Pressure Index",
+      "method_ref": "docs/method/indexes.md#incident-pressure",
+      "note": "2 eligible incidents; raw pressure 0.075 squashed with k = 3.0. Counts one underlying event once; media volume is the separate attention index.",
+      "scale": "0–100, higher = more verified incident pressure",
+      "value": 2.4538
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 3,
+          "signal_id": "coverage_gap",
+          "tier": 1,
+          "value_normalized": 0.1,
+          "weight": 0.3
+        },
+        {
+          "contribution": 12.866,
+          "signal_id": "forecast_disagreement",
+          "tier": 1,
+          "value_normalized": 0.6433,
+          "weight": 0.2
+        },
+        {
+          "contribution": 0,
+          "signal_id": "low_tier_share",
+          "tier": 1,
+          "value_normalized": 0,
+          "weight": 0.15
+        },
+        {
+          "contribution": 1.142,
+          "signal_id": "sensitivity_spread",
+          "tier": 1,
+          "value_normalized": 0.0571,
+          "weight": 0.2
+        },
+        {
+          "contribution": 7.5,
+          "signal_id": "unknown_dependencies",
+          "tier": 1,
+          "value_normalized": 0.5,
+          "weight": 0.15
+        }
+      ],
+      "coverage": 1,
+      "index_id": "uncertainty",
+      "is_probability": false,
+      "label": "Uncertainty Score",
+      "method_ref": "docs/method/indexes.md#uncertainty-score",
+      "note": "Weighted mean of coverage gap, external-forecast disagreement, low-tier evidence share, sensitivity spread and a constant unknown-dependency term. Not a probability.",
+      "scale": "0–100, higher = less is known",
+      "value": 24.5069
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 17,
+          "signal_id": "D2.unattended_duration",
+          "tier": 1,
+          "value_normalized": 0.5,
+          "weight": 0.34
+        },
+        {
+          "contribution": 19.8,
+          "signal_id": "D3.tool_permission_scope",
+          "tier": 1,
+          "value_normalized": 0.6,
+          "weight": 0.33
+        },
+        {
+          "contribution": 24.75,
+          "signal_id": "D6.mcp_registry_signing",
+          "tier": 1,
+          "value_normalized": 0.75,
+          "weight": 0.33
+        }
+      ],
+      "coverage": 1,
+      "index_id": "agentic_infrastructure_risk",
+      "is_probability": false,
+      "label": "Agentic Infrastructure Risk Index",
+      "method_ref": "docs/method/indexes.md#agentic-infrastructure-risk",
+      "note": "",
+      "scale": "0–100, higher = more exposure from agent infrastructure",
+      "value": 61.55
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [],
+      "coverage": 0,
+      "index_id": "attention",
+      "is_probability": false,
+      "label": "Attention Index",
+      "method_ref": "docs/method/indexes.md#attention-index",
+      "note": "Not computed: the prototype ingests no media-volume data. Article counts are never used as incident counts.",
+      "scale": "0–100, media volume per underlying event",
+      "value": null
+    }
+  ],
+  "kind": "index_value",
+  "schema_version": 1
+}

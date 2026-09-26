@@ -345,21 +345,9 @@ export const SensitivityKind = z.enum([
 export type SensitivityKindValue = z.infer<typeof SensitivityKind>;
 
 /** Direction of a driver's contribution in "Why this number?" explanations. */
-export const ContributionDirection = z.enum(["increases", "decreases", "neutral"]);
-export type ContributionDirectionValue = z.infer<typeof ContributionDirection>;
 
 /** How a driver enters the published objects. */
-export const ModelRole = z.enum([
-  "index_component",
-  "aggregation_input",
-  "experimental_causal_input",
-  "editorial_input",
-  "informational",
-]);
-export type ModelRoleValue = z.infer<typeof ModelRole>;
 
-export const ApprovalStatus = z.enum(["pending", "approved", "rejected"]);
-export type ApprovalStatusValue = z.infer<typeof ApprovalStatus>;
 
 export const SubmissionKind = z.enum(["source", "correction", "incident_reference"]);
 export type SubmissionKindValue = z.infer<typeof SubmissionKind>;
@@ -894,3 +882,21 @@ export const ROUNDING_BY_UNCERTAINTY: Record<UncertaintyLabelValue, { points: nu
   moderate: { points: 1, rule: "nearest_1" },
   low: { points: 1, rule: "nearest_1" },
 };
+
+// ---------------------------------------------------------------------------
+// Brand (build-spec name rules). Rendered text uses BRAND, never a literal.
+// ---------------------------------------------------------------------------
+
+/** The brand, written exactly like this everywhere it is displayed. */
+export const BRAND = "p(DOOM)" as const;
+export const BRAND_EXPANDED =
+  "Probability of Doom, Disempowerment, and Unrecoverable Machine-Caused Catastrophe" as const;
+export const PUBLIC_LABEL = "The AI Existential and Civilizational Risk Observatory" as const;
+export const AUTHOR = "NU Cybernetics" as const;
+export const TAGLINES = [
+  "The Future Is Not a Single Number.",
+  "Measure the Risk. Expose the Assumptions. Change the Trajectory.",
+  "A Living Map of Advanced-AI Risk.",
+  "Understand the Odds. Improve the Outcome.",
+  "Watch the Frontier Without Losing Sight of Humanity.",
+] as const;

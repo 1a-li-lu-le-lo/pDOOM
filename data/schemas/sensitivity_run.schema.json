@@ -2,9 +2,9 @@
   "$id": "urn:pdoom:schema:sensitivity_run:v1",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
-  "description": "One perturbation of the model and its effect on a target estimate",
+  "description": "One perturbation of the model and its effect on a target",
   "properties": {
-    "id": {
+    "run_id": {
       "minLength": 1,
       "type": "string"
     },
@@ -24,41 +24,90 @@
       ],
       "type": "string"
     },
-    "target_estimate_id": {
-      "description": "estimate id, e.g. est-external-O6-2100",
-      "pattern": "^est-[A-Za-z0-9_+-]+$",
+    "target_kind": {
+      "enum": [
+        "aggregation_group",
+        "estimate"
+      ],
       "type": "string"
     },
-    "baseline_p50": {
+    "target_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "removed_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "parameter_change": {
+      "type": "string"
+    },
+    "horizon": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "outcome_set": {
+      "items": {
+        "enum": [
+          "O0",
+          "O1",
+          "O2",
+          "O3",
+          "O4",
+          "O5",
+          "O6",
+          "O7",
+          "O8"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "baseline_value": {
       "description": "Probability in [0, 1]",
       "maximum": 1,
       "minimum": 0,
       "type": "number"
     },
-    "perturbed_p50": {
+    "value": {
       "description": "Probability in [0, 1]",
       "maximum": 1,
       "minimum": 0,
       "type": "number"
     },
     "delta": {
-      "description": "perturbed_p50 - baseline_p50",
+      "description": "value - baseline_value",
       "maximum": 1,
       "minimum": -1,
       "type": "number"
     },
-    "description": {
+    "rank": {
+      "maximum": 9007199254740991,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "note": {
       "type": "string"
     }
   },
   "required": [
-    "id",
+    "run_id",
     "kind",
-    "target_estimate_id",
-    "baseline_p50",
-    "perturbed_p50",
+    "target_kind",
+    "target_id",
+    "removed_id",
+    "parameter_change",
+    "horizon",
+    "outcome_set",
+    "baseline_value",
+    "value",
     "delta",
-    "description"
+    "rank",
+    "note"
   ],
   "title": "p(DOOM) Sensitivity Run",
   "type": "object"

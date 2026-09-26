@@ -1,0 +1,237 @@
+{
+  "items": [
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-unweighted_median",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "unweighted_median",
+      "n": 4,
+      "note": "Median of member central values; the preferred method because it is robust to a single extreme forecast.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": true,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.04,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-linear_pool",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "linear_pool",
+      "n": 4,
+      "note": "Arithmetic mean of member central values.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.0585,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-log_odds_pool",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "log_odds_pool",
+      "n": 4,
+      "note": "Mean on the log-odds scale, mapped back to a probability.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.031733,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-trimmed_mean",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "trimmed_mean",
+      "n": 4,
+      "note": "Mean after trimming 20% from each end; falls back to the median when fewer than five members.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.04,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-tier_weighted",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "tier_weighted",
+      "n": 4,
+      "note": "Weighted by source tier multiplier (tier 1 = 1.0, tier 2 = 0.9, tier 3 = 0.5); no member above the single-figure cap.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.0585,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-recency_weighted",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "recency_weighted",
+      "n": 4,
+      "note": "Weighted by 0.5^(age in years / 3) relative to the newest member; no member above the single-figure cap.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.064457,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.2859,
+        "fc-fixture-survey-2025-safety": 0.2859,
+        "fc-fixture-tournament-experts": 0.2141,
+        "fc-fixture-tournament-superforecasters": 0.2141
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    },
+    {
+      "aggregation_id": "agg-g-fix-ext-2100-equal_weight_by_population",
+      "conditioning": "unconditional",
+      "forecast_ids": [
+        "fc-fixture-survey-2025-researchers",
+        "fc-fixture-survey-2025-safety",
+        "fc-fixture-tournament-experts",
+        "fc-fixture-tournament-superforecasters"
+      ],
+      "group_id": "G-FIX-EXT-2100",
+      "horizon": "2100",
+      "method": "equal_weight_by_population",
+      "n": 4,
+      "note": "Mean of per-population medians so that a large survey and a small superforecaster panel count equally.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 4,
+      "preferred": false,
+      "source_ids": [
+        "src-fixture-survey-2025",
+        "src-fixture-tournament-2024"
+      ],
+      "transformation_note": "No transformation applied; members answer the same question in the same units.",
+      "value": 0.0585,
+      "weights": {
+        "fc-fixture-survey-2025-researchers": 0.25,
+        "fc-fixture-survey-2025-safety": 0.25,
+        "fc-fixture-tournament-experts": 0.25,
+        "fc-fixture-tournament-superforecasters": 0.25
+      },
+      "wording_note": "fc-fixture-survey-2025-researchers [Fixture survey 2025, 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-survey-2025-safety [Fixture survey 2025 (safety subgroup), 2025-06-01]: \"What probability do you give to the fixture outcome by 2100?\" | fc-fixture-tournament-experts [Fixture tournament (experts), 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\" | fc-fixture-tournament-superforecasters [Fixture tournament, 2024-03-01]: \"(paraphrase) Probability of the fixture outcome by 2100\""
+    }
+  ],
+  "kind": "aggregation",
+  "schema_version": 1
+}

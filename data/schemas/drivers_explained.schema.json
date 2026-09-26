@@ -2,123 +2,133 @@
   "$id": "urn:pdoom:schema:drivers_explained:v1",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
-  "description": "One driver contribution shown in the 'Why this number?' panel",
+  "description": "drivers_explained.json",
   "properties": {
-    "driver": {
-      "enum": [
-        "D1",
-        "D2",
-        "D3",
-        "D4",
-        "D5",
-        "D6",
-        "D7",
-        "D8",
-        "D9",
-        "D10"
-      ],
+    "kind": {
+      "const": "drivers_explained",
       "type": "string"
     },
-    "signal_id": {
-      "description": "signal id, e.g. D1.task_horizon_50pct",
-      "pattern": "^D(?:[1-9]|10)\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
-      "type": "string"
-    },
-    "index_id": {
-      "enum": [
-        "evidence_pressure",
-        "capability_pressure",
-        "control_strength",
-        "incident_pressure",
-        "uncertainty",
-        "agentic_infrastructure_risk",
-        "attention"
-      ],
-      "type": "string"
-    },
-    "direction": {
-      "enum": [
-        "increases",
-        "decreases",
-        "neutral"
-      ],
-      "type": "string"
-    },
-    "magnitude": {
-      "description": "Absolute contribution in index points",
-      "minimum": 0,
+    "schema_version": {
+      "const": 1,
       "type": "number"
     },
-    "source_ids": {
-      "items": {
-        "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
-        "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
-        "type": "string"
-      },
-      "type": "array"
+    "release_id": {
+      "anyOf": [
+        {
+          "description": "release id, e.g. rel-2026-09-26-001",
+          "pattern": "^rel-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
-    "confidence": {
-      "enum": [
-        "low",
-        "moderate",
-        "high"
-      ],
-      "type": "string"
-    },
-    "model_role": {
-      "enum": [
-        "index_component",
-        "aggregation_input",
-        "experimental_causal_input",
-        "editorial_input",
-        "informational"
-      ],
-      "type": "string"
-    },
-    "last_updated": {
+    "as_of": {
       "description": "Calendar date, YYYY-MM-DD",
       "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
       "type": "string"
     },
-    "sensitivity": {
-      "additionalProperties": false,
-      "properties": {
-        "leave_one_out_delta": {
-          "description": "Index points moved when this driver is removed",
-          "type": [
-            "number",
-            "null"
-          ]
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "One driver contribution shown in the 'Why this number?' panel",
+        "properties": {
+          "index_id": {
+            "enum": [
+              "evidence_pressure",
+              "capability_pressure",
+              "control_strength",
+              "incident_pressure",
+              "uncertainty",
+              "agentic_infrastructure_risk",
+              "attention"
+            ],
+            "type": "string"
+          },
+          "driver": {
+            "description": "Signal id",
+            "minLength": 1,
+            "type": "string"
+          },
+          "driver_family": {
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "raises_pressure",
+              "strengthens_control"
+            ],
+            "type": "string"
+          },
+          "magnitude": {
+            "description": "Contribution in index points",
+            "type": "number"
+          },
+          "source_ids": {
+            "items": {
+              "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+              "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "confidence": {
+            "description": "Value in [0, 1]",
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "model_role": {
+            "type": "string"
+          },
+          "last_updated": {
+            "description": "Calendar date, YYYY-MM-DD",
+            "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+            "type": "string"
+          },
+          "sensitivity": {
+            "description": "Index points moved when this signal is removed",
+            "type": "number"
+          },
+          "counterevidence": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
         },
-        "note": {
-          "type": "string"
-        }
+        "required": [
+          "index_id",
+          "driver",
+          "driver_family",
+          "direction",
+          "magnitude",
+          "source_ids",
+          "confidence",
+          "model_role",
+          "last_updated",
+          "sensitivity",
+          "counterevidence"
+        ],
+        "type": "object"
       },
-      "required": [
-        "leave_one_out_delta",
-        "note"
-      ],
-      "type": "object"
+      "type": "array"
     },
-    "counterevidence": {
-      "type": [
-        "string",
-        "null"
-      ]
+    "notes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
     }
   },
   "required": [
-    "driver",
-    "signal_id",
-    "index_id",
-    "direction",
-    "magnitude",
-    "source_ids",
-    "confidence",
-    "model_role",
-    "last_updated",
-    "sensitivity",
-    "counterevidence"
+    "kind",
+    "schema_version",
+    "release_id",
+    "as_of",
+    "items",
+    "notes"
   ],
   "title": "p(DOOM) Drivers Explained",
   "type": "object"

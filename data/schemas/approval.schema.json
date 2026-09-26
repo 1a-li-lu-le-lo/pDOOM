@@ -27,10 +27,7 @@
       "type": "string"
     },
     "conflicts_declared": {
-      "items": {
-        "type": "string"
-      },
-      "type": "array"
+      "type": "string"
     }
   },
   "required": [

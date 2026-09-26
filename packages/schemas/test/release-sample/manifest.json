@@ -1,0 +1,843 @@
+{
+  "approval": {
+    "approver_ids": [
+      "reviewer-a",
+      "reviewer-b"
+    ],
+    "heightened_review": true,
+    "heightened_review_ack": "reviewer-b",
+    "received_approvals": 2,
+    "required_approvals": 1
+  },
+  "candidate_id": "cand-2026-09-26-001",
+  "changes": [
+    "First release of this release line.",
+    "Snapshot snap-1999-01-01-001; 6 sources, 5 forecasts, 2 incidents."
+  ],
+  "code_commit": "abc1234",
+  "data_snapshot": "snap-1999-01-01-001",
+  "data_summary": {
+    "benchmark_definitions": {
+      "bm-fixture-horizon": "1c5f4e604f0c8d12"
+    },
+    "forecast_count": 5,
+    "forecast_source_ids": [
+      "src-fixture-survey-2025",
+      "src-fixture-tournament-2024"
+    ],
+    "incident_count": 2,
+    "scenario_ids": [
+      "S1",
+      "S3"
+    ],
+    "source_count": 6
+  },
+  "dependencies": {
+    "lambda": 0.5,
+    "not_modelled": [
+      "feedback loops",
+      "time-varying hazards",
+      "explicit competing risks",
+      "scenario-graph dependence (edges are descriptive)"
+    ],
+    "structure": "single common latent factor Z with Gaussian copula loading λ across A, C, E, F and outcome shares"
+  },
+  "editorial_risk_level": "elevated",
+  "estimates": [
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-1y",
+      "horizon": "1y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-3y",
+      "horizon": "3y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-5y",
+      "horizon": "5y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-10y",
+      "horizon": "10y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-25y",
+      "horizon": "25y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-2100",
+      "horizon": "2100",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-eventual",
+      "horizon": "eventual",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "4%",
+      "estimate_id": "est-external-G-FIX-EXT-2100",
+      "horizon": "2100",
+      "interval": {
+        "p05": 0.004,
+        "p25": 0.004,
+        "p50": 0.04,
+        "p75": 0.05,
+        "p95": 0.15
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.04,
+      "status": "external_aggregate"
+    },
+    {
+      "display": "1%",
+      "estimate_id": "est-research-P_DOOM-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.000185,
+        "p25": 0.001471,
+        "p50": 0.005028,
+        "p75": 0.015608,
+        "p95": 0.062732
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.005028,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O3-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.000064,
+        "p25": 0.000514,
+        "p50": 0.001825,
+        "p75": 0.005721,
+        "p95": 0.021665
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.001825,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.000052,
+        "p25": 0.000414,
+        "p50": 0.001559,
+        "p75": 0.004813,
+        "p95": 0.01993
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.001559,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.000014,
+        "p25": 0.000115,
+        "p50": 0.00045,
+        "p75": 0.001598,
+        "p95": 0.007413
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.00045,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.000005,
+        "p25": 0.000046,
+        "p50": 0.000185,
+        "p75": 0.000638,
+        "p95": 0.003294
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.000185,
+      "status": "research_mode"
+    },
+    {
+      "display": "1%",
+      "estimate_id": "est-research-P_DOOM-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.000335,
+        "p25": 0.002576,
+        "p50": 0.008291,
+        "p75": 0.023991,
+        "p95": 0.086493
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.008291,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O3-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.000116,
+        "p25": 0.000885,
+        "p50": 0.002985,
+        "p75": 0.008933,
+        "p95": 0.032313
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.002985,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.000092,
+        "p25": 0.00071,
+        "p50": 0.002526,
+        "p75": 0.007716,
+        "p95": 0.028993
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.002526,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.000024,
+        "p25": 0.000196,
+        "p50": 0.000729,
+        "p75": 0.002478,
+        "p95": 0.010937
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.000729,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.00001,
+        "p25": 0.000077,
+        "p50": 0.000304,
+        "p75": 0.000988,
+        "p95": 0.004776
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.000304,
+      "status": "research_mode"
+    },
+    {
+      "display": "1%",
+      "estimate_id": "est-research-P_DOOM-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.00048,
+        "p25": 0.003704,
+        "p50": 0.011594,
+        "p75": 0.031609,
+        "p95": 0.107759
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.011594,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O3-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.000174,
+        "p25": 0.001274,
+        "p50": 0.004077,
+        "p75": 0.011787,
+        "p95": 0.039803
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.004077,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.000134,
+        "p25": 0.001005,
+        "p50": 0.003462,
+        "p75": 0.010074,
+        "p95": 0.037172
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.003462,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.000034,
+        "p25": 0.000278,
+        "p50": 0.001012,
+        "p75": 0.003309,
+        "p95": 0.014211
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.001012,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.000014,
+        "p25": 0.00011,
+        "p50": 0.000418,
+        "p75": 0.001323,
+        "p95": 0.006019
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.000418,
+      "status": "research_mode"
+    }
+  ],
+  "external_forecasts": {
+    "forecast_count": 4,
+    "group_count": 1,
+    "group_ids": [
+      "G-FIX-EXT-2100"
+    ],
+    "source_ids": [
+      "src-fixture-survey-2025",
+      "src-fixture-tournament-2024"
+    ]
+  },
+  "files": [
+    {
+      "count": 23,
+      "path": "estimates.json",
+      "sha256": "8eb023e1a73183e8ff292e455da33fb486040d1c181a2190fd34080f702e384e"
+    },
+    {
+      "count": 7,
+      "path": "indexes.json",
+      "sha256": "5aaee789e503e3fc74aa48d093ab1f221385295f6bb2d37d60d83a2a5120b916"
+    },
+    {
+      "count": 7,
+      "path": "aggregations.json",
+      "sha256": "854fc5784822ad73c5ab9117426d1bda9a40851490bac05e930b62f327cdaf3e"
+    },
+    {
+      "count": 132,
+      "path": "sensitivity.json",
+      "sha256": "e271746f0113198ed9801c2e1b3260ddb486c601d91f6cf81e7da0b0255a416c"
+    },
+    {
+      "count": 8,
+      "path": "drivers_explained.json",
+      "sha256": "08ac5a4662b49995f5144a3110484c2ab596815a61ebee809915ca8fc70461cb"
+    },
+    {
+      "count": 1,
+      "path": "delta.json",
+      "sha256": "f2c08cdd17109d4dba0ae72b5db4933c04be32ccde15ca180a0abe8ea7ccb9f4"
+    }
+  ],
+  "generated_at": "2026-09-26T12:00:00Z",
+  "horizons": [
+    "1y",
+    "3y",
+    "5y",
+    "10y",
+    "25y",
+    "2100",
+    "eventual"
+  ],
+  "intervals": "Intervals are p05–p95. External aggregates use the min–max range of member forecasts; research-mode intervals are Monte Carlo quantiles under documented parameter uncertainty; the official object publishes none.",
+  "known_limitations": [
+    "No official probability is published: the official object has status insufficiently_calibrated because no documented calibration process exists for long-horizon existential outcomes.",
+    "The research-mode model's parameters are judgments informed by cited sources, not measurements; its intervals express parameter uncertainty under the model, not calibrated forecast error.",
+    "External forecast aggregates inherit the selection, framing and population effects of their member surveys; groups are small and dominated by a few studies.",
+    "Indexes (0–100) are constructed scores and are never probabilities; coverage below 1 means specified signals lacked eligible observations.",
+    "Dependence between factors is represented by a single common latent factor; feedback loops, competing risks and time-varying hazards are not modelled.",
+    "Incident pressure counts only verified, registry-referenced incidents and therefore under-represents unreported or unverified events.",
+    "Editorial risk level (elevated) is a rule-based, human-readable classification, not a measurement."
+  ],
+  "model_versions": [
+    "pdoom-model/official-index-only@0.1.0",
+    "pdoom-model/external-aggregate@0.1.0",
+    "pdoom-model/experimental-causal@0.1.0",
+    "pdoom-model/indexes@0.1.0"
+  ],
+  "outcome_definition": "p(DOOM) = probability of O3 (permanent severe disempowerment), O4 (civilizational collapse), O5 (near-extinction), O6 (human extinction), O7 (biospheric catastrophe) or O8 (other irreversible loss) within the stated horizon, conditional on the model specification. The official value in this release line is index-only (insufficiently calibrated); external aggregates and the research-mode model are published separately and never blended.",
+  "previous_release_id": null,
+  "priors": {
+    "experimental_causal": {
+      "common_factor_loading": 0.5,
+      "horizons": {
+        "10y": {
+          "A": {
+            "p05": 0.2,
+            "p50": 0.5,
+            "p95": 0.8
+          },
+          "C": {
+            "p05": 0.3,
+            "p50": 0.6,
+            "p95": 0.9
+          },
+          "E": {
+            "p05": 0.1,
+            "p50": 0.3,
+            "p95": 0.6
+          },
+          "F": {
+            "p05": 0.05,
+            "p50": 0.2,
+            "p95": 0.5
+          },
+          "O": {
+            "O3": {
+              "p05": 0.05,
+              "p50": 0.2,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.02,
+              "p50": 0.1,
+              "p95": 0.3
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.2
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.2
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.1
+            },
+            "O8": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.2
+            }
+          }
+        },
+        "25y": {
+          "A": {
+            "p05": 0.4,
+            "p50": 0.7,
+            "p95": 0.95
+          },
+          "C": {
+            "p05": 0.3,
+            "p50": 0.6,
+            "p95": 0.9
+          },
+          "E": {
+            "p05": 0.1,
+            "p50": 0.3,
+            "p95": 0.6
+          },
+          "F": {
+            "p05": 0.05,
+            "p50": 0.2,
+            "p95": 0.5
+          },
+          "O": {
+            "O3": {
+              "p05": 0.05,
+              "p50": 0.2,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.02,
+              "p50": 0.1,
+              "p95": 0.3
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.2
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.2
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.1
+            },
+            "O8": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.2
+            }
+          }
+        },
+        "5y": {
+          "A": {
+            "p05": 0.1,
+            "p50": 0.3,
+            "p95": 0.6
+          },
+          "C": {
+            "p05": 0.3,
+            "p50": 0.6,
+            "p95": 0.9
+          },
+          "E": {
+            "p05": 0.1,
+            "p50": 0.3,
+            "p95": 0.6
+          },
+          "F": {
+            "p05": 0.05,
+            "p50": 0.2,
+            "p95": 0.5
+          },
+          "O": {
+            "O3": {
+              "p05": 0.05,
+              "p50": 0.2,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.02,
+              "p50": 0.1,
+              "p95": 0.3
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.2
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.2
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.1
+            },
+            "O8": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.2
+            }
+          }
+        }
+      },
+      "rationale": {
+        "A": "fixture",
+        "C": "fixture",
+        "E": "fixture",
+        "F": "fixture",
+        "O": "fixture",
+        "dependence": "fixture"
+      },
+      "samples": 4000,
+      "seed": 20260926,
+      "version": "pdoom-model/experimental-causal@0.1.0"
+    },
+    "note": "Every prior is a documented judgment stored in model_spec.json; none is a measurement."
+  },
+  "published": "2026-09-26T13:00:00Z",
+  "release_id": "rel-2026-09-26-001",
+  "reproduction_command": "go run ./cmd/pdoomctl model run --snapshot data/snapshots/snap-1999-01-01-001 --out data/candidates/cand-2026-09-26-001 --release-id rel-2026-09-26-001 --generated-at 2026-09-26T12:00:00Z --code-commit abc1234",
+  "reviewers": [
+    "reviewer-a",
+    "reviewer-b"
+  ],
+  "sensitivity": [
+    {
+      "delta": -0.01,
+      "kind": "leave_one_source_out",
+      "run_id": "sens-loo-G-FIX-EXT-2100-fc-fixture-survey-2025-researchers",
+      "target_id": "G-FIX-EXT-2100"
+    },
+    {
+      "delta": -0.01,
+      "kind": "leave_one_source_out",
+      "run_id": "sens-loo-G-FIX-EXT-2100-fc-fixture-survey-2025-safety",
+      "target_id": "G-FIX-EXT-2100"
+    },
+    {
+      "delta": 0.01,
+      "kind": "leave_one_source_out",
+      "run_id": "sens-loo-G-FIX-EXT-2100-fc-fixture-tournament-experts",
+      "target_id": "G-FIX-EXT-2100"
+    },
+    {
+      "delta": -0.023,
+      "kind": "leave_one_survey_out",
+      "run_id": "sens-loso-G-FIX-EXT-2100-src-fixture-survey-2025",
+      "target_id": "G-FIX-EXT-2100"
+    },
+    {
+      "delta": 0.06,
+      "kind": "leave_one_survey_out",
+      "run_id": "sens-loso-G-FIX-EXT-2100-src-fixture-tournament-2024",
+      "target_id": "G-FIX-EXT-2100"
+    },
+    {
+      "delta": 0.0185,
+      "kind": "alternative_weighting",
+      "run_id": "sens-method-G-FIX-EXT-2100-equal_weight_by_population",
+      "target_id": "G-FIX-EXT-2100"
+    },
+    {
+      "delta": 0.0185,
+      "kind": "alternative_weighting",
+      "run_id": "sens-method-G-FIX-EXT-2100-linear_pool",
+      "target_id": "G-FIX-EXT-2100"
+    },
+    {
+      "delta": 0.024457,
+      "kind": "alternative_weighting",
+      "run_id": "sens-method-G-FIX-EXT-2100-recency_weighted",
+      "target_id": "G-FIX-EXT-2100"
+    },
+    {
+      "delta": 0.0185,
+      "kind": "alternative_weighting",
+      "run_id": "sens-method-G-FIX-EXT-2100-tier_weighted",
+      "target_id": "G-FIX-EXT-2100"
+    },
+    {
+      "delta": 0.011418,
+      "kind": "pessimistic_safeguards",
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y"
+    }
+  ],
+  "signature": "5d23bd6226e24e00e1b685aae8979f649efb8b6c07568a0ecdec70eea2d36aff",
+  "source_cutoff": "2026-09-01",
+  "superseded": null,
+  "uncertainty_score": 24.5069,
+  "weights": {
+    "incident_scoring": {
+      "evidence_weights": {
+        "allegation": 0.1,
+        "corroborated_report": 0.6,
+        "independently_reproduced": 1,
+        "official_finding": 0.85,
+        "peer_reviewed_analysis": 0.9,
+        "single_source_report": 0.3
+      },
+      "recency_half_life_days": 730,
+      "relevance_weights": {
+        "direct_precursor": 1,
+        "indirect": 0.25,
+        "moderate": 0.5,
+        "none": 0,
+        "strong": 0.8,
+        "weak": 0.1
+      },
+      "severity_weights": {
+        "catastrophic": 1,
+        "major": 0.6,
+        "material": 0.3,
+        "minor": 0.1,
+        "negligible": 0,
+        "severe": 0.85
+      },
+      "squash_k": 3
+    },
+    "index_weights": {
+      "agentic_infrastructure_risk": {
+        "D2.unattended_duration": 0.34,
+        "D3.tool_permission_scope": 0.33,
+        "D6.mcp_registry_signing": 0.33
+      },
+      "capability_pressure": {
+        "D1.swe_bench": 0.35,
+        "D1.task_horizon_50pct": 0.35,
+        "D2.unattended_duration": 0.3
+      },
+      "control_strength": {
+        "D5.control_evaluations": 0.35,
+        "D6.mcp_registry_signing": 0.35,
+        "D7.binding_frontier_rules": 0.3
+      },
+      "evidence_pressure": {},
+      "incident_pressure": {},
+      "uncertainty": {
+        "coverage_gap": 0.3,
+        "forecast_disagreement": 0.2,
+        "low_tier_share": 0.15,
+        "sensitivity_spread": 0.2,
+        "unknown_dependencies": 0.15
+      }
+    },
+    "single_figure_cap": 0.35,
+    "tier_multipliers": {
+      "1": 1,
+      "2": 0.9,
+      "3": 0.5,
+      "4": 0,
+      "5": 0
+    },
+    "weight_bounds": [
+      0,
+      0.35
+    ]
+  }
+}

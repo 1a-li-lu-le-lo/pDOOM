@@ -17,7 +17,6 @@
         "description": "Published estimate with outcome, horizon, conditioning, interval and status",
         "properties": {
           "estimate_id": {
-            "description": "estimate id, e.g. est-external-O6-2100",
             "pattern": "^est-[A-Za-z0-9_+-]+$",
             "type": "string"
           },
@@ -69,6 +68,12 @@
               "eventual"
             ],
             "type": "string"
+          },
+          "horizon_note": {
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "conditioning": {
             "type": "string"
@@ -148,13 +153,20 @@
             ]
           },
           "disagreement": {
-            "enum": [
-              "low",
-              "moderate",
-              "high",
-              "extreme"
-            ],
-            "type": "string"
+            "anyOf": [
+              {
+                "enum": [
+                  "low",
+                  "moderate",
+                  "high",
+                  "extreme"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "uncertainty": {
             "enum": [
@@ -166,11 +178,6 @@
             "type": "string"
           },
           "model_confidence": {
-            "enum": [
-              "low",
-              "moderate",
-              "high"
-            ],
             "type": "string"
           },
           "source_coverage": {
@@ -212,63 +219,7 @@
                     "pattern": "^rel-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
                     "type": "string"
                   },
-                  "estimate_id": {
-                    "description": "estimate id, e.g. est-external-O6-2100",
-                    "pattern": "^est-[A-Za-z0-9_+-]+$",
-                    "type": "string"
-                  },
-                  "quantiles": {
-                    "anyOf": [
-                      {
-                        "additionalProperties": false,
-                        "description": "Five-point quantiles (probabilities)",
-                        "properties": {
-                          "p05": {
-                            "description": "Probability in [0, 1]",
-                            "maximum": 1,
-                            "minimum": 0,
-                            "type": "number"
-                          },
-                          "p25": {
-                            "description": "Probability in [0, 1]",
-                            "maximum": 1,
-                            "minimum": 0,
-                            "type": "number"
-                          },
-                          "p50": {
-                            "description": "Probability in [0, 1]",
-                            "maximum": 1,
-                            "minimum": 0,
-                            "type": "number"
-                          },
-                          "p75": {
-                            "description": "Probability in [0, 1]",
-                            "maximum": 1,
-                            "minimum": 0,
-                            "type": "number"
-                          },
-                          "p95": {
-                            "description": "Probability in [0, 1]",
-                            "maximum": 1,
-                            "minimum": 0,
-                            "type": "number"
-                          }
-                        },
-                        "required": [
-                          "p05",
-                          "p25",
-                          "p50",
-                          "p75",
-                          "p95"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "type": "null"
-                      }
-                    ]
-                  },
-                  "mean": {
+                  "p50": {
                     "anyOf": [
                       {
                         "description": "Probability in [0, 1]",
@@ -280,13 +231,15 @@
                         "type": "null"
                       }
                     ]
+                  },
+                  "display": {
+                    "type": "string"
                   }
                 },
                 "required": [
                   "release_id",
-                  "estimate_id",
-                  "quantiles",
-                  "mean"
+                  "p50",
+                  "display"
                 ],
                 "type": "object"
               },
@@ -299,12 +252,7 @@
             "type": "string"
           },
           "rounding_rule": {
-            "enum": [
-              "nearest_5",
-              "nearest_2",
-              "nearest_1",
-              "not_applicable"
-            ],
+            "pattern": "^(none|nearest_\\d+)$",
             "type": "string"
           },
           "display": {
@@ -316,11 +264,8 @@
                 "type": "string"
               },
               "interval": {
-                "description": "Rounded p05–p95 interval, null when no probability is published",
-                "type": [
-                  "string",
-                  "null"
-                ]
+                "description": "Rounded p05–p95 interval; empty when no probability is published",
+                "type": "string"
               },
               "note": {
                 "type": "string"
@@ -342,6 +287,12 @@
           "method_ref": {
             "minLength": 1,
             "type": "string"
+          },
+          "group_id": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         },
         "required": [
@@ -351,6 +302,7 @@
           "outcome_set",
           "outcome_label",
           "horizon",
+          "horizon_note",
           "conditioning",
           "forecast_origin_date",
           "last_evidence_date",
@@ -365,7 +317,8 @@
           "rounding_rule",
           "display",
           "assumptions",
-          "method_ref"
+          "method_ref",
+          "group_id"
         ],
         "type": "object"
       },

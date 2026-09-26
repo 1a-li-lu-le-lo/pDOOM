@@ -163,8 +163,8 @@
       "location": "release"
     },
     {
-      "container": "envelope",
-      "envelope_schema": "drivers_explained.envelope.schema.json",
+      "container": "object",
+      "envelope_schema": null,
       "file": "drivers_explained.json",
       "item_schema": "drivers_explained.schema.json",
       "kind": "drivers_explained",

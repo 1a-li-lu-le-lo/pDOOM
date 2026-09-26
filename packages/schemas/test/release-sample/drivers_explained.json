@@ -1,0 +1,133 @@
+{
+  "as_of": "2026-09-26",
+  "items": [
+    {
+      "confidence": 0.7,
+      "counterevidence": null,
+      "direction": "raises_pressure",
+      "driver": "D1.swe_bench",
+      "driver_family": "D1",
+      "index_id": "capability_pressure",
+      "last_updated": "2026-08-01",
+      "magnitude": 24.5,
+      "model_role": "weighted component (weight 0.35, tier 1)",
+      "sensitivity": 4.7385,
+      "source_ids": [
+        "src-fixture-lab-card"
+      ]
+    },
+    {
+      "confidence": 0.7,
+      "counterevidence": null,
+      "direction": "raises_pressure",
+      "driver": "D1.task_horizon_50pct",
+      "driver_family": "D1",
+      "index_id": "capability_pressure",
+      "last_updated": "2026-08-01",
+      "magnitude": 21.7,
+      "model_role": "weighted component (weight 0.35, tier 1)",
+      "sensitivity": 0.4308,
+      "source_ids": [
+        "src-fixture-eval-report"
+      ]
+    },
+    {
+      "confidence": 0.7,
+      "counterevidence": null,
+      "direction": "raises_pressure",
+      "driver": "D2.unattended_duration",
+      "driver_family": "D2",
+      "index_id": "capability_pressure",
+      "last_updated": "2026-08-01",
+      "magnitude": 15,
+      "model_role": "weighted component (weight 0.30, tier 1)",
+      "sensitivity": -4.8,
+      "source_ids": [
+        "src-fixture-eval-report"
+      ]
+    },
+    {
+      "confidence": 0.7,
+      "counterevidence": null,
+      "direction": "strengthens_control",
+      "driver": "D5.control_evaluations",
+      "driver_family": "D5",
+      "index_id": "control_strength",
+      "last_updated": "2026-08-01",
+      "magnitude": 15,
+      "model_role": "weighted component (weight 0.35, tier 1)",
+      "sensitivity": 2.5,
+      "source_ids": [
+        "src-fixture-eval-report"
+      ]
+    },
+    {
+      "confidence": 0.7,
+      "counterevidence": null,
+      "direction": "strengthens_control",
+      "driver": "D6.mcp_registry_signing",
+      "driver_family": "D6",
+      "index_id": "control_strength",
+      "last_updated": "2026-08-01",
+      "magnitude": 12.5,
+      "model_role": "weighted component (weight 0.35, tier 1)",
+      "sensitivity": -2.5,
+      "source_ids": [
+        "src-fixture-eval-report"
+      ]
+    },
+    {
+      "confidence": 0.7,
+      "counterevidence": null,
+      "direction": "raises_pressure",
+      "driver": "D2.unattended_duration",
+      "driver_family": "D2",
+      "index_id": "agentic_infrastructure_risk",
+      "last_updated": "2026-08-01",
+      "magnitude": 17,
+      "model_role": "weighted component (weight 0.34, tier 1)",
+      "sensitivity": -5.95,
+      "source_ids": [
+        "src-fixture-eval-report"
+      ]
+    },
+    {
+      "confidence": 0.7,
+      "counterevidence": null,
+      "direction": "raises_pressure",
+      "driver": "D3.tool_permission_scope",
+      "driver_family": "D3",
+      "index_id": "agentic_infrastructure_risk",
+      "last_updated": "2026-08-01",
+      "magnitude": 19.8,
+      "model_role": "weighted component (weight 0.33, tier 1)",
+      "sensitivity": -0.7634,
+      "source_ids": [
+        "src-fixture-eval-report"
+      ]
+    },
+    {
+      "confidence": 0.7,
+      "counterevidence": null,
+      "direction": "raises_pressure",
+      "driver": "D6.mcp_registry_signing",
+      "driver_family": "D6",
+      "index_id": "agentic_infrastructure_risk",
+      "last_updated": "2026-08-01",
+      "magnitude": 24.75,
+      "model_role": "weighted component (weight 0.33, tier 1)",
+      "sensitivity": 6.6246,
+      "source_ids": [
+        "src-fixture-eval-report"
+      ]
+    }
+  ],
+  "kind": "drivers_explained",
+  "notes": [
+    "Contributions are shares of a 0–100 index, not probabilities.",
+    "Sensitivity is the change in the index when the signal is removed and the remaining weights are renormalized.",
+    "Causal attribution of probability changes to individual drivers is not available in this model version; the research-mode estimate depends on judgment-based parameters documented in the model specification."
+  ],
+  "release_id": null,
+  "schema_version": 1
+}
