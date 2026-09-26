@@ -102,7 +102,7 @@ export default async function ChangelogPage() {
             </>
           ) : null}
         </section>
-        <article className="prose card" dangerouslySetInnerHTML={{ __html: log.html }} />
+        <article className="prose card" aria-label="Release changelog" dangerouslySetInnerHTML={{ __html: log.html.replace(/^<h1[^>]*>[\s\S]*?<\/h1>\n?/, "") }} />
       </div>
     </div>
   );

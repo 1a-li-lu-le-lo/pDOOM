@@ -8,7 +8,7 @@ import { IconArray } from "@/components/charts/IconArray";
 import { EstimateCard } from "@/components/meter/EstimateCard";
 import { ShareLink } from "@/components/share/ShareLink";
 import { DEFAULT_HORIZON, getRelease, headline, isValidHorizon, researchEstimate } from "@/lib/data";
-import { horizonLabel, outcomeSetLabel } from "@/lib/format";
+import { horizonLabel, outcomeSetLabel, tidyInterval } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Compare",
@@ -82,7 +82,7 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
               <div key={e.estimate_id} className="stack" style={{ gap: "var(--s-1)" }}>
                 <div className="eyebrow">{horizonLabel(e.horizon)}</div>
                 <IconArray p={e.quantiles!.p50} high={e.quantiles!.p95} cells={100} label={`Research-mode p(DOOM), ${horizonLabel(e.horizon)}`} colorVar="var(--c-disagreement)" />
-                <div className="cite">median {e.display.central} · interval {e.display.interval}</div>
+                <div className="cite">median {e.display.central} · interval {tidyInterval(e.display.interval)}</div>
               </div>
             ))}
           </div>

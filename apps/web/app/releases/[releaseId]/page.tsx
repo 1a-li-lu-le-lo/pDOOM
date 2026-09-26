@@ -134,7 +134,7 @@ export default async function ReleasePage({ params }: { params: Promise<{ releas
             ))}
           </div>
         </section>
-        <article className="prose card" dangerouslySetInnerHTML={{ __html: card.html }} />
+        <article className="prose card" aria-label="Model card" dangerouslySetInnerHTML={{ __html: card.html.replace(/^<h1[^>]*>[\s\S]*?<\/h1>\n?/, "") }} />
         <div className="row no-print">
           <Link className="btn" href={`/api/export/release.json?release=${m.release_id}`}>
             Download this release (JSON)

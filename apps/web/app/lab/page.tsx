@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { PageHeader } from "@/components/shell/PageHeader";
 import { ScenarioLab } from "@/components/lab/ScenarioLab";
 import { getRelease, getSnapshot, researchEstimate } from "@/lib/data";
+import { tidyInterval } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Scenario Lab",
@@ -17,7 +18,7 @@ export default async function LabPage() {
   const baseline = Object.fromEntries(
     Object.keys(spec.horizons).map((h) => {
       const e = researchEstimate(rel, "P_DOOM", h);
-      return [h, e?.quantiles ? { p05: e.quantiles.p05, p50: e.quantiles.p50, p95: e.quantiles.p95, display: e.display.central, interval: e.display.interval } : null];
+      return [h, e?.quantiles ? { p05: e.quantiles.p05, p50: e.quantiles.p50, p95: e.quantiles.p95, display: e.display.central, interval: tidyInterval(e.display.interval) } : null];
     }),
   );
   return (

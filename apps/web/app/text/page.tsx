@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { BRAND, BRAND_EXPANDED, OUTCOMES, PUBLIC_LABEL } from "@pdoom/schemas";
 import { getDataSource, getRelease, getSnapshot, headline, indexById, researchEstimate } from "@/lib/data";
-import { STATUS_LABEL, fmtDate, horizonLabel, outcomeSetLabel, titleCase } from "@/lib/format";
+import { STATUS_LABEL, fmtDate, horizonLabel, outcomeSetLabel, tidyInterval, titleCase } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Plain text", description: `${BRAND} in plain text: every substantive fact of the observatory without graphics or scripts.` };
 
@@ -114,12 +114,12 @@ export default async function TextPage() {
         <ul>
           {research ? (
             <li>
-              <strong>{STATUS_LABEL[research.status]}</strong>, {outcomeSetLabel(research.outcome_set)}, {horizonLabel(research.horizon)}: median {research.display.central}, plausible interval {research.display.interval} (rounded to {research.rounding_rule.replace("nearest_", "nearest ")} points). {research.display.note}
+              <strong>{STATUS_LABEL[research.status]}</strong>, {outcomeSetLabel(research.outcome_set)}, {horizonLabel(research.horizon)}: median {research.display.central}, plausible interval {tidyInterval(research.display.interval)} (rounded to {research.rounding_rule.replace("nearest_", "nearest ")} points). {research.display.note}
             </li>
           ) : null}
           {h.external.map((e) => (
             <li key={e.estimate_id}>
-              <strong>{STATUS_LABEL[e.status]}</strong> ({e.group_id}), {outcomeSetLabel(e.outcome_set)}, {horizonLabel(e.horizon)}: median {e.display.central}, member range {e.display.interval}, {e.disagreement} disagreement, {e.source_coverage.forecast_count} forecasts from {e.source_coverage.population_count} populations.
+              <strong>{STATUS_LABEL[e.status]}</strong> ({e.group_id}), {outcomeSetLabel(e.outcome_set)}, {horizonLabel(e.horizon)}: median {e.display.central}, member range {tidyInterval(e.display.interval)}, {e.disagreement} disagreement, {e.source_coverage.forecast_count} forecasts from {e.source_coverage.population_count} populations.
               {cite(e.source_coverage.source_ids)}
             </li>
           ))}
@@ -172,7 +172,7 @@ export default async function TextPage() {
                 <tr key={hz}>
                   <td>{horizonLabel(hz)}</td>
                   <td className="num">{e.display.central}</td>
-                  <td className="num">{e.display.interval}</td>
+                  <td className="num">{tidyInterval(e.display.interval)}</td>
                 </tr>
               ) : null;
             })}
@@ -220,7 +220,7 @@ export default async function TextPage() {
                 <tr key={k}>
                   <td>{outcomeSetLabel(e.outcome_set)}</td>
                   <td className="num">{e.display.central}</td>
-                  <td className="num">{e.display.interval}</td>
+                  <td className="num">{tidyInterval(e.display.interval)}</td>
                 </tr>
               ) : null;
             })}

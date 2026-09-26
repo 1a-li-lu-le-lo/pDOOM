@@ -5,7 +5,7 @@
 import { ImageResponse } from "next/og";
 import { BRAND, PUBLIC_LABEL, TAGLINES } from "@pdoom/schemas";
 import { DEFAULT_HORIZON, getRelease, headline, indexById, researchEstimate } from "@/lib/data";
-import { horizonLabel } from "@/lib/format";
+import { horizonLabel, tidyInterval } from "@/lib/format";
 
 export const alt = `${BRAND} — ${PUBLIC_LABEL}`;
 export const size = { width: 1200, height: 630 };
@@ -28,7 +28,7 @@ export default async function Image() {
     const h = headline(rel);
     official = h.official.find((e) => e.horizon === DEFAULT_HORIZON)?.display.central ?? official;
     const r = researchEstimate(rel, "P_DOOM", DEFAULT_HORIZON);
-    interval = r ? `Research-mode model, ${horizonLabel(DEFAULT_HORIZON)}: median ${r.display.central}, plausible interval ${r.display.interval}` : "";
+    interval = r ? `Research-mode model, ${horizonLabel(DEFAULT_HORIZON)}: median ${r.display.central}, plausible interval ${tidyInterval(r.display.interval)}` : "";
     const u = indexById(rel, "uncertainty");
     unc = u?.value != null ? `Uncertainty ${Math.round(u.value)} / 100` : "";
     releaseId = rel.manifest.release_id;

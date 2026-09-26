@@ -18,7 +18,7 @@ export default defineConfig({
     launchOptions: { executablePath: process.env.PDOOM_CHROMIUM ?? "/opt/pw-browsers/chromium" },
   },
   webServer: {
-    command: `pnpm --filter @pdoom/web start -- -p ${PORT}`,
+    command: `pnpm --filter @pdoom/web exec next start -p ${PORT}`,
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

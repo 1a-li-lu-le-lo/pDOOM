@@ -33,7 +33,7 @@ export function NodeGraph({ nodes, edges, title, description }: { nodes: GraphNo
   const byId = new Map(nodes.map((n) => [n.id, n]));
   return (
     <figure>
-      <svg className="chart node-graph" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}: ${nodes.length} nodes and ${edges.length} relations; see the table below`}>
+      <svg className="chart node-graph" viewBox={`0 0 ${W} ${H}`} role="group" aria-label={`${title}: ${nodes.length} nodes and ${edges.length} relations; each node links to its page and the table below lists every relation`}>
         <defs>
           <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
             <path d="M0,0 L10,5 L0,10 z" fill="var(--c-text-3)" />

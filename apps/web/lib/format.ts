@@ -60,3 +60,15 @@ export function uncertaintyBadge(label: UncertaintyLabelValue | null | undefined
   const cls = label === "low" || label === "moderate" ? badgeClass("evidence") : badgeClass("uncertainty");
   return { cls, text: `${label} uncertainty` };
 }
+
+/**
+ * Display-only normalisation of a release interval string. When both ends round
+ * to the same displayed value the model card shows a single value; the "<1%"
+ * guard can still produce "<1%–<1%", which reads as a range that is not one.
+ * The underlying quantiles are untouched and remain in the data table.
+ */
+export function tidyInterval(interval: string): string {
+  const m = interval.match(/^(.+?)–(.+)$/);
+  if (m && m[1] === m[2]) return m[1]!;
+  return interval;
+}

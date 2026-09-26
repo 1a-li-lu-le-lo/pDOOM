@@ -8,7 +8,8 @@ for (const route of ROUTES) {
     const res = await page.goto(route);
     expect(res?.status()).toBe(200);
     await expect(page.locator("h1")).toHaveCount(1);
-    await expect(page.locator("main a[href^='/text']").first()).toBeVisible();
+    if (route === "/text") await expect(page.locator("main a[href='/']").first()).toBeVisible();
+    else await expect(page.locator("main a[href^='/text']").first()).toBeVisible();
     await expect(page.locator("header .brand")).toContainText("p(DOOM)");
     // The footer says which release the page was rendered from.
     await expect(page.locator("footer")).toContainText(/Release rel-\d{4}-\d{2}-\d{2}-\d{3}/);

@@ -1,0 +1,24 @@
+/* Copyright NU Cybernetics. p(DOOM) — research prototype. */
+/* WCAG 2.2 target size (2.5.8): every inline link that is not in a sentence gets a 24px target. */
+.toc a,
+.doc-toc a,
+.card ul.cite a,
+.driver-list a,
+.kv dd a,
+.site-footer a {
+  display: inline-block;
+  min-height: 24px;
+  line-height: 24px;
+  padding: 0 2px;
+}
+.cite a {
+  display: inline-block;
+  min-height: 24px;
+  line-height: 24px;
+}
+td a,
+th a {
+  display: inline-block;
+  min-height: 24px;
+  line-height: 24px;
+}

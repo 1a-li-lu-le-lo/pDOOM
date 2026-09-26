@@ -3,10 +3,15 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { BRAND, PUBLIC_LABEL, TAGLINES } from "@pdoom/schemas";
 import "./globals.css";
+import "./a11y.css";
 import { ModeProvider } from "@/components/mode/ModeProvider";
 import { Header } from "@/components/shell/Header";
 import { Footer } from "@/components/shell/Footer";
 import { getRelease } from "@/lib/data";
+
+// Every page is rendered per request so a promotion or rollback of
+// data/releases/CURRENT is served within the SDK's refresh window, without a rebuild.
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.PDOOM_PUBLIC_URL ?? "http://localhost:3000"),

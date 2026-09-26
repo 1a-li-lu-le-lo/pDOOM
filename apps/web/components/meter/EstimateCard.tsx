@@ -1,7 +1,7 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
 import type { Estimate } from "@pdoom/schemas";
 import { QuantileStrip } from "../charts/QuantileStrip";
-import { STATUS_LABEL, badgeClass, fmtDate, horizonLabel, outcomeSetLabel, uncertaintyBadge } from "@/lib/format";
+import { STATUS_LABEL, badgeClass, fmtDate, horizonLabel, outcomeSetLabel, tidyInterval, uncertaintyBadge } from "@/lib/format";
 
 const STATUS_COLOR: Record<string, string> = {
   external_aggregate: "var(--c-evidence)",
@@ -31,7 +31,7 @@ export function EstimateCard({ e, compact = false, hideStrip = false }: { e: Est
       <div className="value" style={{ color: STATUS_COLOR[e.status], fontSize: withheld ? "var(--fs-xl)" : undefined }}>
         {e.display.central}
       </div>
-      {q && !withheld ? <div className="interval">plausible interval {e.display.interval} · rounded to {e.rounding_rule.replace("nearest_", "nearest ")} points</div> : null}
+      {q && !withheld ? <div className="interval">plausible interval {tidyInterval(e.display.interval)} · rounded to {e.rounding_rule.replace("nearest_", "nearest ")} points</div> : null}
       {q && !withheld && !hideStrip ? (
         <QuantileStrip p05={q.p05} p25={q.p25} p50={q.p50} p75={q.p75} p95={q.p95} label={`${outcomeSetLabel(e.outcome_set)}, ${horizonLabel(e.horizon)}`} description={e.display.note} colorVar={STATUS_COLOR[e.status]} compact={compact} />
       ) : (
