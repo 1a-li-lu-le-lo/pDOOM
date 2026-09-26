@@ -1,0 +1,105 @@
+{
+  "$id": "urn:pdoom:schema:user_scenario_params:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Scenario Lab input: horizon plus ten integer sliders in -2..2",
+  "properties": {
+    "horizon": {
+      "enum": [
+        "2100",
+        "1y",
+        "3y",
+        "5y",
+        "10y",
+        "25y",
+        "eventual"
+      ],
+      "type": "string"
+    },
+    "capability_timeline": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "autonomy_growth": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "access_level": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "safety_progress": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "governance_strength": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "model_security": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "open_weight_diffusion": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "international_coordination": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "incident_frequency": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "resilience": {
+      "description": "Integer slider, -2..2",
+      "maximum": 2,
+      "minimum": -2,
+      "type": "integer"
+    },
+    "samples": {
+      "maximum": 50000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "seed": {
+      "maximum": 4294967295,
+      "minimum": 0,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "horizon",
+    "capability_timeline",
+    "autonomy_growth",
+    "access_level",
+    "safety_progress",
+    "governance_strength",
+    "model_security",
+    "open_weight_diffusion",
+    "international_coordination",
+    "incident_frequency",
+    "resilience"
+  ],
+  "title": "p(DOOM) User Scenario Params",
+  "type": "object"
+}

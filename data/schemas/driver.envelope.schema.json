@@ -1,0 +1,107 @@
+{
+  "$id": "urn:pdoom:schema:driver.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "driver",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "Driver family (D1..D10) and its tracked signals",
+        "properties": {
+          "id": {
+            "description": "driver_family id, e.g. D5",
+            "pattern": "^D(?:[1-9]|10)$",
+            "type": "string"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "signals": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "signal_id": {
+                  "description": "signal id, e.g. D1.task_horizon_50pct",
+                  "pattern": "^D(?:[1-9]|10)\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "name": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "direction": {
+                  "enum": [
+                    "higher_raises_pressure",
+                    "higher_strengthens_control"
+                  ],
+                  "type": "string"
+                },
+                "normalization": {
+                  "description": "How the raw value maps to 0..1",
+                  "type": "string"
+                },
+                "raw_unit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "preferred_source_types": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "observation_vs_judgment": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "signal_id",
+                "name",
+                "description",
+                "direction",
+                "normalization",
+                "raw_unit",
+                "preferred_source_types",
+                "observation_vs_judgment"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "signals"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Driver file",
+  "type": "object"
+}

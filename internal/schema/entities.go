@@ -1,4 +1,4 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 
 package schema
 
@@ -171,7 +171,7 @@ type Benchmark struct {
 	Unit              string             `json:"unit"`
 	Direction         BenchmarkDirection `json:"direction"`
 	Limitations       string             `json:"limitations"`
-	PDUMRelevance     Relevance          `json:"pdum_relevance"`
+	PDoomRelevance    Relevance          `json:"pdoom_relevance"`
 	WeightNote        *string            `json:"weight_note"`
 	SourceIDs         []string           `json:"source_ids"`
 	Review
@@ -217,7 +217,7 @@ type Incident struct {
 	Cause           []IncidentCause `json:"cause"`
 	Harm            []Harm          `json:"harm"`
 	Severity        Severity        `json:"severity"`
-	PDUMRelevance   Relevance       `json:"pdum_relevance"`
+	PDoomRelevance  Relevance       `json:"pdoom_relevance"`
 	EvidenceLevel   EvidenceLevel   `json:"evidence_level"`
 	SystemsInvolved []string        `json:"systems_involved"`
 	Jurisdiction    *string         `json:"jurisdiction"`
@@ -230,28 +230,28 @@ type Incident struct {
 
 // Scenario is a category-level pathway description (Appendix A: scenario).
 type Scenario struct {
-	ID                    string            `json:"id"`
-	Name                  string            `json:"name"`
-	OutcomeSet            []Outcome         `json:"outcome_set"`
-	Description           string            `json:"description"`
-	Prerequisites         []string          `json:"prerequisites"`
-	EarlyIndicators       []string          `json:"early_indicators"`
-	Counterindicators     []string          `json:"counterindicators"`
-	CapabilityThresholds  []string          `json:"capability_thresholds"`
-	Exposure              string            `json:"exposure"`
-	ControlFailures       []string          `json:"control_failures"`
-	HumanContributions    []string          `json:"human_contributions"`
-	AIContributions       []string          `json:"ai_contributions"`
-	Dependencies          []string          `json:"dependencies"`
-	TimeHorizonNote       string            `json:"time_horizon_note"`
-	ProbabilitySource     ProbabilitySource `json:"probability_source"`
-	Uncertainty           UncertaintyLabel  `json:"uncertainty"`
-	InterventionIDs       []string          `json:"intervention_ids"`
-	Recoverability        Recoverability    `json:"recoverability"`
-	EvidenceSummary       string            `json:"evidence_summary"`
-	SourceIDs             []string          `json:"source_ids"`
-	OpenQuestions         []string          `json:"open_questions"`
-	ContentSafetyNote     *string           `json:"content_safety_note"`
+	ID                   string            `json:"id"`
+	Name                 string            `json:"name"`
+	OutcomeSet           []Outcome         `json:"outcome_set"`
+	Description          string            `json:"description"`
+	Prerequisites        []string          `json:"prerequisites"`
+	EarlyIndicators      []string          `json:"early_indicators"`
+	Counterindicators    []string          `json:"counterindicators"`
+	CapabilityThresholds []string          `json:"capability_thresholds"`
+	Exposure             string            `json:"exposure"`
+	ControlFailures      []string          `json:"control_failures"`
+	HumanContributions   []string          `json:"human_contributions"`
+	AIContributions      []string          `json:"ai_contributions"`
+	Dependencies         []string          `json:"dependencies"`
+	TimeHorizonNote      string            `json:"time_horizon_note"`
+	ProbabilitySource    ProbabilitySource `json:"probability_source"`
+	Uncertainty          UncertaintyLabel  `json:"uncertainty"`
+	InterventionIDs      []string          `json:"intervention_ids"`
+	Recoverability       Recoverability    `json:"recoverability"`
+	EvidenceSummary      string            `json:"evidence_summary"`
+	SourceIDs            []string          `json:"source_ids"`
+	OpenQuestions        []string          `json:"open_questions"`
+	ContentSafetyNote    *string           `json:"content_safety_note"`
 	Review
 }
 
@@ -268,14 +268,14 @@ type ScenarioEdge struct {
 
 // Signal is one observable signal of a driver family.
 type Signal struct {
-	SignalID               string          `json:"signal_id"`
-	Name                   string          `json:"name"`
-	Description            string          `json:"description"`
-	Direction              SignalDirection `json:"direction"`
-	Normalization          string          `json:"normalization"`
-	RawUnit                *string         `json:"raw_unit"`
-	PreferredSourceTypes   []string        `json:"preferred_source_types"`
-	ObservationVsJudgment  string          `json:"observation_vs_judgment"`
+	SignalID              string          `json:"signal_id"`
+	Name                  string          `json:"name"`
+	Description           string          `json:"description"`
+	Direction             SignalDirection `json:"direction"`
+	Normalization         string          `json:"normalization"`
+	RawUnit               *string         `json:"raw_unit"`
+	PreferredSourceTypes  []string        `json:"preferred_source_types"`
+	ObservationVsJudgment string          `json:"observation_vs_judgment"`
 }
 
 // Driver is a driver family D1..D10 with its signals (Appendix A: driver).
@@ -424,11 +424,11 @@ type IndexWeights struct {
 
 // IncidentScoring holds the incident pressure constants.
 type IncidentScoring struct {
-	SeverityWeights       map[string]float64 `json:"severity_weights"`
-	RelevanceWeights      map[string]float64 `json:"relevance_weights"`
-	EvidenceWeights       map[string]float64 `json:"evidence_weights"`
-	RecencyHalfLifeDays   int                `json:"recency_half_life_days"`
-	SquashK               float64            `json:"squash_k"`
+	SeverityWeights     map[string]float64 `json:"severity_weights"`
+	RelevanceWeights    map[string]float64 `json:"relevance_weights"`
+	EvidenceWeights     map[string]float64 `json:"evidence_weights"`
+	RecencyHalfLifeDays int                `json:"recency_half_life_days"`
+	SquashK             float64            `json:"squash_k"`
 }
 
 // EditorialRule maps a condition to an editorial risk level; first match wins.

@@ -1,0 +1,232 @@
+{
+  "$id": "urn:pdoom:schema:scenario:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Category-level pathway scenario (S1..S18)",
+  "properties": {
+    "id": {
+      "description": "scenario id, e.g. S3",
+      "pattern": "^S(?:[1-9]|1[0-8])$",
+      "type": "string"
+    },
+    "name": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "outcome_set": {
+      "items": {
+        "enum": [
+          "O0",
+          "O1",
+          "O2",
+          "O3",
+          "O4",
+          "O5",
+          "O6",
+          "O7",
+          "O8"
+        ],
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "description": {
+      "type": "string"
+    },
+    "prerequisites": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "early_indicators": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "counterindicators": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "capability_thresholds": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "exposure": {
+      "type": "string"
+    },
+    "control_failures": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "human_contributions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "ai_contributions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "dependencies": {
+      "items": {
+        "description": "scenario id, e.g. S3",
+        "pattern": "^S(?:[1-9]|1[0-8])$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "time_horizon_note": {
+      "type": "string"
+    },
+    "probability_source": {
+      "enum": [
+        "not_assigned",
+        "external_forecast",
+        "experimental_model",
+        "expert_elicitation"
+      ],
+      "type": "string"
+    },
+    "uncertainty": {
+      "enum": [
+        "low",
+        "moderate",
+        "high",
+        "extreme"
+      ],
+      "type": "string"
+    },
+    "intervention_ids": {
+      "items": {
+        "description": "intervention id, e.g. I04",
+        "pattern": "^I\\d{2,}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "recoverability": {
+      "enum": [
+        "high",
+        "moderate",
+        "low",
+        "none",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "evidence_summary": {
+      "type": "string"
+    },
+    "source_ids": {
+      "items": {
+        "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+        "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "open_questions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "content_safety_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verification": {
+      "additionalProperties": false,
+      "description": "Verification record: how and when the item was checked against its canonical source",
+      "properties": {
+        "status": {
+          "enum": [
+            "verified_fetch",
+            "verified_search",
+            "verified_prior_knowledge",
+            "unverified"
+          ],
+          "type": "string"
+        },
+        "checked_at": {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "checked_at",
+        "method",
+        "note"
+      ],
+      "type": "object"
+    },
+    "human_review_status": {
+      "enum": [
+        "pending",
+        "reviewed",
+        "disputed"
+      ],
+      "type": "string"
+    },
+    "model_use_status": {
+      "enum": [
+        "excluded",
+        "informational",
+        "eligible",
+        "used"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "outcome_set",
+    "description",
+    "prerequisites",
+    "early_indicators",
+    "counterindicators",
+    "capability_thresholds",
+    "exposure",
+    "control_failures",
+    "human_contributions",
+    "ai_contributions",
+    "dependencies",
+    "time_horizon_note",
+    "probability_source",
+    "uncertainty",
+    "intervention_ids",
+    "recoverability",
+    "evidence_summary",
+    "source_ids",
+    "open_questions",
+    "content_safety_note",
+    "verification",
+    "human_review_status",
+    "model_use_status"
+  ],
+  "title": "p(DOOM) Scenario",
+  "type": "object"
+}

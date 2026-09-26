@@ -1,0 +1,231 @@
+{
+  "kind": "schema_index",
+  "schema_version": 1,
+  "schemas": [
+    {
+      "container": "envelope",
+      "envelope_schema": "definition.envelope.schema.json",
+      "file": "definitions.json",
+      "item_schema": "definition.schema.json",
+      "kind": "definition",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "source.envelope.schema.json",
+      "file": "sources.json",
+      "item_schema": "source.schema.json",
+      "kind": "source",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "claim.envelope.schema.json",
+      "file": "claims.json",
+      "item_schema": "claim.schema.json",
+      "kind": "claim",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "forecast.envelope.schema.json",
+      "file": "forecasts.json",
+      "item_schema": "forecast.schema.json",
+      "kind": "forecast",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "benchmark.envelope.schema.json",
+      "file": "benchmarks.json",
+      "item_schema": "benchmark.schema.json",
+      "kind": "benchmark",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "benchmark_result.envelope.schema.json",
+      "file": "benchmark_results.json",
+      "item_schema": "benchmark_result.schema.json",
+      "kind": "benchmark_result",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "incident.envelope.schema.json",
+      "file": "incidents.json",
+      "item_schema": "incident.schema.json",
+      "kind": "incident",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "scenario.envelope.schema.json",
+      "file": "scenarios.json",
+      "item_schema": "scenario.schema.json",
+      "kind": "scenario",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "scenario_edge.envelope.schema.json",
+      "file": "scenario_edges.json",
+      "item_schema": "scenario_edge.schema.json",
+      "kind": "scenario_edge",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "driver.envelope.schema.json",
+      "file": "drivers.json",
+      "item_schema": "driver.schema.json",
+      "kind": "driver",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "driver_observation.envelope.schema.json",
+      "file": "driver_observations.json",
+      "item_schema": "driver_observation.schema.json",
+      "kind": "driver_observation",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "intervention.envelope.schema.json",
+      "file": "interventions.json",
+      "item_schema": "intervention.schema.json",
+      "kind": "intervention",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "organization.envelope.schema.json",
+      "file": "organizations.json",
+      "item_schema": "organization.schema.json",
+      "kind": "organization",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "action.envelope.schema.json",
+      "file": "actions.json",
+      "item_schema": "action.schema.json",
+      "kind": "action",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "model_spec.envelope.schema.json",
+      "file": "model_spec.json",
+      "item_schema": "model_spec.schema.json",
+      "kind": "model_spec",
+      "location": "snapshot"
+    },
+    {
+      "container": "object",
+      "envelope_schema": null,
+      "file": "manifest.json",
+      "item_schema": "snapshot_manifest.schema.json",
+      "kind": "snapshot_manifest",
+      "location": "snapshot"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "estimate.envelope.schema.json",
+      "file": "estimates.json",
+      "item_schema": "estimate.schema.json",
+      "kind": "estimate",
+      "location": "release"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "index_value.envelope.schema.json",
+      "file": "indexes.json",
+      "item_schema": "index_value.schema.json",
+      "kind": "index_value",
+      "location": "release"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "aggregation.envelope.schema.json",
+      "file": "aggregations.json",
+      "item_schema": "aggregation.schema.json",
+      "kind": "aggregation",
+      "location": "release"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "sensitivity_run.envelope.schema.json",
+      "file": "sensitivity.json",
+      "item_schema": "sensitivity_run.schema.json",
+      "kind": "sensitivity_run",
+      "location": "release"
+    },
+    {
+      "container": "envelope",
+      "envelope_schema": "drivers_explained.envelope.schema.json",
+      "file": "drivers_explained.json",
+      "item_schema": "drivers_explained.schema.json",
+      "kind": "drivers_explained",
+      "location": "release"
+    },
+    {
+      "container": "object",
+      "envelope_schema": null,
+      "file": "delta.json",
+      "item_schema": "delta_record.schema.json",
+      "kind": "delta_record",
+      "location": "release"
+    },
+    {
+      "container": "object",
+      "envelope_schema": null,
+      "file": "manifest.json",
+      "item_schema": "release_manifest.schema.json",
+      "kind": "release_manifest",
+      "location": "release"
+    },
+    {
+      "container": "array",
+      "envelope_schema": null,
+      "file": "approvals.json",
+      "item_schema": "approval.schema.json",
+      "kind": "approval",
+      "location": "release"
+    },
+    {
+      "container": "jsonl",
+      "envelope_schema": null,
+      "file": "submissions.jsonl",
+      "item_schema": "submission.schema.json",
+      "kind": "submission",
+      "location": "review_queue"
+    },
+    {
+      "container": "none",
+      "envelope_schema": null,
+      "file": null,
+      "item_schema": "cassandra_finding.schema.json",
+      "kind": "cassandra_finding",
+      "location": "runtime"
+    },
+    {
+      "container": "none",
+      "envelope_schema": null,
+      "file": null,
+      "item_schema": "user_scenario_params.schema.json",
+      "kind": "user_scenario_params",
+      "location": "runtime"
+    },
+    {
+      "container": "none",
+      "envelope_schema": null,
+      "file": null,
+      "item_schema": "user_scenario_result.schema.json",
+      "kind": "user_scenario_result",
+      "location": "runtime"
+    }
+  ],
+  "target": "draft-2020-12"
+}

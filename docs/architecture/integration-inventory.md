@@ -1,4 +1,4 @@
-<!-- Copyright NU Cybernetics. PDUM — research prototype. -->
+<!-- Copyright NU Cybernetics. p(DOOM) — research prototype. -->
 # Integration inventory (Phase 0 — repository discovery)
 
 Date: 2026-09-26. Branch: `claude/pdum-risk-observatory-yq0pve`.

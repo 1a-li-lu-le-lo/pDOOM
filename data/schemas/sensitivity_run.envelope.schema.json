@@ -1,0 +1,87 @@
+{
+  "$id": "urn:pdoom:schema:sensitivity_run.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "sensitivity_run",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "One perturbation of the model and its effect on a target estimate",
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "leave_one_source_out",
+              "leave_one_survey_out",
+              "alternative_weighting",
+              "alternative_prior",
+              "alternative_dependency",
+              "optimistic_safeguards",
+              "pessimistic_safeguards",
+              "slower_capability",
+              "faster_capability",
+              "lower_exposure",
+              "higher_exposure"
+            ],
+            "type": "string"
+          },
+          "target_estimate_id": {
+            "description": "estimate id, e.g. est-external-O6-2100",
+            "pattern": "^est-[A-Za-z0-9_+-]+$",
+            "type": "string"
+          },
+          "baseline_p50": {
+            "description": "Probability in [0, 1]",
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "perturbed_p50": {
+            "description": "Probability in [0, 1]",
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "delta": {
+            "description": "perturbed_p50 - baseline_p50",
+            "maximum": 1,
+            "minimum": -1,
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "target_estimate_id",
+          "baseline_p50",
+          "perturbed_p50",
+          "delta",
+          "description"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Sensitivity Run file",
+  "type": "object"
+}

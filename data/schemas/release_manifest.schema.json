@@ -1,0 +1,637 @@
+{
+  "$id": "urn:pdoom:schema:release_manifest:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "MODEL RELEASE ARTIFACT manifest",
+  "properties": {
+    "release_id": {
+      "description": "release id, e.g. rel-2026-09-26-001",
+      "pattern": "^rel-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
+      "type": "string"
+    },
+    "model_versions": {
+      "items": {
+        "description": "model_version id, e.g. pdoom-model/external-aggregate@0.1.0",
+        "pattern": "^pdoom-model\\/[a-z0-9]+(?:-[a-z0-9]+)*@\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "code_commit": {
+      "pattern": "^[a-f0-9]{7,40}$",
+      "type": "string"
+    },
+    "data_snapshot": {
+      "description": "snapshot id, e.g. snap-2026-09-26-001",
+      "pattern": "^snap-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
+      "type": "string"
+    },
+    "source_cutoff": {
+      "description": "Calendar date, YYYY-MM-DD",
+      "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+      "type": "string"
+    },
+    "outcome_definition": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "outcome_set": {
+          "items": {
+            "enum": [
+              "O0",
+              "O1",
+              "O2",
+              "O3",
+              "O4",
+              "O5",
+              "O6",
+              "O7",
+              "O8"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "text": {
+          "type": "string"
+        },
+        "definition_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "label",
+        "outcome_set",
+        "text",
+        "definition_ids"
+      ],
+      "type": "object"
+    },
+    "horizons": {
+      "items": {
+        "enum": [
+          "2100",
+          "1y",
+          "3y",
+          "5y",
+          "10y",
+          "25y",
+          "eventual"
+        ],
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "priors": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "model_spec_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "experimental_causal_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "method_ref": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "model_spec_id",
+        "experimental_causal_version",
+        "method_ref"
+      ],
+      "type": "object"
+    },
+    "weights": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "tier_multipliers": {
+          "additionalProperties": false,
+          "properties": {
+            "1": {
+              "description": "Value in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "2": {
+              "description": "Value in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "3": {
+              "description": "Value in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "4": {
+              "description": "Value in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "5": {
+              "description": "Value in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "object"
+        },
+        "weight_bounds": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        },
+        "method_ref": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "tier_multipliers",
+        "weight_bounds",
+        "method_ref"
+      ],
+      "type": "object"
+    },
+    "dependencies": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "common_factor_loading": {
+          "anyOf": [
+            {
+              "description": "Value in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "method_ref": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "description",
+        "common_factor_loading",
+        "method_ref"
+      ],
+      "type": "object"
+    },
+    "estimates_summary": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "estimate_id": {
+            "description": "estimate id, e.g. est-external-O6-2100",
+            "pattern": "^est-[A-Za-z0-9_+-]+$",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "official",
+              "insufficiently_calibrated",
+              "external_aggregate",
+              "research_mode",
+              "user_scenario"
+            ],
+            "type": "string"
+          },
+          "outcome_set": {
+            "items": {
+              "enum": [
+                "O0",
+                "O1",
+                "O2",
+                "O3",
+                "O4",
+                "O5",
+                "O6",
+                "O7",
+                "O8"
+              ],
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "horizon": {
+            "enum": [
+              "2100",
+              "1y",
+              "3y",
+              "5y",
+              "10y",
+              "25y",
+              "eventual"
+            ],
+            "type": "string"
+          },
+          "p50": {
+            "anyOf": [
+              {
+                "description": "Probability in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "display_central": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "estimate_id",
+          "status",
+          "outcome_set",
+          "horizon",
+          "p50",
+          "display_central"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "intervals_summary": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "estimate_id": {
+            "description": "estimate id, e.g. est-external-O6-2100",
+            "pattern": "^est-[A-Za-z0-9_+-]+$",
+            "type": "string"
+          },
+          "p05": {
+            "anyOf": [
+              {
+                "description": "Probability in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "p95": {
+            "anyOf": [
+              {
+                "description": "Probability in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "display_interval": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "uncertainty": {
+            "enum": [
+              "low",
+              "moderate",
+              "high",
+              "extreme"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "estimate_id",
+          "p05",
+          "p95",
+          "display_interval",
+          "uncertainty"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "sensitivity_summary": {
+      "additionalProperties": false,
+      "properties": {
+        "run_count": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "max_abs_delta": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "most_sensitive_kind": {
+          "anyOf": [
+            {
+              "enum": [
+                "leave_one_source_out",
+                "leave_one_survey_out",
+                "alternative_weighting",
+                "alternative_prior",
+                "alternative_dependency",
+                "optimistic_safeguards",
+                "pessimistic_safeguards",
+                "slower_capability",
+                "faster_capability",
+                "lower_exposure",
+                "higher_exposure"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "run_count",
+        "max_abs_delta",
+        "most_sensitive_kind",
+        "note"
+      ],
+      "type": "object"
+    },
+    "external_forecasts_summary": {
+      "additionalProperties": false,
+      "properties": {
+        "forecast_count": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "group_count": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "population_count": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source_count": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "forecast_count",
+        "group_count",
+        "population_count",
+        "source_count",
+        "note"
+      ],
+      "type": "object"
+    },
+    "changes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "reviewers": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "reviewer_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "conflicts_declared": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "reviewer_id",
+          "role",
+          "conflicts_declared"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "approval": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "approved",
+            "rejected"
+          ],
+          "type": "string"
+        },
+        "required_approvals": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "received_approvals": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "approved_at": {
+          "anyOf": [
+            {
+              "description": "ISO 8601 timestamp in UTC (…Z)",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "required_approvals",
+        "received_approvals",
+        "approved_at"
+      ],
+      "type": "object"
+    },
+    "known_limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "reproduction_command": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "signature": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "algorithm": {
+              "const": "ed25519",
+              "type": "string"
+            },
+            "key_id": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "signed_at": {
+              "description": "ISO 8601 timestamp in UTC (…Z)",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
+              "type": "string"
+            },
+            "signature_base64": {
+              "pattern": "^[A-Za-z0-9+/]+={0,2}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "algorithm",
+            "key_id",
+            "signed_at",
+            "signature_base64"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "published": {
+      "anyOf": [
+        {
+          "description": "ISO 8601 timestamp in UTC (…Z)",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "superseded": {
+      "anyOf": [
+        {
+          "description": "release id, e.g. rel-2026-09-26-001",
+          "pattern": "^rel-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "release_id",
+    "model_versions",
+    "code_commit",
+    "data_snapshot",
+    "source_cutoff",
+    "outcome_definition",
+    "horizons",
+    "priors",
+    "weights",
+    "dependencies",
+    "estimates_summary",
+    "intervals_summary",
+    "sensitivity_summary",
+    "external_forecasts_summary",
+    "changes",
+    "reviewers",
+    "approval",
+    "known_limitations",
+    "reproduction_command",
+    "signature",
+    "published",
+    "superseded"
+  ],
+  "title": "p(DOOM) Release Manifest",
+  "type": "object"
+}

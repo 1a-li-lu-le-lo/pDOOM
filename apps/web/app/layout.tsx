@@ -1,7 +1,7 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 import type { ReactNode } from "react";
 
-export const metadata = { title: "PDUM", description: "AI Existential and Civilizational Risk Observatory" };
+export const metadata = { title: "P_DOOM", description: "AI Existential and Civilizational Risk Observatory" };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

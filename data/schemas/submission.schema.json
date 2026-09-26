@@ -1,0 +1,51 @@
+{
+  "$id": "urn:pdoom:schema:submission:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Public submission appended to the review queue; never changes published data",
+  "properties": {
+    "id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "source",
+        "correction",
+        "incident_reference"
+      ],
+      "type": "string"
+    },
+    "submitted_at": {
+      "description": "ISO 8601 timestamp in UTC (…Z)",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
+      "type": "string"
+    },
+    "payload": {
+      "additionalProperties": {},
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "received"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "kind",
+    "submitted_at",
+    "payload",
+    "status"
+  ],
+  "title": "p(DOOM) Submission",
+  "type": "object"
+}

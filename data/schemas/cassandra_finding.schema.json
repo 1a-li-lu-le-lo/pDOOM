@@ -1,0 +1,66 @@
+{
+  "$id": "urn:pdoom:schema:cassandra_finding:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Adversarial review finding",
+  "properties": {
+    "finding_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "critical",
+        "high",
+        "medium",
+        "low"
+      ],
+      "type": "string"
+    },
+    "component": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "claim": {
+      "type": "string"
+    },
+    "assumption": {
+      "type": "string"
+    },
+    "counterevidence": {
+      "type": "string"
+    },
+    "reproduction": {
+      "type": "string"
+    },
+    "impact": {
+      "type": "string"
+    },
+    "recommendation": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "open",
+        "resolved",
+        "accepted_risk",
+        "disputed"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "finding_id",
+    "severity",
+    "component",
+    "claim",
+    "assumption",
+    "counterevidence",
+    "reproduction",
+    "impact",
+    "recommendation",
+    "status"
+  ],
+  "title": "p(DOOM) Cassandra Finding",
+  "type": "object"
+}

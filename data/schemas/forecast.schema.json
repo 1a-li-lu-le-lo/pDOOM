@@ -1,0 +1,311 @@
+{
+  "$id": "urn:pdoom:schema:forecast:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Forecast record with original wording, outcome set, horizon and conditioning",
+  "properties": {
+    "id": {
+      "description": "forecast id, e.g. fc-xpt-2022-superforecasters-ai-extinction-2100",
+      "pattern": "^fc-[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "forecaster_or_survey": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_id": {
+      "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+      "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "date": {
+      "description": "Calendar date, YYYY-MM-DD",
+      "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+      "type": "string"
+    },
+    "population": {
+      "enum": [
+        "general_ai_researchers",
+        "frontier_lab_researchers",
+        "ai_safety_researchers",
+        "superforecasters",
+        "domain_experts",
+        "economists",
+        "governance_researchers",
+        "public_forecasters",
+        "prediction_market",
+        "individual_expert",
+        "organization"
+      ],
+      "type": "string"
+    },
+    "sample_size": {
+      "anyOf": [
+        {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "expertise": {
+      "type": "string"
+    },
+    "question_wording_original": {
+      "type": "string"
+    },
+    "paraphrase": {
+      "type": "boolean"
+    },
+    "outcome_set": {
+      "items": {
+        "enum": [
+          "O0",
+          "O1",
+          "O2",
+          "O3",
+          "O4",
+          "O5",
+          "O6",
+          "O7",
+          "O8"
+        ],
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "horizon": {
+      "enum": [
+        "2100",
+        "1y",
+        "3y",
+        "5y",
+        "10y",
+        "25y",
+        "eventual",
+        "custom"
+      ],
+      "type": "string"
+    },
+    "horizon_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "horizon_end_year": {
+      "anyOf": [
+        {
+          "maximum": 9007199254740991,
+          "minimum": -9007199254740991,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "conditions": {
+      "type": "string"
+    },
+    "mean": {
+      "anyOf": [
+        {
+          "description": "Probability in [0, 1]",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "median": {
+      "anyOf": [
+        {
+          "description": "Probability in [0, 1]",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "quantiles": {
+      "additionalProperties": false,
+      "description": "Any subset of p05..p95 (probabilities)",
+      "properties": {
+        "p05": {
+          "description": "Probability in [0, 1]",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "p25": {
+          "description": "Probability in [0, 1]",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "p50": {
+          "description": "Probability in [0, 1]",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "p75": {
+          "description": "Probability in [0, 1]",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "p95": {
+          "description": "Probability in [0, 1]",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "response_rate": {
+      "anyOf": [
+        {
+          "description": "Value in [0, 1]",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "selection_effects": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "framing_effects": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "calibration": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "group_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "transformation_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "current",
+        "superseded",
+        "withdrawn"
+      ],
+      "type": "string"
+    },
+    "verification": {
+      "additionalProperties": false,
+      "description": "Verification record: how and when the item was checked against its canonical source",
+      "properties": {
+        "status": {
+          "enum": [
+            "verified_fetch",
+            "verified_search",
+            "verified_prior_knowledge",
+            "unverified"
+          ],
+          "type": "string"
+        },
+        "checked_at": {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "checked_at",
+        "method",
+        "note"
+      ],
+      "type": "object"
+    },
+    "human_review_status": {
+      "enum": [
+        "pending",
+        "reviewed",
+        "disputed"
+      ],
+      "type": "string"
+    },
+    "model_use_status": {
+      "enum": [
+        "excluded",
+        "informational",
+        "eligible",
+        "used"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "forecaster_or_survey",
+    "source_id",
+    "date",
+    "population",
+    "sample_size",
+    "expertise",
+    "question_wording_original",
+    "paraphrase",
+    "outcome_set",
+    "horizon",
+    "horizon_note",
+    "horizon_end_year",
+    "conditions",
+    "mean",
+    "median",
+    "quantiles",
+    "response_rate",
+    "selection_effects",
+    "framing_effects",
+    "calibration",
+    "group_id",
+    "transformation_note",
+    "status",
+    "verification",
+    "human_review_status",
+    "model_use_status"
+  ],
+  "title": "p(DOOM) Forecast",
+  "type": "object"
+}

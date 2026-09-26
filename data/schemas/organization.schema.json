@@ -1,0 +1,159 @@
+{
+  "$id": "urn:pdoom:schema:organization:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Organisation listed on the Act page",
+  "properties": {
+    "id": {
+      "description": "organization id, e.g. org-metr",
+      "pattern": "^org-[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "name": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "url": {
+      "description": "http(s) URL",
+      "format": "uri",
+      "type": "string"
+    },
+    "mission": {
+      "type": "string"
+    },
+    "legal_status": {
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "focus": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "programs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "open_outputs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "funding_disclosure": {
+      "type": "string"
+    },
+    "conflicts": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "evidence_of_impact": {
+      "type": "string"
+    },
+    "ways_to_help": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "inclusion_criteria_met": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "last_verified": {
+      "description": "Calendar date, YYYY-MM-DD",
+      "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+      "type": "string"
+    },
+    "source_ids": {
+      "items": {
+        "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+        "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "verification": {
+      "additionalProperties": false,
+      "description": "Verification record: how and when the item was checked against its canonical source",
+      "properties": {
+        "status": {
+          "enum": [
+            "verified_fetch",
+            "verified_search",
+            "verified_prior_knowledge",
+            "unverified"
+          ],
+          "type": "string"
+        },
+        "checked_at": {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "checked_at",
+        "method",
+        "note"
+      ],
+      "type": "object"
+    },
+    "human_review_status": {
+      "enum": [
+        "pending",
+        "reviewed",
+        "disputed"
+      ],
+      "type": "string"
+    },
+    "model_use_status": {
+      "enum": [
+        "excluded",
+        "informational",
+        "eligible",
+        "used"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "url",
+    "mission",
+    "legal_status",
+    "jurisdiction",
+    "focus",
+    "programs",
+    "open_outputs",
+    "funding_disclosure",
+    "conflicts",
+    "evidence_of_impact",
+    "ways_to_help",
+    "inclusion_criteria_met",
+    "last_verified",
+    "source_ids",
+    "verification",
+    "human_review_status",
+    "model_use_status"
+  ],
+  "title": "p(DOOM) Organization",
+  "type": "object"
+}

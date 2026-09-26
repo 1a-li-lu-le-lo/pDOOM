@@ -1,0 +1,245 @@
+{
+  "$id": "urn:pdoom:schema:claim.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "claim",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "Atomic claim extracted from a source",
+        "properties": {
+          "id": {
+            "description": "claim id, e.g. clm-metr-time-horizon-01",
+            "pattern": "^clm-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2,}$",
+            "type": "string"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "predicate": {
+            "type": "string"
+          },
+          "object": {
+            "type": "string"
+          },
+          "date": {
+            "anyOf": [
+              {
+                "description": "Calendar date, YYYY-MM-DD",
+                "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "horizon": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "geography": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "model_version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_id": {
+            "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+            "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "evidence_type": {
+            "enum": [
+              "measurement",
+              "survey_result",
+              "forecast",
+              "incident_report",
+              "policy_text",
+              "expert_judgment",
+              "model_output",
+              "anecdote"
+            ],
+            "type": "string"
+          },
+          "quantitative_value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "uncertainty": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "direct_quote_pointer": {
+            "description": "Section / page / figure locator, never the full quoted text",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "context": {
+            "type": "string"
+          },
+          "corroboration_ids": {
+            "items": {
+              "description": "claim id, e.g. clm-metr-time-horizon-01",
+              "pattern": "^clm-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2,}$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "contradiction_ids": {
+            "items": {
+              "description": "claim id, e.g. clm-metr-time-horizon-01",
+              "pattern": "^clm-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2,}$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "relevance": {
+            "enum": [
+              "none",
+              "weak",
+              "indirect",
+              "moderate",
+              "strong",
+              "direct_precursor"
+            ],
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "candidate",
+              "corroborated",
+              "contradicted",
+              "retracted",
+              "superseded"
+            ],
+            "type": "string"
+          },
+          "verification": {
+            "additionalProperties": false,
+            "description": "Verification record: how and when the item was checked against its canonical source",
+            "properties": {
+              "status": {
+                "enum": [
+                  "verified_fetch",
+                  "verified_search",
+                  "verified_prior_knowledge",
+                  "unverified"
+                ],
+                "type": "string"
+              },
+              "checked_at": {
+                "description": "Calendar date, YYYY-MM-DD",
+                "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "status",
+              "checked_at",
+              "method",
+              "note"
+            ],
+            "type": "object"
+          },
+          "human_review_status": {
+            "enum": [
+              "pending",
+              "reviewed",
+              "disputed"
+            ],
+            "type": "string"
+          },
+          "model_use_status": {
+            "enum": [
+              "excluded",
+              "informational",
+              "eligible",
+              "used"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "subject",
+          "predicate",
+          "object",
+          "date",
+          "horizon",
+          "geography",
+          "model_name",
+          "model_version",
+          "source_id",
+          "evidence_type",
+          "quantitative_value",
+          "unit",
+          "uncertainty",
+          "direct_quote_pointer",
+          "context",
+          "corroboration_ids",
+          "contradiction_ids",
+          "relevance",
+          "status",
+          "verification",
+          "human_review_status",
+          "model_use_status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Claim file",
+  "type": "object"
+}

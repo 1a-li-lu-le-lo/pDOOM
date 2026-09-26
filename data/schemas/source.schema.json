@@ -1,0 +1,306 @@
+{
+  "$id": "urn:pdoom:schema:source:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Source record (build-spec Appendix A)",
+  "properties": {
+    "id": {
+      "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+      "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "canonical_url": {
+      "description": "http(s) URL",
+      "format": "uri",
+      "type": "string"
+    },
+    "title": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "authors": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "date_published": {
+      "anyOf": [
+        {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "date_updated": {
+      "anyOf": [
+        {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "date_retrieved": {
+      "description": "Calendar date, YYYY-MM-DD",
+      "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+      "type": "string"
+    },
+    "source_tier": {
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "type": "number"
+    },
+    "source_type": {
+      "enum": [
+        "paper",
+        "preprint",
+        "dataset",
+        "code",
+        "model_card",
+        "safety_framework",
+        "government",
+        "standard",
+        "court",
+        "regulatory",
+        "company_disclosure",
+        "incident_report",
+        "survey",
+        "review_article",
+        "evaluation",
+        "journalism",
+        "blog",
+        "newsletter",
+        "talk",
+        "podcast",
+        "social",
+        "forecast_platform",
+        "other"
+      ],
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "topic": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "claim_ids": {
+      "items": {
+        "description": "claim id, e.g. clm-metr-time-horizon-01",
+        "pattern": "^clm-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2,}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "evidence_summary": {
+      "type": "string"
+    },
+    "counterevidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "methodology": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sample": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "limitations": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "conflicts": {
+      "items": {
+        "enum": [
+          "developer_self_report",
+          "advocacy_context",
+          "government_policy_context",
+          "commercial_interest",
+          "funder_relationship",
+          "none_known"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "license": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "robots_status": {
+      "enum": [
+        "allowed",
+        "disallowed",
+        "not_applicable",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "content_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "archive_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "language": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "translation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "duplicate_group": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "retraction_status": {
+      "enum": [
+        "none",
+        "retracted",
+        "corrected",
+        "disputed"
+      ],
+      "type": "string"
+    },
+    "correction_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "citation": {
+      "type": "string"
+    },
+    "verification": {
+      "additionalProperties": false,
+      "description": "Verification record: how and when the item was checked against its canonical source",
+      "properties": {
+        "status": {
+          "enum": [
+            "verified_fetch",
+            "verified_search",
+            "verified_prior_knowledge",
+            "unverified"
+          ],
+          "type": "string"
+        },
+        "checked_at": {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "checked_at",
+        "method",
+        "note"
+      ],
+      "type": "object"
+    },
+    "human_review_status": {
+      "enum": [
+        "pending",
+        "reviewed",
+        "disputed"
+      ],
+      "type": "string"
+    },
+    "model_use_status": {
+      "enum": [
+        "excluded",
+        "informational",
+        "eligible",
+        "used"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "canonical_url",
+    "title",
+    "publisher",
+    "authors",
+    "date_published",
+    "date_updated",
+    "date_retrieved",
+    "source_tier",
+    "source_type",
+    "jurisdiction",
+    "topic",
+    "claim_ids",
+    "evidence_summary",
+    "counterevidence",
+    "methodology",
+    "sample",
+    "limitations",
+    "conflicts",
+    "license",
+    "robots_status",
+    "content_hash",
+    "archive_reference",
+    "language",
+    "translation",
+    "duplicate_group",
+    "retraction_status",
+    "correction_status",
+    "citation",
+    "verification",
+    "human_review_status",
+    "model_use_status"
+  ],
+  "title": "p(DOOM) Source",
+  "type": "object"
+}

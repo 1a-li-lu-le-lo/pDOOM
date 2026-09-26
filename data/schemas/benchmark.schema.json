@@ -1,0 +1,175 @@
+{
+  "$id": "urn:pdoom:schema:benchmark:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Capability benchmark",
+  "properties": {
+    "id": {
+      "description": "benchmark id, e.g. bm-metr-time-horizon-50",
+      "pattern": "^bm-[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "name": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "maintainer": {
+      "type": "string"
+    },
+    "version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "url": {
+      "description": "http(s) URL",
+      "format": "uri",
+      "type": "string"
+    },
+    "tasks": {
+      "type": "string"
+    },
+    "contamination_risk": {
+      "enum": [
+        "low",
+        "moderate",
+        "high",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "saturation": {
+      "enum": [
+        "none",
+        "partial",
+        "saturated",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "scaffold": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "model_access": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": "string"
+    },
+    "direction": {
+      "enum": [
+        "higher_is_more_capable",
+        "lower_is_more_capable"
+      ],
+      "type": "string"
+    },
+    "limitations": {
+      "type": "string"
+    },
+    "pdoom_relevance": {
+      "enum": [
+        "none",
+        "weak",
+        "indirect",
+        "moderate",
+        "strong",
+        "direct_precursor"
+      ],
+      "type": "string"
+    },
+    "weight_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_ids": {
+      "items": {
+        "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+        "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "verification": {
+      "additionalProperties": false,
+      "description": "Verification record: how and when the item was checked against its canonical source",
+      "properties": {
+        "status": {
+          "enum": [
+            "verified_fetch",
+            "verified_search",
+            "verified_prior_knowledge",
+            "unverified"
+          ],
+          "type": "string"
+        },
+        "checked_at": {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "checked_at",
+        "method",
+        "note"
+      ],
+      "type": "object"
+    },
+    "human_review_status": {
+      "enum": [
+        "pending",
+        "reviewed",
+        "disputed"
+      ],
+      "type": "string"
+    },
+    "model_use_status": {
+      "enum": [
+        "excluded",
+        "informational",
+        "eligible",
+        "used"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "maintainer",
+    "version",
+    "url",
+    "tasks",
+    "contamination_risk",
+    "saturation",
+    "scaffold",
+    "model_access",
+    "unit",
+    "direction",
+    "limitations",
+    "pdoom_relevance",
+    "weight_note",
+    "source_ids",
+    "verification",
+    "human_review_status",
+    "model_use_status"
+  ],
+  "title": "p(DOOM) Benchmark",
+  "type": "object"
+}

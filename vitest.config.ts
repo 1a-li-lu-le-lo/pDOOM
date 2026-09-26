@@ -1,4 +1,4 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({

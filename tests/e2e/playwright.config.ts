@@ -1,7 +1,7 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 import { defineConfig, devices } from "@playwright/test";
 
-const PORT = Number(process.env.PDUM_E2E_PORT ?? 3117);
+const PORT = Number(process.env.PDOOM_E2E_PORT ?? 3117);
 const baseURL = `http://127.0.0.1:${PORT}`;
 
 export default defineConfig({
@@ -15,10 +15,10 @@ export default defineConfig({
   use: {
     baseURL,
     trace: "retain-on-failure",
-    launchOptions: { executablePath: process.env.PDUM_CHROMIUM ?? "/opt/pw-browsers/chromium" },
+    launchOptions: { executablePath: process.env.PDOOM_CHROMIUM ?? "/opt/pw-browsers/chromium" },
   },
   webServer: {
-    command: `pnpm --filter @pdum/web start -- -p ${PORT}`,
+    command: `pnpm --filter @pdoom/web start -- -p ${PORT}`,
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

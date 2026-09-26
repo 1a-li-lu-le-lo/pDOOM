@@ -1,6 +1,6 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 
-// Package schema holds the Go structs that mirror @pdum/schemas: every entity of
+// Package schema holds the Go structs that mirror @pdoom/schemas: every entity of
 // a data snapshot (build-spec Appendix A), every release object (build-spec
 // §3.6), the Scenario Lab parameter/result objects, typed enumerations
 // (build-spec §3.3) and the JSON file envelope (§3.1).
@@ -56,10 +56,10 @@ var OutcomeLabels = map[Outcome]string{
 	O8: "Other irreversible loss",
 }
 
-// Derived outcome sets (build-spec §3.3). PDUM is O3..O8 and may only be shown
+// Derived outcome sets (build-spec §3.3). p(DOOM) is O3..O8 and may only be shown
 // next to its decomposition (§0.4).
 var (
-	PDUMOutcomes           = []Outcome{O3, O4, O5, O6, O7, O8}
+	PDoomOutcomes          = []Outcome{O3, O4, O5, O6, O7, O8}
 	ExtinctionOutcomes     = []Outcome{O6}
 	DisempowermentOutcomes = []Outcome{O3}
 	CollapseOutcomes       = []Outcome{O4, O5}
@@ -270,7 +270,7 @@ var Severities = []string{"negligible", "minor", "material", "major", "severe", 
 // Valid reports whether the value is allowed.
 func (s Severity) Valid() bool { return inSet(string(s), Severities) }
 
-// Relevance is PDUM relevance of a claim, benchmark or incident.
+// Relevance is p(DOOM) relevance of a claim, benchmark or incident.
 type Relevance string
 
 // Relevances lists the allowed values.
@@ -511,7 +511,7 @@ type SignalDirection string
 
 // Signal directions.
 const (
-	HigherRaisesPressure    SignalDirection = "higher_raises_pressure"
+	HigherRaisesPressure     SignalDirection = "higher_raises_pressure"
 	HigherStrengthensControl SignalDirection = "higher_strengthens_control"
 )
 
@@ -606,8 +606,8 @@ func OutcomeSetKey(set []Outcome) string {
 // their derived names, anything else the joined outcome labels.
 func OutcomeSetLabel(set []Outcome) string {
 	switch OutcomeSetKey(set) {
-	case OutcomeSetKey(PDUMOutcomes):
-		return "PDUM (O3–O8 combined)"
+	case OutcomeSetKey(PDoomOutcomes):
+		return "p(DOOM) (O3–O8 combined)"
 	case OutcomeSetKey(CollapseOutcomes):
 		return "Civilizational collapse or near extinction (O4+O5)"
 	}

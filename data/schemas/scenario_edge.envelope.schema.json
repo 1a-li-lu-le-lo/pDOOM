@@ -1,0 +1,85 @@
+{
+  "$id": "urn:pdoom:schema:scenario_edge.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "scenario_edge",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "Directed relation between two scenarios",
+        "properties": {
+          "id": {
+            "description": "scenario_edge id, e.g. se-S14-S15",
+            "pattern": "^se-S(?:[1-9]|1[0-8])-S(?:[1-9]|1[0-8])$",
+            "type": "string"
+          },
+          "from_id": {
+            "description": "scenario id, e.g. S3",
+            "pattern": "^S(?:[1-9]|1[0-8])$",
+            "type": "string"
+          },
+          "to_id": {
+            "description": "scenario id, e.g. S3",
+            "pattern": "^S(?:[1-9]|1[0-8])$",
+            "type": "string"
+          },
+          "relation": {
+            "enum": [
+              "enables",
+              "amplifies",
+              "prevents_response",
+              "shares_prerequisite",
+              "competes_with"
+            ],
+            "type": "string"
+          },
+          "confidence": {
+            "enum": [
+              "low",
+              "moderate",
+              "high"
+            ],
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "source_ids": {
+            "items": {
+              "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+              "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "from_id",
+          "to_id",
+          "relation",
+          "confidence",
+          "rationale",
+          "source_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Scenario Edge file",
+  "type": "object"
+}

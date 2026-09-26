@@ -1,8 +1,8 @@
 {
-  "name": "pdum-monorepo",
+  "name": "pdoom-monorepo",
   "private": true,
   "version": "0.1.0",
-  "description": "PDUM — Probability of Doom, Disempowerment, and Unrecoverable Machine-Caused Catastrophe. The AI Existential and Civilizational Risk Observatory. Copyright NU Cybernetics.",
+  "description": "p(DOOM) — Probability of Doom, Disempowerment, and Unrecoverable Machine-Caused Catastrophe. The AI Existential and Civilizational Risk Observatory. Copyright NU Cybernetics.",
   "packageManager": "pnpm@10.33.0",
   "engines": {
     "node": ">=22"
@@ -14,9 +14,9 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "build": "pnpm -r --if-present build",
-    "build:jsonschema": "pnpm --filter @pdum/schemas build:jsonschema",
+    "build:jsonschema": "pnpm --filter @pdoom/schemas build:jsonschema",
     "e2e": "playwright test -c tests/e2e/playwright.config.ts",
-    "dev": "pnpm --filter @pdum/web dev"
+    "dev": "pnpm --filter @pdoom/web dev"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

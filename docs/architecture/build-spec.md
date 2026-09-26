@@ -1,6 +1,10 @@
-# PDUM Build Specification (the "constitution")
+# p(DOOM) Build Specification (the "constitution")
 
-**Project:** PDUM — Probability of Doom, Disempowerment, and Unrecoverable Machine-Caused Catastrophe.
+**Project:** p(DOOM) — Probability of Doom, Disempowerment, and Unrecoverable Machine-Caused Catastrophe.
+**Name rules:** the brand is written exactly `p(DOOM)` in every displayed or prose context (never PDUM, pDOOM or PDOOM).
+Code identifiers use `pdoom` / `PDoom` / `PDOOM_` (env), packages are `@pdoom/*`, binaries are `pdoomctl`, `pdoom-api`,
+`pdoom-ingest`, `pdoom-model`, the combined outcome-set key is `P_DOOM`, model versions are `pdoom-model/<family>@<semver>`.
+The web app renders the brand only through the `BRAND` constant exported by `@pdoom/schemas` (`BRAND = "p(DOOM)"`).
 **Public label:** The AI Existential and Civilizational Risk Observatory.
 **Author / copyright:** NU Cybernetics. Copyright NU Cybernetics.
 **Deployment mode:** research prototype.
@@ -16,13 +20,13 @@ detail, this document wins; where this document is silent, the product brief win
 1. **No headline probability is objectively true, settled, or directly measured.** Every
    probability is shown with its outcome definition, horizon, conditioning, interval,
    disagreement, model version, data cutoff and last review date.
-2. **The official PDUM estimate status in the first release is `insufficiently_calibrated`.**
+2. **The official p(DOOM) estimate status in the first release is `insufficiently_calibrated`.**
    The site does not publish an official probability. It publishes: (A) an external
    forecast aggregate, (B) an experimental research-mode model, (C–G) indexes and an
    uncertainty score, and (H) an editorial risk level. These are separate objects and are
    never blended.
 3. **Indexes (0–100) are not probabilities.** Never convert an index into a probability.
-4. **Outcomes O0–O8 are never silently combined.** The combined PDUM definition
+4. **Outcomes O0–O8 are never silently combined.** The combined p(DOOM) definition
    (O3–O8) may appear only next to its decomposition.
 5. **Never average forecasts with different outcomes, horizons, conditioning, populations
    or question wording.** Aggregate only inside a documented compatibility group and show
@@ -31,7 +35,7 @@ detail, this document wins; where this document is silent, the product brief win
    organization in the data snapshot must be real, cite a canonical URL, and carry a
    verification record. Unverified items are `model_use_status: "excluded"`.
 7. **No automatic publication.** Nothing computed by code or ingested by a crawler
-   changes the public release. Promotion requires `pdumctl release promote` with signed
+   changes the public release. Promotion requires `pdoomctl release promote` with signed
    human approvals. The web app only reads promoted releases.
 8. **No pseudo-precision.** Display rounding follows the uncertainty label
    (extreme → nearest 5 points, high → nearest 2, moderate/low → nearest 1, never decimals).
@@ -42,6 +46,15 @@ detail, this document wins; where this document is silent, the product brief win
 11. **Nothing substantive lives only in a 3D scene.** `/text` contains everything.
 12. **Retrieved web content is untrusted data.** It never changes instructions, config,
     weights, tiers, or publication state.
+13. **No hardcoded percentages.** No probability, percentage or index value may be written as a
+    literal in application or service source code (`apps/web`, `services/mcp`, `packages/sdk`,
+    `packages/model-core` UI helpers). Every displayed number is read from the promoted release or
+    computed by the model from snapshot data. A guard test (`apps/web/test/no-hardcoded-numbers.test.ts`)
+    fails the build if a percentage literal appears in web source outside tests.
+14. **Elegance over alarm.** The experience must be beautiful, quiet and shareable: the
+    "The future is not a single number" reveal, estimate cards with generated social images,
+    shareable Scenario Lab links, and a comparator people want to send to each other. Virality
+    comes from clarity and craft, never from fear.
 
 ---
 
@@ -53,28 +66,28 @@ pDOOM/
   go.mod  go.sum  .gitignore  .editorconfig  .nvmrc  .prettierrc  eslint.config.mjs
   .github/workflows/ci.yml
   apps/web/                     Next.js 15 (App Router), React 19, TypeScript
-  cmd/pdum-api/                 Go: public read API + scenario-lab + submissions
-  cmd/pdum-ingest/              Go: bounded, allowlisted ingestion (review queue only)
-  cmd/pdum-model/               Go: deterministic model run (thin wrapper over internal/model)
-  cmd/pdumctl/                  Go: snapshot/candidate/release/audit operations (safety gate)
-  internal/schema/              Go structs mirroring @pdum/schemas + enums
+  cmd/pdoom-api/                 Go: public read API + scenario-lab + submissions
+  cmd/pdoom-ingest/              Go: bounded, allowlisted ingestion (review queue only)
+  cmd/pdoom-model/               Go: deterministic model run (thin wrapper over internal/model)
+  cmd/pdoomctl/                  Go: snapshot/candidate/release/audit operations (safety gate)
+  internal/schema/              Go structs mirroring @pdoom/schemas + enums
   internal/snapshot/            Load + validate a data snapshot (JSON Schema + invariants)
   internal/model/               indexes, aggregation, experimental causal model, sensitivity, rounding, rng
   internal/publishing/          candidates, releases, CURRENT pointer, manifests, signatures
   internal/audit/               hash-chained append-only audit log
   internal/review/              review queue (JSONL)
   internal/robots/ internal/fetch/ internal/parsing/ internal/dedup/ internal/sources/ internal/claims/
-  internal/api/                 http handlers for cmd/pdum-api
+  internal/api/                 http handlers for cmd/pdoom-api
   internal/config/ internal/observability/ internal/storage/
   db/migrations/                PostgreSQL DDL (reference schema; not required to run the prototype)
   api/openapi.yaml              OpenAPI 3.1 for the public API
-  packages/schemas/             @pdum/schemas — zod v4 schemas, enums, TS types, JSON Schema export
-  packages/model-core/          @pdum/model-core — TS port of the experimental model + rounding (Scenario Lab, MCP)
-  packages/sdk/                 @pdum/sdk — PdumDataSource (file + http) used by web and MCP
-  packages/design-system/       @pdum/design-system — tokens.css, tokens.json, fonts.css
-  services/mcp/                 @pdum/mcp — read-oriented MCP server (stdio)
+  packages/schemas/             @pdoom/schemas — zod v4 schemas, enums, TS types, JSON Schema export
+  packages/model-core/          @pdoom/model-core — TS port of the experimental model + rounding (Scenario Lab, MCP)
+  packages/sdk/                 @pdoom/sdk — PDoomDataSource (file + http) used by web and MCP
+  packages/design-system/       @pdoom/design-system — tokens.css, tokens.json, fonts.css
+  services/mcp/                 @pdoom/mcp — read-oriented MCP server (stdio)
   research/                     research reports (markdown) that justify the data snapshot
-  data/schemas/                 generated JSON Schemas (pnpm --filter @pdum/schemas build:jsonschema)
+  data/schemas/                 generated JSON Schemas (pnpm --filter @pdoom/schemas build:jsonschema)
   data/snapshots/<id>/          versioned data snapshots (see §3)
   data/releases/<id>/           promoted releases; data/releases/CURRENT holds the current id
   data/candidates/              candidate releases (gitignored except .gitkeep)
@@ -83,13 +96,13 @@ pDOOM/
   data/review-queue/            ingestion review queue (gitignored except README)
   config/sources.json           allowlisted ingestion source configuration
   docs/{architecture,design,method,security,accessibility,governance,operations,api}/
-  skills/pdum/SKILL.md
+  skills/pdoom/SKILL.md
   tests/{e2e,accessibility,security,property,visual,performance}/
 ```
 
 Go module path: `github.com/1a-li-lu-le-lo/pdoom`. Go version: 1.24.
-TS package names: `@pdum/web`, `@pdum/schemas`, `@pdum/model-core`, `@pdum/sdk`,
-`@pdum/design-system`, `@pdum/mcp`.
+TS package names: `@pdoom/web`, `@pdoom/schemas`, `@pdoom/model-core`, `@pdoom/sdk`,
+`@pdoom/design-system`, `@pdoom/mcp`.
 
 ## 2. Toolchain and commands
 
@@ -99,18 +112,18 @@ TS package names: `@pdum/web`, `@pdum/schemas`, `@pdum/model-core`, `@pdum/sdk`,
 | Typecheck all TS | `pnpm typecheck` |
 | Lint | `pnpm lint` |
 | Unit tests (TS) | `pnpm test` (vitest) |
-| Build web | `pnpm --filter @pdum/web build` |
+| Build web | `pnpm --filter @pdoom/web build` |
 | Go | `go build ./... && go vet ./... && go test ./...` |
 | Everything | `make check` |
-| Regenerate JSON Schemas | `pnpm --filter @pdum/schemas build:jsonschema` |
-| Validate a snapshot | `go run ./cmd/pdumctl snapshot validate data/snapshots/<id>` |
-| Run candidate | `go run ./cmd/pdumctl model run --snapshot data/snapshots/<id> --out data/candidates/<cid>` |
+| Regenerate JSON Schemas | `pnpm --filter @pdoom/schemas build:jsonschema` |
+| Validate a snapshot | `go run ./cmd/pdoomctl snapshot validate data/snapshots/<id>` |
+| Run candidate | `go run ./cmd/pdoomctl model run --snapshot data/snapshots/<id> --out data/candidates/<cid>` |
 | E2E | `pnpm e2e` (Playwright, uses `/opt/pw-browsers/chromium` via `executablePath`) |
 
 Code style: Prettier defaults (2 spaces, single quotes false → use Prettier default double quotes),
 ESLint 9 flat config. Go: gofmt, go vet clean.
 Every source file created for this project starts with a one-line copyright comment:
-`// Copyright NU Cybernetics. PDUM — research prototype.` (or `#`/`<!-- -->` per language).
+`// Copyright NU Cybernetics. p(DOOM) — research prototype.` (or `#`/`<!-- -->` per language).
 Do not write model identifiers or AI attributions into repository files.
 
 Timestamps: ISO 8601 in UTC (`2026-09-26T00:00:00Z`) or date-only `YYYY-MM-DD`.
@@ -148,10 +161,10 @@ scenario | scenario_edge | driver | driver_observation | intervention | organiza
 | snapshot | `snap-YYYY-MM-DD-NNN` | `snap-2026-09-26-001` |
 | candidate | `cand-YYYY-MM-DD-NNN` | |
 | release | `rel-YYYY-MM-DD-NNN` | `rel-2026-09-26-001` |
-| model version | `pdum-model/<family>@<semver>` | `pdum-model/external-aggregate@0.1.0`, `pdum-model/experimental-causal@0.1.0`, `pdum-model/indexes@0.1.0` |
+| model version | `pdoom-model/<family>@<semver>` | `pdoom-model/external-aggregate@0.1.0`, `pdoom-model/experimental-causal@0.1.0`, `pdoom-model/indexes@0.1.0` |
 
 ### 3.3 Enumerations (exact string values)
-- **Outcomes** `O0 beneficial_or_manageable`, `O1 serious_reversible_harm`, `O2 systemic_authoritarian_or_oligopolistic_control`, `O3 permanent_severe_disempowerment`, `O4 civilizational_collapse`, `O5 near_extinction`, `O6 human_extinction`, `O7 biospheric_catastrophe`, `O8 other_irreversible_loss`. Derived sets: `PDUM = O3..O8`, `P_EXTINCTION = O6`, `P_DISEMPOWERMENT = O3`, `P_COLLAPSE = O4,O5`, `P_BIOSPHERE = O7`.
+- **Outcomes** `O0 beneficial_or_manageable`, `O1 serious_reversible_harm`, `O2 systemic_authoritarian_or_oligopolistic_control`, `O3 permanent_severe_disempowerment`, `O4 civilizational_collapse`, `O5 near_extinction`, `O6 human_extinction`, `O7 biospheric_catastrophe`, `O8 other_irreversible_loss`. Derived sets: `p(DOOM) = O3..O8`, `P_EXTINCTION = O6`, `P_DISEMPOWERMENT = O3`, `P_COLLAPSE = O4,O5`, `P_BIOSPHERE = O7`.
 - **Horizons** `1y, 3y, 5y, 10y, 25y, 2100, eventual` (horizon is measured from `forecast_origin_date`).
 - **Source tier** `1..5` (1 primary/authoritative, 2 independent technical, 3 high-quality journalism, 4 commentary, 5 unverified).
 - **Source type** `paper | preprint | dataset | code | model_card | safety_framework | government | standard | court | regulatory | company_disclosure | incident_report | survey | review_article | evaluation | journalism | blog | newsletter | talk | podcast | social | forecast_platform | other`.
@@ -161,7 +174,7 @@ scenario | scenario_edge | driver | driver_observation | intervention | organiza
 - **Claim evidence type** `measurement | survey_result | forecast | incident_report | policy_text | expert_judgment | model_output | anecdote`. **Claim status** `candidate | corroborated | contradicted | retracted | superseded`.
 - **Forecast population** `general_ai_researchers | frontier_lab_researchers | ai_safety_researchers | superforecasters | domain_experts | economists | governance_researchers | public_forecasters | prediction_market | individual_expert | organization`.
 - **Forecast compatibility group** (`forecast.group_id`): free string; forecasts with the same group_id share outcome set, horizon, conditioning and comparable wording. Groups are declared in `forecasts.json` items via `group_id` and documented in `research/forecasts/compatibility-groups.md`.
-- **Incident cause** `malicious_use | malfunction | human_misuse | organizational_failure | security_compromise | insufficient_oversight | systemic_interaction | unclear`. **Harm** `physical | psychological | financial | informational | political | environmental | privacy | security | civil_rights | institutional | infrastructure`. **Severity** `negligible | minor | material | major | severe | catastrophic`. **PDUM relevance** `none | weak | indirect | moderate | strong | direct_precursor`. **Evidence level** `allegation | single_source_report | corroborated_report | official_finding | peer_reviewed_analysis | independently_reproduced`.
+- **Incident cause** `malicious_use | malfunction | human_misuse | organizational_failure | security_compromise | insufficient_oversight | systemic_interaction | unclear`. **Harm** `physical | psychological | financial | informational | political | environmental | privacy | security | civil_rights | institutional | infrastructure`. **Severity** `negligible | minor | material | major | severe | catastrophic`. **p(DOOM) relevance** `none | weak | indirect | moderate | strong | direct_precursor`. **Evidence level** `allegation | single_source_report | corroborated_report | official_finding | peer_reviewed_analysis | independently_reproduced`.
 - **Driver families** `D1 capability, D2 autonomy, D3 access_exposure, D4 scalability, D5 alignment_control, D6 security, D7 governance, D8 incidents, D9 race_dynamics, D10 resilience`.
 - **Observation kind** `observation | judgment`.
 - **Uncertainty / disagreement label** `low | moderate | high | extreme`.
@@ -224,7 +237,7 @@ data/releases/CURRENT   → text file containing the release id
 ```
 Estimate object:
 ```json
-{ "estimate_id":"est-external-O6-2100", "producer":"pdum-model/external-aggregate@0.1.0",
+{ "estimate_id":"est-external-O6-2100", "producer":"pdoom-model/external-aggregate@0.1.0",
   "status":"external_aggregate", "outcome_set":["O6"], "outcome_label":"Human extinction",
   "horizon":"2100", "conditioning":"...", "forecast_origin_date":"2026-09-26", "last_evidence_date":"2026-09-01",
   "quantiles":{"p05":0.003,"p25":0.01,"p50":0.05,"p75":0.1,"p95":0.3}, "mean":0.08,
@@ -240,11 +253,11 @@ Index value object:
   "coverage":0.8, "as_of":"2026-09-26", "method_ref":"docs/method/indexes.md#capability-pressure", "note":"" }
 ```
 The official object is always present:
-`{ "estimate_id":"est-official-PDUM-10y", "status":"insufficiently_calibrated", "quantiles":null, ... "display":{"central":"Insufficiently calibrated"} }` for each horizon.
+`{ "estimate_id":"est-official-P_DOOM-10y", "status":"insufficiently_calibrated", "quantiles":null, ... "display":{"central":"Insufficiently calibrated"} }` for each horizon.
 
 ### 3.7 Audit log
 `data/audit/audit.jsonl`, one JSON per line: `{ seq, ts, actor, action, subject, details, prev_hash, hash }`
-where `hash = sha256(prev_hash + canonical_json(without hash))`. `pdumctl audit verify` checks the chain.
+where `hash = sha256(prev_hash + canonical_json(without hash))`. `pdoomctl audit verify` checks the chain.
 
 ## 4. Go interfaces (cross-agent contract)
 
@@ -282,9 +295,9 @@ All Go packages must have tests. The model package must have a golden test:
 
 ## 5. TypeScript package contracts
 
-### @pdum/schemas (`packages/schemas/src/index.ts`)
+### @pdoom/schemas (`packages/schemas/src/index.ts`)
 - `export const Outcome = z.enum([...])`, `Horizon`, `SourceTier`, ... (all enums in §3.3) and
-  `OUTCOMES: Record<OutcomeCode,{code,slug,label,description,included_in:{pdum,extinction,disempowerment,collapse,biosphere}}>`,
+  `OUTCOMES: Record<OutcomeCode,{code,slug,label,description,included_in:{pdoom,extinction,disempowerment,collapse,biosphere}}>`,
   `HORIZONS: {key,label,years|null}[]`, `DRIVER_FAMILIES`, `SOURCE_TIERS` (with descriptions and rules).
 - One zod schema per entity: `DefinitionSchema`, `SourceSchema`, `ClaimSchema`, `ForecastSchema`, `BenchmarkSchema`,
   `BenchmarkResultSchema`, `IncidentSchema`, `ScenarioSchema`, `ScenarioEdgeSchema`, `DriverSchema`,
@@ -296,16 +309,16 @@ All Go packages must have tests. The model package must have a golden test:
 - `scripts/build-jsonschema.ts` writes `data/schemas/<entity>.schema.json` via `z.toJSONSchema`.
 - Tests: fixtures in `packages/schemas/test/` parse; enums complete.
 
-### @pdum/model-core (`packages/model-core/src/index.ts`)
+### @pdoom/model-core (`packages/model-core/src/index.ts`)
 - `mulberry32(seed: number): () => number` (identical to Go `internal/model/rng.go`).
 - `logitNormalFromQuantiles({p05,p50,p95})`, `sampleLogitNormal(rng, dist)`.
 - `evaluateUserScenario(spec: ExperimentalCausalSpec, params: UserScenarioParams): UserScenarioResult` — same algorithm as Go; golden fixture `packages/model-core/test/golden.json` shared with Go tests (tolerance 0.01 on quantiles).
 - `roundForDisplay(p: number, uncertainty: UncertaintyLabel): {display: string; rule: string}` and `formatInterval`.
-- `describeUserScenario(result)` → the mandated sentence "Under your selected assumptions—not the PDUM official model—the median estimate is …".
+- `describeUserScenario(result)` → the mandated sentence "Under your selected assumptions—not the p(DOOM) official model—the median estimate is …".
 
-### @pdum/sdk (`packages/sdk/src/index.ts`)
+### @pdoom/sdk (`packages/sdk/src/index.ts`)
 ```ts
-export interface PdumDataSource {
+export interface PDoomDataSource {
   getRelease(): Promise<Release>;            // current promoted release (manifest+estimates+indexes+aggregations+sensitivity+delta+driversExplained)
   getReleaseById(id: string): Promise<Release>; listReleases(): Promise<ReleaseSummary[]>;
   getSnapshot(): Promise<Snapshot>;          // all entity arrays keyed by kind
@@ -313,12 +326,12 @@ export interface PdumDataSource {
   getIncidents(); getScenarios(); getScenario(id); getScenarioEdges(); getDrivers(); getDriverObservations();
   getInterventions(); getOrganizations(); getModelSpec(); getMethodology(): Promise<{markdownFiles: {path,title}[]}>;
 }
-export function createFileDataSource(opts:{dataDir:string}): PdumDataSource;   // Node fs; caches per process
-export function createHttpDataSource(opts:{baseUrl:string}): PdumDataSource;  // GET /v1/... per api/openapi.yaml
-export function resolveDataDir(): string;  // PDUM_DATA_DIR env or walks up from cwd to find /data/releases/CURRENT
+export function createFileDataSource(opts:{dataDir:string}): PDoomDataSource;   // Node fs; caches per process
+export function createHttpDataSource(opts:{baseUrl:string}): PDoomDataSource;  // GET /v1/... per api/openapi.yaml
+export function resolveDataDir(): string;  // PDOOM_DATA_DIR env or walks up from cwd to find /data/releases/CURRENT
 ```
 
-### @pdum/design-system
+### @pdoom/design-system
 `tokens.css` (CSS custom properties on `:root`, dark default, `[data-theme="light"]`, `[data-palette="cvd"]`,
 `@media (prefers-reduced-motion)`, `@media (prefers-contrast: more)`), `tokens.json` (same values),
 `base.css` (reset, typography scale, tabular numerals, focus rings, skip link, print styles).
@@ -326,14 +339,14 @@ export function resolveDataDir(): string;  // PDUM_DATA_DIR env or walks up from
 ## 6. Web application (`apps/web`)
 
 - Next.js 15 App Router, `output: undefined` (node server), `reactStrictMode`, TypeScript strict.
-- Data access only through `@pdum/sdk` (`lib/data.ts` exports `getDataSource()`; server components call it).
+- Data access only through `@pdoom/sdk` (`lib/data.ts` exports `getDataSource()`; server components call it).
 - Routes (all server-rendered, each with `<h1>`, breadcrumbs, and a "Plain text" link):
   `/` (Meter home: server `MeterPanel` above the fold + client `ModeStage`), `/text`, `/meter`, `/futures`,
   `/futures/[scenarioId]`, `/evidence`, `/evidence/sources/[sourceId]`, `/capabilities`, `/agents`, `/incidents`,
   `/forecasts`, `/safeguards`, `/act`, `/method`, `/method/[slug]` (renders docs/method/*.md), `/lab` (Scenario Lab),
   `/changelog`, `/releases/[releaseId]`, `/compare` (probability comparator), `/api/export/[name]` (json/csv/jsonl).
 - Modes: `event-horizon | orrery | branching | observatory | text`; `components/mode/ModeProvider.tsx` (client context,
-  localStorage key `pdum.mode`, honours `prefers-reduced-motion` → default `observatory`), `ModeSwitcher` visible in the
+  localStorage key `pdoom.mode`, honours `prefers-reduced-motion` → default `observatory`), `ModeSwitcher` visible in the
   header (first viewport) with an explicit "Immersive / Plain text" toggle.
 - Scenes: `components/scenes/event-horizon/*` (R3F, dynamic import, `ssr:false`, WebGL detection, static SVG fallback,
   quality manager, pause on hidden, skippable intro), `components/scenes/orrery/*` (SVG+CSS), `components/scenes/branching/*` (SVG).
@@ -347,7 +360,7 @@ export function resolveDataDir(): string;  // PDUM_DATA_DIR env or walks up from
 
 ## 7. MCP server (`services/mcp`)
 `@modelcontextprotocol/sdk` stdio server exposing the tools in the brief (read tools + three submission tools).
-Read tools use `@pdum/sdk` file data source (`PDUM_DATA_DIR`) or http (`PDUM_API_URL`). Submission tools append to
+Read tools use `@pdoom/sdk` file data source (`PDOOM_DATA_DIR`) or http (`PDOOM_API_URL`). Submission tools append to
 `data/review-queue/submissions.jsonl` (or POST to the API) and never modify snapshots/releases. Every tool response includes
 `horizon`, `outcome_set`, `status`, `model_version`, `data_cutoff`, and `limitations` where a probability appears.
 
@@ -368,15 +381,15 @@ Read tools use `@pdum/sdk` file data source (`PDUM_DATA_DIR`) or http (`PDUM_API
 | Owner | May write |
 | --- | --- |
 | schemas | `packages/schemas/**`, `data/schemas/**` |
-| go-core | `internal/{schema,snapshot,model,publishing,audit,config}/**`, `cmd/pdumctl/**`, `cmd/pdum-model/**`, `db/migrations/**` |
-| go-ingest | `internal/{robots,fetch,parsing,dedup,sources,claims,review,observability,storage}/**`, `cmd/pdum-ingest/**`, `config/sources.json` |
-| go-api | `internal/api/**`, `cmd/pdum-api/**`, `api/openapi.yaml`, `docs/api/**` |
+| go-core | `internal/{schema,snapshot,model,publishing,audit,config}/**`, `cmd/pdoomctl/**`, `cmd/pdoom-model/**`, `db/migrations/**` |
+| go-ingest | `internal/{robots,fetch,parsing,dedup,sources,claims,review,observability,storage}/**`, `cmd/pdoom-ingest/**`, `config/sources.json` |
+| go-api | `internal/api/**`, `cmd/pdoom-api/**`, `api/openapi.yaml`, `docs/api/**` |
 | web-shell | `apps/web/{app/layout.tsx,app/globals.css,app/text/**,app/page.tsx,components/{shell,mode,meter,charts,common}/**,lib/**}`, `packages/sdk/**`, `packages/design-system/**` |
 | web-pages-a | `apps/web/app/{meter,forecasts,capabilities,evidence,compare,changelog,releases}/**`, `apps/web/components/{forecasts,capabilities,evidence}/**` |
 | web-pages-b | `apps/web/app/{futures,incidents,agents,safeguards,act,method}/**`, `apps/web/components/{futures,incidents,agents,safeguards,act,method}/**` |
 | web-scenes | `apps/web/components/scenes/**` |
 | web-lab | `packages/model-core/**`, `apps/web/app/{lab,api/export}/**`, `apps/web/components/lab/**` |
-| mcp | `services/mcp/**`, `skills/pdum/**` |
+| mcp | `services/mcp/**`, `skills/pdoom/**` |
 | docs | `docs/**` (except build-spec.md), `README.md`, `NOTICE` |
 | research | `research/**`, `data/snapshots/**` |
 Shared files (`package.json`, lockfile, `tsconfig.base.json`, `eslint.config.mjs`, `Makefile`, `go.mod`) are orchestrator-only.
@@ -397,11 +410,11 @@ Types: `str`, `str?` (nullable string), `date` (`YYYY-MM-DD`), `date?`, `num`, `
 
 **forecast** `{ id, forecaster_or_survey, source_id, date: date, population, sample_size: int?, expertise: str, question_wording_original: str, paraphrase: bool, outcome_set: [outcome], horizon: horizon|"custom", horizon_note: str?, horizon_end_year: int?, conditions: str, mean: num?, median: num?, quantiles: { p05?, p25?, p50?, p75?, p95? } (probabilities 0..1), response_rate: num?, selection_effects: str?, framing_effects: str?, calibration: str?, group_id: str?, transformation_note: str?, status: "current"|"superseded"|"withdrawn", verification, human_review_status, model_use_status }`
 
-**benchmark** `{ id, name, maintainer, version: str?, url, tasks: str, contamination_risk: "low"|"moderate"|"high"|"unknown", saturation: "none"|"partial"|"saturated"|"unknown", scaffold: str?, model_access: str?, unit: str, direction: "higher_is_more_capable"|"lower_is_more_capable", limitations: str, pdum_relevance: relevance, weight_note: str?, source_ids: [str], verification, human_review_status, model_use_status }`
+**benchmark** `{ id, name, maintainer, version: str?, url, tasks: str, contamination_risk: "low"|"moderate"|"high"|"unknown", saturation: "none"|"partial"|"saturated"|"unknown", scaffold: str?, model_access: str?, unit: str, direction: "higher_is_more_capable"|"lower_is_more_capable", limitations: str, pdoom_relevance: relevance, weight_note: str?, source_ids: [str], verification, human_review_status, model_use_status }`
 
 **benchmark_result** `{ id, benchmark_id, model_name, model_developer, date: date, value: num, unit: str, ci_low: num?, ci_high: num?, scaffold: str?, confidence: "low"|"moderate"|"high", note: str?, source_ids: [str], verification, human_review_status, model_use_status }`
 
-**incident** `{ id, title, date: date?, date_precision: "day"|"month"|"year"|"unknown", external_ids: { aiid?: str, oecd_aim?: str, mit_tracker?: str, cve?: str, docket?: str, other?: str }, summary: str (non-graphic, non-operational), cause: [cause], harm: [harm], severity, pdum_relevance: relevance, evidence_level, systems_involved: [str], jurisdiction: str?, near_miss: bool, novelty: "routine"|"notable"|"novel", exposure_note: str?, source_ids: [str], verification, human_review_status, model_use_status }`
+**incident** `{ id, title, date: date?, date_precision: "day"|"month"|"year"|"unknown", external_ids: { aiid?: str, oecd_aim?: str, mit_tracker?: str, cve?: str, docket?: str, other?: str }, summary: str (non-graphic, non-operational), cause: [cause], harm: [harm], severity, pdoom_relevance: relevance, evidence_level, systems_involved: [str], jurisdiction: str?, near_miss: bool, novelty: "routine"|"notable"|"novel", exposure_note: str?, source_ids: [str], verification, human_review_status, model_use_status }`
 
 **scenario** `{ id (S1..S18), name, outcome_set: [outcome], description, prerequisites: [str], early_indicators: [str], counterindicators: [str], capability_thresholds: [str], exposure: str, control_failures: [str], human_contributions: [str], ai_contributions: [str], dependencies: [scenario_id], time_horizon_note: str, probability_source: "not_assigned"|"external_forecast"|"experimental_model"|"expert_elicitation", uncertainty: uncertainty_label, intervention_ids: [str], recoverability: "high"|"moderate"|"low"|"none"|"unknown", evidence_summary: str, source_ids: [str], open_questions: [str], content_safety_note: str?, verification, human_review_status, model_use_status }`
 
@@ -417,6 +430,6 @@ Types: `str`, `str?` (nullable string), `date` (`YYYY-MM-DD`), `date?`, `num`, `
 
 **action** (kind `action`, file `actions.json`) `{ id: "act-<audience>-<slug>", audience: "individuals"|"software_engineers"|"ai_researchers"|"laboratories"|"policymakers"|"funders"|"educators"|"nonprofits"|"auditors_red_teams"|"standards_bodies", title, description, related_intervention_ids: [str], resources: [{ title, url, source_id: str? }], effort: "low"|"moderate"|"high", verification, human_review_status, model_use_status }`
 
-**model_spec** (single item) `{ id: "pdum-model-spec@0.1.0", index_weights: { capability_pressure: {signal_id: num}, control_strength: {signal_id: num}, incident_pressure: {...constants}, evidence_pressure: {...}, uncertainty: {...}, agentic_infrastructure_risk: {signal_id: num} }, weight_bounds: [0, 0.35], tier_multipliers: {"1":1,"2":0.9,"3":0.5,"4":0,"5":0}, incident_scoring: { severity_weights: {...}, relevance_weights: {...}, evidence_weights: {...}, recency_half_life_days: int, squash_k: num }, editorial_rules: [{ level, when: str }], rounding_rules: { extreme: 5, high: 2, moderate: 1, low: 1 }, aggregation_methods: [method], experimental_causal: { version, seed: int, samples: int, common_factor_loading: num, horizons: { "<horizon>": { A: {p05,p50,p95}, C: {...}, E: {...}, F: {...}, O: { "O3": {...}, "O4": {...}, "O5": {...}, "O6": {...}, "O7": {...}, "O8": {...} } } }, rationale: { A: str, C: str, E: str, F: str, O: str, dependence: str }, source_ids: [str] } }`
+**model_spec** (single item) `{ id: "pdoom-model-spec@0.1.0", index_weights: { capability_pressure: {signal_id: num}, control_strength: {signal_id: num}, incident_pressure: {...constants}, evidence_pressure: {...}, uncertainty: {...}, agentic_infrastructure_risk: {signal_id: num} }, weight_bounds: [0, 0.35], tier_multipliers: {"1":1,"2":0.9,"3":0.5,"4":0,"5":0}, incident_scoring: { severity_weights: {...}, relevance_weights: {...}, evidence_weights: {...}, recency_half_life_days: int, squash_k: num }, editorial_rules: [{ level, when: str }], rounding_rules: { extreme: 5, high: 2, moderate: 1, low: 1 }, aggregation_methods: [method], experimental_causal: { version, seed: int, samples: int, common_factor_loading: num, horizons: { "<horizon>": { A: {p05,p50,p95}, C: {...}, E: {...}, F: {...}, O: { "O3": {...}, "O4": {...}, "O5": {...}, "O6": {...}, "O7": {...}, "O8": {...} } } }, rationale: { A: str, C: str, E: str, F: str, O: str, dependence: str }, source_ids: [str] } }`
 
 Every JSON file must parse, ids must be unique within a file, and every referenced id (source_ids, claim_ids, scenario ids, intervention ids, signal ids) must exist somewhere in the snapshot after merge. Research agents that create sources write them to their own fragment file (`research/<area>/fragments/sources.json`, `.../claims.json`), which the orchestrator merges (deduplicated by canonical_url) into `sources.json` / `claims.json`.

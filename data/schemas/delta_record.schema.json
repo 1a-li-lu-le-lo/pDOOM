@@ -1,0 +1,352 @@
+{
+  "$id": "urn:pdoom:schema:delta_record:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "PROBABILITY CHANGE POLICY record versus the previous release (null fields on first release)",
+  "properties": {
+    "previous_estimate": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "description": "Release id (previous) or candidate id (new)",
+              "minLength": 1,
+              "type": "string"
+            },
+            "estimate_id": {
+              "description": "estimate id, e.g. est-external-O6-2100",
+              "pattern": "^est-[A-Za-z0-9_+-]+$",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "official",
+                "insufficiently_calibrated",
+                "external_aggregate",
+                "research_mode",
+                "user_scenario"
+              ],
+              "type": "string"
+            },
+            "p50": {
+              "anyOf": [
+                {
+                  "description": "Probability in [0, 1]",
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "artifact_id",
+            "estimate_id",
+            "status",
+            "p50"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "new_candidate": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "description": "Release id (previous) or candidate id (new)",
+              "minLength": 1,
+              "type": "string"
+            },
+            "estimate_id": {
+              "description": "estimate id, e.g. est-external-O6-2100",
+              "pattern": "^est-[A-Za-z0-9_+-]+$",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "official",
+                "insufficiently_calibrated",
+                "external_aggregate",
+                "research_mode",
+                "user_scenario"
+              ],
+              "type": "string"
+            },
+            "p50": {
+              "anyOf": [
+                {
+                  "description": "Probability in [0, 1]",
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "artifact_id",
+            "estimate_id",
+            "status",
+            "p50"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "absolute_change": {
+      "anyOf": [
+        {
+          "maximum": 1,
+          "minimum": -1,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "relative_change": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "affected_horizons": {
+      "items": {
+        "enum": [
+          "2100",
+          "1y",
+          "3y",
+          "5y",
+          "10y",
+          "25y",
+          "eventual"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "affected_outcomes": {
+      "items": {
+        "enum": [
+          "O0",
+          "O1",
+          "O2",
+          "O3",
+          "O4",
+          "O5",
+          "O6",
+          "O7",
+          "O8"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "sources_added": {
+      "items": {
+        "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+        "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "sources_removed": {
+      "items": {
+        "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+        "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "model_changes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "weight_changes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "data_corrections": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "sensitivity_summary": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "run_count": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "max_abs_delta": {
+              "anyOf": [
+                {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "most_sensitive_kind": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "leave_one_source_out",
+                    "leave_one_survey_out",
+                    "alternative_weighting",
+                    "alternative_prior",
+                    "alternative_dependency",
+                    "optimistic_safeguards",
+                    "pessimistic_safeguards",
+                    "slower_capability",
+                    "faster_capability",
+                    "lower_exposure",
+                    "higher_exposure"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "run_count",
+            "max_abs_delta",
+            "most_sensitive_kind",
+            "note"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "heightened_review_triggers": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "reviewer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "approval": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "status": {
+              "enum": [
+                "pending",
+                "approved",
+                "rejected"
+              ],
+              "type": "string"
+            },
+            "required_approvals": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "received_approvals": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "approved_at": {
+              "anyOf": [
+                {
+                  "description": "ISO 8601 timestamp in UTC (…Z)",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "required_approvals",
+            "received_approvals",
+            "approved_at"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "release": {
+      "anyOf": [
+        {
+          "description": "release id, e.g. rel-2026-09-26-001",
+          "pattern": "^rel-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "previous_estimate",
+    "new_candidate",
+    "absolute_change",
+    "relative_change",
+    "affected_horizons",
+    "affected_outcomes",
+    "sources_added",
+    "sources_removed",
+    "model_changes",
+    "weight_changes",
+    "data_corrections",
+    "sensitivity_summary",
+    "heightened_review_triggers",
+    "reviewer",
+    "approval",
+    "release"
+  ],
+  "title": "p(DOOM) Delta Record",
+  "type": "object"
+}

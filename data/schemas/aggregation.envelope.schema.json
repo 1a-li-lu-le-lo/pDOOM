@@ -1,0 +1,159 @@
+{
+  "$id": "urn:pdoom:schema:aggregation.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "aggregation",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "Aggregate of one compatibility group under one method",
+        "properties": {
+          "group_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "outcome_set": {
+            "items": {
+              "enum": [
+                "O0",
+                "O1",
+                "O2",
+                "O3",
+                "O4",
+                "O5",
+                "O6",
+                "O7",
+                "O8"
+              ],
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "horizon": {
+            "enum": [
+              "2100",
+              "1y",
+              "3y",
+              "5y",
+              "10y",
+              "25y",
+              "eventual",
+              "custom"
+            ],
+            "type": "string"
+          },
+          "method": {
+            "enum": [
+              "unweighted_median",
+              "linear_pool",
+              "log_odds_pool",
+              "trimmed_mean",
+              "tier_weighted",
+              "recency_weighted",
+              "equal_weight_by_population"
+            ],
+            "type": "string"
+          },
+          "value": {
+            "description": "Probability in [0, 1]",
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "quantiles": {
+            "additionalProperties": false,
+            "description": "Five-point quantiles (probabilities)",
+            "properties": {
+              "p05": {
+                "description": "Probability in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "p25": {
+                "description": "Probability in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "p50": {
+                "description": "Probability in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "p75": {
+                "description": "Probability in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "p95": {
+                "description": "Probability in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "required": [
+              "p05",
+              "p25",
+              "p50",
+              "p75",
+              "p95"
+            ],
+            "type": "object"
+          },
+          "n": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "weights_note": {
+            "type": "string"
+          },
+          "wording_note": {
+            "type": "string"
+          },
+          "source_ids": {
+            "items": {
+              "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+              "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "group_id",
+          "outcome_set",
+          "horizon",
+          "method",
+          "value",
+          "n",
+          "weights_note",
+          "wording_note",
+          "source_ids"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Aggregation file",
+  "type": "object"
+}

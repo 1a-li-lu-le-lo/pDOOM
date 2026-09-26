@@ -1,0 +1,142 @@
+{
+  "$id": "urn:pdoom:schema:definition:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Glossary definition with attributed variants",
+  "properties": {
+    "id": {
+      "description": "definition id, e.g. def-agi",
+      "pattern": "^def-[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "term": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "short_definition": {
+      "type": "string"
+    },
+    "definitions": {
+      "type": "array",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "source_id": {
+            "anyOf": [
+              {
+                "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+                "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "attribution": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "source_id",
+          "attribution",
+          "note"
+        ],
+        "type": "object"
+      }
+    },
+    "consensus": {
+      "enum": [
+        "consensus",
+        "contested",
+        "emerging"
+      ],
+      "type": "string"
+    },
+    "related_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "see_also_urls": {
+      "items": {
+        "description": "http(s) URL",
+        "format": "uri",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "verification": {
+      "additionalProperties": false,
+      "description": "Verification record: how and when the item was checked against its canonical source",
+      "properties": {
+        "status": {
+          "enum": [
+            "verified_fetch",
+            "verified_search",
+            "verified_prior_knowledge",
+            "unverified"
+          ],
+          "type": "string"
+        },
+        "checked_at": {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "checked_at",
+        "method",
+        "note"
+      ],
+      "type": "object"
+    },
+    "human_review_status": {
+      "enum": [
+        "pending",
+        "reviewed",
+        "disputed"
+      ],
+      "type": "string"
+    },
+    "model_use_status": {
+      "enum": [
+        "excluded",
+        "informational",
+        "eligible",
+        "used"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "term",
+    "short_definition",
+    "definitions",
+    "consensus",
+    "related_ids",
+    "see_also_urls",
+    "verification",
+    "human_review_status",
+    "model_use_status"
+  ],
+  "title": "p(DOOM) Definition",
+  "type": "object"
+}

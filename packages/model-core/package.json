@@ -1,5 +1,5 @@
 {
-  "name": "@pdum/model-core",
+  "name": "@pdoom/model-core",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,6 +7,6 @@
   "types": "./src/index.ts",
   "exports": { ".": "./src/index.ts" },
   "scripts": { "typecheck": "tsc --noEmit" },
-  "dependencies": { "@pdum/schemas": "workspace:*" },
+  "dependencies": { "@pdoom/schemas": "workspace:*" },
   "devDependencies": { "typescript": "^5.9.0" }
 }

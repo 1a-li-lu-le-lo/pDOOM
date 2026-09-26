@@ -1,4 +1,4 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 import type { NextConfig } from "next";
 
 const csp = [
@@ -18,7 +18,7 @@ const csp = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  transpilePackages: ["@pdum/schemas", "@pdum/model-core", "@pdum/sdk", "@pdum/design-system"],
+  transpilePackages: ["@pdoom/schemas", "@pdoom/model-core", "@pdoom/sdk", "@pdoom/design-system"],
   outputFileTracingRoot: new URL("../../", import.meta.url).pathname,
   experimental: { optimizePackageImports: ["three", "@react-three/drei"] },
   async headers() {

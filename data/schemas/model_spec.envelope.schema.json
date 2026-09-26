@@ -1,0 +1,635 @@
+{
+  "$id": "urn:pdoom:schema:model_spec.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "model_spec",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "Model specification: weights, constants, rules and experimental parameters",
+        "properties": {
+          "id": {
+            "description": "model_spec id, e.g. pdoom-model-spec@0.1.0",
+            "pattern": "^pdoom-model-spec@\\d+\\.\\d+\\.\\d+$",
+            "type": "string"
+          },
+          "index_weights": {
+            "additionalProperties": false,
+            "properties": {
+              "capability_pressure": {
+                "additionalProperties": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "propertyNames": {
+                  "description": "signal id, e.g. D1.task_horizon_50pct",
+                  "pattern": "^D(?:[1-9]|10)\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              "control_strength": {
+                "additionalProperties": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "propertyNames": {
+                  "description": "signal id, e.g. D1.task_horizon_50pct",
+                  "pattern": "^D(?:[1-9]|10)\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              "incident_pressure": {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "propertyNames": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              "evidence_pressure": {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "propertyNames": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              "uncertainty": {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "propertyNames": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              "agentic_infrastructure_risk": {
+                "additionalProperties": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "propertyNames": {
+                  "description": "signal id, e.g. D1.task_horizon_50pct",
+                  "pattern": "^D(?:[1-9]|10)\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "type": "object"
+              }
+            },
+            "required": [
+              "capability_pressure",
+              "control_strength",
+              "incident_pressure",
+              "evidence_pressure",
+              "uncertainty",
+              "agentic_infrastructure_risk"
+            ],
+            "type": "object"
+          },
+          "weight_bounds": {
+            "items": false,
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "maximum": 1,
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "tier_multipliers": {
+            "additionalProperties": false,
+            "properties": {
+              "1": {
+                "description": "Value in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "2": {
+                "description": "Value in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "3": {
+                "description": "Value in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "4": {
+                "description": "Value in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "5": {
+                "description": "Value in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "required": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "type": "object"
+          },
+          "incident_scoring": {
+            "additionalProperties": false,
+            "properties": {
+              "severity_weights": {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "propertyNames": {
+                  "enum": [
+                    "negligible",
+                    "minor",
+                    "material",
+                    "major",
+                    "severe",
+                    "catastrophic"
+                  ],
+                  "type": "string"
+                },
+                "required": [
+                  "negligible",
+                  "minor",
+                  "material",
+                  "major",
+                  "severe",
+                  "catastrophic"
+                ],
+                "type": "object"
+              },
+              "relevance_weights": {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "propertyNames": {
+                  "enum": [
+                    "none",
+                    "weak",
+                    "indirect",
+                    "moderate",
+                    "strong",
+                    "direct_precursor"
+                  ],
+                  "type": "string"
+                },
+                "required": [
+                  "none",
+                  "weak",
+                  "indirect",
+                  "moderate",
+                  "strong",
+                  "direct_precursor"
+                ],
+                "type": "object"
+              },
+              "evidence_weights": {
+                "additionalProperties": {
+                  "type": "number"
+                },
+                "propertyNames": {
+                  "enum": [
+                    "allegation",
+                    "single_source_report",
+                    "corroborated_report",
+                    "official_finding",
+                    "peer_reviewed_analysis",
+                    "independently_reproduced"
+                  ],
+                  "type": "string"
+                },
+                "required": [
+                  "allegation",
+                  "single_source_report",
+                  "corroborated_report",
+                  "official_finding",
+                  "peer_reviewed_analysis",
+                  "independently_reproduced"
+                ],
+                "type": "object"
+              },
+              "recency_half_life_days": {
+                "maximum": 9007199254740991,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "squash_k": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "severity_weights",
+              "relevance_weights",
+              "evidence_weights",
+              "recency_half_life_days",
+              "squash_k"
+            ],
+            "type": "object"
+          },
+          "editorial_rules": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "level": {
+                  "enum": [
+                    "very_low",
+                    "low",
+                    "guarded",
+                    "elevated",
+                    "high",
+                    "severe_uncertainty",
+                    "insufficient_evidence"
+                  ],
+                  "type": "string"
+                },
+                "when": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "level",
+                "when"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "rounding_rules": {
+            "additionalProperties": false,
+            "properties": {
+              "extreme": {
+                "maximum": 9007199254740991,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "high": {
+                "maximum": 9007199254740991,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "moderate": {
+                "maximum": 9007199254740991,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "low": {
+                "maximum": 9007199254740991,
+                "minimum": 1,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "extreme",
+              "high",
+              "moderate",
+              "low"
+            ],
+            "type": "object"
+          },
+          "aggregation_methods": {
+            "items": {
+              "enum": [
+                "unweighted_median",
+                "linear_pool",
+                "log_odds_pool",
+                "trimmed_mean",
+                "tier_weighted",
+                "recency_weighted",
+                "equal_weight_by_population"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "experimental_causal": {
+            "additionalProperties": false,
+            "description": "Parameters of the experimental causal model (research mode only)",
+            "properties": {
+              "version": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "seed": {
+                "maximum": 4294967295,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "samples": {
+                "maximum": 9007199254740991,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "common_factor_loading": {
+                "description": "Value in [0, 1]",
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "horizons": {
+                "additionalProperties": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "A": {
+                      "additionalProperties": false,
+                      "description": "Capability / autonomy pressure factor",
+                      "properties": {
+                        "p05": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "p50": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "p95": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "p05",
+                        "p50",
+                        "p95"
+                      ],
+                      "type": "object"
+                    },
+                    "C": {
+                      "additionalProperties": false,
+                      "description": "Control strength factor",
+                      "properties": {
+                        "p05": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "p50": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "p95": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "p05",
+                        "p50",
+                        "p95"
+                      ],
+                      "type": "object"
+                    },
+                    "E": {
+                      "additionalProperties": false,
+                      "description": "Exposure factor",
+                      "properties": {
+                        "p05": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "p50": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "p95": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "p05",
+                        "p50",
+                        "p95"
+                      ],
+                      "type": "object"
+                    },
+                    "F": {
+                      "additionalProperties": false,
+                      "description": "Fragility / resilience factor",
+                      "properties": {
+                        "p05": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "p50": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        },
+                        "p95": {
+                          "description": "Probability in [0, 1]",
+                          "maximum": 1,
+                          "minimum": 0,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "p05",
+                        "p50",
+                        "p95"
+                      ],
+                      "type": "object"
+                    },
+                    "O": {
+                      "additionalProperties": {
+                        "additionalProperties": false,
+                        "description": "Three-point quantiles (probabilities)",
+                        "properties": {
+                          "p05": {
+                            "description": "Probability in [0, 1]",
+                            "maximum": 1,
+                            "minimum": 0,
+                            "type": "number"
+                          },
+                          "p50": {
+                            "description": "Probability in [0, 1]",
+                            "maximum": 1,
+                            "minimum": 0,
+                            "type": "number"
+                          },
+                          "p95": {
+                            "description": "Probability in [0, 1]",
+                            "maximum": 1,
+                            "minimum": 0,
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "p05",
+                          "p50",
+                          "p95"
+                        ],
+                        "type": "object"
+                      },
+                      "description": "Per-outcome base rates, O3..O8",
+                      "propertyNames": {
+                        "enum": [
+                          "O3",
+                          "O4",
+                          "O5",
+                          "O6",
+                          "O7",
+                          "O8"
+                        ],
+                        "type": "string"
+                      },
+                      "required": [
+                        "O3",
+                        "O4",
+                        "O5",
+                        "O6",
+                        "O7",
+                        "O8"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "A",
+                    "C",
+                    "E",
+                    "F",
+                    "O"
+                  ],
+                  "type": "object"
+                },
+                "propertyNames": {
+                  "enum": [
+                    "2100",
+                    "1y",
+                    "3y",
+                    "5y",
+                    "10y",
+                    "25y",
+                    "eventual"
+                  ],
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              "rationale": {
+                "additionalProperties": false,
+                "properties": {
+                  "A": {
+                    "type": "string"
+                  },
+                  "C": {
+                    "type": "string"
+                  },
+                  "E": {
+                    "type": "string"
+                  },
+                  "F": {
+                    "type": "string"
+                  },
+                  "O": {
+                    "type": "string"
+                  },
+                  "dependence": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "A",
+                  "C",
+                  "E",
+                  "F",
+                  "O",
+                  "dependence"
+                ],
+                "type": "object"
+              },
+              "source_ids": {
+                "items": {
+                  "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+                  "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "version",
+              "seed",
+              "samples",
+              "common_factor_loading",
+              "horizons",
+              "rationale",
+              "source_ids"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "index_weights",
+          "weight_bounds",
+          "tier_multipliers",
+          "incident_scoring",
+          "editorial_rules",
+          "rounding_rules",
+          "aggregation_methods",
+          "experimental_causal"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Model Spec file",
+  "type": "object"
+}

@@ -1,0 +1,201 @@
+{
+  "$id": "urn:pdoom:schema:intervention:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Category-level safeguard or intervention",
+  "properties": {
+    "id": {
+      "description": "intervention id, e.g. I04",
+      "pattern": "^I\\d{2,}$",
+      "type": "string"
+    },
+    "name": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "target_scenario_ids": {
+      "items": {
+        "description": "scenario id, e.g. S3",
+        "pattern": "^S(?:[1-9]|1[0-8])$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "mechanism": {
+      "type": "string"
+    },
+    "evidence_summary": {
+      "type": "string"
+    },
+    "evidence_strength": {
+      "enum": [
+        "none",
+        "weak",
+        "moderate",
+        "strong"
+      ],
+      "type": "string"
+    },
+    "cost": {
+      "enum": [
+        "low",
+        "moderate",
+        "high",
+        "very_high",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "time_to_deploy": {
+      "enum": [
+        "months",
+        "1-2y",
+        "3-5y",
+        "5y+",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "effect_size": {
+      "description": "Qualitative only",
+      "enum": [
+        "unknown",
+        "small",
+        "moderate",
+        "large"
+      ],
+      "type": "string"
+    },
+    "uncertainty": {
+      "enum": [
+        "low",
+        "moderate",
+        "high",
+        "extreme"
+      ],
+      "type": "string"
+    },
+    "possible_failure": {
+      "type": "string"
+    },
+    "possible_backfire": {
+      "type": "string"
+    },
+    "owner_types": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "user_actions": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "audience": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "audience",
+          "action"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "category": {
+      "enum": [
+        "technical",
+        "organizational",
+        "national",
+        "international",
+        "resilience"
+      ],
+      "type": "string"
+    },
+    "source_ids": {
+      "items": {
+        "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+        "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "verification": {
+      "additionalProperties": false,
+      "description": "Verification record: how and when the item was checked against its canonical source",
+      "properties": {
+        "status": {
+          "enum": [
+            "verified_fetch",
+            "verified_search",
+            "verified_prior_knowledge",
+            "unverified"
+          ],
+          "type": "string"
+        },
+        "checked_at": {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "checked_at",
+        "method",
+        "note"
+      ],
+      "type": "object"
+    },
+    "human_review_status": {
+      "enum": [
+        "pending",
+        "reviewed",
+        "disputed"
+      ],
+      "type": "string"
+    },
+    "model_use_status": {
+      "enum": [
+        "excluded",
+        "informational",
+        "eligible",
+        "used"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "target_scenario_ids",
+    "mechanism",
+    "evidence_summary",
+    "evidence_strength",
+    "cost",
+    "time_to_deploy",
+    "effect_size",
+    "uncertainty",
+    "possible_failure",
+    "possible_backfire",
+    "owner_types",
+    "user_actions",
+    "category",
+    "source_ids",
+    "verification",
+    "human_review_status",
+    "model_use_status"
+  ],
+  "title": "p(DOOM) Intervention",
+  "type": "object"
+}

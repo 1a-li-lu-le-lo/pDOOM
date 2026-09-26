@@ -1,4 +1,4 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 // Merge research fragment files (research/*/fragments/{sources,claims}.json) into a
 // snapshot's sources.json / claims.json, deduplicating sources by canonical URL and
 // rewriting every remapped id across all snapshot entity files.

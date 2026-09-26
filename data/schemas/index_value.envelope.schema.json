@@ -1,0 +1,178 @@
+{
+  "$id": "urn:pdoom:schema:index_value.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "index_value",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "Index value on the 0–100 scale; never a probability",
+        "properties": {
+          "index_id": {
+            "enum": [
+              "evidence_pressure",
+              "capability_pressure",
+              "control_strength",
+              "incident_pressure",
+              "uncertainty",
+              "agentic_infrastructure_risk",
+              "attention"
+            ],
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "description": "Index score on the 0–100 scale; not a probability",
+                "maximum": 100,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "label": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "scale": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "is_probability": {
+            "const": false,
+            "type": "boolean"
+          },
+          "baseline": {
+            "anyOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "snapshot_id": {
+                    "description": "snapshot id, e.g. snap-2026-09-26-001",
+                    "pattern": "^snap-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
+                    "type": "string"
+                  },
+                  "value": {
+                    "anyOf": [
+                      {
+                        "description": "Index score on the 0–100 scale; not a probability",
+                        "maximum": 100,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "snapshot_id",
+                  "value"
+                ],
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "components": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "signal_id": {
+                  "description": "signal id, e.g. D1.task_horizon_50pct",
+                  "pattern": "^D(?:[1-9]|10)\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
+                  "type": "string"
+                },
+                "weight": {
+                  "type": "number"
+                },
+                "value_normalized": {
+                  "description": "Value in [0, 1]",
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "tier": {
+                  "enum": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ],
+                  "type": "number"
+                },
+                "contribution": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "signal_id",
+                "weight",
+                "value_normalized",
+                "tier",
+                "contribution"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "coverage": {
+            "description": "Value in [0, 1]",
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "as_of": {
+            "description": "Calendar date, YYYY-MM-DD",
+            "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+            "type": "string"
+          },
+          "method_ref": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "index_id",
+          "value",
+          "label",
+          "scale",
+          "is_probability",
+          "baseline",
+          "components",
+          "coverage",
+          "as_of",
+          "method_ref",
+          "note"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Index Value file",
+  "type": "object"
+}

@@ -1,6 +1,6 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 /**
- * Shared primitives used by every PDUM schema.
+ * Shared primitives used by every p(DOOM) schema.
  *
  * All regular expressions here must stay RE2-compatible (no lookaheads, no
  * backreferences) because Go validates the generated JSON Schemas with a
@@ -157,8 +157,8 @@ export const ID_PATTERNS = {
   snapshot: "^snap-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
   candidate: "^cand-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
   release: "^rel-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
-  model_version: `^pdum-model/${SLUG}@\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$`,
-  model_spec: "^pdum-model-spec@\\d+\\.\\d+\\.\\d+$",
+  model_version: `^pdoom-model/${SLUG}@\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$`,
+  model_spec: "^pdoom-model-spec@\\d+\\.\\d+\\.\\d+$",
   estimate: "^est-[A-Za-z0-9_+-]+$",
 } as const;
 
@@ -188,8 +188,8 @@ export const ActionId = idSchema("action", "act-individuals-learn-the-basics");
 export const SnapshotId = idSchema("snapshot", "snap-2026-09-26-001");
 export const CandidateId = idSchema("candidate", "cand-2026-09-26-001");
 export const ReleaseId = idSchema("release", "rel-2026-09-26-001");
-export const ModelVersion = idSchema("model_version", "pdum-model/external-aggregate@0.1.0");
-export const ModelSpecId = idSchema("model_spec", "pdum-model-spec@0.1.0");
+export const ModelVersion = idSchema("model_version", "pdoom-model/external-aggregate@0.1.0");
+export const ModelSpecId = idSchema("model_spec", "pdoom-model-spec@0.1.0");
 export const EstimateId = idSchema("estimate", "est-external-O6-2100");
 
 /** Any snapshot entity id that we do not constrain further (e.g. driver observations). */

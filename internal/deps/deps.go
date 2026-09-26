@@ -1,4 +1,4 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 // Package deps pins third-party modules used across the Go services so that
 // `go mod tidy` keeps them while individual packages are still being written.
 package deps

@@ -1,0 +1,146 @@
+{
+  "$id": "urn:pdoom:schema:benchmark_result:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A single benchmark measurement for one model",
+  "properties": {
+    "id": {
+      "description": "benchmark_result id, e.g. bmr-metr-th50-example-model",
+      "pattern": "^bmr-[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "benchmark_id": {
+      "description": "benchmark id, e.g. bm-metr-time-horizon-50",
+      "pattern": "^bm-[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string"
+    },
+    "model_name": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "model_developer": {
+      "type": "string"
+    },
+    "date": {
+      "description": "Calendar date, YYYY-MM-DD",
+      "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "ci_low": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "ci_high": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "scaffold": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "low",
+        "moderate",
+        "high"
+      ],
+      "type": "string"
+    },
+    "note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_ids": {
+      "items": {
+        "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+        "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "verification": {
+      "additionalProperties": false,
+      "description": "Verification record: how and when the item was checked against its canonical source",
+      "properties": {
+        "status": {
+          "enum": [
+            "verified_fetch",
+            "verified_search",
+            "verified_prior_knowledge",
+            "unverified"
+          ],
+          "type": "string"
+        },
+        "checked_at": {
+          "description": "Calendar date, YYYY-MM-DD",
+          "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "checked_at",
+        "method",
+        "note"
+      ],
+      "type": "object"
+    },
+    "human_review_status": {
+      "enum": [
+        "pending",
+        "reviewed",
+        "disputed"
+      ],
+      "type": "string"
+    },
+    "model_use_status": {
+      "enum": [
+        "excluded",
+        "informational",
+        "eligible",
+        "used"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "benchmark_id",
+    "model_name",
+    "model_developer",
+    "date",
+    "value",
+    "unit",
+    "ci_low",
+    "ci_high",
+    "scaffold",
+    "confidence",
+    "note",
+    "source_ids",
+    "verification",
+    "human_review_status",
+    "model_use_status"
+  ],
+  "title": "p(DOOM) Benchmark Result",
+  "type": "object"
+}

@@ -1,0 +1,147 @@
+{
+  "$id": "urn:pdoom:schema:drivers_explained.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "drivers_explained",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "One driver contribution shown in the 'Why this number?' panel",
+        "properties": {
+          "driver": {
+            "enum": [
+              "D1",
+              "D2",
+              "D3",
+              "D4",
+              "D5",
+              "D6",
+              "D7",
+              "D8",
+              "D9",
+              "D10"
+            ],
+            "type": "string"
+          },
+          "signal_id": {
+            "description": "signal id, e.g. D1.task_horizon_50pct",
+            "pattern": "^D(?:[1-9]|10)\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "index_id": {
+            "enum": [
+              "evidence_pressure",
+              "capability_pressure",
+              "control_strength",
+              "incident_pressure",
+              "uncertainty",
+              "agentic_infrastructure_risk",
+              "attention"
+            ],
+            "type": "string"
+          },
+          "direction": {
+            "enum": [
+              "increases",
+              "decreases",
+              "neutral"
+            ],
+            "type": "string"
+          },
+          "magnitude": {
+            "description": "Absolute contribution in index points",
+            "minimum": 0,
+            "type": "number"
+          },
+          "source_ids": {
+            "items": {
+              "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+              "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "confidence": {
+            "enum": [
+              "low",
+              "moderate",
+              "high"
+            ],
+            "type": "string"
+          },
+          "model_role": {
+            "enum": [
+              "index_component",
+              "aggregation_input",
+              "experimental_causal_input",
+              "editorial_input",
+              "informational"
+            ],
+            "type": "string"
+          },
+          "last_updated": {
+            "description": "Calendar date, YYYY-MM-DD",
+            "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+            "type": "string"
+          },
+          "sensitivity": {
+            "additionalProperties": false,
+            "properties": {
+              "leave_one_out_delta": {
+                "description": "Index points moved when this driver is removed",
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "leave_one_out_delta",
+              "note"
+            ],
+            "type": "object"
+          },
+          "counterevidence": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "driver",
+          "signal_id",
+          "index_id",
+          "direction",
+          "magnitude",
+          "source_ids",
+          "confidence",
+          "model_role",
+          "last_updated",
+          "sensitivity",
+          "counterevidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Drivers Explained file",
+  "type": "object"
+}

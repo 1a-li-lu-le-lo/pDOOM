@@ -1,0 +1,46 @@
+{
+  "$id": "urn:pdoom:schema:approval:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Signed reviewer approval of a release manifest",
+  "properties": {
+    "reviewer_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "key_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "signed_at": {
+      "description": "ISO 8601 timestamp in UTC (…Z)",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$",
+      "type": "string"
+    },
+    "manifest_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "signature_base64": {
+      "pattern": "^[A-Za-z0-9+/]+={0,2}$",
+      "type": "string"
+    },
+    "conflicts_declared": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "reviewer_id",
+    "key_id",
+    "signed_at",
+    "manifest_sha256",
+    "signature_base64",
+    "conflicts_declared"
+  ],
+  "title": "p(DOOM) Approval",
+  "type": "object"
+}

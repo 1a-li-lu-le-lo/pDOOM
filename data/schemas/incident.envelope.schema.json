@@ -1,0 +1,267 @@
+{
+  "$id": "urn:pdoom:schema:incident.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "incident",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "Verified AI incident or near miss, described at category level",
+        "properties": {
+          "id": {
+            "description": "incident id, e.g. inc-aiid-0001-example",
+            "pattern": "^inc-[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "date": {
+            "anyOf": [
+              {
+                "description": "Calendar date, YYYY-MM-DD",
+                "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "date_precision": {
+            "enum": [
+              "day",
+              "month",
+              "year",
+              "unknown"
+            ],
+            "type": "string"
+          },
+          "external_ids": {
+            "additionalProperties": false,
+            "properties": {
+              "aiid": {
+                "type": "string"
+              },
+              "oecd_aim": {
+                "type": "string"
+              },
+              "mit_tracker": {
+                "type": "string"
+              },
+              "cve": {
+                "type": "string"
+              },
+              "docket": {
+                "type": "string"
+              },
+              "other": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "summary": {
+            "description": "Non-graphic, non-operational summary",
+            "type": "string"
+          },
+          "cause": {
+            "items": {
+              "enum": [
+                "malicious_use",
+                "malfunction",
+                "human_misuse",
+                "organizational_failure",
+                "security_compromise",
+                "insufficient_oversight",
+                "systemic_interaction",
+                "unclear"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "harm": {
+            "items": {
+              "enum": [
+                "physical",
+                "psychological",
+                "financial",
+                "informational",
+                "political",
+                "environmental",
+                "privacy",
+                "security",
+                "civil_rights",
+                "institutional",
+                "infrastructure"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "severity": {
+            "enum": [
+              "negligible",
+              "minor",
+              "material",
+              "major",
+              "severe",
+              "catastrophic"
+            ],
+            "type": "string"
+          },
+          "pdoom_relevance": {
+            "enum": [
+              "none",
+              "weak",
+              "indirect",
+              "moderate",
+              "strong",
+              "direct_precursor"
+            ],
+            "type": "string"
+          },
+          "evidence_level": {
+            "enum": [
+              "allegation",
+              "single_source_report",
+              "corroborated_report",
+              "official_finding",
+              "peer_reviewed_analysis",
+              "independently_reproduced"
+            ],
+            "type": "string"
+          },
+          "systems_involved": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "jurisdiction": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "near_miss": {
+            "type": "boolean"
+          },
+          "novelty": {
+            "enum": [
+              "routine",
+              "notable",
+              "novel"
+            ],
+            "type": "string"
+          },
+          "exposure_note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_ids": {
+            "items": {
+              "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+              "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "verification": {
+            "additionalProperties": false,
+            "description": "Verification record: how and when the item was checked against its canonical source",
+            "properties": {
+              "status": {
+                "enum": [
+                  "verified_fetch",
+                  "verified_search",
+                  "verified_prior_knowledge",
+                  "unverified"
+                ],
+                "type": "string"
+              },
+              "checked_at": {
+                "description": "Calendar date, YYYY-MM-DD",
+                "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "status",
+              "checked_at",
+              "method",
+              "note"
+            ],
+            "type": "object"
+          },
+          "human_review_status": {
+            "enum": [
+              "pending",
+              "reviewed",
+              "disputed"
+            ],
+            "type": "string"
+          },
+          "model_use_status": {
+            "enum": [
+              "excluded",
+              "informational",
+              "eligible",
+              "used"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "date",
+          "date_precision",
+          "external_ids",
+          "summary",
+          "cause",
+          "harm",
+          "severity",
+          "pdoom_relevance",
+          "evidence_level",
+          "systems_involved",
+          "jurisdiction",
+          "near_miss",
+          "novelty",
+          "exposure_note",
+          "source_ids",
+          "verification",
+          "human_review_status",
+          "model_use_status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Incident file",
+  "type": "object"
+}

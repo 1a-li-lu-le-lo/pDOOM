@@ -1,4 +1,4 @@
-# Copyright NU Cybernetics. PDUM — research prototype.
+# Copyright NU Cybernetics. p(DOOM) — research prototype.
 name: ci
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm lint
       - run: pnpm test
-      - run: pnpm --filter @pdum/web build
+      - run: pnpm --filter @pdoom/web build
   go:
     runs-on: ubuntu-latest
     steps:
@@ -34,8 +34,8 @@ jobs:
       - name: Validate committed snapshot and audit chain
         run: |
           SNAP=$(ls -d data/snapshots/snap-* | sort | tail -1)
-          go run ./cmd/pdumctl snapshot validate "$SNAP"
-          test -f data/audit/audit.jsonl && go run ./cmd/pdumctl audit verify data/audit/audit.jsonl || true
+          go run ./cmd/pdoomctl snapshot validate "$SNAP"
+          test -f data/audit/audit.jsonl && go run ./cmd/pdoomctl audit verify data/audit/audit.jsonl || true
   e2e:
     runs-on: ubuntu-latest
     needs: [typescript]
@@ -47,7 +47,7 @@ jobs:
         with: { node-version: 22, cache: pnpm }
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
-      - run: pnpm --filter @pdum/web build
-      - run: PDUM_CHROMIUM= pnpm e2e
+      - run: pnpm --filter @pdoom/web build
+      - run: PDOOM_CHROMIUM= pnpm e2e
         env:
           CI: "1"

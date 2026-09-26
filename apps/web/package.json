@@ -1,5 +1,5 @@
 {
-  "name": "@pdum/web",
+  "name": "@pdoom/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@pdum/design-system": "workspace:*",
-    "@pdum/model-core": "workspace:*",
-    "@pdum/schemas": "workspace:*",
-    "@pdum/sdk": "workspace:*",
+    "@pdoom/design-system": "workspace:*",
+    "@pdoom/model-core": "workspace:*",
+    "@pdoom/schemas": "workspace:*",
+    "@pdoom/sdk": "workspace:*",
     "@react-three/drei": "^10.7.0",
     "@react-three/fiber": "^9.8.0",
     "d3-array": "^3.2.4",

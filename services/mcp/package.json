@@ -1,15 +1,15 @@
 {
-  "name": "@pdum/mcp",
+  "name": "@pdoom/mcp",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "bin": { "pdum-mcp": "./src/server.ts" },
+  "bin": { "pdoom-mcp": "./src/server.ts" },
   "scripts": { "typecheck": "tsc --noEmit", "start": "tsx src/server.ts" },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
-    "@pdum/model-core": "workspace:*",
-    "@pdum/schemas": "workspace:*",
-    "@pdum/sdk": "workspace:*",
+    "@pdoom/model-core": "workspace:*",
+    "@pdoom/schemas": "workspace:*",
+    "@pdoom/sdk": "workspace:*",
     "zod": "^4.1.0"
   },
   "devDependencies": { "@types/node": "^22.19.0", "tsx": "^4.23.0", "typescript": "^5.9.0" }

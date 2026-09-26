@@ -1,0 +1,360 @@
+{
+  "$id": "urn:pdoom:schema:estimate:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Published estimate with outcome, horizon, conditioning, interval and status",
+  "properties": {
+    "estimate_id": {
+      "description": "estimate id, e.g. est-external-O6-2100",
+      "pattern": "^est-[A-Za-z0-9_+-]+$",
+      "type": "string"
+    },
+    "producer": {
+      "description": "model_version id, e.g. pdoom-model/external-aggregate@0.1.0",
+      "pattern": "^pdoom-model\\/[a-z0-9]+(?:-[a-z0-9]+)*@\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "official",
+        "insufficiently_calibrated",
+        "external_aggregate",
+        "research_mode",
+        "user_scenario"
+      ],
+      "type": "string"
+    },
+    "outcome_set": {
+      "items": {
+        "enum": [
+          "O0",
+          "O1",
+          "O2",
+          "O3",
+          "O4",
+          "O5",
+          "O6",
+          "O7",
+          "O8"
+        ],
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "outcome_label": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "horizon": {
+      "enum": [
+        "2100",
+        "1y",
+        "3y",
+        "5y",
+        "10y",
+        "25y",
+        "eventual"
+      ],
+      "type": "string"
+    },
+    "conditioning": {
+      "type": "string"
+    },
+    "forecast_origin_date": {
+      "description": "Calendar date, YYYY-MM-DD",
+      "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+      "type": "string"
+    },
+    "last_evidence_date": {
+      "description": "Calendar date, YYYY-MM-DD",
+      "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+      "type": "string"
+    },
+    "quantiles": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "description": "Five-point quantiles (probabilities)",
+          "properties": {
+            "p05": {
+              "description": "Probability in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "p25": {
+              "description": "Probability in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "p50": {
+              "description": "Probability in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "p75": {
+              "description": "Probability in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "p95": {
+              "description": "Probability in [0, 1]",
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "p05",
+            "p25",
+            "p50",
+            "p75",
+            "p95"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "mean": {
+      "anyOf": [
+        {
+          "description": "Probability in [0, 1]",
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "disagreement": {
+      "enum": [
+        "low",
+        "moderate",
+        "high",
+        "extreme"
+      ],
+      "type": "string"
+    },
+    "uncertainty": {
+      "enum": [
+        "low",
+        "moderate",
+        "high",
+        "extreme"
+      ],
+      "type": "string"
+    },
+    "model_confidence": {
+      "enum": [
+        "low",
+        "moderate",
+        "high"
+      ],
+      "type": "string"
+    },
+    "source_coverage": {
+      "additionalProperties": false,
+      "properties": {
+        "forecast_count": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "population_count": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source_ids": {
+          "items": {
+            "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+            "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "forecast_count",
+        "population_count",
+        "source_ids"
+      ],
+      "type": "object"
+    },
+    "previous": {
+      "anyOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "release_id": {
+              "description": "release id, e.g. rel-2026-09-26-001",
+              "pattern": "^rel-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
+              "type": "string"
+            },
+            "estimate_id": {
+              "description": "estimate id, e.g. est-external-O6-2100",
+              "pattern": "^est-[A-Za-z0-9_+-]+$",
+              "type": "string"
+            },
+            "quantiles": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "description": "Five-point quantiles (probabilities)",
+                  "properties": {
+                    "p05": {
+                      "description": "Probability in [0, 1]",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "p25": {
+                      "description": "Probability in [0, 1]",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "p50": {
+                      "description": "Probability in [0, 1]",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "p75": {
+                      "description": "Probability in [0, 1]",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    },
+                    "p95": {
+                      "description": "Probability in [0, 1]",
+                      "maximum": 1,
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "p05",
+                    "p25",
+                    "p50",
+                    "p75",
+                    "p95"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "mean": {
+              "anyOf": [
+                {
+                  "description": "Probability in [0, 1]",
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "release_id",
+            "estimate_id",
+            "quantiles",
+            "mean"
+          ],
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reason_for_change": {
+      "type": "string"
+    },
+    "rounding_rule": {
+      "enum": [
+        "nearest_5",
+        "nearest_2",
+        "nearest_1",
+        "not_applicable"
+      ],
+      "type": "string"
+    },
+    "display": {
+      "additionalProperties": false,
+      "properties": {
+        "central": {
+          "description": "Rounded central value or \"Insufficiently calibrated\"",
+          "minLength": 1,
+          "type": "string"
+        },
+        "interval": {
+          "description": "Rounded p05–p95 interval, null when no probability is published",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "central",
+        "interval",
+        "note"
+      ],
+      "type": "object"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "method_ref": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "estimate_id",
+    "producer",
+    "status",
+    "outcome_set",
+    "outcome_label",
+    "horizon",
+    "conditioning",
+    "forecast_origin_date",
+    "last_evidence_date",
+    "quantiles",
+    "mean",
+    "disagreement",
+    "uncertainty",
+    "model_confidence",
+    "source_coverage",
+    "previous",
+    "reason_for_change",
+    "rounding_rule",
+    "display",
+    "assumptions",
+    "method_ref"
+  ],
+  "title": "p(DOOM) Estimate",
+  "type": "object"
+}

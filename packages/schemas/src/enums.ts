@@ -1,4 +1,4 @@
-// Copyright NU Cybernetics. PDUM — research prototype.
+// Copyright NU Cybernetics. p(DOOM) — research prototype.
 /**
  * Every enumeration from build-spec §3.3 (and the small per-entity enumerations
  * from Appendix A) as zod v4 enums, plus the display / rule tables that the web
@@ -15,9 +15,9 @@ import { z } from "zod";
 export const Outcome = z.enum(["O0", "O1", "O2", "O3", "O4", "O5", "O6", "O7", "O8"]);
 export type OutcomeCode = z.infer<typeof Outcome>;
 
-/** Outcomes counted in the combined PDUM definition (O3..O8). */
-export const PdumOutcome = z.enum(["O3", "O4", "O5", "O6", "O7", "O8"]);
-export type PdumOutcomeCode = z.infer<typeof PdumOutcome>;
+/** Outcomes counted in the combined p(DOOM) definition (O3..O8). */
+export const PDoomOutcome = z.enum(["O3", "O4", "O5", "O6", "O7", "O8"]);
+export type PDoomOutcomeCode = z.infer<typeof PDoomOutcome>;
 
 export const OutcomeSlug = z.enum([
   "beneficial_or_manageable",
@@ -32,11 +32,15 @@ export const OutcomeSlug = z.enum([
 ]);
 export type OutcomeSlugValue = z.infer<typeof OutcomeSlug>;
 
-export const Horizon = z.enum(["1y", "3y", "5y", "10y", "25y", "2100", "eventual"]);
+/** Horizon keys in specification order. Do not rely on `Horizon.options` for order:
+ * zod v4 stores enum members as object keys, and JavaScript orders integer-like keys
+ * such as "2100" first. */
+export const HORIZON_KEYS = ["1y", "3y", "5y", "10y", "25y", "2100", "eventual"] as const;
+export const Horizon = z.enum(HORIZON_KEYS);
 export type HorizonKey = z.infer<typeof Horizon>;
 
 /** Forecast records may carry a non-standard horizon; `custom` requires `horizon_note`. */
-export const ForecastHorizon = z.enum([...Horizon.options, "custom"]);
+export const ForecastHorizon = z.enum([...HORIZON_KEYS, "custom"]);
 export type ForecastHorizonKey = z.infer<typeof ForecastHorizon>;
 
 export const SourceTier = z.literal([1, 2, 3, 4, 5]);
@@ -172,7 +176,7 @@ export const IncidentSeverity = z.enum([
 ]);
 export type IncidentSeverityValue = z.infer<typeof IncidentSeverity>;
 
-export const PdumRelevance = z.enum([
+export const PDoomRelevance = z.enum([
   "none",
   "weak",
   "indirect",
@@ -180,7 +184,7 @@ export const PdumRelevance = z.enum([
   "strong",
   "direct_precursor",
 ]);
-export type PdumRelevanceValue = z.infer<typeof PdumRelevance>;
+export type PDoomRelevanceValue = z.infer<typeof PDoomRelevance>;
 
 export const EvidenceLevel = z.enum([
   "allegation",
@@ -376,7 +380,7 @@ export interface OutcomeDefinition {
   label: string;
   description: string;
   included_in: {
-    pdum: boolean;
+    pdoom: boolean;
     extinction: boolean;
     disempowerment: boolean;
     collapse: boolean;
@@ -385,7 +389,7 @@ export interface OutcomeDefinition {
 }
 
 const NOT_INCLUDED = {
-  pdum: false,
+  pdoom: false,
   extinction: false,
   disempowerment: false,
   collapse: false,
@@ -394,7 +398,7 @@ const NOT_INCLUDED = {
 
 /**
  * Outcome ladder O0–O8. Descriptions are category-level and contain no
- * operational detail. O0–O2 are tracked but sit outside the combined PDUM set.
+ * operational detail. O0–O2 are tracked but sit outside the combined p(DOOM) set.
  */
 export const OUTCOMES: Record<OutcomeCode, OutcomeDefinition> = {
   O0: {
@@ -427,7 +431,7 @@ export const OUTCOMES: Record<OutcomeCode, OutcomeDefinition> = {
     label: "Permanent severe disempowerment",
     description:
       "Humanity loses, in a way judged practically irreversible, the ability to direct its own future — whether to AI systems or to a narrow group controlling them.",
-    included_in: { ...NOT_INCLUDED, pdum: true, disempowerment: true },
+    included_in: { ...NOT_INCLUDED, pdoom: true, disempowerment: true },
   },
   O4: {
     code: "O4",
@@ -435,7 +439,7 @@ export const OUTCOMES: Record<OutcomeCode, OutcomeDefinition> = {
     label: "Civilizational collapse",
     description:
       "A breakdown of global-scale institutions, infrastructure and population that is not recovered from within centuries, with humanity surviving in reduced form.",
-    included_in: { ...NOT_INCLUDED, pdum: true, collapse: true },
+    included_in: { ...NOT_INCLUDED, pdoom: true, collapse: true },
   },
   O5: {
     code: "O5",
@@ -443,14 +447,14 @@ export const OUTCOMES: Record<OutcomeCode, OutcomeDefinition> = {
     label: "Near extinction",
     description:
       "Human population falls to a small fraction of its current level with recovery uncertain; the species survives.",
-    included_in: { ...NOT_INCLUDED, pdum: true, collapse: true },
+    included_in: { ...NOT_INCLUDED, pdoom: true, collapse: true },
   },
   O6: {
     code: "O6",
     slug: "human_extinction",
     label: "Human extinction",
     description: "No living humans remain.",
-    included_in: { ...NOT_INCLUDED, pdum: true, extinction: true },
+    included_in: { ...NOT_INCLUDED, pdoom: true, extinction: true },
   },
   O7: {
     code: "O7",
@@ -458,7 +462,7 @@ export const OUTCOMES: Record<OutcomeCode, OutcomeDefinition> = {
     label: "Biospheric catastrophe",
     description:
       "Irreversible destruction of much of Earth's biosphere attributable to AI-driven activity, whether or not humans survive.",
-    included_in: { ...NOT_INCLUDED, pdum: true, biosphere: true },
+    included_in: { ...NOT_INCLUDED, pdoom: true, biosphere: true },
   },
   O8: {
     code: "O8",
@@ -466,13 +470,13 @@ export const OUTCOMES: Record<OutcomeCode, OutcomeDefinition> = {
     label: "Other irreversible loss",
     description:
       "An unrecoverable loss of value not captured by O3–O7, such as permanent lock-in of a substantially worse trajectory for humanity.",
-    included_in: { ...NOT_INCLUDED, pdum: true },
+    included_in: { ...NOT_INCLUDED, pdoom: true },
   },
 };
 
 /** Derived outcome sets (build-spec §3.3). Never combine outcomes silently (§0.4). */
 export const DERIVED_OUTCOME_SETS = {
-  PDUM: ["O3", "O4", "O5", "O6", "O7", "O8"],
+  P_DOOM: ["O3", "O4", "O5", "O6", "O7", "O8"],
   P_EXTINCTION: ["O6"],
   P_DISEMPOWERMENT: ["O3"],
   P_COLLAPSE: ["O4", "O5"],
@@ -596,8 +600,8 @@ export interface SourceTierDefinition {
   description: string;
   /** Default weight multiplier used by the indexes (build-spec §3.5). */
   default_multiplier: number;
-  /** Whether evidence at this tier may, on its own, change a PDUM-relevant estimate. */
-  may_alter_pdum: boolean;
+  /** Whether evidence at this tier may, on its own, change a p(DOOM)-relevant estimate. */
+  may_alter_pdoom: boolean;
   /** Whether corroboration from a higher tier is required before model use. */
   requires_corroboration: boolean;
   /** Highest model_use_status an item at this tier may reach. */
@@ -612,12 +616,12 @@ export const SOURCE_TIERS: readonly SourceTierDefinition[] = [
     description:
       "Peer-reviewed research, official datasets, primary documents, government and regulatory texts, court records, standards and other authoritative primary material.",
     default_multiplier: 1.0,
-    may_alter_pdum: true,
+    may_alter_pdoom: true,
     requires_corroboration: false,
     max_model_use_status: "used",
     rules: [
       "May be used directly as model input.",
-      "A material change to a PDUM-relevant estimate requires Tier 1 evidence or independent corroboration from at least two Tier 2 sources.",
+      "A material change to a p(DOOM)-relevant estimate requires Tier 1 evidence or independent corroboration from at least two Tier 2 sources.",
       "Developer-authored primary documents keep the developer_self_report conflict label.",
     ],
   },
@@ -627,7 +631,7 @@ export const SOURCE_TIERS: readonly SourceTierDefinition[] = [
     description:
       "Independent technical analyses, evaluations, reproductions and expert reports by parties without a developer or funder conflict on the matter at hand.",
     default_multiplier: 0.9,
-    may_alter_pdum: true,
+    may_alter_pdoom: true,
     requires_corroboration: false,
     max_model_use_status: "used",
     rules: [
@@ -641,13 +645,13 @@ export const SOURCE_TIERS: readonly SourceTierDefinition[] = [
     description:
       "Reporting from outlets with editorial standards, corrections policies and named authors.",
     default_multiplier: 0.5,
-    may_alter_pdum: false,
+    may_alter_pdoom: false,
     requires_corroboration: true,
     max_model_use_status: "used",
     rules: [
       "Creates candidate evidence: claims supported only by Tier 3 sources stay in status candidate.",
       "May be used at reduced weight once corroborated by a Tier 1 or Tier 2 source.",
-      "Cannot on its own justify a material change to a PDUM-relevant estimate.",
+      "Cannot on its own justify a material change to a p(DOOM)-relevant estimate.",
     ],
   },
   {
@@ -655,7 +659,7 @@ export const SOURCE_TIERS: readonly SourceTierDefinition[] = [
     name: "Commentary",
     description: "Opinion, blogs, newsletters, talks, podcasts and similar secondary commentary.",
     default_multiplier: 0.0,
-    may_alter_pdum: false,
+    may_alter_pdoom: false,
     requires_corroboration: true,
     max_model_use_status: "informational",
     rules: [
@@ -669,11 +673,11 @@ export const SOURCE_TIERS: readonly SourceTierDefinition[] = [
     description:
       "Social posts, anonymous material and anything whose provenance could not be verified.",
     default_multiplier: 0.0,
-    may_alter_pdum: false,
+    may_alter_pdoom: false,
     requires_corroboration: true,
     max_model_use_status: "excluded",
     rules: [
-      "Cannot alter PDUM or any published index in any way.",
+      "Cannot alter p(DOOM) or any published index in any way.",
       "Always model_use_status excluded; may appear only in the review queue as unverified.",
     ],
   },

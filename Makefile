@@ -1,4 +1,4 @@
-# Copyright NU Cybernetics. PDUM — research prototype.
+# Copyright NU Cybernetics. p(DOOM) — research prototype.
 SHELL := /bin/bash
 SNAPSHOT ?= $(shell ls -d data/snapshots/snap-* 2>/dev/null | sort | tail -1)
 
@@ -27,13 +27,13 @@ schemas:
 	pnpm build:jsonschema
 
 validate:
-	go run ./cmd/pdumctl snapshot validate $(SNAPSHOT)
+	go run ./cmd/pdoomctl snapshot validate $(SNAPSHOT)
 
 candidate:
-	go run ./cmd/pdumctl model run --snapshot $(SNAPSHOT) --out data/candidates/$$(date -u +cand-%Y-%m-%d-%H%M%S)
+	go run ./cmd/pdoomctl model run --snapshot $(SNAPSHOT) --out data/candidates/$$(date -u +cand-%Y-%m-%d-%H%M%S)
 
 audit-verify:
-	go run ./cmd/pdumctl audit verify data/audit/audit.jsonl
+	go run ./cmd/pdoomctl audit verify data/audit/audit.jsonl
 
 e2e:
 	pnpm e2e

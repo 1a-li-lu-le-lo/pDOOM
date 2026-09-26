@@ -1,0 +1,171 @@
+{
+  "$id": "urn:pdoom:schema:action.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "action",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "Concrete action for a named audience",
+        "properties": {
+          "id": {
+            "description": "action id, e.g. act-individuals-learn-the-basics",
+            "pattern": "^act-[a-z_]+-[a-z0-9]+(?:-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "audience": {
+            "enum": [
+              "individuals",
+              "software_engineers",
+              "ai_researchers",
+              "laboratories",
+              "policymakers",
+              "funders",
+              "educators",
+              "nonprofits",
+              "auditors_red_teams",
+              "standards_bodies"
+            ],
+            "type": "string"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "related_intervention_ids": {
+            "items": {
+              "description": "intervention id, e.g. I04",
+              "pattern": "^I\\d{2,}$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "resources": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "url": {
+                  "description": "http(s) URL",
+                  "format": "uri",
+                  "type": "string"
+                },
+                "source_id": {
+                  "anyOf": [
+                    {
+                      "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+                      "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "title",
+                "url",
+                "source_id"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "effort": {
+            "enum": [
+              "low",
+              "moderate",
+              "high"
+            ],
+            "type": "string"
+          },
+          "verification": {
+            "additionalProperties": false,
+            "description": "Verification record: how and when the item was checked against its canonical source",
+            "properties": {
+              "status": {
+                "enum": [
+                  "verified_fetch",
+                  "verified_search",
+                  "verified_prior_knowledge",
+                  "unverified"
+                ],
+                "type": "string"
+              },
+              "checked_at": {
+                "description": "Calendar date, YYYY-MM-DD",
+                "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "status",
+              "checked_at",
+              "method",
+              "note"
+            ],
+            "type": "object"
+          },
+          "human_review_status": {
+            "enum": [
+              "pending",
+              "reviewed",
+              "disputed"
+            ],
+            "type": "string"
+          },
+          "model_use_status": {
+            "enum": [
+              "excluded",
+              "informational",
+              "eligible",
+              "used"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "audience",
+          "title",
+          "description",
+          "related_intervention_ids",
+          "resources",
+          "effort",
+          "verification",
+          "human_review_status",
+          "model_use_status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Action file",
+  "type": "object"
+}

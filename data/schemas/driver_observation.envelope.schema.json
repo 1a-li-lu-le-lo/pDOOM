@@ -1,0 +1,177 @@
+{
+  "$id": "urn:pdoom:schema:driver_observation.envelope:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "driver_observation",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "items": {
+      "items": {
+        "additionalProperties": false,
+        "description": "One normalised observation or judgment for a driver signal",
+        "properties": {
+          "id": {
+            "description": "Entity id",
+            "minLength": 1,
+            "type": "string"
+          },
+          "signal_id": {
+            "description": "signal id, e.g. D1.task_horizon_50pct",
+            "pattern": "^D(?:[1-9]|10)\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "family": {
+            "enum": [
+              "D1",
+              "D2",
+              "D3",
+              "D4",
+              "D5",
+              "D6",
+              "D7",
+              "D8",
+              "D9",
+              "D10"
+            ],
+            "type": "string"
+          },
+          "value_normalized": {
+            "description": "Value in [0, 1]",
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "raw_value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "raw_unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "confidence": {
+            "description": "Value in [0, 1]",
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "observation_kind": {
+            "enum": [
+              "observation",
+              "judgment"
+            ],
+            "type": "string"
+          },
+          "as_of": {
+            "description": "Calendar date, YYYY-MM-DD",
+            "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "counterevidence": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_ids": {
+            "items": {
+              "description": "source id, e.g. src-grace-2024-thousands-of-ai-authors",
+              "pattern": "^src-[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "verification": {
+            "additionalProperties": false,
+            "description": "Verification record: how and when the item was checked against its canonical source",
+            "properties": {
+              "status": {
+                "enum": [
+                  "verified_fetch",
+                  "verified_search",
+                  "verified_prior_knowledge",
+                  "unverified"
+                ],
+                "type": "string"
+              },
+              "checked_at": {
+                "description": "Calendar date, YYYY-MM-DD",
+                "pattern": "^\\d{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "status",
+              "checked_at",
+              "method",
+              "note"
+            ],
+            "type": "object"
+          },
+          "human_review_status": {
+            "enum": [
+              "pending",
+              "reviewed",
+              "disputed"
+            ],
+            "type": "string"
+          },
+          "model_use_status": {
+            "enum": [
+              "excluded",
+              "informational",
+              "eligible",
+              "used"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "signal_id",
+          "family",
+          "value_normalized",
+          "raw_value",
+          "raw_unit",
+          "confidence",
+          "observation_kind",
+          "as_of",
+          "rationale",
+          "counterevidence",
+          "source_ids",
+          "verification",
+          "human_review_status",
+          "model_use_status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "schema_version",
+    "items"
+  ],
+  "title": "p(DOOM) Driver Observation file",
+  "type": "object"
+}
