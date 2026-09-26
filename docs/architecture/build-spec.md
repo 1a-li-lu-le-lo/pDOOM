@@ -380,3 +380,43 @@ Read tools use `@pdum/sdk` file data source (`PDUM_DATA_DIR`) or http (`PDUM_API
 | docs | `docs/**` (except build-spec.md), `README.md`, `NOTICE` |
 | research | `research/**`, `data/snapshots/**` |
 Shared files (`package.json`, lockfile, `tsconfig.base.json`, `eslint.config.mjs`, `Makefile`, `go.mod`) are orchestrator-only.
+
+---
+
+## Appendix A — Exact entity field lists (JSON, snake_case)
+
+Types: `str`, `str?` (nullable string), `date` (`YYYY-MM-DD`), `date?`, `num`, `int`, `bool`, `[T]` array, `{...}` object.
+`verification` = `{ status: verified_fetch|verified_search|verified_prior_knowledge|unverified, checked_at: date, method: str, note: str }`.
+`review` fields on every entity: `human_review_status`, `model_use_status`.
+
+**definition** `{ id, term, short_definition: str, definitions: [{ text, source_id: str?, attribution: str, note: str }], consensus: "consensus"|"contested"|"emerging", related_ids: [str], see_also_urls: [str], verification, human_review_status, model_use_status }`
+
+**source** `{ id, canonical_url, title, publisher, authors: [str], date_published: date?, date_updated: date?, date_retrieved: date, source_tier: int(1-5), source_type, jurisdiction: str?, topic: [str], claim_ids: [str], evidence_summary: str, counterevidence: str?, methodology: str?, sample: str?, limitations: str?, conflicts: [conflict_label], license: str?, robots_status: "allowed"|"disallowed"|"not_applicable"|"unknown", content_hash: str?, archive_reference: str?, language: str, translation: str?, duplicate_group: str?, retraction_status: "none"|"retracted"|"corrected"|"disputed", correction_status: str?, citation: str, verification, human_review_status, model_use_status }`
+
+**claim** `{ id, text, subject, predicate, object, date: date?, horizon: str?, geography: str?, model_name: str?, model_version: str?, source_id, evidence_type, quantitative_value: num?, unit: str?, uncertainty: str?, direct_quote_pointer: str? (section/page/figure locator, not full text), context: str, corroboration_ids: [str], contradiction_ids: [str], relevance: "none"|"weak"|"indirect"|"moderate"|"strong"|"direct_precursor", status, verification, human_review_status, model_use_status }`
+
+**forecast** `{ id, forecaster_or_survey, source_id, date: date, population, sample_size: int?, expertise: str, question_wording_original: str, paraphrase: bool, outcome_set: [outcome], horizon: horizon|"custom", horizon_note: str?, horizon_end_year: int?, conditions: str, mean: num?, median: num?, quantiles: { p05?, p25?, p50?, p75?, p95? } (probabilities 0..1), response_rate: num?, selection_effects: str?, framing_effects: str?, calibration: str?, group_id: str?, transformation_note: str?, status: "current"|"superseded"|"withdrawn", verification, human_review_status, model_use_status }`
+
+**benchmark** `{ id, name, maintainer, version: str?, url, tasks: str, contamination_risk: "low"|"moderate"|"high"|"unknown", saturation: "none"|"partial"|"saturated"|"unknown", scaffold: str?, model_access: str?, unit: str, direction: "higher_is_more_capable"|"lower_is_more_capable", limitations: str, pdum_relevance: relevance, weight_note: str?, source_ids: [str], verification, human_review_status, model_use_status }`
+
+**benchmark_result** `{ id, benchmark_id, model_name, model_developer, date: date, value: num, unit: str, ci_low: num?, ci_high: num?, scaffold: str?, confidence: "low"|"moderate"|"high", note: str?, source_ids: [str], verification, human_review_status, model_use_status }`
+
+**incident** `{ id, title, date: date?, date_precision: "day"|"month"|"year"|"unknown", external_ids: { aiid?: str, oecd_aim?: str, mit_tracker?: str, cve?: str, docket?: str, other?: str }, summary: str (non-graphic, non-operational), cause: [cause], harm: [harm], severity, pdum_relevance: relevance, evidence_level, systems_involved: [str], jurisdiction: str?, near_miss: bool, novelty: "routine"|"notable"|"novel", exposure_note: str?, source_ids: [str], verification, human_review_status, model_use_status }`
+
+**scenario** `{ id (S1..S18), name, outcome_set: [outcome], description, prerequisites: [str], early_indicators: [str], counterindicators: [str], capability_thresholds: [str], exposure: str, control_failures: [str], human_contributions: [str], ai_contributions: [str], dependencies: [scenario_id], time_horizon_note: str, probability_source: "not_assigned"|"external_forecast"|"experimental_model"|"expert_elicitation", uncertainty: uncertainty_label, intervention_ids: [str], recoverability: "high"|"moderate"|"low"|"none"|"unknown", evidence_summary: str, source_ids: [str], open_questions: [str], content_safety_note: str?, verification, human_review_status, model_use_status }`
+
+**scenario_edge** `{ id, from_id, to_id, relation: "enables"|"amplifies"|"prevents_response"|"shares_prerequisite"|"competes_with", confidence: "low"|"moderate"|"high", rationale: str, source_ids: [str] }`
+
+**driver** `{ id (D1..D10), name, description, signals: [{ signal_id, name, description, direction: "higher_raises_pressure"|"higher_strengthens_control", normalization: str (how raw → 0..1), raw_unit: str?, preferred_source_types: [str], observation_vs_judgment: str }] }`
+
+**driver_observation** `{ id, signal_id, family, value_normalized: num(0..1), raw_value: num?, raw_unit: str?, confidence: num(0..1), observation_kind, as_of: date, rationale: str, counterevidence: str?, source_ids: [str], verification, human_review_status, model_use_status }`
+
+**intervention** `{ id (I01..), name, target_scenario_ids: [str], mechanism, evidence_summary, evidence_strength: "none"|"weak"|"moderate"|"strong", cost: "low"|"moderate"|"high"|"very_high"|"unknown", time_to_deploy: "months"|"1-2y"|"3-5y"|"5y+"|"unknown", effect_size: "unknown"|"small"|"moderate"|"large" (qualitative only), uncertainty: uncertainty_label, possible_failure: str, possible_backfire: str, owner_types: [str], user_actions: [{ audience, action }], category: "technical"|"organizational"|"national"|"international"|"resilience", source_ids: [str], verification, human_review_status, model_use_status }`
+
+**organization** `{ id, name, url, mission, legal_status: str, jurisdiction: str, focus: [str], programs: [str], open_outputs: [str], funding_disclosure: str, conflicts: [str], evidence_of_impact: str, ways_to_help: [str], inclusion_criteria_met: [str], last_verified: date, source_ids: [str], verification, human_review_status, model_use_status }`
+
+**action** (kind `action`, file `actions.json`) `{ id: "act-<audience>-<slug>", audience: "individuals"|"software_engineers"|"ai_researchers"|"laboratories"|"policymakers"|"funders"|"educators"|"nonprofits"|"auditors_red_teams"|"standards_bodies", title, description, related_intervention_ids: [str], resources: [{ title, url, source_id: str? }], effort: "low"|"moderate"|"high", verification, human_review_status, model_use_status }`
+
+**model_spec** (single item) `{ id: "pdum-model-spec@0.1.0", index_weights: { capability_pressure: {signal_id: num}, control_strength: {signal_id: num}, incident_pressure: {...constants}, evidence_pressure: {...}, uncertainty: {...}, agentic_infrastructure_risk: {signal_id: num} }, weight_bounds: [0, 0.35], tier_multipliers: {"1":1,"2":0.9,"3":0.5,"4":0,"5":0}, incident_scoring: { severity_weights: {...}, relevance_weights: {...}, evidence_weights: {...}, recency_half_life_days: int, squash_k: num }, editorial_rules: [{ level, when: str }], rounding_rules: { extreme: 5, high: 2, moderate: 1, low: 1 }, aggregation_methods: [method], experimental_causal: { version, seed: int, samples: int, common_factor_loading: num, horizons: { "<horizon>": { A: {p05,p50,p95}, C: {...}, E: {...}, F: {...}, O: { "O3": {...}, "O4": {...}, "O5": {...}, "O6": {...}, "O7": {...}, "O8": {...} } } }, rationale: { A: str, C: str, E: str, F: str, O: str, dependence: str }, source_ids: [str] } }`
+
+Every JSON file must parse, ids must be unique within a file, and every referenced id (source_ids, claim_ids, scenario ids, intervention ids, signal ids) must exist somewhere in the snapshot after merge. Research agents that create sources write them to their own fragment file (`research/<area>/fragments/sources.json`, `.../claims.json`), which the orchestrator merges (deduplicated by canonical_url) into `sources.json` / `claims.json`.
