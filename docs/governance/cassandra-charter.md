@@ -86,17 +86,22 @@ reproducibility and invariants and does not read findings.
 
 ## 6. Record for `rel-2026-09-26-001`
 
-The prototype release was produced with two development keys held by the build operator. No
-separate Cassandra findings file exists for it. The known-limitation list in its manifest and
-model card (no calibration; judgment parameters; small groups dominated by a few studies;
-single-factor dependence; registry-only incidents; rule-based editorial level) is the closest
-record, and the largest sensitivity runs published in the model card show that the aggregate
-`G-EXT-2100-METACULUS` and the group `G-CAT10-2100` each rest on two members, so removing either
-member moves the aggregate by several points. A Cassandra reviewer should treat both as `high`
-findings against any use of those aggregates as headline figures.
+The adversarial review of the first release is written up in
+[`cassandra-reviews/rel-2026-09-26-001.md`](cassandra-reviews/rel-2026-09-26-001.md): eleven
+findings (`CR-001`–`CR-011`) in the schema above, with one `critical` and three `high` findings
+recorded as `accepted_risk` for the research prototype (reviewer independence of the two
+development keys; two-member groups; two extinction-by-2100 groups that differ by population;
+provenance without archives or content hashes), one `high` finding resolved in the web layer
+(per-request rendering so that a rollback is served), two `medium` findings and one `low` finding
+left `open` for the next release line (the aggregation note text for two-member groups; the
+single-judgment outcome shares; the declared but uncomputed attention index), and the checks that
+passed. Because the review is a markdown document rather than a hashed file inside the release
+directory, it is not part of the signed release; the release's own record of the same risks is
+its `known_limitations` list and model card.
 
 ## Not yet implemented
 
-- `cassandra-findings.json` inside candidate and release directories, hashed into the manifest.
+- `cassandra-findings.json` inside candidate and release directories, hashed into the manifest
+  (today the review lives in `docs/governance/cassandra-reviews/<release-id>.md`).
 - A promotion gate that refuses `critical` or `high` open findings.
 - Serving findings through the API and on `/releases/[releaseId]`.

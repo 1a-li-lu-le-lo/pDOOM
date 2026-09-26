@@ -51,7 +51,7 @@ memory; they fall back to a best-effort read of the directory only while no rele
   for human review; `POST /v1/scenario-lab/evaluate` computes a `user_scenario` result per
   request and stores nothing.
 * **No administrative endpoints.** Promotion, rollback, review and reviewer keys are
-  CLI-only (`pdoomctl`, ADR-004). The OpenAPI document contains no such routes and the route
+  CLI-only (`pdoomctl`, ADR-003). The OpenAPI document contains no such routes and the route
   table test (`internal/api/routes_test.go`) fails if one appears without being specified.
 * **Deterministic bodies.** GET responses are encoded once per release and carry a strong
   `ETag` (SHA-256 of the body) with `Cache-Control: public, max-age=60`; `If-None-Match`

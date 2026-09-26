@@ -128,7 +128,7 @@ reserves the next release number for the generation date unless `--release-id` i
 ## Not yet implemented
 
 - A Cassandra findings file as a promotion input ([`cassandra-charter.md`](cassandra-charter.md));
-  today findings are handled outside the tool.
+  today findings are handled outside the tool, in `docs/governance/cassandra-reviews/`.
 - More than one required approval by default (`RequiredApprovals = 1`; heightened review
   already requires two).
 - A scheduled cadence or a release calendar.

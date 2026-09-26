@@ -113,6 +113,7 @@ switch to black on white.
 
 - An explicit empty-state sentence on `/evidence` when filters match no source (today the
   filtered table is simply empty).
-- Loading and error states for the immersive scenes (the scenes are placeholders).
+- Visible loading and error states for the immersive scenes: today a scene fades in when ready and
+  disappears silently on failure, leaving the static disk.
 - A dedicated "release superseded since you opened this page" notice; the SDK reload is
   silent.

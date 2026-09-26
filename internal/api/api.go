@@ -8,7 +8,7 @@
 // estimate. The two write endpoints append a submission to the review queue or
 // evaluate a user scenario with the experimental model (the result is labelled
 // user_scenario and nothing on disk changes). There are no administrative
-// endpoints: promotion, rollback and review are CLI-only (pdoomctl, ADR-004).
+// endpoints: promotion, rollback and review are CLI-only (pdoomctl, ADR-003).
 package api
 
 import (

@@ -4,14 +4,15 @@ import Link from "next/link";
 import { PageHeader } from "@/components/shell/PageHeader";
 import { DistributionDots } from "@/components/charts/DistributionDots";
 import { getRelease, getSnapshot } from "@/lib/data";
-import { fmtDate, horizonLabel, outcomeSetLabel, titleCase } from "@/lib/format";
+import { fmtDate, horizonLabel, outcomeSetLabel, pct, titleCase } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Forecasts",
   description: "Every external forecast in the snapshot with its original question wording, population, outcome set, horizon and conditioning, aggregated only inside compatibility groups.",
 };
 
-const pctFine = (p: number | null) => (p === null ? "—" : `${Math.round(p * 1000) / 10}%`);
+// Member forecasts are quoted as their sources state them; computed aggregates follow the release rounding rule.
+const asRecorded = (p: number | null) => (p === null ? "—" : `${Math.round(p * 1000) / 10}%`);
 
 export default async function ForecastsPage() {
   const [rel, snap] = await Promise.all([getRelease(), getSnapshot()]);
@@ -40,6 +41,7 @@ export default async function ForecastsPage() {
         {groups.map((g) => {
           const aggs = rel.aggregations.filter((a) => a.group_id === g);
           const pref = aggs.find((a) => a.preferred) ?? aggs[0]!;
+          const unc = rel.estimates.find((e) => e.group_id === g)?.uncertainty ?? "high";
           const members = forecastsByGroup(g);
           return (
             <section key={g} id={g} className="card stack" aria-labelledby={`${g}-h`}>
@@ -58,7 +60,7 @@ export default async function ForecastsPage() {
                   <thead>
                     <tr>
                       <th>Method</th>
-                      <th className="num">Value</th>
+                      <th className="num">Value (rounded as the release displays it)</th>
                       <th>Note</th>
                     </tr>
                   </thead>
@@ -68,7 +70,7 @@ export default async function ForecastsPage() {
                         <td>
                           {titleCase(a.method)} {a.preferred ? <span className="badge badge-evidence">preferred</span> : null}
                         </td>
-                        <td className="num">{pctFine(a.value)}</td>
+                        <td className="num">{pct(a.value, unc)}</td>
                         <td className="muted">{a.note}</td>
                       </tr>
                     ))}
@@ -123,8 +125,9 @@ function ForecastRow({ f, sourceTitle }: { f: import("@pdoom/schemas").Forecast;
       <dl className="kv">
         <dt>Central value</dt>
         <dd>
-          {f.median !== null ? `median ${pctFine(f.median)}` : f.mean !== null ? `mean ${pctFine(f.mean)}` : "not stated"}
-          {f.quantiles?.p25 !== undefined && f.quantiles?.p75 !== undefined ? ` · IQR ${pctFine(f.quantiles.p25)}–${pctFine(f.quantiles.p75)}` : ""}
+          {f.median !== null ? `median ${asRecorded(f.median)}` : f.mean !== null ? `mean ${asRecorded(f.mean)}` : "not stated"}
+          {f.quantiles?.p25 !== undefined && f.quantiles?.p75 !== undefined ? ` · IQR ${asRecorded(f.quantiles.p25)}–${asRecorded(f.quantiles.p75)}` : ""}
+          {f.median !== null || f.mean !== null ? " (as the source states it)" : ""}
         </dd>
         <dt>Outcome set</dt>
         <dd>{outcomeSetLabel(f.outcome_set)}</dd>

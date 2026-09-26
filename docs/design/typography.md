@@ -83,6 +83,6 @@ data tables print, and appends URLs to external links.
 
 ## Not yet implemented
 
-- Shipping and subsetting the named brand fonts (the build specification lists a `fonts.css`
-  in the design-system package; it does not exist).
-- A typographic scale for the immersive scenes' in-canvas labels (scenes are placeholders).
+- Shipping and subsetting the named brand fonts: `packages/design-system/fonts.css` declares
+  the stacks but no font files, so system faces are used until licensed files are added.
+- In-canvas typography: the scenes render no text by design, so none is needed yet.

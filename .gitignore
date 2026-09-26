@@ -32,6 +32,7 @@ Thumbs.db
 *.log
 
 # locally built binaries
+/pdumctl
 /pdoom-api
 /pdoom-ingest
 /pdoomctl

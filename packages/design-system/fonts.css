@@ -1,0 +1,22 @@
+/* Copyright NU Cybernetics. p(DOOM) — research prototype. */
+/*
+ * Font stacks for p(DOOM). No font files ship with the prototype: the named
+ * faces are used when installed locally and every stack ends in system faces,
+ * so nothing is fetched at runtime (no external requests, build-spec §6).
+ * When licensed font files are added under ./fonts/, declare them here with
+ * @font-face and font-display: swap; the tokens below need no change.
+ */
+:root {
+  --font-display: "Space Grotesk", "Manrope", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Source Sans 3", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-numeric: "tnum" 1, "lnum" 1;
+}
+.num,
+td.num,
+.gauge .num,
+.estimate-card .value,
+.meter-value,
+.lab-value {
+  font-variant-numeric: tabular-nums lining-nums;
+}

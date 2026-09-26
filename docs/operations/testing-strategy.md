@@ -24,8 +24,8 @@ Run with `pnpm test` (root `vitest.config.ts` includes `packages/*/test`, `packa
 `apps/web/test/no-hardcoded-numbers.test.ts` walks `apps/web/{app,components,lib}`, drops
 comment lines, strips CSS and SVG geometry (`width: "100%"`, `offset="35%"`, `r`, `cx`, …), and
 fails if any digit sequence followed by a percent sign remains (`/(?<![\w$}{])\d+(\.\d+)?\s?%/`).
-Template placeholders such as `${x}%` are allowed. The same test fails on the phrases
-"humanity has N years left", "doom is certain" and "the machines are coming". It asserts that it
+Template placeholders such as `${x}%` are allowed. The same test fails on three fixed panic
+phrasings (a countdown of how long humanity has, certainty of doom, "the machines are coming"). It asserts that it
 scanned more than five files so that an empty directory cannot pass silently. This is the code
 form of build-spec rule 0.13 and ADR-005.
 
@@ -108,11 +108,11 @@ Node 22 and Go 1.24 with caching; `permissions: contents: read`.
 
 ## Not yet implemented
 
-- End-to-end specs: `tests/e2e` contains only `playwright.config.ts`; the `e2e` CI job will
-  report that no tests were found until specs are added.
 - `tests/accessibility`, `tests/security`, `tests/property`, `tests/visual` and
-  `tests/performance` are empty directories.
-- Visual regression baselines and a performance budget for the immersive scenes (which are
-  placeholders).
-- Tests for `services/mcp` (the server is a placeholder; `vitest` is configured with
-  `passWithNoTests`).
+  `tests/performance` as separate suites; today axe runs inside `tests/e2e/a11y.spec.ts`,
+  security properties are Go tests (`internal/fetch`, `internal/api`) and property-style
+  checks are the Go and TypeScript golden tests.
+- Visual regression baselines and a frame-time budget for the immersive scenes; the quality
+  manager adapts at runtime but nothing asserts a budget in CI.
+- The SDK's HTTP integration test spawns `cmd/pdoom-api` and is skipped where Go is absent
+  (the TypeScript CI job); the Go job covers the API itself.

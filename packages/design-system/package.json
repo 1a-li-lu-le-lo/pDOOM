@@ -6,6 +6,7 @@
   "exports": {
     "./tokens.css": "./tokens.css",
     "./base.css": "./base.css",
-    "./tokens.json": "./tokens.json"
+    "./tokens.json": "./tokens.json",
+    "./fonts.css": "./fonts.css"
   }
 }

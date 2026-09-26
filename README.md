@@ -57,8 +57,9 @@ release; the immersive scenes are labelled "Conceptual risk visualization · not
 AI risk" and are progressive enhancement. `/text` is a complete, server-rendered, printable
 page with every substantive fact in twenty sections and works without JavaScript; every other
 route links to its matching section. Readers who prefer reduced motion get the Observatory by
-default. The Event Horizon, Orrery and Branching scenes are placeholders in this prototype and
-render the static disk ([`docs/design/motion-semantics.md`](docs/design/motion-semantics.md)).
+default. The Event Horizon scene (WebGL) pauses when hidden, lowers its quality on slow devices
+and can be skipped; the Orrery and Branching scenes are SVG. All three are conceptual and
+labelled as such; the grammar is in [`docs/design/motion-semantics.md`](docs/design/motion-semantics.md).
 
 ## Repository layout
 
@@ -72,8 +73,8 @@ internal/                 Go: schema, snapshot, model, publishing, audit, review
 packages/schemas/         @pdoom/schemas — zod schemas, enums, brand constants, JSON Schema export
 packages/model-core/      @pdoom/model-core — TypeScript port of the causal model and rounding (Scenario Lab)
 packages/sdk/             @pdoom/sdk — file and HTTP data sources
-packages/design-system/   tokens.css, tokens.json, base.css
-services/mcp/             @pdoom/mcp — placeholder for the MCP server
+packages/design-system/   tokens.css, fonts.css, tokens.json, base.css
+services/mcp/             @pdoom/mcp — stdio MCP server: twelve read tools, three submission tools
 skills/pdoom/             SKILL.md: how an assistant should read p(DOOM)
 tools/snapshot/           build.mjs (content modules → snapshot), merge-fragments.mjs
 data/                     snapshots/, releases/ (+ CURRENT), schemas/, keys/reviewers/*.pub, audit/audit.jsonl, review-queue/, candidates/
@@ -131,7 +132,7 @@ promoted with signed approvals. Details: [`docs/governance/corrections-policy.md
 ## Governance
 
 - [Editorial policy](docs/governance/editorial-policy.md) · [Update governance](docs/governance/update-governance.md) · [Probability change policy](docs/governance/probability-change-policy.md)
-- [Conflict of interest](docs/governance/conflict-of-interest.md) · [Cassandra charter](docs/governance/cassandra-charter.md) · [Psychological safety](docs/governance/psychological-safety.md)
+- [Conflict of interest](docs/governance/conflict-of-interest.md) · [Cassandra charter](docs/governance/cassandra-charter.md) and [review of the first release](docs/governance/cassandra-reviews/rel-2026-09-26-001.md) · [Psychological safety](docs/governance/psychological-safety.md)
 - [Decision log](docs/governance/decision-log.md) · [Threat model](docs/security/threat-model.md) · [Crawler safety](docs/security/crawler-safety.md)
 - [Public methodology](docs/method/model.md) · [Content safety](docs/method/content-safety.md) · [Accessibility](docs/accessibility/accessibility.md) · [API](docs/api/README.md)
 

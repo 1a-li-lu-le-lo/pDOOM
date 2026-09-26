@@ -9,14 +9,15 @@ import { BarList } from "@/components/charts/BarList";
 import { LineWithBand } from "@/components/charts/LineWithBand";
 import { ShareLink } from "@/components/share/ShareLink";
 import { DEFAULT_HORIZON, getRelease, getSnapshot, headline, indexById, isValidHorizon, researchEstimate } from "@/lib/data";
-import { INDEX_SHORT, fmtDate, horizonLabel, outcomeSetLabel, titleCase } from "@/lib/format";
+import { INDEX_SHORT, fmtDate, horizonLabel, outcomeSetLabel, pct, titleCase } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Meter",
   description: "The current p(DOOM) meter: official status, external forecast aggregates, the research-mode model, indexes and the assumptions behind every number.",
 };
 
-const pctFine = (p: number) => `${Math.round(p * 1000) / 10}%`;
+// Computed values follow the release's rounding rule for the matching estimate (high uncertainty when unknown).
+const roundedAs = (rel: Awaited<ReturnType<typeof getRelease>>, groupId: string | null, p: number) => pct(p, rel.estimates.find((e) => e.group_id === groupId)?.uncertainty ?? "high");
 
 export default async function MeterPage({ searchParams }: { searchParams: Promise<{ horizon?: string }> }) {
   const sp = await searchParams;
@@ -78,7 +79,7 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
             items={groups.map((g) => ({
               label: `${g.group_id} · ${outcomeSetLabel(g.outcome_set)} · ${horizonLabel(g.horizon)}`,
               value: g.value,
-              display: pctFine(g.value),
+              display: roundedAs(rel, g.group_id, g.value),
               note: `${titleCase(g.method)}, ${g.n} forecasts from ${g.population_count} populations`,
               href: `/forecasts#${g.group_id}`,
             }))}
@@ -109,7 +110,7 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
                   <th>Change</th>
                   <th className="num">Baseline</th>
                   <th className="num">Result</th>
-                  <th className="num">Delta (points)</th>
+                  <th className="num">Change (whole points)</th>
                 </tr>
               </thead>
               <tbody>
@@ -118,9 +119,9 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
                     <td>{titleCase(s.kind)}</td>
                     <td>{s.target_id}</td>
                     <td>{s.parameter_change}</td>
-                    <td className="num">{pctFine(s.baseline_value)}</td>
-                    <td className="num">{pctFine(s.value)}</td>
-                    <td className="num">{(s.delta * 100).toFixed(1)}</td>
+                    <td className="num">{roundedAs(rel, s.target_kind === "aggregation_group" ? s.target_id : null, s.baseline_value)}</td>
+                    <td className="num">{roundedAs(rel, s.target_kind === "aggregation_group" ? s.target_id : null, s.value)}</td>
+                    <td className="num">{Math.round(s.delta * 100) === 0 ? "under 1" : `${s.delta > 0 ? "+" : ""}${Math.round(s.delta * 100)}`}</td>
                   </tr>
                 ))}
               </tbody>

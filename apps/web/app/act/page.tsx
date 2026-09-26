@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Concrete, proportionate actions for individuals, developers, researchers, policymakers, journalists and organisations, and the organisations working on the problem.",
 };
 
-const AUDIENCE_ORDER = ["individuals", "developers", "researchers", "policymakers", "journalists", "educators", "civil_society", "organizations", "investors", "students"];
+const AUDIENCE_ORDER = ["individuals", "software_engineers", "ai_researchers", "laboratories", "policymakers", "funders", "educators", "nonprofits", "auditors_red_teams", "standards_bodies"];
 
 export default async function ActPage({ searchParams }: { searchParams: Promise<{ audience?: string }> }) {
   const sp = await searchParams;

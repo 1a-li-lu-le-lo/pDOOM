@@ -128,7 +128,7 @@ releases silently.
 **Decision.** No probability, percentage or index value may be written as a literal in
 `apps/web` (app, components, lib) or in the service and SDK sources. A vitest guard scans every
 `.ts`/`.tsx`/`.md` file, strips CSS and SVG geometry, and fails the build on any digit sequence
-followed by a percent sign, and on a fixed list of panic phrases. All displayed numbers are read
+followed by a percent sign, and on a fixed list of panic phrasings. All displayed numbers are read
 from the promoted release through `@pdoom/sdk` or computed by `@pdoom/model-core` from snapshot
 data.
 
@@ -182,8 +182,8 @@ link is in the first viewport of every page, and every route header links to the
 section.
 
 **Consequences.** Nothing substantive may live only in a scene; scenes read the same release data
-as the meter; reduced-motion users get the Observatory by default; the immersive scenes are
-currently placeholders that render the static disk, and the site is complete without them.
+as the meter; reduced-motion users get the Observatory by default; the site is complete without
+the scenes, which load after the server-rendered meter and only where WebGL and motion are allowed.
 
 **Alternatives considered.** A scene-first site with a text "accessibility page" (rejected: the
 text page would decay); no scenes at all (rejected: clarity and craft are how the site is shared);
@@ -208,3 +208,20 @@ checklist.
 
 **Alternatives considered.** A single permissive licence for everything (open: data-source
 licences may not permit it); a source-available licence for code (open).
+
+## ADR-009: Next.js App Router with server rendering for the web surface
+
+- **Status:** accepted
+- **Context:** The observatory must be readable without JavaScript (the `/text` route), render every number from the signed release on the server, and still host three optional immersive modes.
+- **Decision:** `apps/web` uses Next.js 15 App Router with React server components for every route; pages render per request so a promotion or rollback is served without a rebuild; immersive scenes load only on the client, after the server-rendered meter, behind WebGL and reduced-motion checks.
+- **Consequences:** One framework covers static-like pages, per-request data and client scenes; the Content Security Policy in `apps/web/next.config.ts` allows no external origin. The trade-off is a Node server rather than a static export.
+- **Alternatives considered:** A static-site generator (rejected: rollback would require a rebuild); a single-page application (rejected: the plain-text route and no-JavaScript reading are first-class requirements).
+
+## ADR-010: PostgreSQL reference schema, files as the system of record
+
+- **Status:** accepted
+- **Context:** The build specification asks for a relational reference schema, while the prototype's system of record is the sealed snapshot and release directories under `data/` with hash-chained audit records.
+- **Decision:** `db/migrations/` carries a reference PostgreSQL schema that mirrors the snapshot and release entities for teams that need to query the data relationally. The prototype does not run a database: the API, web app and MCP server read the release files, and every mutation path is the CLI.
+- **Consequences:** The schema is documentation with teeth (it can be applied and loaded from the JSON files) but nothing in the running system depends on it; keeping it in step with `packages/schemas` is a review-time duty.
+- **Alternatives considered:** Making PostgreSQL the system of record (rejected for v0: it would weaken byte-for-byte reproducibility and the sealed-directory model); no schema at all (rejected: the specification requires one).
+

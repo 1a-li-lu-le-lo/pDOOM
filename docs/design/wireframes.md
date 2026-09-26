@@ -180,5 +180,5 @@ route's header links to the matching section.
 
 ## Not yet implemented
 
-- Wireframes for the immersive scenes' in-canvas overlays; the scenes are placeholders.
+- Wireframes for in-canvas overlays; the scenes intentionally render no text today.
 - A mobile-specific arrangement of the Scenario Lab controls beyond stacking.

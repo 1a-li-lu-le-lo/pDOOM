@@ -116,8 +116,8 @@ requires two distinct reviewers. Release `rel-2026-09-26-001` was approved by
    `advocacy_context`, governments `government_policy_context`
    ([`conflict-of-interest.md`](conflict-of-interest.md)).
 9. Calm register throughout: no exclamation marks, no imperatives about fear, no imagery of
-   harm. The guard test also fails the build on the phrases "humanity has N years left", "doom
-   is certain" and "the machines are coming".
+   harm. The guard test also fails the build on three fixed panic phrasings (a countdown of how
+   long humanity has, certainty of doom, "the machines are coming").
 
 ## 7. Corrections and retractions
 
@@ -152,7 +152,8 @@ state it the same way.
 
 - A named editorial board and a public roster of reviewer identities beyond the two
   development keys in `data/keys/reviewers/`.
-- A Cassandra findings file inside the release directory (see
-  [`cassandra-charter.md`](cassandra-charter.md)).
+- A Cassandra findings file inside the release directory; the first release's adversarial
+  review is a markdown document, [`cassandra-reviews/rel-2026-09-26-001.md`](cassandra-reviews/rel-2026-09-26-001.md)
+  (see [`cassandra-charter.md`](cassandra-charter.md)).
 - A fixed publication calendar; releases follow reviewed snapshots
   ([`update-governance.md`](update-governance.md)).

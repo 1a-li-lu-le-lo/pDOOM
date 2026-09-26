@@ -21,13 +21,13 @@ infrastructure, design assets, safety gates) all returned no results.
 - No accretion-disk tooling exists to reuse; the Event Horizon scene is built new in
   `apps/web/components/scenes/event-horizon` on Three.js + React Three Fiber.
 - No established production framework exists; Next.js 15 (App Router) is selected
-  (see `docs/governance/decision-log.md`, ADR-001).
+  (see `docs/governance/decision-log.md`, ADR-009).
 - No licensing constraints from prior code apply. The project license is a pending
-  decision recorded in ADR-005; `NOTICE` carries the NU Cybernetics copyright.
+  decision recorded in ADR-008; `NOTICE` carries the NU Cybernetics copyright.
 - No deployment configuration exists; the prototype ships a Node server for the web app
   and Go binaries for the API and tooling (see `docs/operations/deployment.md`).
 - No data infrastructure exists; the prototype uses versioned snapshot files with a
-  reference PostgreSQL schema in `db/migrations` (ADR-003).
+  reference PostgreSQL schema in `db/migrations` (ADR-010).
 
 ## Third-party libraries adopted (with license)
 

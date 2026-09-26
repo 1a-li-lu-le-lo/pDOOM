@@ -14,7 +14,7 @@ There are three intake channels. None of them can change a published value.
 | --- | --- | --- |
 | `POST /v1/submissions/corrections` on `cmd/pdoom-api` | One JSON line in `data/review-queue/submissions.jsonl` (`kind: correction`, `status: received`) | Implemented ([`../api/README.md`](../api/README.md)) |
 | `POST /v1/submissions/sources` | One JSON line, `kind: source` | Implemented |
-| MCP submission tools in `services/mcp` | The same file or the same API route (build-spec §7) | Not yet implemented; `services/mcp/src/server.ts` is a placeholder |
+| `pdoom_submit_source`, `pdoom_submit_correction`, `pdoom_submit_incident_reference` in `services/mcp` | The same file (`PDOOM_DATA_DIR` set) or the same API routes (`PDOOM_API_URL` set; incident references need the file mode) | Implemented; tested in `services/mcp/test/tools.test.ts` |
 
 A correction payload (`CorrectionSubmissionPayloadSchema` in `packages/schemas/src/lab.ts`,
 mirrored by `internal/api/handlers_submit.go`) has:

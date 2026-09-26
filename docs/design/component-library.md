@@ -75,12 +75,13 @@ the promoted release through `@pdoom/sdk`; no component fetches, stores or compu
 | --- | --- | --- | --- |
 | `HomeStage` (client) | `data: StageData` | Chooses the scene for the mode; static disk before hydration, in Observatory/Text modes, under reduced motion or without WebGL; dynamic-imports the scenes | Static disk wrappers are `aria-hidden`; scene wrappers carry `aria-label` "Conceptual risk visualization — not a simulation of AI risk" |
 | `StaticDisk` | `intervalWidth?`, `brightness?`, `particles?`, `safeguards?`, `seed?` | Server-renderable SVG accretion disk following [`motion-semantics.md`](motion-semantics.md) §1 | `role="img"` with a full-sentence `aria-label` describing the grammar and the disclaimer |
-| `event-horizon/EventHorizonScene` (client) | `data` | Placeholder: returns `null` over the static disk | — |
-| `orrery/OrreryScene` (client) | `data`, `reducedMotion` | Placeholder: renders `StaticDisk` | as `StaticDisk` |
-| `branching/BranchingScene` (client) | `data`, `reducedMotion` | Placeholder: renders `StaticDisk` | as `StaticDisk` |
+| `event-horizon/EventHorizonScene` (client) | `data` | React Three Fiber canvas over the static disk: horizon, accretion band (thickness = interval width), particle field (count = sources), safeguard arcs, faint research-curve points; quality manager, pause when hidden or out of view, skippable intro, reduced-motion still frame, error boundary | Wrapper `aria-hidden`; no text or numbers in the canvas; `pointer-events: none` |
+| `orrery/OrreryScene` (client) | `data`, `reducedMotion` | SVG orrery: withheld official object at the centre, indexes, scenarios (recoverability shapes and colours), safeguard markers on slow CSS orbits | `role="img"` with a conceptual label; `<title>` per node; static under reduced motion |
+| `branching/BranchingScene` (client) | `data`, `reducedMotion` | SVG branching tree from "now"; branch thickness = scenarios per recoverability group; dashed safeguard ties; grow-in animation | `role="img"` with a conceptual label; static under reduced motion |
+| `charts/FlowDiagram` | `left`, `right`, `flows`, `title`, `description` | Sankey-lite: ribbons from scenarios (by recoverability) to the outcomes they can reach; ribbon width = number of scenarios | `role="img"` label plus a flows table |
+| `charts/IconArray` | `p`, `cells?`, `label`, `low?`, `high?` | N cells with round(p·N) filled; used on `/compare` | `role="img"` with a sentence summary |
 
 ## Not yet implemented
 
-- `FlowDiagram` (Sankey-lite) named in the build specification's chart list; not present.
-- The immersive scenes themselves (see [`motion-semantics.md`](motion-semantics.md)).
+- In-canvas loading and error overlays for the scenes; failures are silent by design (the static disk remains).
 - Page-section components under `components/{forecasts,capabilities,evidence,futures,incidents,agents,safeguards,act,method}` named in the ownership matrix; the pages render their sections inline today.

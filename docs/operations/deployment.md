@@ -116,6 +116,7 @@ not depend on one.
   would implement.
 - A `standalone` Next.js output; the server currently runs from the workspace with
   `node_modules` present.
-- The MCP server as a deployable (`services/mcp` is a placeholder).
-- A reference PostgreSQL deployment: `db/migrations` is empty; the prototype runs entirely
-  from files.
+- The MCP server as a packaged deployable; today it runs with `pnpm --filter @pdoom/mcp start`
+  (stdio) with `PDOOM_DATA_DIR` or `PDOOM_API_URL` set.
+- A reference PostgreSQL deployment: `db/migrations/0001_reference_schema.sql` can be applied and
+  loaded from the JSON files, but the prototype runs entirely from files.

@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/shell/PageHeader";
 import { NodeGraph } from "@/components/charts/NodeGraph";
+import { FlowDiagram } from "@/components/charts/FlowDiagram";
 import { getSnapshot } from "@/lib/data";
-import { outcomeSetLabel, titleCase } from "@/lib/format";
+import { outcomeLabel, outcomeSetLabel, titleCase } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Branching futures",
@@ -30,6 +31,8 @@ export default async function FuturesPage() {
   const snap = await getSnapshot();
   const scenarios = [...snap.scenarios].sort((a, b) => Number(a.id.slice(1)) - Number(b.id.slice(1)));
   const groups = ["none", "low", "moderate", "high", "unknown"];
+  const outcomes = ["O3", "O4", "O5", "O6", "O7", "O8"];
+  const flows = groups.flatMap((g) => outcomes.map((o) => ({ from: g, to: o, value: scenarios.filter((s) => s.recoverability === g && s.outcome_set.includes(o as never)).length }))).filter((f) => f.value > 0);
   return (
     <div className="page">
       <div className="container stack">
@@ -43,6 +46,14 @@ export default async function FuturesPage() {
           description="Nodes are pathways coloured by recoverability (red irreversible, amber low, green moderate or high, grey unknown). Arrow thickness follows the stated confidence in the relation. This is a map of dependencies, not a prediction of any route."
           nodes={scenarios.map((s) => ({ id: s.id, label: s.name, group: s.recoverability, href: `/futures/${s.id}`, colorVar: RECOVER_COLOR[s.recoverability] }))}
           edges={snap.scenario_edges.map((e) => ({ from: e.from_id, to: e.to_id, label: titleCase(e.relation), strength: e.confidence === "high" ? 1 : e.confidence === "moderate" ? 0.6 : 0.3 }))}
+        />
+        <FlowDiagram
+          title="Which pathways can reach which outcomes"
+          description="Ribbons run from recoverability groups of pathways to the outcomes those pathways can reach; ribbon thickness is the number of pathways, never a probability. Most pathways can reach several outcomes, which is why the outcome decomposition on the meter is shown together."
+          left={groups.filter((g) => scenarios.some((s) => s.recoverability === g)).map((g) => ({ id: g, label: RECOVER_LABEL[g] ?? g, colorVar: RECOVER_COLOR[g] }))}
+          right={outcomes.map((o) => ({ id: o, label: `${o} ${outcomeLabel(o)}`, colorVar: "var(--c-risk)" }))}
+          flows={flows}
+          unit="pathways"
         />
         {groups.map((g) => {
           const items = scenarios.filter((s) => s.recoverability === g);

@@ -71,8 +71,8 @@ need WebGL. See [`states.md`](states.md).
 
 ## Not yet implemented
 
-- The Event Horizon scene itself: `components/scenes/event-horizon/EventHorizonScene.tsx`
-  returns `null` over the static disk. The Orrery and Branching scenes currently render the
-  static disk. Pause-when-hidden, the quality manager and the skippable intro therefore have
-  nothing to act on yet and must be implemented with the scenes.
-- A motion budget test (frame-time or CPU) for the scenes.
+- A motion budget test (frame-time or CPU) for the scenes; the quality manager measures the
+  first two seconds at runtime and halves particle count and pixel ratio under 45 fps, but CI
+  asserts nothing about frame time.
+- User-facing controls to pause or replay a scene; today pausing is automatic (hidden tab,
+  out of view, reduced motion) and the intro is skipped by any input.

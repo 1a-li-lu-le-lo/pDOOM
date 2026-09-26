@@ -32,8 +32,9 @@ everything). This page maps each commitment to how it is met and lists the known
 
 Scenes are progressive enhancement over a complete, server-rendered page. A scene never
 carries information that is not in the meter or in `/text`; the mode switcher sits in the
-first viewport; reduced motion and missing WebGL both fall back to the static disk. The
-scenes themselves are placeholders at present.
+first viewport; reduced motion and missing WebGL both fall back to the static disk. The Event
+Horizon canvas is `aria-hidden` and carries no text; the Orrery and Branching SVGs are
+`role="img"` with a label that names the grammar and says they are not a simulation.
 
 ## 3. Testing
 
@@ -60,11 +61,11 @@ scenes themselves are placeholders at present.
 - **Form validation on `/evidence`** relies on the server ignoring invalid values; there is no
   inline error text.
 - **Theme and palette switches** (`data-theme`, `data-palette`) have no UI yet.
-- **Scenes are placeholders**; when built they must honour pause-on-hidden, a skippable intro,
-  a visible label and the reduced-motion fallback.
+- **Scenes have no user-facing controls** beyond the mode switcher; pausing, quality and the
+  intro skip are automatic (hidden tab, out of view, any input, reduced motion).
 
 ## Not yet implemented
 
-- `tests/e2e/*.spec.ts` and `tests/accessibility/*` (routes, mode switching, reduced motion,
-  WebGL failure, `/text` without JavaScript, axe on `/`, `/meter`, `/futures`, `/lab`, `/text`).
+- `tests/accessibility/*` as a separate suite; today the axe checks live in `tests/e2e/a11y.spec.ts`
+  and run on `/`, `/meter`, `/futures`, `/forecasts`, `/lab`, `/act`, `/text` and `/method/model`.
 - An accessibility statement page inside the web app; this document is the statement.
