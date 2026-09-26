@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+.pnpm-store/
+# build outputs
+.next/
+out/
+dist/
+coverage/
+bin/
+*.tsbuildinfo
+# test artefacts
+test-results/
+playwright-report/
+blob-report/
+# env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+data/keys/reviewers/*.key
+# runtime data that must never be committed
+data/candidates/*
+!data/candidates/.gitkeep
+data/review-queue/*
+!data/review-queue/README.md
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

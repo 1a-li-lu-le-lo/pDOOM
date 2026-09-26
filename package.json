@@ -1,0 +1,41 @@
+{
+  "name": "pdum-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "PDUM — Probability of Doom, Disempowerment, and Unrecoverable Machine-Caused Catastrophe. The AI Existential and Civilizational Risk Observatory. Copyright NU Cybernetics.",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r --if-present typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "build": "pnpm -r --if-present build",
+    "build:jsonschema": "pnpm --filter @pdum/schemas build:jsonschema",
+    "e2e": "playwright test -c tests/e2e/playwright.config.ts",
+    "dev": "pnpm --filter @pdum/web dev"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@eslint/js": "^9.39.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.19.0",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "^15.5.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.9.0",
+    "tsx": "^4.23.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.46.0",
+    "vitest": "^3.2.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "unrs-resolver"
+    ]
+  }
+}
