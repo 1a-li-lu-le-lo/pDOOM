@@ -107,6 +107,8 @@ Responses carry `RateLimit-Limit` and `RateLimit-Remaining`; an exhausted bucket
 | GET | `/v1/sources/{id}` | One source with its claims. |
 | GET | `/v1/methodology`, `/v1/methodology/{slug}` | Methodology documents; content as `text/markdown`. |
 | GET | `/v1/releases`, `/v1/releases/{id}` | Published release list and full release directories (unreadable or unpublished directories are omitted). |
+| GET | `/v1/releases/{id}/changelog.md`, `/v1/releases/{id}/model-card.md` | The Markdown documents shipped with a published release; content as `text/markdown`. |
+| GET | `/v1/snapshot` | The sealed data snapshot behind the current release, entity file by entity file (large; use the ETag). What `@pdoom/sdk`'s HTTP source reads to mirror the file source. |
 | POST | `/v1/scenario-lab/evaluate` | UserScenarioParams (+ `samples` ≤ 50000, `seed`). |
 | POST | `/v1/submissions/sources`, `/v1/submissions/corrections` | `{ "payload": {...}, "contact"?: "..." }`; the `202` body carries an `id` unique to that submission. |
 | GET | `/healthz`, `/readyz` | Liveness, readiness. |
