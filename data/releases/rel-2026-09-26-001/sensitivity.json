@@ -1,0 +1,5846 @@
+{
+  "items": [
+    {
+      "baseline_value": 0.07065,
+      "delta": -0.04935,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-CAT10-2100 without fc-xpt-2023-experts-ai-catastrophe-2100 (Existential Risk Persuasion Tournament — domain experts).",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-xpt-2023-experts-ai-catastrophe-2100",
+      "rank": 3,
+      "removed_id": "fc-xpt-2023-experts-ai-catastrophe-2100",
+      "run_id": "sens-loo-G-CAT10-2100-fc-xpt-2023-experts-ai-catastrophe-2100",
+      "target_id": "G-CAT10-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0213
+    },
+    {
+      "baseline_value": 0.07065,
+      "delta": 0.04935,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-CAT10-2100 without fc-xpt-2023-superforecasters-ai-catastrophe-2100 (Existential Risk Persuasion Tournament — superforecasters).",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-xpt-2023-superforecasters-ai-catastrophe-2100",
+      "rank": 4,
+      "removed_id": "fc-xpt-2023-superforecasters-ai-catastrophe-2100",
+      "run_id": "sens-loo-G-CAT10-2100-fc-xpt-2023-superforecasters-ai-catastrophe-2100",
+      "target_id": "G-CAT10-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.12
+    },
+    {
+      "baseline_value": 0.07065,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "parameter_change": "method linear_pool",
+      "rank": 298,
+      "removed_id": null,
+      "run_id": "sens-method-G-CAT10-2100-linear_pool",
+      "target_id": "G-CAT10-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.07065
+    },
+    {
+      "baseline_value": 0.07065,
+      "delta": -0.018987,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "parameter_change": "method log_odds_pool",
+      "rank": 12,
+      "removed_id": null,
+      "run_id": "sens-method-G-CAT10-2100-log_odds_pool",
+      "target_id": "G-CAT10-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.051663
+    },
+    {
+      "baseline_value": 0.07065,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "parameter_change": "method trimmed_mean",
+      "rank": 301,
+      "removed_id": null,
+      "run_id": "sens-method-G-CAT10-2100-trimmed_mean",
+      "target_id": "G-CAT10-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.07065
+    },
+    {
+      "baseline_value": 0.07065,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "parameter_change": "method tier_weighted",
+      "rank": 300,
+      "removed_id": null,
+      "run_id": "sens-method-G-CAT10-2100-tier_weighted",
+      "target_id": "G-CAT10-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.07065
+    },
+    {
+      "baseline_value": 0.07065,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "parameter_change": "method recency_weighted",
+      "rank": 299,
+      "removed_id": null,
+      "run_id": "sens-method-G-CAT10-2100-recency_weighted",
+      "target_id": "G-CAT10-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.07065
+    },
+    {
+      "baseline_value": 0.07065,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "parameter_change": "method equal_weight_by_population",
+      "rank": 297,
+      "removed_id": null,
+      "run_id": "sens-method-G-CAT10-2100-equal_weight_by_population",
+      "target_id": "G-CAT10-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.07065
+    },
+    {
+      "baseline_value": 0.0169,
+      "delta": -0.0131,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-EXT-2100 without fc-xpt-2023-experts-ai-extinction-2100 (Existential Risk Persuasion Tournament — domain experts).",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-xpt-2023-experts-ai-extinction-2100",
+      "rank": 22,
+      "removed_id": "fc-xpt-2023-experts-ai-extinction-2100",
+      "run_id": "sens-loo-G-EXT-2100-fc-xpt-2023-experts-ai-extinction-2100",
+      "target_id": "G-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0038
+    },
+    {
+      "baseline_value": 0.0169,
+      "delta": 0.0131,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-EXT-2100 without fc-xpt-2023-superforecasters-ai-extinction-2100 (Existential Risk Persuasion Tournament — superforecasters).",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-xpt-2023-superforecasters-ai-extinction-2100",
+      "rank": 23,
+      "removed_id": "fc-xpt-2023-superforecasters-ai-extinction-2100",
+      "run_id": "sens-loo-G-EXT-2100-fc-xpt-2023-superforecasters-ai-extinction-2100",
+      "target_id": "G-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.03
+    },
+    {
+      "baseline_value": 0.0169,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method linear_pool",
+      "rank": 308,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-linear_pool",
+      "target_id": "G-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0169
+    },
+    {
+      "baseline_value": 0.0169,
+      "delta": -0.006155,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method log_odds_pool",
+      "rank": 38,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-log_odds_pool",
+      "target_id": "G-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.010745
+    },
+    {
+      "baseline_value": 0.0169,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method trimmed_mean",
+      "rank": 311,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-trimmed_mean",
+      "target_id": "G-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0169
+    },
+    {
+      "baseline_value": 0.0169,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method tier_weighted",
+      "rank": 310,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-tier_weighted",
+      "target_id": "G-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0169
+    },
+    {
+      "baseline_value": 0.0169,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method recency_weighted",
+      "rank": 309,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-recency_weighted",
+      "target_id": "G-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0169
+    },
+    {
+      "baseline_value": 0.0169,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method equal_weight_by_population",
+      "rank": 307,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-equal_weight_by_population",
+      "target_id": "G-EXT-2100",
+      "target_kind": "aggregation_group",
+      "value": 0.0169
+    },
+    {
+      "baseline_value": 0.1475,
+      "delta": -0.0725,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-EXT-2100-METACULUS without fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction (Metaculus 'most dedicated x-risk forecasters' (platform analysis, September 2026)).",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+      "rank": 1,
+      "removed_id": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+      "run_id": "sens-loo-G-EXT-2100-METACULUS-fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+      "target_id": "G-EXT-2100-METACULUS",
+      "target_kind": "aggregation_group",
+      "value": 0.075
+    },
+    {
+      "baseline_value": 0.1475,
+      "delta": 0.0725,
+      "horizon": "2100",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-EXT-2100-METACULUS without fc-metaculus-2026-pro-forecasters-ai-extinction (Metaculus Pro Forecasters (platform analysis, September 2026)).",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-metaculus-2026-pro-forecasters-ai-extinction",
+      "rank": 2,
+      "removed_id": "fc-metaculus-2026-pro-forecasters-ai-extinction",
+      "run_id": "sens-loo-G-EXT-2100-METACULUS-fc-metaculus-2026-pro-forecasters-ai-extinction",
+      "target_id": "G-EXT-2100-METACULUS",
+      "target_kind": "aggregation_group",
+      "value": 0.22
+    },
+    {
+      "baseline_value": 0.1475,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method linear_pool",
+      "rank": 303,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-METACULUS-linear_pool",
+      "target_id": "G-EXT-2100-METACULUS",
+      "target_kind": "aggregation_group",
+      "value": 0.1475
+    },
+    {
+      "baseline_value": 0.1475,
+      "delta": -0.01614,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method log_odds_pool",
+      "rank": 15,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-METACULUS-log_odds_pool",
+      "target_id": "G-EXT-2100-METACULUS",
+      "target_kind": "aggregation_group",
+      "value": 0.13136
+    },
+    {
+      "baseline_value": 0.1475,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method trimmed_mean",
+      "rank": 306,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-METACULUS-trimmed_mean",
+      "target_id": "G-EXT-2100-METACULUS",
+      "target_kind": "aggregation_group",
+      "value": 0.1475
+    },
+    {
+      "baseline_value": 0.1475,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method tier_weighted",
+      "rank": 305,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-METACULUS-tier_weighted",
+      "target_id": "G-EXT-2100-METACULUS",
+      "target_kind": "aggregation_group",
+      "value": 0.1475
+    },
+    {
+      "baseline_value": 0.1475,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method recency_weighted",
+      "rank": 304,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-METACULUS-recency_weighted",
+      "target_id": "G-EXT-2100-METACULUS",
+      "target_kind": "aggregation_group",
+      "value": 0.1475
+    },
+    {
+      "baseline_value": 0.1475,
+      "delta": 0,
+      "horizon": "2100",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "method equal_weight_by_population",
+      "rank": 302,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-2100-METACULUS-equal_weight_by_population",
+      "target_id": "G-EXT-2100-METACULUS",
+      "target_kind": "aggregation_group",
+      "value": 0.1475
+    },
+    {
+      "baseline_value": 0.075,
+      "delta": 0.025,
+      "horizon": "eventual",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-EXT-DISEMP-UNDATED without fc-espai-2023-extinction-or-disempowerment (2023 Expert Survey on Progress in AI (Grace et al. 2024)).",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-espai-2023-extinction-or-disempowerment",
+      "rank": 8,
+      "removed_id": "fc-espai-2023-extinction-or-disempowerment",
+      "run_id": "sens-loo-G-EXT-DISEMP-UNDATED-fc-espai-2023-extinction-or-disempowerment",
+      "target_id": "G-EXT-DISEMP-UNDATED",
+      "target_kind": "aggregation_group",
+      "value": 0.1
+    },
+    {
+      "baseline_value": 0.075,
+      "delta": -0.025,
+      "horizon": "eventual",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-EXT-DISEMP-UNDATED without fc-espai-2024-extinction-or-disempowerment (2024 Expert Survey on Progress in AI (AI Impacts)).",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "parameter_change": "remove forecast fc-espai-2024-extinction-or-disempowerment",
+      "rank": 9,
+      "removed_id": "fc-espai-2024-extinction-or-disempowerment",
+      "run_id": "sens-loo-G-EXT-DISEMP-UNDATED-fc-espai-2024-extinction-or-disempowerment",
+      "target_id": "G-EXT-DISEMP-UNDATED",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.075,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "parameter_change": "method linear_pool",
+      "rank": 313,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-DISEMP-UNDATED-linear_pool",
+      "target_id": "G-EXT-DISEMP-UNDATED",
+      "target_kind": "aggregation_group",
+      "value": 0.075
+    },
+    {
+      "baseline_value": 0.075,
+      "delta": -0.003961,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "parameter_change": "method log_odds_pool",
+      "rank": 55,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-DISEMP-UNDATED-log_odds_pool",
+      "target_id": "G-EXT-DISEMP-UNDATED",
+      "target_kind": "aggregation_group",
+      "value": 0.071039
+    },
+    {
+      "baseline_value": 0.075,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "parameter_change": "method trimmed_mean",
+      "rank": 314,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-DISEMP-UNDATED-trimmed_mean",
+      "target_id": "G-EXT-DISEMP-UNDATED",
+      "target_kind": "aggregation_group",
+      "value": 0.075
+    },
+    {
+      "baseline_value": 0.075,
+      "delta": -0.001316,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "parameter_change": "method tier_weighted",
+      "rank": 107,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-DISEMP-UNDATED-tier_weighted",
+      "target_id": "G-EXT-DISEMP-UNDATED",
+      "target_kind": "aggregation_group",
+      "value": 0.073684
+    },
+    {
+      "baseline_value": 0.075,
+      "delta": 0.003356,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "parameter_change": "method recency_weighted",
+      "rank": 67,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-DISEMP-UNDATED-recency_weighted",
+      "target_id": "G-EXT-DISEMP-UNDATED",
+      "target_kind": "aggregation_group",
+      "value": 0.078356
+    },
+    {
+      "baseline_value": 0.075,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "parameter_change": "method equal_weight_by_population",
+      "rank": 312,
+      "removed_id": null,
+      "run_id": "sens-method-G-EXT-DISEMP-UNDATED-equal_weight_by_population",
+      "target_id": "G-EXT-DISEMP-UNDATED",
+      "target_kind": "aggregation_group",
+      "value": 0.075
+    },
+    {
+      "baseline_value": 0.05,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-XBAD-LONG-RUN without fc-espai-2022-extremely-bad-long-run (2022 Expert Survey on Progress in AI (AI Impacts)).",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "remove forecast fc-espai-2022-extremely-bad-long-run",
+      "rank": 295,
+      "removed_id": "fc-espai-2022-extremely-bad-long-run",
+      "run_id": "sens-loo-G-XBAD-LONG-RUN-fc-espai-2022-extremely-bad-long-run",
+      "target_id": "G-XBAD-LONG-RUN",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.05,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "leave_one_source_out",
+      "note": "Preferred aggregate (median) of G-XBAD-LONG-RUN without fc-espai-2023-extremely-bad-long-run (2023 Expert Survey on Progress in AI (Grace et al. 2024)).",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "remove forecast fc-espai-2023-extremely-bad-long-run",
+      "rank": 296,
+      "removed_id": "fc-espai-2023-extremely-bad-long-run",
+      "run_id": "sens-loo-G-XBAD-LONG-RUN-fc-espai-2023-extremely-bad-long-run",
+      "target_id": "G-XBAD-LONG-RUN",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.05,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "method linear_pool",
+      "rank": 316,
+      "removed_id": null,
+      "run_id": "sens-method-G-XBAD-LONG-RUN-linear_pool",
+      "target_id": "G-XBAD-LONG-RUN",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.05,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "method log_odds_pool",
+      "rank": 317,
+      "removed_id": null,
+      "run_id": "sens-method-G-XBAD-LONG-RUN-log_odds_pool",
+      "target_id": "G-XBAD-LONG-RUN",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.05,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "method trimmed_mean",
+      "rank": 320,
+      "removed_id": null,
+      "run_id": "sens-method-G-XBAD-LONG-RUN-trimmed_mean",
+      "target_id": "G-XBAD-LONG-RUN",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.05,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "method tier_weighted",
+      "rank": 319,
+      "removed_id": null,
+      "run_id": "sens-method-G-XBAD-LONG-RUN-tier_weighted",
+      "target_id": "G-XBAD-LONG-RUN",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.05,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "method recency_weighted",
+      "rank": 318,
+      "removed_id": null,
+      "run_id": "sens-method-G-XBAD-LONG-RUN-recency_weighted",
+      "target_id": "G-XBAD-LONG-RUN",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.05,
+      "delta": 0,
+      "horizon": "eventual",
+      "kind": "alternative_weighting",
+      "note": "Difference between the preferred aggregate and an alternative aggregation method.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "method equal_weight_by_population",
+      "rank": 315,
+      "removed_id": null,
+      "run_id": "sens-method-G-XBAD-LONG-RUN-equal_weight_by_population",
+      "target_id": "G-XBAD-LONG-RUN",
+      "target_kind": "aggregation_group",
+      "value": 0.05
+    },
+    {
+      "baseline_value": 0.001239,
+      "delta": -0.000718,
+      "horizon": "1y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 154,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-1y",
+      "target_id": "est-research-P_DOOM-1y",
+      "target_kind": "estimate",
+      "value": 0.000521
+    },
+    {
+      "baseline_value": 0.000493,
+      "delta": -0.000285,
+      "horizon": "1y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 201,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-1y",
+      "target_id": "est-research-O3-1y",
+      "target_kind": "estimate",
+      "value": 0.000208
+    },
+    {
+      "baseline_value": 0.0003,
+      "delta": -0.000173,
+      "horizon": "1y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 226,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-1y",
+      "target_id": "est-research-P_COLLAPSE-1y",
+      "target_kind": "estimate",
+      "value": 0.000127
+    },
+    {
+      "baseline_value": 0.0001,
+      "delta": -0.000058,
+      "horizon": "1y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 268,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-1y",
+      "target_id": "est-research-O6-1y",
+      "target_kind": "estimate",
+      "value": 0.000042
+    },
+    {
+      "baseline_value": 0.00004,
+      "delta": -0.000023,
+      "horizon": "1y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 281,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-1y",
+      "target_id": "est-research-O7-1y",
+      "target_kind": "estimate",
+      "value": 0.000017
+    },
+    {
+      "baseline_value": 0.001239,
+      "delta": 0.001305,
+      "horizon": "1y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 108,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-1y",
+      "target_id": "est-research-P_DOOM-1y",
+      "target_kind": "estimate",
+      "value": 0.002544
+    },
+    {
+      "baseline_value": 0.000493,
+      "delta": 0.000515,
+      "horizon": "1y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 170,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-1y",
+      "target_id": "est-research-O3-1y",
+      "target_kind": "estimate",
+      "value": 0.001008
+    },
+    {
+      "baseline_value": 0.0003,
+      "delta": 0.000311,
+      "horizon": "1y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 198,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-1y",
+      "target_id": "est-research-P_COLLAPSE-1y",
+      "target_kind": "estimate",
+      "value": 0.000611
+    },
+    {
+      "baseline_value": 0.0001,
+      "delta": 0.000103,
+      "horizon": "1y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 248,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-1y",
+      "target_id": "est-research-O6-1y",
+      "target_kind": "estimate",
+      "value": 0.000203
+    },
+    {
+      "baseline_value": 0.00004,
+      "delta": 0.000042,
+      "horizon": "1y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 274,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-1y",
+      "target_id": "est-research-O7-1y",
+      "target_kind": "estimate",
+      "value": 0.000082
+    },
+    {
+      "baseline_value": 0.001239,
+      "delta": -0.000595,
+      "horizon": "1y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 162,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-1y",
+      "target_id": "est-research-P_DOOM-1y",
+      "target_kind": "estimate",
+      "value": 0.000644
+    },
+    {
+      "baseline_value": 0.000493,
+      "delta": -0.000236,
+      "horizon": "1y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 213,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-1y",
+      "target_id": "est-research-O3-1y",
+      "target_kind": "estimate",
+      "value": 0.000257
+    },
+    {
+      "baseline_value": 0.0003,
+      "delta": -0.000144,
+      "horizon": "1y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 237,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-1y",
+      "target_id": "est-research-P_COLLAPSE-1y",
+      "target_kind": "estimate",
+      "value": 0.000156
+    },
+    {
+      "baseline_value": 0.0001,
+      "delta": -0.000048,
+      "horizon": "1y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 272,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-1y",
+      "target_id": "est-research-O6-1y",
+      "target_kind": "estimate",
+      "value": 0.000052
+    },
+    {
+      "baseline_value": 0.00004,
+      "delta": -0.000019,
+      "horizon": "1y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 285,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-1y",
+      "target_id": "est-research-O7-1y",
+      "target_kind": "estimate",
+      "value": 0.000021
+    },
+    {
+      "baseline_value": 0.001239,
+      "delta": 0.001046,
+      "horizon": "1y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 128,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-1y",
+      "target_id": "est-research-P_DOOM-1y",
+      "target_kind": "estimate",
+      "value": 0.002285
+    },
+    {
+      "baseline_value": 0.000493,
+      "delta": 0.000415,
+      "horizon": "1y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 182,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-1y",
+      "target_id": "est-research-O3-1y",
+      "target_kind": "estimate",
+      "value": 0.000908
+    },
+    {
+      "baseline_value": 0.0003,
+      "delta": 0.000256,
+      "horizon": "1y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 206,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-1y",
+      "target_id": "est-research-P_COLLAPSE-1y",
+      "target_kind": "estimate",
+      "value": 0.000556
+    },
+    {
+      "baseline_value": 0.0001,
+      "delta": 0.000085,
+      "horizon": "1y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 257,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-1y",
+      "target_id": "est-research-O6-1y",
+      "target_kind": "estimate",
+      "value": 0.000185
+    },
+    {
+      "baseline_value": 0.00004,
+      "delta": 0.000034,
+      "horizon": "1y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 277,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-1y",
+      "target_id": "est-research-O7-1y",
+      "target_kind": "estimate",
+      "value": 0.000074
+    },
+    {
+      "baseline_value": 0.001239,
+      "delta": -0.000554,
+      "horizon": "1y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 165,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-1y",
+      "target_id": "est-research-P_DOOM-1y",
+      "target_kind": "estimate",
+      "value": 0.000685
+    },
+    {
+      "baseline_value": 0.000493,
+      "delta": -0.000221,
+      "horizon": "1y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 216,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-1y",
+      "target_id": "est-research-O3-1y",
+      "target_kind": "estimate",
+      "value": 0.000272
+    },
+    {
+      "baseline_value": 0.0003,
+      "delta": -0.000135,
+      "horizon": "1y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 239,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-1y",
+      "target_id": "est-research-P_COLLAPSE-1y",
+      "target_kind": "estimate",
+      "value": 0.000165
+    },
+    {
+      "baseline_value": 0.0001,
+      "delta": -0.000045,
+      "horizon": "1y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 273,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-1y",
+      "target_id": "est-research-O6-1y",
+      "target_kind": "estimate",
+      "value": 0.000055
+    },
+    {
+      "baseline_value": 0.00004,
+      "delta": -0.000018,
+      "horizon": "1y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 287,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-1y",
+      "target_id": "est-research-O7-1y",
+      "target_kind": "estimate",
+      "value": 0.000022
+    },
+    {
+      "baseline_value": 0.001239,
+      "delta": 0.000802,
+      "horizon": "1y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 146,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-1y",
+      "target_id": "est-research-P_DOOM-1y",
+      "target_kind": "estimate",
+      "value": 0.002041
+    },
+    {
+      "baseline_value": 0.000493,
+      "delta": 0.000322,
+      "horizon": "1y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 194,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-1y",
+      "target_id": "est-research-O3-1y",
+      "target_kind": "estimate",
+      "value": 0.000815
+    },
+    {
+      "baseline_value": 0.0003,
+      "delta": 0.000199,
+      "horizon": "1y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 220,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-1y",
+      "target_id": "est-research-P_COLLAPSE-1y",
+      "target_kind": "estimate",
+      "value": 0.000499
+    },
+    {
+      "baseline_value": 0.0001,
+      "delta": 0.000064,
+      "horizon": "1y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 264,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-1y",
+      "target_id": "est-research-O6-1y",
+      "target_kind": "estimate",
+      "value": 0.000164
+    },
+    {
+      "baseline_value": 0.00004,
+      "delta": 0.000026,
+      "horizon": "1y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 280,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-1y",
+      "target_id": "est-research-O7-1y",
+      "target_kind": "estimate",
+      "value": 0.000066
+    },
+    {
+      "baseline_value": 0.001239,
+      "delta": -0.000019,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 284,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-1y",
+      "target_id": "est-research-P_DOOM-1y",
+      "target_kind": "estimate",
+      "value": 0.00122
+    },
+    {
+      "baseline_value": 0.000493,
+      "delta": -0.000028,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 278,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-1y",
+      "target_id": "est-research-O3-1y",
+      "target_kind": "estimate",
+      "value": 0.000465
+    },
+    {
+      "baseline_value": 0.0003,
+      "delta": -0.000009,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 291,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-1y",
+      "target_id": "est-research-P_COLLAPSE-1y",
+      "target_kind": "estimate",
+      "value": 0.000291
+    },
+    {
+      "baseline_value": 0.0001,
+      "delta": -0.000005,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 292,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-1y",
+      "target_id": "est-research-O6-1y",
+      "target_kind": "estimate",
+      "value": 0.000095
+    },
+    {
+      "baseline_value": 0.00004,
+      "delta": -0.000002,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 294,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-1y",
+      "target_id": "est-research-O7-1y",
+      "target_kind": "estimate",
+      "value": 0.000038
+    },
+    {
+      "baseline_value": 0.001239,
+      "delta": 0.000063,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 265,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-1y",
+      "target_id": "est-research-P_DOOM-1y",
+      "target_kind": "estimate",
+      "value": 0.001302
+    },
+    {
+      "baseline_value": 0.000493,
+      "delta": 0.000048,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 270,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-1y",
+      "target_id": "est-research-O3-1y",
+      "target_kind": "estimate",
+      "value": 0.000541
+    },
+    {
+      "baseline_value": 0.0003,
+      "delta": 0.000018,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 286,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-1y",
+      "target_id": "est-research-P_COLLAPSE-1y",
+      "target_kind": "estimate",
+      "value": 0.000318
+    },
+    {
+      "baseline_value": 0.0001,
+      "delta": 0.000011,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 289,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-1y",
+      "target_id": "est-research-O6-1y",
+      "target_kind": "estimate",
+      "value": 0.000111
+    },
+    {
+      "baseline_value": 0.00004,
+      "delta": 0.000004,
+      "horizon": "1y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 293,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-1y",
+      "target_id": "est-research-O7-1y",
+      "target_kind": "estimate",
+      "value": 0.000044
+    },
+    {
+      "baseline_value": 0.005073,
+      "delta": -0.002918,
+      "horizon": "3y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 73,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-3y",
+      "target_id": "est-research-P_DOOM-3y",
+      "target_kind": "estimate",
+      "value": 0.002155
+    },
+    {
+      "baseline_value": 0.002012,
+      "delta": -0.001152,
+      "horizon": "3y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 122,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-3y",
+      "target_id": "est-research-O3-3y",
+      "target_kind": "estimate",
+      "value": 0.00086
+    },
+    {
+      "baseline_value": 0.00123,
+      "delta": -0.0007,
+      "horizon": "3y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 155,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-3y",
+      "target_id": "est-research-P_COLLAPSE-3y",
+      "target_kind": "estimate",
+      "value": 0.00053
+    },
+    {
+      "baseline_value": 0.000403,
+      "delta": -0.000231,
+      "horizon": "3y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 214,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-3y",
+      "target_id": "est-research-O6-3y",
+      "target_kind": "estimate",
+      "value": 0.000172
+    },
+    {
+      "baseline_value": 0.000163,
+      "delta": -0.000093,
+      "horizon": "3y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 253,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-3y",
+      "target_id": "est-research-O7-3y",
+      "target_kind": "estimate",
+      "value": 0.00007
+    },
+    {
+      "baseline_value": 0.005073,
+      "delta": 0.005063,
+      "horizon": "3y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 46,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-3y",
+      "target_id": "est-research-P_DOOM-3y",
+      "target_kind": "estimate",
+      "value": 0.010136
+    },
+    {
+      "baseline_value": 0.002012,
+      "delta": 0.002029,
+      "horizon": "3y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 87,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-3y",
+      "target_id": "est-research-O3-3y",
+      "target_kind": "estimate",
+      "value": 0.004041
+    },
+    {
+      "baseline_value": 0.00123,
+      "delta": 0.00122,
+      "horizon": "3y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 116,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-3y",
+      "target_id": "est-research-P_COLLAPSE-3y",
+      "target_kind": "estimate",
+      "value": 0.00245
+    },
+    {
+      "baseline_value": 0.000403,
+      "delta": 0.0004,
+      "horizon": "3y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 186,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-3y",
+      "target_id": "est-research-O6-3y",
+      "target_kind": "estimate",
+      "value": 0.000803
+    },
+    {
+      "baseline_value": 0.000163,
+      "delta": 0.000161,
+      "horizon": "3y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 230,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-3y",
+      "target_id": "est-research-O7-3y",
+      "target_kind": "estimate",
+      "value": 0.000324
+    },
+    {
+      "baseline_value": 0.005073,
+      "delta": -0.002165,
+      "horizon": "3y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 84,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-3y",
+      "target_id": "est-research-P_DOOM-3y",
+      "target_kind": "estimate",
+      "value": 0.002908
+    },
+    {
+      "baseline_value": 0.002012,
+      "delta": -0.000857,
+      "horizon": "3y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 141,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-3y",
+      "target_id": "est-research-O3-3y",
+      "target_kind": "estimate",
+      "value": 0.001155
+    },
+    {
+      "baseline_value": 0.00123,
+      "delta": -0.000524,
+      "horizon": "3y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 169,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-3y",
+      "target_id": "est-research-P_COLLAPSE-3y",
+      "target_kind": "estimate",
+      "value": 0.000706
+    },
+    {
+      "baseline_value": 0.000403,
+      "delta": -0.00017,
+      "horizon": "3y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 227,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-3y",
+      "target_id": "est-research-O6-3y",
+      "target_kind": "estimate",
+      "value": 0.000233
+    },
+    {
+      "baseline_value": 0.000163,
+      "delta": -0.000069,
+      "horizon": "3y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 263,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-3y",
+      "target_id": "est-research-O7-3y",
+      "target_kind": "estimate",
+      "value": 0.000094
+    },
+    {
+      "baseline_value": 0.005073,
+      "delta": 0.002997,
+      "horizon": "3y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 71,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-3y",
+      "target_id": "est-research-P_DOOM-3y",
+      "target_kind": "estimate",
+      "value": 0.00807
+    },
+    {
+      "baseline_value": 0.002012,
+      "delta": 0.001186,
+      "horizon": "3y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 120,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-3y",
+      "target_id": "est-research-O3-3y",
+      "target_kind": "estimate",
+      "value": 0.003198
+    },
+    {
+      "baseline_value": 0.00123,
+      "delta": 0.000731,
+      "horizon": "3y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 151,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-3y",
+      "target_id": "est-research-P_COLLAPSE-3y",
+      "target_kind": "estimate",
+      "value": 0.001961
+    },
+    {
+      "baseline_value": 0.000403,
+      "delta": 0.000237,
+      "horizon": "3y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 212,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-3y",
+      "target_id": "est-research-O6-3y",
+      "target_kind": "estimate",
+      "value": 0.00064
+    },
+    {
+      "baseline_value": 0.000163,
+      "delta": 0.000097,
+      "horizon": "3y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 250,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-3y",
+      "target_id": "est-research-O7-3y",
+      "target_kind": "estimate",
+      "value": 0.00026
+    },
+    {
+      "baseline_value": 0.005073,
+      "delta": -0.002216,
+      "horizon": "3y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 82,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-3y",
+      "target_id": "est-research-P_DOOM-3y",
+      "target_kind": "estimate",
+      "value": 0.002857
+    },
+    {
+      "baseline_value": 0.002012,
+      "delta": -0.000879,
+      "horizon": "3y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 138,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-3y",
+      "target_id": "est-research-O3-3y",
+      "target_kind": "estimate",
+      "value": 0.001133
+    },
+    {
+      "baseline_value": 0.00123,
+      "delta": -0.000542,
+      "horizon": "3y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 166,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-3y",
+      "target_id": "est-research-P_COLLAPSE-3y",
+      "target_kind": "estimate",
+      "value": 0.000688
+    },
+    {
+      "baseline_value": 0.000403,
+      "delta": -0.000176,
+      "horizon": "3y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 225,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-3y",
+      "target_id": "est-research-O6-3y",
+      "target_kind": "estimate",
+      "value": 0.000227
+    },
+    {
+      "baseline_value": 0.000163,
+      "delta": -0.000071,
+      "horizon": "3y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 262,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-3y",
+      "target_id": "est-research-O7-3y",
+      "target_kind": "estimate",
+      "value": 0.000092
+    },
+    {
+      "baseline_value": 0.005073,
+      "delta": 0.003059,
+      "horizon": "3y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 70,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-3y",
+      "target_id": "est-research-P_DOOM-3y",
+      "target_kind": "estimate",
+      "value": 0.008132
+    },
+    {
+      "baseline_value": 0.002012,
+      "delta": 0.001233,
+      "horizon": "3y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 113,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-3y",
+      "target_id": "est-research-O3-3y",
+      "target_kind": "estimate",
+      "value": 0.003245
+    },
+    {
+      "baseline_value": 0.00123,
+      "delta": 0.000746,
+      "horizon": "3y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 150,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-3y",
+      "target_id": "est-research-P_COLLAPSE-3y",
+      "target_kind": "estimate",
+      "value": 0.001976
+    },
+    {
+      "baseline_value": 0.000403,
+      "delta": 0.000243,
+      "horizon": "3y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 210,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-3y",
+      "target_id": "est-research-O6-3y",
+      "target_kind": "estimate",
+      "value": 0.000646
+    },
+    {
+      "baseline_value": 0.000163,
+      "delta": 0.000098,
+      "horizon": "3y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 249,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-3y",
+      "target_id": "est-research-O7-3y",
+      "target_kind": "estimate",
+      "value": 0.000261
+    },
+    {
+      "baseline_value": 0.005073,
+      "delta": -0.000154,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 231,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-3y",
+      "target_id": "est-research-P_DOOM-3y",
+      "target_kind": "estimate",
+      "value": 0.004919
+    },
+    {
+      "baseline_value": 0.002012,
+      "delta": -0.000125,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 243,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-3y",
+      "target_id": "est-research-O3-3y",
+      "target_kind": "estimate",
+      "value": 0.001887
+    },
+    {
+      "baseline_value": 0.00123,
+      "delta": -0.000049,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 269,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-3y",
+      "target_id": "est-research-P_COLLAPSE-3y",
+      "target_kind": "estimate",
+      "value": 0.001181
+    },
+    {
+      "baseline_value": 0.000403,
+      "delta": -0.000022,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 282,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-3y",
+      "target_id": "est-research-O6-3y",
+      "target_kind": "estimate",
+      "value": 0.000381
+    },
+    {
+      "baseline_value": 0.000163,
+      "delta": -0.000011,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 290,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-3y",
+      "target_id": "est-research-O7-3y",
+      "target_kind": "estimate",
+      "value": 0.000152
+    },
+    {
+      "baseline_value": 0.005073,
+      "delta": 0.000312,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 197,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-3y",
+      "target_id": "est-research-P_DOOM-3y",
+      "target_kind": "estimate",
+      "value": 0.005385
+    },
+    {
+      "baseline_value": 0.002012,
+      "delta": 0.000253,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 207,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-3y",
+      "target_id": "est-research-O3-3y",
+      "target_kind": "estimate",
+      "value": 0.002265
+    },
+    {
+      "baseline_value": 0.00123,
+      "delta": 0.000086,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 256,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-3y",
+      "target_id": "est-research-P_COLLAPSE-3y",
+      "target_kind": "estimate",
+      "value": 0.001316
+    },
+    {
+      "baseline_value": 0.000403,
+      "delta": 0.000048,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 271,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-3y",
+      "target_id": "est-research-O6-3y",
+      "target_kind": "estimate",
+      "value": 0.000451
+    },
+    {
+      "baseline_value": 0.000163,
+      "delta": 0.000017,
+      "horizon": "3y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 288,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-3y",
+      "target_id": "est-research-O7-3y",
+      "target_kind": "estimate",
+      "value": 0.00018
+    },
+    {
+      "baseline_value": 0.007955,
+      "delta": -0.004544,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 51,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.003411
+    },
+    {
+      "baseline_value": 0.003159,
+      "delta": -0.001809,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 95,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.00135
+    },
+    {
+      "baseline_value": 0.001947,
+      "delta": -0.001117,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 125,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.00083
+    },
+    {
+      "baseline_value": 0.000631,
+      "delta": -0.000359,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 190,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000272
+    },
+    {
+      "baseline_value": 0.000258,
+      "delta": -0.000148,
+      "horizon": "5y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 235,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.00011
+    },
+    {
+      "baseline_value": 0.007955,
+      "delta": 0.008086,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 31,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.016041
+    },
+    {
+      "baseline_value": 0.003159,
+      "delta": 0.003221,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 68,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.00638
+    },
+    {
+      "baseline_value": 0.001947,
+      "delta": 0.001893,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 93,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.00384
+    },
+    {
+      "baseline_value": 0.000631,
+      "delta": 0.000633,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 160,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.001264
+    },
+    {
+      "baseline_value": 0.000258,
+      "delta": 0.000251,
+      "horizon": "5y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 208,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000509
+    },
+    {
+      "baseline_value": 0.007955,
+      "delta": -0.002954,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 72,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.005001
+    },
+    {
+      "baseline_value": 0.003159,
+      "delta": -0.001159,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 121,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.002
+    },
+    {
+      "baseline_value": 0.001947,
+      "delta": -0.000729,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 152,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.001218
+    },
+    {
+      "baseline_value": 0.000631,
+      "delta": -0.000231,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 215,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.0004
+    },
+    {
+      "baseline_value": 0.000258,
+      "delta": -0.000096,
+      "horizon": "5y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 252,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000162
+    },
+    {
+      "baseline_value": 0.007955,
+      "delta": 0.003483,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 62,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.011438
+    },
+    {
+      "baseline_value": 0.003159,
+      "delta": 0.001399,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 104,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.004558
+    },
+    {
+      "baseline_value": 0.001947,
+      "delta": 0.000818,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 145,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.002765
+    },
+    {
+      "baseline_value": 0.000631,
+      "delta": 0.000278,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 202,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000909
+    },
+    {
+      "baseline_value": 0.000258,
+      "delta": 0.00011,
+      "horizon": "5y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 247,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000368
+    },
+    {
+      "baseline_value": 0.007955,
+      "delta": -0.003462,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 63,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.004493
+    },
+    {
+      "baseline_value": 0.003159,
+      "delta": -0.001374,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 105,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.001785
+    },
+    {
+      "baseline_value": 0.001947,
+      "delta": -0.000861,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 139,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.001086
+    },
+    {
+      "baseline_value": 0.000631,
+      "delta": -0.000273,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 204,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000358
+    },
+    {
+      "baseline_value": 0.000258,
+      "delta": -0.000113,
+      "horizon": "5y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 246,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000145
+    },
+    {
+      "baseline_value": 0.007955,
+      "delta": 0.004852,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 47,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.012807
+    },
+    {
+      "baseline_value": 0.003159,
+      "delta": 0.001938,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 92,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.005097
+    },
+    {
+      "baseline_value": 0.001947,
+      "delta": 0.001189,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 119,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.003136
+    },
+    {
+      "baseline_value": 0.000631,
+      "delta": 0.000384,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 187,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.001015
+    },
+    {
+      "baseline_value": 0.000258,
+      "delta": 0.000154,
+      "horizon": "5y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 232,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000412
+    },
+    {
+      "baseline_value": 0.007955,
+      "delta": -0.000241,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 211,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.007714
+    },
+    {
+      "baseline_value": 0.003159,
+      "delta": -0.000204,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 218,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.002955
+    },
+    {
+      "baseline_value": 0.001947,
+      "delta": -0.000092,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 254,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.001855
+    },
+    {
+      "baseline_value": 0.000631,
+      "delta": -0.000036,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 276,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000595
+    },
+    {
+      "baseline_value": 0.000258,
+      "delta": -0.00002,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 283,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000238
+    },
+    {
+      "baseline_value": 0.007955,
+      "delta": 0.000588,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 164,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-5y",
+      "target_id": "est-research-P_DOOM-5y",
+      "target_kind": "estimate",
+      "value": 0.008543
+    },
+    {
+      "baseline_value": 0.003159,
+      "delta": 0.000429,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 179,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-5y",
+      "target_id": "est-research-O3-5y",
+      "target_kind": "estimate",
+      "value": 0.003588
+    },
+    {
+      "baseline_value": 0.001947,
+      "delta": 0.000133,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 241,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-5y",
+      "target_id": "est-research-P_COLLAPSE-5y",
+      "target_kind": "estimate",
+      "value": 0.00208
+    },
+    {
+      "baseline_value": 0.000631,
+      "delta": 0.000091,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 255,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-5y",
+      "target_id": "est-research-O6-5y",
+      "target_kind": "estimate",
+      "value": 0.000722
+    },
+    {
+      "baseline_value": 0.000258,
+      "delta": 0.000026,
+      "horizon": "5y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 279,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-5y",
+      "target_id": "est-research-O7-5y",
+      "target_kind": "estimate",
+      "value": 0.000284
+    },
+    {
+      "baseline_value": 0.016288,
+      "delta": -0.009219,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 27,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.007069
+    },
+    {
+      "baseline_value": 0.006463,
+      "delta": -0.00367,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 60,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.002793
+    },
+    {
+      "baseline_value": 0.003943,
+      "delta": -0.002228,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 81,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.001715
+    },
+    {
+      "baseline_value": 0.001289,
+      "delta": -0.000725,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 153,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.000564
+    },
+    {
+      "baseline_value": 0.000523,
+      "delta": -0.000296,
+      "horizon": "10y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 200,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000227
+    },
+    {
+      "baseline_value": 0.016288,
+      "delta": 0.015534,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 16,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.031822
+    },
+    {
+      "baseline_value": 0.006463,
+      "delta": 0.006145,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 39,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.012608
+    },
+    {
+      "baseline_value": 0.003943,
+      "delta": 0.003732,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 59,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.007675
+    },
+    {
+      "baseline_value": 0.001289,
+      "delta": 0.001207,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 118,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.002496
+    },
+    {
+      "baseline_value": 0.000523,
+      "delta": 0.000486,
+      "horizon": "10y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 173,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.001009
+    },
+    {
+      "baseline_value": 0.016288,
+      "delta": -0.004693,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 49,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.011595
+    },
+    {
+      "baseline_value": 0.006463,
+      "delta": -0.001873,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 94,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.00459
+    },
+    {
+      "baseline_value": 0.003943,
+      "delta": -0.00112,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 124,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.002823
+    },
+    {
+      "baseline_value": 0.001289,
+      "delta": -0.000371,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 188,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.000918
+    },
+    {
+      "baseline_value": 0.000523,
+      "delta": -0.00015,
+      "horizon": "10y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 234,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000373
+    },
+    {
+      "baseline_value": 0.016288,
+      "delta": 0.00451,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 52,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.020798
+    },
+    {
+      "baseline_value": 0.006463,
+      "delta": 0.00171,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 98,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.008173
+    },
+    {
+      "baseline_value": 0.003943,
+      "delta": 0.00103,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 129,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.004973
+    },
+    {
+      "baseline_value": 0.001289,
+      "delta": 0.000345,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 192,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.001634
+    },
+    {
+      "baseline_value": 0.000523,
+      "delta": 0.000134,
+      "horizon": "10y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 240,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000657
+    },
+    {
+      "baseline_value": 0.016288,
+      "delta": -0.006643,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 35,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.009645
+    },
+    {
+      "baseline_value": 0.006463,
+      "delta": -0.002645,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 77,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.003818
+    },
+    {
+      "baseline_value": 0.003943,
+      "delta": -0.001618,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 100,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.002325
+    },
+    {
+      "baseline_value": 0.001289,
+      "delta": -0.000525,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 168,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.000764
+    },
+    {
+      "baseline_value": 0.000523,
+      "delta": -0.000214,
+      "horizon": "10y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 217,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000309
+    },
+    {
+      "baseline_value": 0.016288,
+      "delta": 0.008824,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 28,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.025112
+    },
+    {
+      "baseline_value": 0.006463,
+      "delta": 0.003447,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 65,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.00991
+    },
+    {
+      "baseline_value": 0.003943,
+      "delta": 0.002125,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 86,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.006068
+    },
+    {
+      "baseline_value": 0.001289,
+      "delta": 0.00068,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 157,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.001969
+    },
+    {
+      "baseline_value": 0.000523,
+      "delta": 0.000275,
+      "horizon": "10y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 203,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000798
+    },
+    {
+      "baseline_value": 0.016288,
+      "delta": -0.000435,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 178,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.015853
+    },
+    {
+      "baseline_value": 0.006463,
+      "delta": -0.000421,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 180,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.006042
+    },
+    {
+      "baseline_value": 0.003943,
+      "delta": -0.000201,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 219,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.003742
+    },
+    {
+      "baseline_value": 0.001289,
+      "delta": -0.000076,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 260,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.001213
+    },
+    {
+      "baseline_value": 0.000523,
+      "delta": -0.00004,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 275,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000483
+    },
+    {
+      "baseline_value": 0.016288,
+      "delta": 0.001245,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 111,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-10y",
+      "target_id": "est-research-P_DOOM-10y",
+      "target_kind": "estimate",
+      "value": 0.017533
+    },
+    {
+      "baseline_value": 0.006463,
+      "delta": 0.000879,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 137,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-10y",
+      "target_id": "est-research-O3-10y",
+      "target_kind": "estimate",
+      "value": 0.007342
+    },
+    {
+      "baseline_value": 0.003943,
+      "delta": 0.000327,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 193,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-10y",
+      "target_id": "est-research-P_COLLAPSE-10y",
+      "target_kind": "estimate",
+      "value": 0.00427
+    },
+    {
+      "baseline_value": 0.001289,
+      "delta": 0.000184,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 223,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-10y",
+      "target_id": "est-research-O6-10y",
+      "target_kind": "estimate",
+      "value": 0.001473
+    },
+    {
+      "baseline_value": 0.000523,
+      "delta": 0.00006,
+      "horizon": "10y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 266,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-10y",
+      "target_id": "est-research-O7-10y",
+      "target_kind": "estimate",
+      "value": 0.000583
+    },
+    {
+      "baseline_value": 0.028948,
+      "delta": -0.016185,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 14,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.012763
+    },
+    {
+      "baseline_value": 0.011336,
+      "delta": -0.006285,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 37,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.005051
+    },
+    {
+      "baseline_value": 0.006939,
+      "delta": -0.003834,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 56,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.003105
+    },
+    {
+      "baseline_value": 0.002275,
+      "delta": -0.001264,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 110,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.001011
+    },
+    {
+      "baseline_value": 0.000913,
+      "delta": -0.000506,
+      "horizon": "25y",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 171,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000407
+    },
+    {
+      "baseline_value": 0.028948,
+      "delta": 0.025409,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 7,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.054357
+    },
+    {
+      "baseline_value": 0.011336,
+      "delta": 0.010156,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 26,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.021492
+    },
+    {
+      "baseline_value": 0.006939,
+      "delta": 0.006095,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 40,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.013034
+    },
+    {
+      "baseline_value": 0.002275,
+      "delta": 0.001965,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 90,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.00424
+    },
+    {
+      "baseline_value": 0.000913,
+      "delta": 0.000789,
+      "horizon": "25y",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 148,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.001702
+    },
+    {
+      "baseline_value": 0.028948,
+      "delta": -0.00532,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 43,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.023628
+    },
+    {
+      "baseline_value": 0.011336,
+      "delta": -0.002014,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 88,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.009322
+    },
+    {
+      "baseline_value": 0.006939,
+      "delta": -0.001219,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 117,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.00572
+    },
+    {
+      "baseline_value": 0.002275,
+      "delta": -0.000416,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 181,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.001859
+    },
+    {
+      "baseline_value": 0.000913,
+      "delta": -0.000163,
+      "horizon": "25y",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 229,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.00075
+    },
+    {
+      "baseline_value": 0.028948,
+      "delta": 0.00383,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 57,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.032778
+    },
+    {
+      "baseline_value": 0.011336,
+      "delta": 0.001548,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 101,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.012884
+    },
+    {
+      "baseline_value": 0.006939,
+      "delta": 0.000939,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 134,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.007878
+    },
+    {
+      "baseline_value": 0.002275,
+      "delta": 0.000299,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 199,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.002574
+    },
+    {
+      "baseline_value": 0.000913,
+      "delta": 0.000122,
+      "horizon": "25y",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 244,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.001035
+    },
+    {
+      "baseline_value": 0.028948,
+      "delta": -0.01134,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 25,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.017608
+    },
+    {
+      "baseline_value": 0.011336,
+      "delta": -0.004407,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 53,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.006929
+    },
+    {
+      "baseline_value": 0.006939,
+      "delta": -0.002707,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 75,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.004232
+    },
+    {
+      "baseline_value": 0.002275,
+      "delta": -0.000893,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 136,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.001382
+    },
+    {
+      "baseline_value": 0.000913,
+      "delta": -0.000357,
+      "horizon": "25y",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 191,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000556
+    },
+    {
+      "baseline_value": 0.028948,
+      "delta": 0.014113,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 19,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.043061
+    },
+    {
+      "baseline_value": 0.011336,
+      "delta": 0.00566,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 41,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.016996
+    },
+    {
+      "baseline_value": 0.006939,
+      "delta": 0.003392,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 66,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.010331
+    },
+    {
+      "baseline_value": 0.002275,
+      "delta": 0.001085,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 126,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.00336
+    },
+    {
+      "baseline_value": 0.000913,
+      "delta": 0.000439,
+      "horizon": "25y",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 177,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.001352
+    },
+    {
+      "baseline_value": 0.028948,
+      "delta": -0.000913,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 135,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.028035
+    },
+    {
+      "baseline_value": 0.011336,
+      "delta": -0.000657,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 158,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.010679
+    },
+    {
+      "baseline_value": 0.006939,
+      "delta": -0.00032,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 196,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.006619
+    },
+    {
+      "baseline_value": 0.002275,
+      "delta": -0.000144,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 236,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.002131
+    },
+    {
+      "baseline_value": 0.000913,
+      "delta": -0.00006,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 267,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.000853
+    },
+    {
+      "baseline_value": 0.028948,
+      "delta": 0.001947,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 91,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y",
+      "target_kind": "estimate",
+      "value": 0.030895
+    },
+    {
+      "baseline_value": 0.011336,
+      "delta": 0.001629,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 99,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-25y",
+      "target_id": "est-research-O3-25y",
+      "target_kind": "estimate",
+      "value": 0.012965
+    },
+    {
+      "baseline_value": 0.006939,
+      "delta": 0.000644,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 159,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-25y",
+      "target_id": "est-research-P_COLLAPSE-25y",
+      "target_kind": "estimate",
+      "value": 0.007583
+    },
+    {
+      "baseline_value": 0.002275,
+      "delta": 0.00032,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 195,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-25y",
+      "target_id": "est-research-O6-25y",
+      "target_kind": "estimate",
+      "value": 0.002595
+    },
+    {
+      "baseline_value": 0.000913,
+      "delta": 0.000126,
+      "horizon": "25y",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 242,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-25y",
+      "target_id": "est-research-O7-25y",
+      "target_kind": "estimate",
+      "value": 0.001039
+    },
+    {
+      "baseline_value": 0.034667,
+      "delta": -0.019406,
+      "horizon": "2100",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 11,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-2100",
+      "target_id": "est-research-P_DOOM-2100",
+      "target_kind": "estimate",
+      "value": 0.015261
+    },
+    {
+      "baseline_value": 0.01355,
+      "delta": -0.007538,
+      "horizon": "2100",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 32,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-2100",
+      "target_id": "est-research-O3-2100",
+      "target_kind": "estimate",
+      "value": 0.006012
+    },
+    {
+      "baseline_value": 0.008251,
+      "delta": -0.004552,
+      "horizon": "2100",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 50,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-2100",
+      "target_id": "est-research-P_COLLAPSE-2100",
+      "target_kind": "estimate",
+      "value": 0.003699
+    },
+    {
+      "baseline_value": 0.002707,
+      "delta": -0.001505,
+      "horizon": "2100",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 102,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-2100",
+      "target_id": "est-research-O6-2100",
+      "target_kind": "estimate",
+      "value": 0.001202
+    },
+    {
+      "baseline_value": 0.001089,
+      "delta": -0.000603,
+      "horizon": "2100",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 161,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-2100",
+      "target_id": "est-research-O7-2100",
+      "target_kind": "estimate",
+      "value": 0.000486
+    },
+    {
+      "baseline_value": 0.034667,
+      "delta": 0.030474,
+      "horizon": "2100",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 6,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-2100",
+      "target_id": "est-research-P_DOOM-2100",
+      "target_kind": "estimate",
+      "value": 0.065141
+    },
+    {
+      "baseline_value": 0.01355,
+      "delta": 0.012066,
+      "horizon": "2100",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 24,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-2100",
+      "target_id": "est-research-O3-2100",
+      "target_kind": "estimate",
+      "value": 0.025616
+    },
+    {
+      "baseline_value": 0.008251,
+      "delta": 0.007294,
+      "horizon": "2100",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 33,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-2100",
+      "target_id": "est-research-P_COLLAPSE-2100",
+      "target_kind": "estimate",
+      "value": 0.015545
+    },
+    {
+      "baseline_value": 0.002707,
+      "delta": 0.002336,
+      "horizon": "2100",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 79,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-2100",
+      "target_id": "est-research-O6-2100",
+      "target_kind": "estimate",
+      "value": 0.005043
+    },
+    {
+      "baseline_value": 0.001089,
+      "delta": 0.000942,
+      "horizon": "2100",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 133,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-2100",
+      "target_id": "est-research-O7-2100",
+      "target_kind": "estimate",
+      "value": 0.002031
+    },
+    {
+      "baseline_value": 0.034667,
+      "delta": -0.004823,
+      "horizon": "2100",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 48,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-2100",
+      "target_id": "est-research-P_DOOM-2100",
+      "target_kind": "estimate",
+      "value": 0.029844
+    },
+    {
+      "baseline_value": 0.01355,
+      "delta": -0.001761,
+      "horizon": "2100",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 96,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-2100",
+      "target_id": "est-research-O3-2100",
+      "target_kind": "estimate",
+      "value": 0.011789
+    },
+    {
+      "baseline_value": 0.008251,
+      "delta": -0.001009,
+      "horizon": "2100",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 131,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-2100",
+      "target_id": "est-research-P_COLLAPSE-2100",
+      "target_kind": "estimate",
+      "value": 0.007242
+    },
+    {
+      "baseline_value": 0.002707,
+      "delta": -0.000361,
+      "horizon": "2100",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 189,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-2100",
+      "target_id": "est-research-O6-2100",
+      "target_kind": "estimate",
+      "value": 0.002346
+    },
+    {
+      "baseline_value": 0.001089,
+      "delta": -0.000142,
+      "horizon": "2100",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 238,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-2100",
+      "target_id": "est-research-O7-2100",
+      "target_kind": "estimate",
+      "value": 0.000947
+    },
+    {
+      "baseline_value": 0.034667,
+      "delta": 0.002905,
+      "horizon": "2100",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 74,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-2100",
+      "target_id": "est-research-P_DOOM-2100",
+      "target_kind": "estimate",
+      "value": 0.037572
+    },
+    {
+      "baseline_value": 0.01355,
+      "delta": 0.00122,
+      "horizon": "2100",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 114,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-2100",
+      "target_id": "est-research-O3-2100",
+      "target_kind": "estimate",
+      "value": 0.01477
+    },
+    {
+      "baseline_value": 0.008251,
+      "delta": 0.000785,
+      "horizon": "2100",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 149,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-2100",
+      "target_id": "est-research-P_COLLAPSE-2100",
+      "target_kind": "estimate",
+      "value": 0.009036
+    },
+    {
+      "baseline_value": 0.002707,
+      "delta": 0.000246,
+      "horizon": "2100",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 209,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-2100",
+      "target_id": "est-research-O6-2100",
+      "target_kind": "estimate",
+      "value": 0.002953
+    },
+    {
+      "baseline_value": 0.001089,
+      "delta": 0.000096,
+      "horizon": "2100",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 251,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-2100",
+      "target_id": "est-research-O7-2100",
+      "target_kind": "estimate",
+      "value": 0.001185
+    },
+    {
+      "baseline_value": 0.034667,
+      "delta": -0.013147,
+      "horizon": "2100",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 21,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-2100",
+      "target_id": "est-research-P_DOOM-2100",
+      "target_kind": "estimate",
+      "value": 0.02152
+    },
+    {
+      "baseline_value": 0.01355,
+      "delta": -0.005099,
+      "horizon": "2100",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 45,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-2100",
+      "target_id": "est-research-O3-2100",
+      "target_kind": "estimate",
+      "value": 0.008451
+    },
+    {
+      "baseline_value": 0.008251,
+      "delta": -0.003098,
+      "horizon": "2100",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 69,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-2100",
+      "target_id": "est-research-P_COLLAPSE-2100",
+      "target_kind": "estimate",
+      "value": 0.005153
+    },
+    {
+      "baseline_value": 0.002707,
+      "delta": -0.001025,
+      "horizon": "2100",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 130,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-2100",
+      "target_id": "est-research-O6-2100",
+      "target_kind": "estimate",
+      "value": 0.001682
+    },
+    {
+      "baseline_value": 0.001089,
+      "delta": -0.000411,
+      "horizon": "2100",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 183,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-2100",
+      "target_id": "est-research-O7-2100",
+      "target_kind": "estimate",
+      "value": 0.000678
+    },
+    {
+      "baseline_value": 0.034667,
+      "delta": 0.015348,
+      "horizon": "2100",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 17,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-2100",
+      "target_id": "est-research-P_DOOM-2100",
+      "target_kind": "estimate",
+      "value": 0.050015
+    },
+    {
+      "baseline_value": 0.01355,
+      "delta": 0.006292,
+      "horizon": "2100",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 36,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-2100",
+      "target_id": "est-research-O3-2100",
+      "target_kind": "estimate",
+      "value": 0.019842
+    },
+    {
+      "baseline_value": 0.008251,
+      "delta": 0.003784,
+      "horizon": "2100",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 58,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-2100",
+      "target_id": "est-research-P_COLLAPSE-2100",
+      "target_kind": "estimate",
+      "value": 0.012035
+    },
+    {
+      "baseline_value": 0.002707,
+      "delta": 0.00122,
+      "horizon": "2100",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 115,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-2100",
+      "target_id": "est-research-O6-2100",
+      "target_kind": "estimate",
+      "value": 0.003927
+    },
+    {
+      "baseline_value": 0.001089,
+      "delta": 0.000492,
+      "horizon": "2100",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 172,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-2100",
+      "target_id": "est-research-O7-2100",
+      "target_kind": "estimate",
+      "value": 0.001581
+    },
+    {
+      "baseline_value": 0.034667,
+      "delta": -0.001288,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 109,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-2100",
+      "target_id": "est-research-P_DOOM-2100",
+      "target_kind": "estimate",
+      "value": 0.033379
+    },
+    {
+      "baseline_value": 0.01355,
+      "delta": -0.000823,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 144,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-2100",
+      "target_id": "est-research-O3-2100",
+      "target_kind": "estimate",
+      "value": 0.012727
+    },
+    {
+      "baseline_value": 0.008251,
+      "delta": -0.000403,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 184,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-2100",
+      "target_id": "est-research-P_COLLAPSE-2100",
+      "target_kind": "estimate",
+      "value": 0.007848
+    },
+    {
+      "baseline_value": 0.002707,
+      "delta": -0.000176,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 224,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-2100",
+      "target_id": "est-research-O6-2100",
+      "target_kind": "estimate",
+      "value": 0.002531
+    },
+    {
+      "baseline_value": 0.001089,
+      "delta": -0.000079,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 259,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-2100",
+      "target_id": "est-research-O7-2100",
+      "target_kind": "estimate",
+      "value": 0.00101
+    },
+    {
+      "baseline_value": 0.034667,
+      "delta": 0.002165,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 83,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-2100",
+      "target_id": "est-research-P_DOOM-2100",
+      "target_kind": "estimate",
+      "value": 0.036832
+    },
+    {
+      "baseline_value": 0.01355,
+      "delta": 0.00197,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 89,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-2100",
+      "target_id": "est-research-O3-2100",
+      "target_kind": "estimate",
+      "value": 0.01552
+    },
+    {
+      "baseline_value": 0.008251,
+      "delta": 0.000801,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 147,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-2100",
+      "target_id": "est-research-P_COLLAPSE-2100",
+      "target_kind": "estimate",
+      "value": 0.009052
+    },
+    {
+      "baseline_value": 0.002707,
+      "delta": 0.0004,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 185,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-2100",
+      "target_id": "est-research-O6-2100",
+      "target_kind": "estimate",
+      "value": 0.003107
+    },
+    {
+      "baseline_value": 0.001089,
+      "delta": 0.000151,
+      "horizon": "2100",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 233,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-2100",
+      "target_id": "est-research-O7-2100",
+      "target_kind": "estimate",
+      "value": 0.00124
+    },
+    {
+      "baseline_value": 0.039492,
+      "delta": -0.022094,
+      "horizon": "eventual",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 10,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual",
+      "target_kind": "estimate",
+      "value": 0.017398
+    },
+    {
+      "baseline_value": 0.015471,
+      "delta": -0.008572,
+      "horizon": "eventual",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 29,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O3-eventual",
+      "target_id": "est-research-O3-eventual",
+      "target_kind": "estimate",
+      "value": 0.006899
+    },
+    {
+      "baseline_value": 0.009454,
+      "delta": -0.00524,
+      "horizon": "eventual",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 44,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_COLLAPSE-eventual",
+      "target_id": "est-research-P_COLLAPSE-eventual",
+      "target_kind": "estimate",
+      "value": 0.004214
+    },
+    {
+      "baseline_value": 0.003089,
+      "delta": -0.001713,
+      "horizon": "eventual",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 97,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O6-eventual",
+      "target_id": "est-research-O6-eventual",
+      "target_kind": "estimate",
+      "value": 0.001376
+    },
+    {
+      "baseline_value": 0.001241,
+      "delta": -0.000687,
+      "horizon": "eventual",
+      "kind": "optimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit −1.0",
+      "rank": 156,
+      "removed_id": null,
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-O7-eventual",
+      "target_id": "est-research-O7-eventual",
+      "target_kind": "estimate",
+      "value": 0.000554
+    },
+    {
+      "baseline_value": 0.039492,
+      "delta": 0.035015,
+      "horizon": "eventual",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 5,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual",
+      "target_kind": "estimate",
+      "value": 0.074507
+    },
+    {
+      "baseline_value": 0.015471,
+      "delta": 0.013776,
+      "horizon": "eventual",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 20,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O3-eventual",
+      "target_id": "est-research-O3-eventual",
+      "target_kind": "estimate",
+      "value": 0.029247
+    },
+    {
+      "baseline_value": 0.009454,
+      "delta": 0.008376,
+      "horizon": "eventual",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 30,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_COLLAPSE-eventual",
+      "target_id": "est-research-P_COLLAPSE-eventual",
+      "target_kind": "estimate",
+      "value": 0.01783
+    },
+    {
+      "baseline_value": 0.003089,
+      "delta": 0.002688,
+      "horizon": "eventual",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 76,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O6-eventual",
+      "target_id": "est-research-O6-eventual",
+      "target_kind": "estimate",
+      "value": 0.005777
+    },
+    {
+      "baseline_value": 0.001241,
+      "delta": 0.00108,
+      "horizon": "eventual",
+      "kind": "pessimistic_safeguards",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "F logit +1.0",
+      "rank": 127,
+      "removed_id": null,
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-O7-eventual",
+      "target_id": "est-research-O7-eventual",
+      "target_kind": "estimate",
+      "value": 0.002321
+    },
+    {
+      "baseline_value": 0.039492,
+      "delta": -0.003549,
+      "horizon": "eventual",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 61,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual",
+      "target_kind": "estimate",
+      "value": 0.035943
+    },
+    {
+      "baseline_value": 0.015471,
+      "delta": -0.001429,
+      "horizon": "eventual",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 103,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O3-eventual",
+      "target_id": "est-research-O3-eventual",
+      "target_kind": "estimate",
+      "value": 0.014042
+    },
+    {
+      "baseline_value": 0.009454,
+      "delta": -0.000856,
+      "horizon": "eventual",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 142,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-P_COLLAPSE-eventual",
+      "target_id": "est-research-P_COLLAPSE-eventual",
+      "target_kind": "estimate",
+      "value": 0.008598
+    },
+    {
+      "baseline_value": 0.003089,
+      "delta": -0.000272,
+      "horizon": "eventual",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 205,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O6-eventual",
+      "target_id": "est-research-O6-eventual",
+      "target_kind": "estimate",
+      "value": 0.002817
+    },
+    {
+      "baseline_value": 0.001241,
+      "delta": -0.000114,
+      "horizon": "eventual",
+      "kind": "slower_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit −0.7",
+      "rank": 245,
+      "removed_id": null,
+      "run_id": "sens-slower_capability-a-logit-0-7-O7-eventual",
+      "target_id": "est-research-O7-eventual",
+      "target_kind": "estimate",
+      "value": 0.001127
+    },
+    {
+      "baseline_value": 0.039492,
+      "delta": 0.002237,
+      "horizon": "eventual",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 80,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual",
+      "target_kind": "estimate",
+      "value": 0.041729
+    },
+    {
+      "baseline_value": 0.015471,
+      "delta": 0.000979,
+      "horizon": "eventual",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 132,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O3-eventual",
+      "target_id": "est-research-O3-eventual",
+      "target_kind": "estimate",
+      "value": 0.01645
+    },
+    {
+      "baseline_value": 0.009454,
+      "delta": 0.000592,
+      "horizon": "eventual",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 163,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-P_COLLAPSE-eventual",
+      "target_id": "est-research-P_COLLAPSE-eventual",
+      "target_kind": "estimate",
+      "value": 0.010046
+    },
+    {
+      "baseline_value": 0.003089,
+      "delta": 0.000186,
+      "horizon": "eventual",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 222,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O6-eventual",
+      "target_id": "est-research-O6-eventual",
+      "target_kind": "estimate",
+      "value": 0.003275
+    },
+    {
+      "baseline_value": 0.001241,
+      "delta": 0.000073,
+      "horizon": "eventual",
+      "kind": "faster_capability",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "A logit +0.7",
+      "rank": 261,
+      "removed_id": null,
+      "run_id": "sens-faster_capability-a-logit-0-7-O7-eventual",
+      "target_id": "est-research-O7-eventual",
+      "target_kind": "estimate",
+      "value": 0.001314
+    },
+    {
+      "baseline_value": 0.039492,
+      "delta": -0.014519,
+      "horizon": "eventual",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 18,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual",
+      "target_kind": "estimate",
+      "value": 0.024973
+    },
+    {
+      "baseline_value": 0.015471,
+      "delta": -0.005652,
+      "horizon": "eventual",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 42,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O3-eventual",
+      "target_id": "est-research-O3-eventual",
+      "target_kind": "estimate",
+      "value": 0.009819
+    },
+    {
+      "baseline_value": 0.009454,
+      "delta": -0.003461,
+      "horizon": "eventual",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 64,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-P_COLLAPSE-eventual",
+      "target_id": "est-research-P_COLLAPSE-eventual",
+      "target_kind": "estimate",
+      "value": 0.005993
+    },
+    {
+      "baseline_value": 0.003089,
+      "delta": -0.001148,
+      "horizon": "eventual",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 123,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O6-eventual",
+      "target_id": "est-research-O6-eventual",
+      "target_kind": "estimate",
+      "value": 0.001941
+    },
+    {
+      "baseline_value": 0.001241,
+      "delta": -0.000456,
+      "horizon": "eventual",
+      "kind": "lower_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit −0.5",
+      "rank": 176,
+      "removed_id": null,
+      "run_id": "sens-lower_exposure-c-and-e-logit-0-5-O7-eventual",
+      "target_id": "est-research-O7-eventual",
+      "target_kind": "estimate",
+      "value": 0.000785
+    },
+    {
+      "baseline_value": 0.039492,
+      "delta": 0.016875,
+      "horizon": "eventual",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 13,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual",
+      "target_kind": "estimate",
+      "value": 0.056367
+    },
+    {
+      "baseline_value": 0.015471,
+      "delta": 0.006758,
+      "horizon": "eventual",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 34,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O3-eventual",
+      "target_id": "est-research-O3-eventual",
+      "target_kind": "estimate",
+      "value": 0.022229
+    },
+    {
+      "baseline_value": 0.009454,
+      "delta": 0.004165,
+      "horizon": "eventual",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 54,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-P_COLLAPSE-eventual",
+      "target_id": "est-research-P_COLLAPSE-eventual",
+      "target_kind": "estimate",
+      "value": 0.013619
+    },
+    {
+      "baseline_value": 0.003089,
+      "delta": 0.001341,
+      "horizon": "eventual",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 106,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O6-eventual",
+      "target_id": "est-research-O6-eventual",
+      "target_kind": "estimate",
+      "value": 0.00443
+    },
+    {
+      "baseline_value": 0.001241,
+      "delta": 0.000534,
+      "horizon": "eventual",
+      "kind": "higher_exposure",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "C and E logit +0.5",
+      "rank": 167,
+      "removed_id": null,
+      "run_id": "sens-higher_exposure-c-and-e-logit-0-5-O7-eventual",
+      "target_id": "est-research-O7-eventual",
+      "target_kind": "estimate",
+      "value": 0.001775
+    },
+    {
+      "baseline_value": 0.039492,
+      "delta": -0.001238,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 112,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual",
+      "target_kind": "estimate",
+      "value": 0.038254
+    },
+    {
+      "baseline_value": 0.015471,
+      "delta": -0.000825,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 143,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O3-eventual",
+      "target_id": "est-research-O3-eventual",
+      "target_kind": "estimate",
+      "value": 0.014646
+    },
+    {
+      "baseline_value": 0.009454,
+      "delta": -0.000463,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 174,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-P_COLLAPSE-eventual",
+      "target_id": "est-research-P_COLLAPSE-eventual",
+      "target_kind": "estimate",
+      "value": 0.008991
+    },
+    {
+      "baseline_value": 0.003089,
+      "delta": -0.000193,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 221,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O6-eventual",
+      "target_id": "est-research-O6-eventual",
+      "target_kind": "estimate",
+      "value": 0.002896
+    },
+    {
+      "baseline_value": 0.001241,
+      "delta": -0.000083,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ = 0",
+      "rank": 258,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-O7-eventual",
+      "target_id": "est-research-O7-eventual",
+      "target_kind": "estimate",
+      "value": 0.001158
+    },
+    {
+      "baseline_value": 0.039492,
+      "delta": 0.002615,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 78,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual",
+      "target_kind": "estimate",
+      "value": 0.042107
+    },
+    {
+      "baseline_value": 0.015471,
+      "delta": 0.002139,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O3"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 85,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O3-eventual",
+      "target_id": "est-research-O3-eventual",
+      "target_kind": "estimate",
+      "value": 0.01761
+    },
+    {
+      "baseline_value": 0.009454,
+      "delta": 0.00086,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 140,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-P_COLLAPSE-eventual",
+      "target_id": "est-research-P_COLLAPSE-eventual",
+      "target_kind": "estimate",
+      "value": 0.010314
+    },
+    {
+      "baseline_value": 0.003089,
+      "delta": 0.000457,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O6"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 175,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O6-eventual",
+      "target_id": "est-research-O6-eventual",
+      "target_kind": "estimate",
+      "value": 0.003546
+    },
+    {
+      "baseline_value": 0.001241,
+      "delta": 0.000166,
+      "horizon": "eventual",
+      "kind": "alternative_dependency",
+      "note": "Research-mode experimental model re-run with one parameter perturbed; all other parameters unchanged.",
+      "outcome_set": [
+        "O7"
+      ],
+      "parameter_change": "common factor loading λ + 0.3 (capped at 1)",
+      "rank": 228,
+      "removed_id": null,
+      "run_id": "sens-alternative_dependency-common-factor-loading-0-3-capped-at-1-O7-eventual",
+      "target_id": "est-research-O7-eventual",
+      "target_kind": "estimate",
+      "value": 0.001407
+    }
+  ],
+  "kind": "sensitivity_run",
+  "schema_version": 1
+}

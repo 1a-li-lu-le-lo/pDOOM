@@ -1,0 +1,2477 @@
+{
+  "items": [
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-1y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "1y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-3y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "3y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Model G (index-only) is the official producer in this release line."
+      ],
+      "conditioning": "Official value withheld: no documented calibration process supports converting indexes or the research-mode model into a published probability (build-spec §0.2, ADR-002).",
+      "disagreement": null,
+      "display": {
+        "central": "Insufficiently calibrated",
+        "interval": "",
+        "note": "The observatory publishes indexes, an external forecast aggregate and a research-mode model; it does not publish an official probability yet."
+      },
+      "estimate_id": "est-official-P_DOOM-eventual",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "eventual",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": null,
+      "method_ref": "docs/method/model.md#official-value",
+      "model_confidence": "not_applicable",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/official-index-only@0.1.0",
+      "quantiles": null,
+      "reason_for_change": "index-only release line",
+      "rounding_rule": "none",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": []
+      },
+      "status": "insufficiently_calibrated",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Members share outcome set, horizon and conditioning (compatibility group G-CAT10-2100).",
+        "Central value is the unweighted median; alternative methods are published alongside.",
+        "Original question wording is shown beside every transformed value."
+      ],
+      "conditioning": "Unconditional.",
+      "disagreement": "high",
+      "display": {
+        "central": "8%",
+        "interval": "2%–12%",
+        "note": "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: linear_pool 8%; log_odds_pool 6%; trimmed_mean 8%; tier_weighted 8%; recency_weighted 8%; equal_weight_by_population 8%"
+      },
+      "estimate_id": "est-external-G-CAT10-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": "G-CAT10-2100",
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.07065,
+      "method_ref": "docs/method/aggregation.md",
+      "model_confidence": "aggregation_of_named_sources",
+      "outcome_label": "Civilizational collapse or Near extinction or Human extinction",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/external-aggregate@0.1.0",
+      "quantiles": {
+        "p05": 0.0213,
+        "p25": 0.0213,
+        "p50": 0.07065,
+        "p75": 0.12,
+        "p95": 0.12
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 2,
+        "population_count": 2,
+        "source_ids": [
+          "src-fri-2023-xpt"
+        ]
+      },
+      "status": "external_aggregate",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Members share outcome set, horizon and conditioning (compatibility group G-EXT-2100).",
+        "Central value is the unweighted median; alternative methods are published alongside.",
+        "Original question wording is shown beside every transformed value."
+      ],
+      "conditioning": "Unconditional.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "2%",
+        "interval": "<1%–4%",
+        "note": "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: linear_pool 2%; log_odds_pool 2%; trimmed_mean 2%; tier_weighted 2%; recency_weighted 2%; equal_weight_by_population 2%"
+      },
+      "estimate_id": "est-external-G-EXT-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": "G-EXT-2100",
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.0169,
+      "method_ref": "docs/method/aggregation.md",
+      "model_confidence": "aggregation_of_named_sources",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/external-aggregate@0.1.0",
+      "quantiles": {
+        "p05": 0.0038,
+        "p25": 0.0038,
+        "p50": 0.0169,
+        "p75": 0.03,
+        "p95": 0.03
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 2,
+        "population_count": 2,
+        "source_ids": [
+          "src-fri-2023-xpt"
+        ]
+      },
+      "status": "external_aggregate",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Members share outcome set, horizon and conditioning (compatibility group G-EXT-2100-METACULUS).",
+        "Central value is the unweighted median; alternative methods are published alongside.",
+        "Original question wording is shown beside every transformed value."
+      ],
+      "conditioning": "Unconditional (platform question).",
+      "disagreement": "high",
+      "display": {
+        "central": "14%",
+        "interval": "8%–22%",
+        "note": "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: linear_pool 14%; log_odds_pool 14%; trimmed_mean 14%; tier_weighted 14%; recency_weighted 14%; equal_weight_by_population 14%"
+      },
+      "estimate_id": "est-external-G-EXT-2100-METACULUS",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": "G-EXT-2100-METACULUS",
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.1475,
+      "method_ref": "docs/method/aggregation.md",
+      "model_confidence": "aggregation_of_named_sources",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/external-aggregate@0.1.0",
+      "quantiles": {
+        "p05": 0.075,
+        "p25": 0.075,
+        "p50": 0.1475,
+        "p75": 0.22,
+        "p95": 0.22
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 2,
+        "population_count": 1,
+        "source_ids": [
+          "src-metaculus-2026-pro-forecasters-ai-extinction"
+        ]
+      },
+      "status": "external_aggregate",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Members share outcome set, horizon and conditioning (compatibility group G-EXT-DISEMP-UNDATED).",
+        "Central value is the unweighted median; alternative methods are published alongside.",
+        "Original question wording is shown beside every transformed value."
+      ],
+      "conditioning": "Unconditional on timelines.",
+      "disagreement": "moderate",
+      "display": {
+        "central": "8%",
+        "interval": "6%–10%",
+        "note": "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: linear_pool 8%; log_odds_pool 8%; trimmed_mean 8%; tier_weighted 8%; recency_weighted 8%; equal_weight_by_population 8%"
+      },
+      "estimate_id": "est-external-G-EXT-DISEMP-UNDATED",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": "G-EXT-DISEMP-UNDATED",
+      "horizon": "eventual",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.075,
+      "method_ref": "docs/method/aggregation.md",
+      "model_confidence": "aggregation_of_named_sources",
+      "outcome_label": "Permanent severe disempowerment or Human extinction",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/external-aggregate@0.1.0",
+      "quantiles": {
+        "p05": 0.05,
+        "p25": 0.05,
+        "p50": 0.075,
+        "p75": 0.1,
+        "p95": 0.1
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 2,
+        "population_count": 1,
+        "source_ids": [
+          "src-aiimpacts-2024-espai",
+          "src-grace-2024-thousands-of-ai-authors"
+        ]
+      },
+      "status": "external_aggregate",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Members share outcome set, horizon and conditioning (compatibility group G-XBAD-LONG-RUN).",
+        "Central value is the unweighted median; alternative methods are published alongside.",
+        "Original question wording is shown beside every transformed value."
+      ],
+      "conditioning": "Conditional on high-level machine intelligence existing (survey framing).",
+      "disagreement": "low",
+      "display": {
+        "central": "6%",
+        "interval": "6%",
+        "note": "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: linear_pool 6%; log_odds_pool 6%; trimmed_mean 6%; tier_weighted 6%; recency_weighted 6%; equal_weight_by_population 6%"
+      },
+      "estimate_id": "est-external-G-XBAD-LONG-RUN",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": "G-XBAD-LONG-RUN",
+      "horizon": "eventual",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.05,
+      "method_ref": "docs/method/aggregation.md",
+      "model_confidence": "aggregation_of_named_sources",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/external-aggregate@0.1.0",
+      "quantiles": {
+        "p05": 0.05,
+        "p25": 0.05,
+        "p50": 0.05,
+        "p75": 0.05,
+        "p95": 0.05
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 2,
+        "population_count": 1,
+        "source_ids": [
+          "src-aiimpacts-2022-espai",
+          "src-grace-2024-thousands-of-ai-authors"
+        ]
+      },
+      "status": "external_aggregate",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-1y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "1y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.004362,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000048,
+        "p25": 0.000344,
+        "p50": 0.001239,
+        "p75": 0.004138,
+        "p95": 0.019435
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-1y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "1y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.00173,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000018,
+        "p25": 0.000135,
+        "p50": 0.000493,
+        "p75": 0.001645,
+        "p95": 0.00759
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-1y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "1y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.001157,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.00001,
+        "p25": 0.00008,
+        "p50": 0.0003,
+        "p75": 0.001035,
+        "p95": 0.005034
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-1y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "1y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.000475,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000003,
+        "p25": 0.000025,
+        "p50": 0.0001,
+        "p75": 0.00037,
+        "p95": 0.002118
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-1y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "1y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.000205,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000001,
+        "p25": 0.000009,
+        "p50": 0.00004,
+        "p75": 0.000152,
+        "p95": 0.00092
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–6%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-3y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "3y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.013458,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000248,
+        "p25": 0.001556,
+        "p50": 0.005073,
+        "p75": 0.014847,
+        "p95": 0.05634
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-3y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "3y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.005366,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000094,
+        "p25": 0.00061,
+        "p50": 0.002012,
+        "p75": 0.005947,
+        "p95": 0.022233
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-3y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "3y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.003565,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000054,
+        "p25": 0.000361,
+        "p50": 0.00123,
+        "p75": 0.003745,
+        "p95": 0.01488
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-3y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "3y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.001455,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000014,
+        "p25": 0.00011,
+        "p50": 0.000403,
+        "p75": 0.001359,
+        "p95": 0.006314
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-3y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "3y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.000625,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000006,
+        "p25": 0.000043,
+        "p50": 0.000163,
+        "p75": 0.000554,
+        "p95": 0.002801
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–8%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.019523,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000416,
+        "p25": 0.002518,
+        "p50": 0.007955,
+        "p75": 0.022478,
+        "p95": 0.079115
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–4%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.007798,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000156,
+        "p25": 0.000992,
+        "p50": 0.003159,
+        "p75": 0.008964,
+        "p95": 0.031583
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.005169,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.00009,
+        "p25": 0.000589,
+        "p50": 0.001947,
+        "p75": 0.005688,
+        "p95": 0.021146
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.002104,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000024,
+        "p25": 0.000177,
+        "p50": 0.000631,
+        "p75": 0.002067,
+        "p95": 0.00912
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-5y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "5y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.000904,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000009,
+        "p25": 0.000069,
+        "p50": 0.000258,
+        "p75": 0.000838,
+        "p95": 0.003978
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "2%",
+        "interval": "<1%–14%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.034728,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000973,
+        "p25": 0.005493,
+        "p50": 0.016288,
+        "p75": 0.042583,
+        "p95": 0.133876
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–6%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.013924,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.00036,
+        "p25": 0.002152,
+        "p50": 0.006463,
+        "p75": 0.017068,
+        "p95": 0.053305
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–4%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.009182,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000208,
+        "p25": 0.001266,
+        "p50": 0.003943,
+        "p75": 0.010864,
+        "p95": 0.036034
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.003724,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000055,
+        "p25": 0.000381,
+        "p50": 0.001289,
+        "p75": 0.003915,
+        "p95": 0.015758
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–<1%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-10y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "10y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.001596,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000021,
+        "p25": 0.000149,
+        "p50": 0.000523,
+        "p75": 0.001583,
+        "p95": 0.006802
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "2%",
+        "interval": "<1%–20%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.054816,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.0019,
+        "p25": 0.010276,
+        "p50": 0.028948,
+        "p75": 0.071086,
+        "p95": 0.198634
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "2%",
+        "interval": "<1%–8%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.022054,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000722,
+        "p25": 0.003998,
+        "p50": 0.011336,
+        "p75": 0.028251,
+        "p95": 0.080682
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–6%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.014474,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000412,
+        "p25": 0.002379,
+        "p50": 0.006939,
+        "p75": 0.017939,
+        "p95": 0.054924
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.005848,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000109,
+        "p25": 0.000706,
+        "p50": 0.002275,
+        "p75": 0.006546,
+        "p95": 0.02388
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-25y",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "25y",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.002504,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000042,
+        "p25": 0.000279,
+        "p50": 0.000913,
+        "p75": 0.002652,
+        "p95": 0.01037
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "4%",
+        "interval": "<1%–22%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.063469,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.002313,
+        "p25": 0.012417,
+        "p50": 0.034667,
+        "p75": 0.083477,
+        "p95": 0.226415
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "2%",
+        "interval": "<1%–10%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.025564,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000869,
+        "p25": 0.00482,
+        "p50": 0.01355,
+        "p75": 0.033231,
+        "p95": 0.092794
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–6%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.016752,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.0005,
+        "p25": 0.002873,
+        "p50": 0.008251,
+        "p75": 0.02113,
+        "p95": 0.06262
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.00676,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000133,
+        "p25": 0.000857,
+        "p50": 0.002707,
+        "p75": 0.007685,
+        "p95": 0.02739
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-2100",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "2100",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.002894,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000051,
+        "p25": 0.000336,
+        "p50": 0.001089,
+        "p75": 0.003117,
+        "p95": 0.011798
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "4%",
+        "interval": "<1%–24%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_DOOM-eventual",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "eventual",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.070657,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "p(DOOM) (O3–O8 combined)",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.002781,
+        "p25": 0.014497,
+        "p50": 0.039492,
+        "p75": 0.094014,
+        "p95": 0.247393
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "2%",
+        "interval": "<1%–10%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O3-eventual",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "eventual",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.028489,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Permanent severe disempowerment",
+      "outcome_set": [
+        "O3"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.001049,
+        "p25": 0.005627,
+        "p50": 0.015471,
+        "p75": 0.037289,
+        "p95": 0.101589
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–6%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-P_COLLAPSE-eventual",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "eventual",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.018642,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Civilizational collapse or near extinction (O4+O5)",
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000601,
+        "p25": 0.003363,
+        "p50": 0.009454,
+        "p75": 0.023649,
+        "p95": 0.068635
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–4%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O6-eventual",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "eventual",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.007513,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Human extinction",
+      "outcome_set": [
+        "O6"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000158,
+        "p25": 0.00099,
+        "p50": 0.003089,
+        "p75": 0.008639,
+        "p95": 0.030086
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    },
+    {
+      "assumptions": [
+        "Factor distributions are logit-normal fits to documented {p05, p50, p95} judgments.",
+        "Common factor loading λ = 0.50 induces positive dependence between factors.",
+        "Monte Carlo with seed 20260926 and 20000 samples; quantiles are nearest-rank."
+      ],
+      "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
+      "disagreement": "extreme",
+      "display": {
+        "central": "<1%",
+        "interval": "<1%–2%",
+        "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
+      },
+      "estimate_id": "est-research-O7-eventual",
+      "forecast_origin_date": "2026-09-26",
+      "group_id": null,
+      "horizon": "eventual",
+      "horizon_note": null,
+      "last_evidence_date": "2026-09-26",
+      "mean": 0.003216,
+      "method_ref": "docs/method/causal-model.md",
+      "model_confidence": "research_mode_low",
+      "outcome_label": "Biospheric catastrophe",
+      "outcome_set": [
+        "O7"
+      ],
+      "previous": null,
+      "producer": "pdoom-model/experimental-causal@0.1.0",
+      "quantiles": {
+        "p05": 0.000062,
+        "p25": 0.000389,
+        "p50": 0.001241,
+        "p75": 0.003518,
+        "p95": 0.012952
+      },
+      "reason_for_change": "first computation for this snapshot",
+      "rounding_rule": "nearest_2",
+      "source_coverage": {
+        "forecast_count": 0,
+        "population_count": 0,
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      },
+      "status": "research_mode",
+      "uncertainty": "high"
+    }
+  ],
+  "kind": "estimate",
+  "schema_version": 1
+}

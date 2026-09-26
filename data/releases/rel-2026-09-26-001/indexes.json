@@ -1,0 +1,368 @@
+{
+  "items": [
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [],
+      "coverage": 1,
+      "index_id": "evidence_pressure",
+      "is_probability": false,
+      "label": "Evidence Pressure Index",
+      "method_ref": "docs/method/indexes.md#evidence-pressure",
+      "note": "Baseline release: evidence pressure is defined as 50 (no movement) for the first release; later releases show movement relative to this baseline.",
+      "scale": "0–100, 50 = no movement since the baseline release",
+      "value": 50
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 5.0562,
+          "signal_id": "D1.bio_chem_uplift",
+          "tier": 1,
+          "value_normalized": 0.45,
+          "weight": 0.1
+        },
+        {
+          "contribution": 4.8371,
+          "signal_id": "D1.computer_use_osworld",
+          "tier": 3,
+          "value_normalized": 0.861,
+          "weight": 0.1
+        },
+        {
+          "contribution": 8.427,
+          "signal_id": "D1.cyber_offense_capability",
+          "tier": 1,
+          "value_normalized": 0.5,
+          "weight": 0.15
+        },
+        {
+          "contribution": 5.4494,
+          "signal_id": "D1.swe_bench_verified",
+          "tier": 3,
+          "value_normalized": 0.97,
+          "weight": 0.1
+        },
+        {
+          "contribution": 15.8989,
+          "signal_id": "D1.task_horizon_50pct",
+          "tier": 1,
+          "value_normalized": 0.566,
+          "weight": 0.25
+        },
+        {
+          "contribution": 6.1798,
+          "signal_id": "D2.autonomous_action_evidence",
+          "tier": 1,
+          "value_normalized": 0.55,
+          "weight": 0.1
+        },
+        {
+          "contribution": 3.8539,
+          "signal_id": "D2.unattended_operation_hours",
+          "tier": 1,
+          "value_normalized": 0.343,
+          "weight": 0.1
+        },
+        {
+          "contribution": 6.6034,
+          "signal_id": "D4.frontier_compute_growth",
+          "tier": 2,
+          "value_normalized": 0.653,
+          "weight": 0.1
+        }
+      ],
+      "coverage": 1,
+      "index_id": "capability_pressure",
+      "is_probability": false,
+      "label": "Capability Pressure Index",
+      "method_ref": "docs/method/indexes.md#capability-pressure",
+      "note": "",
+      "scale": "0–100, higher = more capability pressure",
+      "value": 56.3056
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 8.0838,
+          "signal_id": "D5.shutdown_compliance_evidence",
+          "tier": 1,
+          "value_normalized": 0.45,
+          "weight": 0.15
+        },
+        {
+          "contribution": 3.5928,
+          "signal_id": "D6.mcp_supply_chain_integrity",
+          "tier": 1,
+          "value_normalized": 0.3,
+          "weight": 0.1
+        },
+        {
+          "contribution": 6.4671,
+          "signal_id": "D6.model_weight_security_level",
+          "tier": 2,
+          "value_normalized": 0.4,
+          "weight": 0.15
+        },
+        {
+          "contribution": 3.5928,
+          "signal_id": "D6.prompt_injection_resistance",
+          "tier": 1,
+          "value_normalized": 0.3,
+          "weight": 0.1
+        },
+        {
+          "contribution": 4.7904,
+          "signal_id": "D7.binding_frontier_rules_jurisdictions",
+          "tier": 1,
+          "value_normalized": 0.4,
+          "weight": 0.1
+        },
+        {
+          "contribution": 5.3892,
+          "signal_id": "D7.incident_reporting_mandates",
+          "tier": 1,
+          "value_normalized": 0.45,
+          "weight": 0.1
+        },
+        {
+          "contribution": 3.5928,
+          "signal_id": "D7.published_safety_frameworks",
+          "tier": 1,
+          "value_normalized": 0.6,
+          "weight": 0.05
+        },
+        {
+          "contribution": 5.988,
+          "signal_id": "D7.third_party_evaluation_capacity",
+          "tier": 1,
+          "value_normalized": 0.5,
+          "weight": 0.1
+        }
+      ],
+      "coverage": 0.85,
+      "index_id": "control_strength",
+      "is_probability": false,
+      "label": "Control Strength Index",
+      "method_ref": "docs/method/indexes.md#control-strength",
+      "note": "Computed over 85% of the specified signal weight; missing signals are listed in the coverage gaps.",
+      "scale": "0–100, higher = stronger safeguards and institutions",
+      "value": 41.497
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 1.771,
+          "signal_id": "inc-aiid-1152-replit-agent-production-database",
+          "tier": 2,
+          "value_normalized": 0.15,
+          "weight": 0.0595
+        },
+        {
+          "contribution": 0.3006,
+          "signal_id": "inc-aiid-628-biden-robocall-new-hampshire",
+          "tier": 2,
+          "value_normalized": 0.03,
+          "weight": 0.0101
+        },
+        {
+          "contribution": 7.1703,
+          "signal_id": "inc-aisi-2026-unsanctioned-agent-cyber-testing",
+          "tier": 1,
+          "value_normalized": 0.3,
+          "weight": 0.2409
+        },
+        {
+          "contribution": 0.5745,
+          "signal_id": "inc-anthropic-2025-agentic-misalignment-stress-tests",
+          "tier": 1,
+          "value_normalized": 0.05,
+          "weight": 0.0193
+        },
+        {
+          "contribution": 3.0003,
+          "signal_id": "inc-anthropic-2025-gtg-1002-ai-orchestrated-espionage",
+          "tier": 1,
+          "value_normalized": 0.48,
+          "weight": 0.1008
+        },
+        {
+          "contribution": 2.1966,
+          "signal_id": "inc-csa-2026-mcp-cve-wave",
+          "tier": 2,
+          "value_normalized": 0.15,
+          "weight": 0.0738
+        },
+        {
+          "contribution": 2.4883,
+          "signal_id": "inc-cve-2025-6514-mcp-remote-rce",
+          "tier": 1,
+          "value_normalized": 0.15,
+          "weight": 0.0836
+        },
+        {
+          "contribution": 1.6847,
+          "signal_id": "inc-github-mcp-2025-prompt-injection-private-repos",
+          "tier": 1,
+          "value_normalized": 0.15,
+          "weight": 0.0566
+        },
+        {
+          "contribution": 0.5328,
+          "signal_id": "inc-invariant-2025-mcp-tool-poisoning",
+          "tier": 2,
+          "value_normalized": 0.05,
+          "weight": 0.0179
+        },
+        {
+          "contribution": 0,
+          "signal_id": "inc-moffatt-v-air-canada-chatbot-2024",
+          "tier": 3,
+          "value_normalized": 0,
+          "weight": 0
+        },
+        {
+          "contribution": 0.8959,
+          "signal_id": "inc-palisade-2025-o3-shutdown-sabotage",
+          "tier": 3,
+          "value_normalized": 0.08,
+          "weight": 0.0301
+        }
+      ],
+      "coverage": 1,
+      "index_id": "incident_pressure",
+      "is_probability": false,
+      "label": "Incident Pressure Index",
+      "method_ref": "docs/method/indexes.md#incident-pressure",
+      "note": "11 eligible incidents; raw pressure 0.693 squashed with k = 3.0. Counts one underlying event once; media volume is the separate attention index.",
+      "scale": "0–100, higher = more verified incident pressure",
+      "value": 20.6186
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 40,
+          "signal_id": "calibration_gap",
+          "tier": 1,
+          "value_normalized": 1,
+          "weight": 0.4
+        },
+        {
+          "contribution": 0.5,
+          "signal_id": "coverage_gap",
+          "tier": 1,
+          "value_normalized": 0.05,
+          "weight": 0.1
+        },
+        {
+          "contribution": 4.4415,
+          "signal_id": "forecast_disagreement",
+          "tier": 1,
+          "value_normalized": 0.2961,
+          "weight": 0.15
+        },
+        {
+          "contribution": 8.9475,
+          "signal_id": "judgment_share",
+          "tier": 1,
+          "value_normalized": 0.5965,
+          "weight": 0.15
+        },
+        {
+          "contribution": 0.702,
+          "signal_id": "low_tier_share",
+          "tier": 1,
+          "value_normalized": 0.0702,
+          "weight": 0.1
+        },
+        {
+          "contribution": 1.751,
+          "signal_id": "sensitivity_spread",
+          "tier": 1,
+          "value_normalized": 0.1751,
+          "weight": 0.1
+        }
+      ],
+      "coverage": 1,
+      "index_id": "uncertainty",
+      "is_probability": false,
+      "label": "Uncertainty Score",
+      "method_ref": "docs/method/indexes.md#uncertainty-score",
+      "note": "Weighted mean of coverage gap, external-forecast disagreement, low-tier evidence share, judgment share, sensitivity spread and the calibration gap (1 until proxy calibration exists). Not a probability.",
+      "scale": "0–100, higher = less is known",
+      "value": 56.3412
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [
+        {
+          "contribution": 11,
+          "signal_id": "D2.autonomous_action_evidence",
+          "tier": 1,
+          "value_normalized": 0.55,
+          "weight": 0.2
+        },
+        {
+          "contribution": 6.86,
+          "signal_id": "D2.unattended_operation_hours",
+          "tier": 1,
+          "value_normalized": 0.343,
+          "weight": 0.2
+        },
+        {
+          "contribution": 15,
+          "signal_id": "D3.agent_tool_access_breadth",
+          "tier": 1,
+          "value_normalized": 0.6,
+          "weight": 0.25
+        },
+        {
+          "contribution": 14,
+          "signal_id": "D6.mcp_supply_chain_integrity",
+          "tier": 1,
+          "value_normalized": 0.7,
+          "weight": 0.2
+        },
+        {
+          "contribution": 10.5,
+          "signal_id": "D6.prompt_injection_resistance",
+          "tier": 1,
+          "value_normalized": 0.7,
+          "weight": 0.15
+        }
+      ],
+      "coverage": 1,
+      "index_id": "agentic_infrastructure_risk",
+      "is_probability": false,
+      "label": "Agentic Infrastructure Risk Index",
+      "method_ref": "docs/method/indexes.md#agentic-infrastructure-risk",
+      "note": "",
+      "scale": "0–100, higher = more exposure from agent infrastructure",
+      "value": 57.36
+    },
+    {
+      "as_of": "2026-09-26",
+      "baseline": null,
+      "components": [],
+      "coverage": 0,
+      "index_id": "attention",
+      "is_probability": false,
+      "label": "Attention Index",
+      "method_ref": "docs/method/indexes.md#attention-index",
+      "note": "Not computed: the prototype ingests no media-volume data. Article counts are never used as incident counts.",
+      "scale": "0–100, media volume per underlying event",
+      "value": null
+    }
+  ],
+  "kind": "index_value",
+  "schema_version": 1
+}

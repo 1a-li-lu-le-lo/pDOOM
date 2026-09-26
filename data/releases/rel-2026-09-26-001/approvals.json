@@ -1,0 +1,18 @@
+[
+  {
+    "conflicts_declared": "Development key held by the build operator; no financial conflicts; NU Cybernetics authorship",
+    "key_id": "nuc-editorial-dev",
+    "manifest_sha256": "342d87727534b183beb4885e83eb6ec880a915b7cada290299dae50586f56b1a",
+    "reviewer_id": "nuc-editorial-dev",
+    "signature_base64": "zXd0lmzjleShi6piw6HOxZ/FukZ35LOyuulK9fZrEg6a3J7One8bYq2Dtzr4Npkp0ycPzq3cPf0TXwnvnBdLCw==",
+    "signed_at": "2026-09-26T21:50:00Z"
+  },
+  {
+    "conflicts_declared": "Development key held by the build operator; heightened-review acknowledgement for first release and security-incident trigger",
+    "key_id": "nuc-methodology-dev",
+    "manifest_sha256": "342d87727534b183beb4885e83eb6ec880a915b7cada290299dae50586f56b1a",
+    "reviewer_id": "nuc-methodology-dev",
+    "signature_base64": "M4d6CZqsHRe51iAzEpYNy8TDnuz7EevXEQXi5ruc+kOF4rKgdcZx55KuLV78TMJ4M2JNffmb3uymoQwOjEAdDA==",
+    "signed_at": "2026-09-26T21:52:00Z"
+  }
+]

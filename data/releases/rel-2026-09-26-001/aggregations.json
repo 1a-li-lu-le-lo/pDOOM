@@ -1,0 +1,1056 @@
+{
+  "items": [
+    {
+      "aggregation_id": "agg-g-cat10-2100-unweighted_median",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-catastrophe-2100",
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100"
+      ],
+      "group_id": "G-CAT10-2100",
+      "horizon": "2100",
+      "method": "unweighted_median",
+      "n": 2,
+      "note": "Median of member central values; the preferred method because it is robust to a single extreme forecast.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": true,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-catastrophe-2100: Same mapping as the superforecaster item. | fc-xpt-2023-superforecasters-ai-catastrophe-2100: A catastrophe killing ≥10% of humanity maps to collapse, near-extinction or extinction (O4–O6); it is broader than O6 alone and narrower than p(DOOM).",
+      "value": 0.07065,
+      "weights": {
+        "fc-xpt-2023-experts-ai-catastrophe-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\" | fc-xpt-2023-superforecasters-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-cat10-2100-linear_pool",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-catastrophe-2100",
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100"
+      ],
+      "group_id": "G-CAT10-2100",
+      "horizon": "2100",
+      "method": "linear_pool",
+      "n": 2,
+      "note": "Arithmetic mean of member central values.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-catastrophe-2100: Same mapping as the superforecaster item. | fc-xpt-2023-superforecasters-ai-catastrophe-2100: A catastrophe killing ≥10% of humanity maps to collapse, near-extinction or extinction (O4–O6); it is broader than O6 alone and narrower than p(DOOM).",
+      "value": 0.07065,
+      "weights": {
+        "fc-xpt-2023-experts-ai-catastrophe-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\" | fc-xpt-2023-superforecasters-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-cat10-2100-log_odds_pool",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-catastrophe-2100",
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100"
+      ],
+      "group_id": "G-CAT10-2100",
+      "horizon": "2100",
+      "method": "log_odds_pool",
+      "n": 2,
+      "note": "Mean on the log-odds scale, mapped back to a probability.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-catastrophe-2100: Same mapping as the superforecaster item. | fc-xpt-2023-superforecasters-ai-catastrophe-2100: A catastrophe killing ≥10% of humanity maps to collapse, near-extinction or extinction (O4–O6); it is broader than O6 alone and narrower than p(DOOM).",
+      "value": 0.051663,
+      "weights": {
+        "fc-xpt-2023-experts-ai-catastrophe-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\" | fc-xpt-2023-superforecasters-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-cat10-2100-trimmed_mean",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-catastrophe-2100",
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100"
+      ],
+      "group_id": "G-CAT10-2100",
+      "horizon": "2100",
+      "method": "trimmed_mean",
+      "n": 2,
+      "note": "Mean after trimming 20% from each end; falls back to the median when fewer than five members.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-catastrophe-2100: Same mapping as the superforecaster item. | fc-xpt-2023-superforecasters-ai-catastrophe-2100: A catastrophe killing ≥10% of humanity maps to collapse, near-extinction or extinction (O4–O6); it is broader than O6 alone and narrower than p(DOOM).",
+      "value": 0.07065,
+      "weights": {
+        "fc-xpt-2023-experts-ai-catastrophe-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\" | fc-xpt-2023-superforecasters-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-cat10-2100-tier_weighted",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-catastrophe-2100",
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100"
+      ],
+      "group_id": "G-CAT10-2100",
+      "horizon": "2100",
+      "method": "tier_weighted",
+      "n": 2,
+      "note": "Weighted by source tier multiplier (tier 1 = 1.0, tier 2 = 0.9, tier 3 = 0.5); no member above the single-figure cap.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-catastrophe-2100: Same mapping as the superforecaster item. | fc-xpt-2023-superforecasters-ai-catastrophe-2100: A catastrophe killing ≥10% of humanity maps to collapse, near-extinction or extinction (O4–O6); it is broader than O6 alone and narrower than p(DOOM).",
+      "value": 0.07065,
+      "weights": {
+        "fc-xpt-2023-experts-ai-catastrophe-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\" | fc-xpt-2023-superforecasters-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-cat10-2100-recency_weighted",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-catastrophe-2100",
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100"
+      ],
+      "group_id": "G-CAT10-2100",
+      "horizon": "2100",
+      "method": "recency_weighted",
+      "n": 2,
+      "note": "Weighted by 0.5^(age in years / 3) relative to the newest member; no member above the single-figure cap.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-catastrophe-2100: Same mapping as the superforecaster item. | fc-xpt-2023-superforecasters-ai-catastrophe-2100: A catastrophe killing ≥10% of humanity maps to collapse, near-extinction or extinction (O4–O6); it is broader than O6 alone and narrower than p(DOOM).",
+      "value": 0.07065,
+      "weights": {
+        "fc-xpt-2023-experts-ai-catastrophe-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\" | fc-xpt-2023-superforecasters-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-cat10-2100-equal_weight_by_population",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-catastrophe-2100",
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100"
+      ],
+      "group_id": "G-CAT10-2100",
+      "horizon": "2100",
+      "method": "equal_weight_by_population",
+      "n": 2,
+      "note": "Mean of per-population medians so that a large survey and a small superforecaster panel count equally.",
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-catastrophe-2100: Same mapping as the superforecaster item. | fc-xpt-2023-superforecasters-ai-catastrophe-2100: A catastrophe killing ≥10% of humanity maps to collapse, near-extinction or extinction (O4–O6); it is broader than O6 alone and narrower than p(DOOM).",
+      "value": 0.07065,
+      "weights": {
+        "fc-xpt-2023-experts-ai-catastrophe-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-catastrophe-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\" | fc-xpt-2023-superforecasters-ai-catastrophe-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability of a catastrophe caused by AI that kills at least 10% of humanity by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-unweighted_median",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-extinction-2100",
+        "fc-xpt-2023-superforecasters-ai-extinction-2100"
+      ],
+      "group_id": "G-EXT-2100",
+      "horizon": "2100",
+      "method": "unweighted_median",
+      "n": 2,
+      "note": "Median of member central values; the preferred method because it is robust to a single extreme forecast.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": true,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-extinction-2100: None. | fc-xpt-2023-superforecasters-ai-extinction-2100: None; extinction question maps to O6 directly.",
+      "value": 0.0169,
+      "weights": {
+        "fc-xpt-2023-experts-ai-extinction-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-extinction-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-extinction-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\" | fc-xpt-2023-superforecasters-ai-extinction-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-linear_pool",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-extinction-2100",
+        "fc-xpt-2023-superforecasters-ai-extinction-2100"
+      ],
+      "group_id": "G-EXT-2100",
+      "horizon": "2100",
+      "method": "linear_pool",
+      "n": 2,
+      "note": "Arithmetic mean of member central values.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-extinction-2100: None. | fc-xpt-2023-superforecasters-ai-extinction-2100: None; extinction question maps to O6 directly.",
+      "value": 0.0169,
+      "weights": {
+        "fc-xpt-2023-experts-ai-extinction-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-extinction-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-extinction-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\" | fc-xpt-2023-superforecasters-ai-extinction-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-log_odds_pool",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-extinction-2100",
+        "fc-xpt-2023-superforecasters-ai-extinction-2100"
+      ],
+      "group_id": "G-EXT-2100",
+      "horizon": "2100",
+      "method": "log_odds_pool",
+      "n": 2,
+      "note": "Mean on the log-odds scale, mapped back to a probability.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-extinction-2100: None. | fc-xpt-2023-superforecasters-ai-extinction-2100: None; extinction question maps to O6 directly.",
+      "value": 0.010745,
+      "weights": {
+        "fc-xpt-2023-experts-ai-extinction-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-extinction-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-extinction-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\" | fc-xpt-2023-superforecasters-ai-extinction-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-trimmed_mean",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-extinction-2100",
+        "fc-xpt-2023-superforecasters-ai-extinction-2100"
+      ],
+      "group_id": "G-EXT-2100",
+      "horizon": "2100",
+      "method": "trimmed_mean",
+      "n": 2,
+      "note": "Mean after trimming 20% from each end; falls back to the median when fewer than five members.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-extinction-2100: None. | fc-xpt-2023-superforecasters-ai-extinction-2100: None; extinction question maps to O6 directly.",
+      "value": 0.0169,
+      "weights": {
+        "fc-xpt-2023-experts-ai-extinction-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-extinction-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-extinction-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\" | fc-xpt-2023-superforecasters-ai-extinction-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-tier_weighted",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-extinction-2100",
+        "fc-xpt-2023-superforecasters-ai-extinction-2100"
+      ],
+      "group_id": "G-EXT-2100",
+      "horizon": "2100",
+      "method": "tier_weighted",
+      "n": 2,
+      "note": "Weighted by source tier multiplier (tier 1 = 1.0, tier 2 = 0.9, tier 3 = 0.5); no member above the single-figure cap.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-extinction-2100: None. | fc-xpt-2023-superforecasters-ai-extinction-2100: None; extinction question maps to O6 directly.",
+      "value": 0.0169,
+      "weights": {
+        "fc-xpt-2023-experts-ai-extinction-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-extinction-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-extinction-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\" | fc-xpt-2023-superforecasters-ai-extinction-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-recency_weighted",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-extinction-2100",
+        "fc-xpt-2023-superforecasters-ai-extinction-2100"
+      ],
+      "group_id": "G-EXT-2100",
+      "horizon": "2100",
+      "method": "recency_weighted",
+      "n": 2,
+      "note": "Weighted by 0.5^(age in years / 3) relative to the newest member; no member above the single-figure cap.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-extinction-2100: None. | fc-xpt-2023-superforecasters-ai-extinction-2100: None; extinction question maps to O6 directly.",
+      "value": 0.0169,
+      "weights": {
+        "fc-xpt-2023-experts-ai-extinction-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-extinction-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-extinction-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\" | fc-xpt-2023-superforecasters-ai-extinction-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-equal_weight_by_population",
+      "conditioning": "Unconditional.",
+      "forecast_ids": [
+        "fc-xpt-2023-experts-ai-extinction-2100",
+        "fc-xpt-2023-superforecasters-ai-extinction-2100"
+      ],
+      "group_id": "G-EXT-2100",
+      "horizon": "2100",
+      "method": "equal_weight_by_population",
+      "n": 2,
+      "note": "Mean of per-population medians so that a large survey and a small superforecaster panel count equally.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 2,
+      "preferred": false,
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "transformation_note": "fc-xpt-2023-experts-ai-extinction-2100: None. | fc-xpt-2023-superforecasters-ai-extinction-2100: None; extinction question maps to O6 directly.",
+      "value": 0.0169,
+      "weights": {
+        "fc-xpt-2023-experts-ai-extinction-2100": 0.5,
+        "fc-xpt-2023-superforecasters-ai-extinction-2100": 0.5
+      },
+      "wording_note": "fc-xpt-2023-experts-ai-extinction-2100 [Existential Risk Persuasion Tournament — domain experts, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\" | fc-xpt-2023-superforecasters-ai-extinction-2100 [Existential Risk Persuasion Tournament — superforecasters, 2023-07-01]: \"(paraphrase) What is the probability that AI will cause human extinction by 2100?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-metaculus-unweighted_median",
+      "conditioning": "Unconditional (platform question).",
+      "forecast_ids": [
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+        "fc-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "group_id": "G-EXT-2100-METACULUS",
+      "horizon": "2100",
+      "method": "unweighted_median",
+      "n": 2,
+      "note": "Median of member central values; the preferred method because it is robust to a single extreme forecast.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": true,
+      "source_ids": [
+        "src-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "transformation_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction: Same as the Pro Forecaster item. | fc-metaculus-2026-pro-forecasters-ai-extinction: Horizon inferred from the linked platform questions; treated as a separate compatibility group from the XPT items because wording and population selection differ.",
+      "value": 0.1475,
+      "weights": {
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction": 0.5,
+        "fc-metaculus-2026-pro-forecasters-ai-extinction": 0.5
+      },
+      "wording_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction [Metaculus 'most dedicated x-risk forecasters' (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Most dedicated x-risk forecasters: 22%)\" | fc-metaculus-2026-pro-forecasters-ai-extinction [Metaculus Pro Forecasters (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Pro Forecasters: 7.5%)\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-metaculus-linear_pool",
+      "conditioning": "Unconditional (platform question).",
+      "forecast_ids": [
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+        "fc-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "group_id": "G-EXT-2100-METACULUS",
+      "horizon": "2100",
+      "method": "linear_pool",
+      "n": 2,
+      "note": "Arithmetic mean of member central values.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "transformation_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction: Same as the Pro Forecaster item. | fc-metaculus-2026-pro-forecasters-ai-extinction: Horizon inferred from the linked platform questions; treated as a separate compatibility group from the XPT items because wording and population selection differ.",
+      "value": 0.1475,
+      "weights": {
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction": 0.5,
+        "fc-metaculus-2026-pro-forecasters-ai-extinction": 0.5
+      },
+      "wording_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction [Metaculus 'most dedicated x-risk forecasters' (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Most dedicated x-risk forecasters: 22%)\" | fc-metaculus-2026-pro-forecasters-ai-extinction [Metaculus Pro Forecasters (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Pro Forecasters: 7.5%)\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-metaculus-log_odds_pool",
+      "conditioning": "Unconditional (platform question).",
+      "forecast_ids": [
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+        "fc-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "group_id": "G-EXT-2100-METACULUS",
+      "horizon": "2100",
+      "method": "log_odds_pool",
+      "n": 2,
+      "note": "Mean on the log-odds scale, mapped back to a probability.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "transformation_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction: Same as the Pro Forecaster item. | fc-metaculus-2026-pro-forecasters-ai-extinction: Horizon inferred from the linked platform questions; treated as a separate compatibility group from the XPT items because wording and population selection differ.",
+      "value": 0.13136,
+      "weights": {
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction": 0.5,
+        "fc-metaculus-2026-pro-forecasters-ai-extinction": 0.5
+      },
+      "wording_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction [Metaculus 'most dedicated x-risk forecasters' (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Most dedicated x-risk forecasters: 22%)\" | fc-metaculus-2026-pro-forecasters-ai-extinction [Metaculus Pro Forecasters (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Pro Forecasters: 7.5%)\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-metaculus-trimmed_mean",
+      "conditioning": "Unconditional (platform question).",
+      "forecast_ids": [
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+        "fc-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "group_id": "G-EXT-2100-METACULUS",
+      "horizon": "2100",
+      "method": "trimmed_mean",
+      "n": 2,
+      "note": "Mean after trimming 20% from each end; falls back to the median when fewer than five members.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "transformation_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction: Same as the Pro Forecaster item. | fc-metaculus-2026-pro-forecasters-ai-extinction: Horizon inferred from the linked platform questions; treated as a separate compatibility group from the XPT items because wording and population selection differ.",
+      "value": 0.1475,
+      "weights": {
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction": 0.5,
+        "fc-metaculus-2026-pro-forecasters-ai-extinction": 0.5
+      },
+      "wording_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction [Metaculus 'most dedicated x-risk forecasters' (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Most dedicated x-risk forecasters: 22%)\" | fc-metaculus-2026-pro-forecasters-ai-extinction [Metaculus Pro Forecasters (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Pro Forecasters: 7.5%)\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-metaculus-tier_weighted",
+      "conditioning": "Unconditional (platform question).",
+      "forecast_ids": [
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+        "fc-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "group_id": "G-EXT-2100-METACULUS",
+      "horizon": "2100",
+      "method": "tier_weighted",
+      "n": 2,
+      "note": "Weighted by source tier multiplier (tier 1 = 1.0, tier 2 = 0.9, tier 3 = 0.5); no member above the single-figure cap.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "transformation_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction: Same as the Pro Forecaster item. | fc-metaculus-2026-pro-forecasters-ai-extinction: Horizon inferred from the linked platform questions; treated as a separate compatibility group from the XPT items because wording and population selection differ.",
+      "value": 0.1475,
+      "weights": {
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction": 0.5,
+        "fc-metaculus-2026-pro-forecasters-ai-extinction": 0.5
+      },
+      "wording_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction [Metaculus 'most dedicated x-risk forecasters' (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Most dedicated x-risk forecasters: 22%)\" | fc-metaculus-2026-pro-forecasters-ai-extinction [Metaculus Pro Forecasters (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Pro Forecasters: 7.5%)\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-metaculus-recency_weighted",
+      "conditioning": "Unconditional (platform question).",
+      "forecast_ids": [
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+        "fc-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "group_id": "G-EXT-2100-METACULUS",
+      "horizon": "2100",
+      "method": "recency_weighted",
+      "n": 2,
+      "note": "Weighted by 0.5^(age in years / 3) relative to the newest member; no member above the single-figure cap.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "transformation_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction: Same as the Pro Forecaster item. | fc-metaculus-2026-pro-forecasters-ai-extinction: Horizon inferred from the linked platform questions; treated as a separate compatibility group from the XPT items because wording and population selection differ.",
+      "value": 0.1475,
+      "weights": {
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction": 0.5,
+        "fc-metaculus-2026-pro-forecasters-ai-extinction": 0.5
+      },
+      "wording_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction [Metaculus 'most dedicated x-risk forecasters' (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Most dedicated x-risk forecasters: 22%)\" | fc-metaculus-2026-pro-forecasters-ai-extinction [Metaculus Pro Forecasters (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Pro Forecasters: 7.5%)\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-2100-metaculus-equal_weight_by_population",
+      "conditioning": "Unconditional (platform question).",
+      "forecast_ids": [
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+        "fc-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "group_id": "G-EXT-2100-METACULUS",
+      "horizon": "2100",
+      "method": "equal_weight_by_population",
+      "n": 2,
+      "note": "Mean of per-population medians so that a large survey and a small superforecaster panel count equally.",
+      "outcome_set": [
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-metaculus-2026-pro-forecasters-ai-extinction"
+      ],
+      "transformation_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction: Same as the Pro Forecaster item. | fc-metaculus-2026-pro-forecasters-ai-extinction: Horizon inferred from the linked platform questions; treated as a separate compatibility group from the XPT items because wording and population selection differ.",
+      "value": 0.1475,
+      "weights": {
+        "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction": 0.5,
+        "fc-metaculus-2026-pro-forecasters-ai-extinction": 0.5
+      },
+      "wording_note": "fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction [Metaculus 'most dedicated x-risk forecasters' (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Most dedicated x-risk forecasters: 22%)\" | fc-metaculus-2026-pro-forecasters-ai-extinction [Metaculus Pro Forecasters (platform analysis, September 2026), 2026-09-23]: \"(paraphrase) Will AI cause human extinction? (Pro Forecasters: 7.5%)\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-disemp-undated-unweighted_median",
+      "conditioning": "Unconditional on timelines.",
+      "forecast_ids": [
+        "fc-espai-2023-extinction-or-disempowerment",
+        "fc-espai-2024-extinction-or-disempowerment"
+      ],
+      "group_id": "G-EXT-DISEMP-UNDATED",
+      "horizon": "eventual",
+      "method": "unweighted_median",
+      "n": 2,
+      "note": "Median of member central values; the preferred method because it is robust to a single extreme forecast.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": true,
+      "source_ids": [
+        "src-aiimpacts-2024-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2023-extinction-or-disempowerment: 'Human extinction or similarly permanent and severe disempowerment' maps to O6 ∪ O3. | fc-espai-2024-extinction-or-disempowerment: Same wording as the 2023 survey; day-level survey date approximate (December 2024).",
+      "value": 0.075,
+      "weights": {
+        "fc-espai-2023-extinction-or-disempowerment": 0.5,
+        "fc-espai-2024-extinction-or-disempowerment": 0.5
+      },
+      "wording_note": "fc-espai-2023-extinction-or-disempowerment [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\" | fc-espai-2024-extinction-or-disempowerment [2024 Expert Survey on Progress in AI (AI Impacts), 2024-12-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-disemp-undated-linear_pool",
+      "conditioning": "Unconditional on timelines.",
+      "forecast_ids": [
+        "fc-espai-2023-extinction-or-disempowerment",
+        "fc-espai-2024-extinction-or-disempowerment"
+      ],
+      "group_id": "G-EXT-DISEMP-UNDATED",
+      "horizon": "eventual",
+      "method": "linear_pool",
+      "n": 2,
+      "note": "Arithmetic mean of member central values.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2024-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2023-extinction-or-disempowerment: 'Human extinction or similarly permanent and severe disempowerment' maps to O6 ∪ O3. | fc-espai-2024-extinction-or-disempowerment: Same wording as the 2023 survey; day-level survey date approximate (December 2024).",
+      "value": 0.075,
+      "weights": {
+        "fc-espai-2023-extinction-or-disempowerment": 0.5,
+        "fc-espai-2024-extinction-or-disempowerment": 0.5
+      },
+      "wording_note": "fc-espai-2023-extinction-or-disempowerment [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\" | fc-espai-2024-extinction-or-disempowerment [2024 Expert Survey on Progress in AI (AI Impacts), 2024-12-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-disemp-undated-log_odds_pool",
+      "conditioning": "Unconditional on timelines.",
+      "forecast_ids": [
+        "fc-espai-2023-extinction-or-disempowerment",
+        "fc-espai-2024-extinction-or-disempowerment"
+      ],
+      "group_id": "G-EXT-DISEMP-UNDATED",
+      "horizon": "eventual",
+      "method": "log_odds_pool",
+      "n": 2,
+      "note": "Mean on the log-odds scale, mapped back to a probability.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2024-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2023-extinction-or-disempowerment: 'Human extinction or similarly permanent and severe disempowerment' maps to O6 ∪ O3. | fc-espai-2024-extinction-or-disempowerment: Same wording as the 2023 survey; day-level survey date approximate (December 2024).",
+      "value": 0.071039,
+      "weights": {
+        "fc-espai-2023-extinction-or-disempowerment": 0.5,
+        "fc-espai-2024-extinction-or-disempowerment": 0.5
+      },
+      "wording_note": "fc-espai-2023-extinction-or-disempowerment [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\" | fc-espai-2024-extinction-or-disempowerment [2024 Expert Survey on Progress in AI (AI Impacts), 2024-12-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-disemp-undated-trimmed_mean",
+      "conditioning": "Unconditional on timelines.",
+      "forecast_ids": [
+        "fc-espai-2023-extinction-or-disempowerment",
+        "fc-espai-2024-extinction-or-disempowerment"
+      ],
+      "group_id": "G-EXT-DISEMP-UNDATED",
+      "horizon": "eventual",
+      "method": "trimmed_mean",
+      "n": 2,
+      "note": "Mean after trimming 20% from each end; falls back to the median when fewer than five members.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2024-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2023-extinction-or-disempowerment: 'Human extinction or similarly permanent and severe disempowerment' maps to O6 ∪ O3. | fc-espai-2024-extinction-or-disempowerment: Same wording as the 2023 survey; day-level survey date approximate (December 2024).",
+      "value": 0.075,
+      "weights": {
+        "fc-espai-2023-extinction-or-disempowerment": 0.5,
+        "fc-espai-2024-extinction-or-disempowerment": 0.5
+      },
+      "wording_note": "fc-espai-2023-extinction-or-disempowerment [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\" | fc-espai-2024-extinction-or-disempowerment [2024 Expert Survey on Progress in AI (AI Impacts), 2024-12-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-disemp-undated-tier_weighted",
+      "conditioning": "Unconditional on timelines.",
+      "forecast_ids": [
+        "fc-espai-2023-extinction-or-disempowerment",
+        "fc-espai-2024-extinction-or-disempowerment"
+      ],
+      "group_id": "G-EXT-DISEMP-UNDATED",
+      "horizon": "eventual",
+      "method": "tier_weighted",
+      "n": 2,
+      "note": "Weighted by source tier multiplier (tier 1 = 1.0, tier 2 = 0.9, tier 3 = 0.5); no member above the single-figure cap.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2024-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2023-extinction-or-disempowerment: 'Human extinction or similarly permanent and severe disempowerment' maps to O6 ∪ O3. | fc-espai-2024-extinction-or-disempowerment: Same wording as the 2023 survey; day-level survey date approximate (December 2024).",
+      "value": 0.073684,
+      "weights": {
+        "fc-espai-2023-extinction-or-disempowerment": 0.5263,
+        "fc-espai-2024-extinction-or-disempowerment": 0.4737
+      },
+      "wording_note": "fc-espai-2023-extinction-or-disempowerment [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\" | fc-espai-2024-extinction-or-disempowerment [2024 Expert Survey on Progress in AI (AI Impacts), 2024-12-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-disemp-undated-recency_weighted",
+      "conditioning": "Unconditional on timelines.",
+      "forecast_ids": [
+        "fc-espai-2023-extinction-or-disempowerment",
+        "fc-espai-2024-extinction-or-disempowerment"
+      ],
+      "group_id": "G-EXT-DISEMP-UNDATED",
+      "horizon": "eventual",
+      "method": "recency_weighted",
+      "n": 2,
+      "note": "Weighted by 0.5^(age in years / 3) relative to the newest member; no member above the single-figure cap.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2024-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2023-extinction-or-disempowerment: 'Human extinction or similarly permanent and severe disempowerment' maps to O6 ∪ O3. | fc-espai-2024-extinction-or-disempowerment: Same wording as the 2023 survey; day-level survey date approximate (December 2024).",
+      "value": 0.078356,
+      "weights": {
+        "fc-espai-2023-extinction-or-disempowerment": 0.4329,
+        "fc-espai-2024-extinction-or-disempowerment": 0.5671
+      },
+      "wording_note": "fc-espai-2023-extinction-or-disempowerment [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\" | fc-espai-2024-extinction-or-disempowerment [2024 Expert Survey on Progress in AI (AI Impacts), 2024-12-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\""
+    },
+    {
+      "aggregation_id": "agg-g-ext-disemp-undated-equal_weight_by_population",
+      "conditioning": "Unconditional on timelines.",
+      "forecast_ids": [
+        "fc-espai-2023-extinction-or-disempowerment",
+        "fc-espai-2024-extinction-or-disempowerment"
+      ],
+      "group_id": "G-EXT-DISEMP-UNDATED",
+      "horizon": "eventual",
+      "method": "equal_weight_by_population",
+      "n": 2,
+      "note": "Mean of per-population medians so that a large survey and a small superforecaster panel count equally.",
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2024-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2023-extinction-or-disempowerment: 'Human extinction or similarly permanent and severe disempowerment' maps to O6 ∪ O3. | fc-espai-2024-extinction-or-disempowerment: Same wording as the 2023 survey; day-level survey date approximate (December 2024).",
+      "value": 0.075,
+      "weights": {
+        "fc-espai-2023-extinction-or-disempowerment": 0.5,
+        "fc-espai-2024-extinction-or-disempowerment": 0.5
+      },
+      "wording_note": "fc-espai-2023-extinction-or-disempowerment [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\" | fc-espai-2024-extinction-or-disempowerment [2024 Expert Survey on Progress in AI (AI Impacts), 2024-12-15]: \"What probability do you put on future AI advances causing human extinction or similarly permanent and severe disempowerment of the human species?\""
+    },
+    {
+      "aggregation_id": "agg-g-xbad-long-run-unweighted_median",
+      "conditioning": "Conditional on high-level machine intelligence existing (survey framing).",
+      "forecast_ids": [
+        "fc-espai-2022-extremely-bad-long-run",
+        "fc-espai-2023-extremely-bad-long-run"
+      ],
+      "group_id": "G-XBAD-LONG-RUN",
+      "horizon": "eventual",
+      "method": "unweighted_median",
+      "n": 2,
+      "note": "Median of member central values; the preferred method because it is robust to a single extreme forecast.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "population_count": 1,
+      "preferred": true,
+      "source_ids": [
+        "src-aiimpacts-2022-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2022-extremely-bad-long-run: 'Extremely bad (e.g., human extinction)' mapped to the combined p(DOOM) set O3–O8 because respondents were not asked to separate extinction from other irreversible outcomes. | fc-espai-2023-extremely-bad-long-run: Same mapping as the 2022 survey.",
+      "value": 0.05,
+      "weights": {
+        "fc-espai-2022-extremely-bad-long-run": 0.5,
+        "fc-espai-2023-extremely-bad-long-run": 0.5
+      },
+      "wording_note": "fc-espai-2022-extremely-bad-long-run [2022 Expert Survey on Progress in AI (AI Impacts), 2022-08-03]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\" | fc-espai-2023-extremely-bad-long-run [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\""
+    },
+    {
+      "aggregation_id": "agg-g-xbad-long-run-linear_pool",
+      "conditioning": "Conditional on high-level machine intelligence existing (survey framing).",
+      "forecast_ids": [
+        "fc-espai-2022-extremely-bad-long-run",
+        "fc-espai-2023-extremely-bad-long-run"
+      ],
+      "group_id": "G-XBAD-LONG-RUN",
+      "horizon": "eventual",
+      "method": "linear_pool",
+      "n": 2,
+      "note": "Arithmetic mean of member central values.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2022-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2022-extremely-bad-long-run: 'Extremely bad (e.g., human extinction)' mapped to the combined p(DOOM) set O3–O8 because respondents were not asked to separate extinction from other irreversible outcomes. | fc-espai-2023-extremely-bad-long-run: Same mapping as the 2022 survey.",
+      "value": 0.05,
+      "weights": {
+        "fc-espai-2022-extremely-bad-long-run": 0.5,
+        "fc-espai-2023-extremely-bad-long-run": 0.5
+      },
+      "wording_note": "fc-espai-2022-extremely-bad-long-run [2022 Expert Survey on Progress in AI (AI Impacts), 2022-08-03]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\" | fc-espai-2023-extremely-bad-long-run [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\""
+    },
+    {
+      "aggregation_id": "agg-g-xbad-long-run-log_odds_pool",
+      "conditioning": "Conditional on high-level machine intelligence existing (survey framing).",
+      "forecast_ids": [
+        "fc-espai-2022-extremely-bad-long-run",
+        "fc-espai-2023-extremely-bad-long-run"
+      ],
+      "group_id": "G-XBAD-LONG-RUN",
+      "horizon": "eventual",
+      "method": "log_odds_pool",
+      "n": 2,
+      "note": "Mean on the log-odds scale, mapped back to a probability.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2022-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2022-extremely-bad-long-run: 'Extremely bad (e.g., human extinction)' mapped to the combined p(DOOM) set O3–O8 because respondents were not asked to separate extinction from other irreversible outcomes. | fc-espai-2023-extremely-bad-long-run: Same mapping as the 2022 survey.",
+      "value": 0.05,
+      "weights": {
+        "fc-espai-2022-extremely-bad-long-run": 0.5,
+        "fc-espai-2023-extremely-bad-long-run": 0.5
+      },
+      "wording_note": "fc-espai-2022-extremely-bad-long-run [2022 Expert Survey on Progress in AI (AI Impacts), 2022-08-03]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\" | fc-espai-2023-extremely-bad-long-run [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\""
+    },
+    {
+      "aggregation_id": "agg-g-xbad-long-run-trimmed_mean",
+      "conditioning": "Conditional on high-level machine intelligence existing (survey framing).",
+      "forecast_ids": [
+        "fc-espai-2022-extremely-bad-long-run",
+        "fc-espai-2023-extremely-bad-long-run"
+      ],
+      "group_id": "G-XBAD-LONG-RUN",
+      "horizon": "eventual",
+      "method": "trimmed_mean",
+      "n": 2,
+      "note": "Mean after trimming 20% from each end; falls back to the median when fewer than five members.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2022-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2022-extremely-bad-long-run: 'Extremely bad (e.g., human extinction)' mapped to the combined p(DOOM) set O3–O8 because respondents were not asked to separate extinction from other irreversible outcomes. | fc-espai-2023-extremely-bad-long-run: Same mapping as the 2022 survey.",
+      "value": 0.05,
+      "weights": {
+        "fc-espai-2022-extremely-bad-long-run": 0.5,
+        "fc-espai-2023-extremely-bad-long-run": 0.5
+      },
+      "wording_note": "fc-espai-2022-extremely-bad-long-run [2022 Expert Survey on Progress in AI (AI Impacts), 2022-08-03]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\" | fc-espai-2023-extremely-bad-long-run [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\""
+    },
+    {
+      "aggregation_id": "agg-g-xbad-long-run-tier_weighted",
+      "conditioning": "Conditional on high-level machine intelligence existing (survey framing).",
+      "forecast_ids": [
+        "fc-espai-2022-extremely-bad-long-run",
+        "fc-espai-2023-extremely-bad-long-run"
+      ],
+      "group_id": "G-XBAD-LONG-RUN",
+      "horizon": "eventual",
+      "method": "tier_weighted",
+      "n": 2,
+      "note": "Weighted by source tier multiplier (tier 1 = 1.0, tier 2 = 0.9, tier 3 = 0.5); no member above the single-figure cap.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2022-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2022-extremely-bad-long-run: 'Extremely bad (e.g., human extinction)' mapped to the combined p(DOOM) set O3–O8 because respondents were not asked to separate extinction from other irreversible outcomes. | fc-espai-2023-extremely-bad-long-run: Same mapping as the 2022 survey.",
+      "value": 0.05,
+      "weights": {
+        "fc-espai-2022-extremely-bad-long-run": 0.4737,
+        "fc-espai-2023-extremely-bad-long-run": 0.5263
+      },
+      "wording_note": "fc-espai-2022-extremely-bad-long-run [2022 Expert Survey on Progress in AI (AI Impacts), 2022-08-03]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\" | fc-espai-2023-extremely-bad-long-run [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\""
+    },
+    {
+      "aggregation_id": "agg-g-xbad-long-run-recency_weighted",
+      "conditioning": "Conditional on high-level machine intelligence existing (survey framing).",
+      "forecast_ids": [
+        "fc-espai-2022-extremely-bad-long-run",
+        "fc-espai-2023-extremely-bad-long-run"
+      ],
+      "group_id": "G-XBAD-LONG-RUN",
+      "horizon": "eventual",
+      "method": "recency_weighted",
+      "n": 2,
+      "note": "Weighted by 0.5^(age in years / 3) relative to the newest member; no member above the single-figure cap.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2022-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2022-extremely-bad-long-run: 'Extremely bad (e.g., human extinction)' mapped to the combined p(DOOM) set O3–O8 because respondents were not asked to separate extinction from other irreversible outcomes. | fc-espai-2023-extremely-bad-long-run: Same mapping as the 2022 survey.",
+      "value": 0.05,
+      "weights": {
+        "fc-espai-2022-extremely-bad-long-run": 0.4312,
+        "fc-espai-2023-extremely-bad-long-run": 0.5688
+      },
+      "wording_note": "fc-espai-2022-extremely-bad-long-run [2022 Expert Survey on Progress in AI (AI Impacts), 2022-08-03]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\" | fc-espai-2023-extremely-bad-long-run [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\""
+    },
+    {
+      "aggregation_id": "agg-g-xbad-long-run-equal_weight_by_population",
+      "conditioning": "Conditional on high-level machine intelligence existing (survey framing).",
+      "forecast_ids": [
+        "fc-espai-2022-extremely-bad-long-run",
+        "fc-espai-2023-extremely-bad-long-run"
+      ],
+      "group_id": "G-XBAD-LONG-RUN",
+      "horizon": "eventual",
+      "method": "equal_weight_by_population",
+      "n": 2,
+      "note": "Mean of per-population medians so that a large survey and a small superforecaster panel count equally.",
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "population_count": 1,
+      "preferred": false,
+      "source_ids": [
+        "src-aiimpacts-2022-espai",
+        "src-grace-2024-thousands-of-ai-authors"
+      ],
+      "transformation_note": "fc-espai-2022-extremely-bad-long-run: 'Extremely bad (e.g., human extinction)' mapped to the combined p(DOOM) set O3–O8 because respondents were not asked to separate extinction from other irreversible outcomes. | fc-espai-2023-extremely-bad-long-run: Same mapping as the 2022 survey.",
+      "value": 0.05,
+      "weights": {
+        "fc-espai-2022-extremely-bad-long-run": 0.5,
+        "fc-espai-2023-extremely-bad-long-run": 0.5
+      },
+      "wording_note": "fc-espai-2022-extremely-bad-long-run [2022 Expert Survey on Progress in AI (AI Impacts), 2022-08-03]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\" | fc-espai-2023-extremely-bad-long-run [2023 Expert Survey on Progress in AI (Grace et al. 2024), 2023-10-15]: \"(paraphrase) How likely is it that the long-run effect of advanced AI on humanity will be extremely bad (e.g., human extinction)?\""
+    }
+  ],
+  "kind": "aggregation",
+  "schema_version": 1
+}

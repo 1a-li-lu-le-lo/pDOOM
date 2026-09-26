@@ -1,0 +1,1545 @@
+{
+  "approval": {
+    "approver_ids": [
+      "nuc-editorial-dev",
+      "nuc-methodology-dev"
+    ],
+    "heightened_review": true,
+    "heightened_review_ack": "nuc-methodology-dev",
+    "received_approvals": 2,
+    "required_approvals": 1
+  },
+  "candidate_id": "cand-2026-09-26-001",
+  "changes": [
+    "First release of this release line.",
+    "Snapshot snap-2026-09-26-001; 70 sources, 15 forecasts, 11 incidents."
+  ],
+  "code_commit": "cd74db7",
+  "data_snapshot": "snap-2026-09-26-001",
+  "data_summary": {
+    "benchmark_definitions": {
+      "bm-metr-time-horizon-50": "adcc7ebfb7ef5426",
+      "bm-osworld-verified": "393825d51b909595",
+      "bm-swe-bench-verified": "82de9a4958e0b9f2"
+    },
+    "forecast_count": 15,
+    "forecast_source_ids": [
+      "src-aiimpacts-2022-espai",
+      "src-aiimpacts-2024-espai",
+      "src-carlsmith-2022-power-seeking",
+      "src-fri-2023-xpt",
+      "src-grace-2024-thousands-of-ai-authors",
+      "src-metaculus-1495-gc-caused-by-ai",
+      "src-metaculus-2026-pro-forecasters-ai-extinction",
+      "src-metaculus-578-human-extinction-2100",
+      "src-ord-2020-precipice"
+    ],
+    "incident_count": 11,
+    "scenario_ids": [
+      "S1",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9"
+    ],
+    "source_count": 70
+  },
+  "dependencies": {
+    "lambda": 0.5,
+    "not_modelled": [
+      "feedback loops",
+      "time-varying hazards",
+      "explicit competing risks",
+      "scenario-graph dependence (edges are descriptive)"
+    ],
+    "structure": "single common latent factor Z with Gaussian copula loading λ across A, C, E, F and outcome shares"
+  },
+  "editorial_risk_level": "elevated",
+  "estimates": [
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-1y",
+      "horizon": "1y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-3y",
+      "horizon": "3y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-5y",
+      "horizon": "5y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-10y",
+      "horizon": "10y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-25y",
+      "horizon": "25y",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-2100",
+      "horizon": "2100",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "Insufficiently calibrated",
+      "estimate_id": "est-official-P_DOOM-eventual",
+      "horizon": "eventual",
+      "interval": null,
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": null,
+      "status": "insufficiently_calibrated"
+    },
+    {
+      "display": "8%",
+      "estimate_id": "est-external-G-CAT10-2100",
+      "horizon": "2100",
+      "interval": {
+        "p05": 0.0213,
+        "p25": 0.0213,
+        "p50": 0.07065,
+        "p75": 0.12,
+        "p95": 0.12
+      },
+      "outcome_set": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "p50": 0.07065,
+      "status": "external_aggregate"
+    },
+    {
+      "display": "2%",
+      "estimate_id": "est-external-G-EXT-2100",
+      "horizon": "2100",
+      "interval": {
+        "p05": 0.0038,
+        "p25": 0.0038,
+        "p50": 0.0169,
+        "p75": 0.03,
+        "p95": 0.03
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.0169,
+      "status": "external_aggregate"
+    },
+    {
+      "display": "14%",
+      "estimate_id": "est-external-G-EXT-2100-METACULUS",
+      "horizon": "2100",
+      "interval": {
+        "p05": 0.075,
+        "p25": 0.075,
+        "p50": 0.1475,
+        "p75": 0.22,
+        "p95": 0.22
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.1475,
+      "status": "external_aggregate"
+    },
+    {
+      "display": "8%",
+      "estimate_id": "est-external-G-EXT-DISEMP-UNDATED",
+      "horizon": "eventual",
+      "interval": {
+        "p05": 0.05,
+        "p25": 0.05,
+        "p50": 0.075,
+        "p75": 0.1,
+        "p95": 0.1
+      },
+      "outcome_set": [
+        "O3",
+        "O6"
+      ],
+      "p50": 0.075,
+      "status": "external_aggregate"
+    },
+    {
+      "display": "6%",
+      "estimate_id": "est-external-G-XBAD-LONG-RUN",
+      "horizon": "eventual",
+      "interval": {
+        "p05": 0.05,
+        "p25": 0.05,
+        "p50": 0.05,
+        "p75": 0.05,
+        "p95": 0.05
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.05,
+      "status": "external_aggregate"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_DOOM-1y",
+      "horizon": "1y",
+      "interval": {
+        "p05": 0.000048,
+        "p25": 0.000344,
+        "p50": 0.001239,
+        "p75": 0.004138,
+        "p95": 0.019435
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.001239,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O3-1y",
+      "horizon": "1y",
+      "interval": {
+        "p05": 0.000018,
+        "p25": 0.000135,
+        "p50": 0.000493,
+        "p75": 0.001645,
+        "p95": 0.00759
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.000493,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-1y",
+      "horizon": "1y",
+      "interval": {
+        "p05": 0.00001,
+        "p25": 0.00008,
+        "p50": 0.0003,
+        "p75": 0.001035,
+        "p95": 0.005034
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.0003,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-1y",
+      "horizon": "1y",
+      "interval": {
+        "p05": 0.000003,
+        "p25": 0.000025,
+        "p50": 0.0001,
+        "p75": 0.00037,
+        "p95": 0.002118
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.0001,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-1y",
+      "horizon": "1y",
+      "interval": {
+        "p05": 0.000001,
+        "p25": 0.000009,
+        "p50": 0.00004,
+        "p75": 0.000152,
+        "p95": 0.00092
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.00004,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_DOOM-3y",
+      "horizon": "3y",
+      "interval": {
+        "p05": 0.000248,
+        "p25": 0.001556,
+        "p50": 0.005073,
+        "p75": 0.014847,
+        "p95": 0.05634
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.005073,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O3-3y",
+      "horizon": "3y",
+      "interval": {
+        "p05": 0.000094,
+        "p25": 0.00061,
+        "p50": 0.002012,
+        "p75": 0.005947,
+        "p95": 0.022233
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.002012,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-3y",
+      "horizon": "3y",
+      "interval": {
+        "p05": 0.000054,
+        "p25": 0.000361,
+        "p50": 0.00123,
+        "p75": 0.003745,
+        "p95": 0.01488
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.00123,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-3y",
+      "horizon": "3y",
+      "interval": {
+        "p05": 0.000014,
+        "p25": 0.00011,
+        "p50": 0.000403,
+        "p75": 0.001359,
+        "p95": 0.006314
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.000403,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-3y",
+      "horizon": "3y",
+      "interval": {
+        "p05": 0.000006,
+        "p25": 0.000043,
+        "p50": 0.000163,
+        "p75": 0.000554,
+        "p95": 0.002801
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.000163,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_DOOM-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.000416,
+        "p25": 0.002518,
+        "p50": 0.007955,
+        "p75": 0.022478,
+        "p95": 0.079115
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.007955,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O3-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.000156,
+        "p25": 0.000992,
+        "p50": 0.003159,
+        "p75": 0.008964,
+        "p95": 0.031583
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.003159,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.00009,
+        "p25": 0.000589,
+        "p50": 0.001947,
+        "p75": 0.005688,
+        "p95": 0.021146
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.001947,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.000024,
+        "p25": 0.000177,
+        "p50": 0.000631,
+        "p75": 0.002067,
+        "p95": 0.00912
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.000631,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-5y",
+      "horizon": "5y",
+      "interval": {
+        "p05": 0.000009,
+        "p25": 0.000069,
+        "p50": 0.000258,
+        "p75": 0.000838,
+        "p95": 0.003978
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.000258,
+      "status": "research_mode"
+    },
+    {
+      "display": "2%",
+      "estimate_id": "est-research-P_DOOM-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.000973,
+        "p25": 0.005493,
+        "p50": 0.016288,
+        "p75": 0.042583,
+        "p95": 0.133876
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.016288,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O3-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.00036,
+        "p25": 0.002152,
+        "p50": 0.006463,
+        "p75": 0.017068,
+        "p95": 0.053305
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.006463,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.000208,
+        "p25": 0.001266,
+        "p50": 0.003943,
+        "p75": 0.010864,
+        "p95": 0.036034
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.003943,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.000055,
+        "p25": 0.000381,
+        "p50": 0.001289,
+        "p75": 0.003915,
+        "p95": 0.015758
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.001289,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-10y",
+      "horizon": "10y",
+      "interval": {
+        "p05": 0.000021,
+        "p25": 0.000149,
+        "p50": 0.000523,
+        "p75": 0.001583,
+        "p95": 0.006802
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.000523,
+      "status": "research_mode"
+    },
+    {
+      "display": "2%",
+      "estimate_id": "est-research-P_DOOM-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.0019,
+        "p25": 0.010276,
+        "p50": 0.028948,
+        "p75": 0.071086,
+        "p95": 0.198634
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.028948,
+      "status": "research_mode"
+    },
+    {
+      "display": "2%",
+      "estimate_id": "est-research-O3-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.000722,
+        "p25": 0.003998,
+        "p50": 0.011336,
+        "p75": 0.028251,
+        "p95": 0.080682
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.011336,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.000412,
+        "p25": 0.002379,
+        "p50": 0.006939,
+        "p75": 0.017939,
+        "p95": 0.054924
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.006939,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.000109,
+        "p25": 0.000706,
+        "p50": 0.002275,
+        "p75": 0.006546,
+        "p95": 0.02388
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.002275,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-25y",
+      "horizon": "25y",
+      "interval": {
+        "p05": 0.000042,
+        "p25": 0.000279,
+        "p50": 0.000913,
+        "p75": 0.002652,
+        "p95": 0.01037
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.000913,
+      "status": "research_mode"
+    },
+    {
+      "display": "4%",
+      "estimate_id": "est-research-P_DOOM-2100",
+      "horizon": "2100",
+      "interval": {
+        "p05": 0.002313,
+        "p25": 0.012417,
+        "p50": 0.034667,
+        "p75": 0.083477,
+        "p95": 0.226415
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.034667,
+      "status": "research_mode"
+    },
+    {
+      "display": "2%",
+      "estimate_id": "est-research-O3-2100",
+      "horizon": "2100",
+      "interval": {
+        "p05": 0.000869,
+        "p25": 0.00482,
+        "p50": 0.01355,
+        "p75": 0.033231,
+        "p95": 0.092794
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.01355,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-2100",
+      "horizon": "2100",
+      "interval": {
+        "p05": 0.0005,
+        "p25": 0.002873,
+        "p50": 0.008251,
+        "p75": 0.02113,
+        "p95": 0.06262
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.008251,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-2100",
+      "horizon": "2100",
+      "interval": {
+        "p05": 0.000133,
+        "p25": 0.000857,
+        "p50": 0.002707,
+        "p75": 0.007685,
+        "p95": 0.02739
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.002707,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-2100",
+      "horizon": "2100",
+      "interval": {
+        "p05": 0.000051,
+        "p25": 0.000336,
+        "p50": 0.001089,
+        "p75": 0.003117,
+        "p95": 0.011798
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.001089,
+      "status": "research_mode"
+    },
+    {
+      "display": "4%",
+      "estimate_id": "est-research-P_DOOM-eventual",
+      "horizon": "eventual",
+      "interval": {
+        "p05": 0.002781,
+        "p25": 0.014497,
+        "p50": 0.039492,
+        "p75": 0.094014,
+        "p95": 0.247393
+      },
+      "outcome_set": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "p50": 0.039492,
+      "status": "research_mode"
+    },
+    {
+      "display": "2%",
+      "estimate_id": "est-research-O3-eventual",
+      "horizon": "eventual",
+      "interval": {
+        "p05": 0.001049,
+        "p25": 0.005627,
+        "p50": 0.015471,
+        "p75": 0.037289,
+        "p95": 0.101589
+      },
+      "outcome_set": [
+        "O3"
+      ],
+      "p50": 0.015471,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-P_COLLAPSE-eventual",
+      "horizon": "eventual",
+      "interval": {
+        "p05": 0.000601,
+        "p25": 0.003363,
+        "p50": 0.009454,
+        "p75": 0.023649,
+        "p95": 0.068635
+      },
+      "outcome_set": [
+        "O4",
+        "O5"
+      ],
+      "p50": 0.009454,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O6-eventual",
+      "horizon": "eventual",
+      "interval": {
+        "p05": 0.000158,
+        "p25": 0.00099,
+        "p50": 0.003089,
+        "p75": 0.008639,
+        "p95": 0.030086
+      },
+      "outcome_set": [
+        "O6"
+      ],
+      "p50": 0.003089,
+      "status": "research_mode"
+    },
+    {
+      "display": "<1%",
+      "estimate_id": "est-research-O7-eventual",
+      "horizon": "eventual",
+      "interval": {
+        "p05": 0.000062,
+        "p25": 0.000389,
+        "p50": 0.001241,
+        "p75": 0.003518,
+        "p95": 0.012952
+      },
+      "outcome_set": [
+        "O7"
+      ],
+      "p50": 0.001241,
+      "status": "research_mode"
+    }
+  ],
+  "external_forecasts": {
+    "forecast_count": 10,
+    "group_count": 5,
+    "group_ids": [
+      "G-CAT10-2100",
+      "G-EXT-2100",
+      "G-EXT-2100-METACULUS",
+      "G-EXT-DISEMP-UNDATED",
+      "G-XBAD-LONG-RUN"
+    ],
+    "source_ids": [
+      "src-aiimpacts-2022-espai",
+      "src-aiimpacts-2024-espai",
+      "src-fri-2023-xpt",
+      "src-grace-2024-thousands-of-ai-authors",
+      "src-metaculus-2026-pro-forecasters-ai-extinction"
+    ]
+  },
+  "files": [
+    {
+      "count": 47,
+      "path": "estimates.json",
+      "sha256": "fbd550863a40d2f82140d7ee98d30533b4eb5034c4fd9009ddf7cc7ab84829a9"
+    },
+    {
+      "count": 7,
+      "path": "indexes.json",
+      "sha256": "a30d7f6d1126559bb6c60c5a0158d2214ea7434e74343eb84f802bfe19719493"
+    },
+    {
+      "count": 35,
+      "path": "aggregations.json",
+      "sha256": "81989cc78cb25ef510794febd6ec81b00ebf9c5a0a5a689d3cd0f866ceb3648a"
+    },
+    {
+      "count": 320,
+      "path": "sensitivity.json",
+      "sha256": "111974196c0245da941080a78ce572b1d537e33a58268edc8a9385ee24090d25"
+    },
+    {
+      "count": 21,
+      "path": "drivers_explained.json",
+      "sha256": "32f5a934d3427b4e9a5cf6269837b28e7ba8215ff7ecc944ce355a98c43d96fe"
+    },
+    {
+      "count": 1,
+      "path": "delta.json",
+      "sha256": "ef005fed17b41dcd20d6b1d87e0305f1cf922c1645cd7cf9675bce0762746009"
+    }
+  ],
+  "generated_at": "2026-09-26T21:45:00Z",
+  "horizons": [
+    "1y",
+    "3y",
+    "5y",
+    "10y",
+    "25y",
+    "2100",
+    "eventual"
+  ],
+  "intervals": "Intervals are p05–p95. External aggregates use the min–max range of member forecasts; research-mode intervals are Monte Carlo quantiles under documented parameter uncertainty; the official object publishes none.",
+  "known_limitations": [
+    "No official probability is published: the official object has status insufficiently_calibrated because no documented calibration process exists for long-horizon existential outcomes.",
+    "The research-mode model's parameters are judgments informed by cited sources, not measurements; its intervals express parameter uncertainty under the model, not calibrated forecast error.",
+    "External forecast aggregates inherit the selection, framing and population effects of their member surveys; groups are small and dominated by a few studies.",
+    "Indexes (0–100) are constructed scores and are never probabilities; coverage below 1 means specified signals lacked eligible observations.",
+    "Dependence between factors is represented by a single common latent factor; feedback loops, competing risks and time-varying hazards are not modelled.",
+    "Incident pressure counts only verified, registry-referenced incidents and therefore under-represents unreported or unverified events.",
+    "Editorial risk level (elevated) is a rule-based, human-readable classification, not a measurement."
+  ],
+  "model_versions": [
+    "pdoom-model/official-index-only@0.1.0",
+    "pdoom-model/external-aggregate@0.1.0",
+    "pdoom-model/experimental-causal@0.1.0",
+    "pdoom-model/indexes@0.1.0"
+  ],
+  "outcome_definition": "p(DOOM) = probability of O3 (permanent severe disempowerment), O4 (civilizational collapse), O5 (near-extinction), O6 (human extinction), O7 (biospheric catastrophe) or O8 (other irreversible loss) within the stated horizon, conditional on the model specification. The official value in this release line is index-only (insufficiently calibrated); external aggregates and the research-mode model are published separately and never blended.",
+  "previous_release_id": null,
+  "priors": {
+    "experimental_causal": {
+      "common_factor_loading": 0.5,
+      "horizons": {
+        "10y": {
+          "A": {
+            "p05": 0.3,
+            "p50": 0.6,
+            "p95": 0.9
+          },
+          "C": {
+            "p05": 0.4,
+            "p50": 0.7,
+            "p95": 0.92
+          },
+          "E": {
+            "p05": 0.12,
+            "p50": 0.35,
+            "p95": 0.65
+          },
+          "F": {
+            "p05": 0.05,
+            "p50": 0.22,
+            "p95": 0.55
+          },
+          "O": {
+            "O3": {
+              "p05": 0.08,
+              "p50": 0.25,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.04,
+              "p95": 0.12
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.15
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.08
+            },
+            "O8": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            }
+          }
+        },
+        "1y": {
+          "A": {
+            "p05": 0.02,
+            "p50": 0.08,
+            "p95": 0.25
+          },
+          "C": {
+            "p05": 0.35,
+            "p50": 0.65,
+            "p95": 0.9
+          },
+          "E": {
+            "p05": 0.08,
+            "p50": 0.25,
+            "p95": 0.55
+          },
+          "F": {
+            "p05": 0.04,
+            "p50": 0.18,
+            "p95": 0.45
+          },
+          "O": {
+            "O3": {
+              "p05": 0.08,
+              "p50": 0.25,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.04,
+              "p95": 0.12
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.15
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.08
+            },
+            "O8": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            }
+          }
+        },
+        "2100": {
+          "A": {
+            "p05": 0.6,
+            "p50": 0.88,
+            "p95": 0.99
+          },
+          "C": {
+            "p05": 0.4,
+            "p50": 0.75,
+            "p95": 0.94
+          },
+          "E": {
+            "p05": 0.15,
+            "p50": 0.42,
+            "p95": 0.72
+          },
+          "F": {
+            "p05": 0.05,
+            "p50": 0.25,
+            "p95": 0.6
+          },
+          "O": {
+            "O3": {
+              "p05": 0.08,
+              "p50": 0.25,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.04,
+              "p95": 0.12
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.15
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.08
+            },
+            "O8": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            }
+          }
+        },
+        "25y": {
+          "A": {
+            "p05": 0.5,
+            "p50": 0.8,
+            "p95": 0.97
+          },
+          "C": {
+            "p05": 0.4,
+            "p50": 0.72,
+            "p95": 0.93
+          },
+          "E": {
+            "p05": 0.15,
+            "p50": 0.4,
+            "p95": 0.7
+          },
+          "F": {
+            "p05": 0.05,
+            "p50": 0.25,
+            "p95": 0.6
+          },
+          "O": {
+            "O3": {
+              "p05": 0.08,
+              "p50": 0.25,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.04,
+              "p95": 0.12
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.15
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.08
+            },
+            "O8": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            }
+          }
+        },
+        "3y": {
+          "A": {
+            "p05": 0.08,
+            "p50": 0.25,
+            "p95": 0.55
+          },
+          "C": {
+            "p05": 0.35,
+            "p50": 0.65,
+            "p95": 0.9
+          },
+          "E": {
+            "p05": 0.1,
+            "p50": 0.3,
+            "p95": 0.6
+          },
+          "F": {
+            "p05": 0.05,
+            "p50": 0.2,
+            "p95": 0.5
+          },
+          "O": {
+            "O3": {
+              "p05": 0.08,
+              "p50": 0.25,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.04,
+              "p95": 0.12
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.15
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.08
+            },
+            "O8": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            }
+          }
+        },
+        "5y": {
+          "A": {
+            "p05": 0.15,
+            "p50": 0.4,
+            "p95": 0.75
+          },
+          "C": {
+            "p05": 0.35,
+            "p50": 0.65,
+            "p95": 0.9
+          },
+          "E": {
+            "p05": 0.1,
+            "p50": 0.3,
+            "p95": 0.6
+          },
+          "F": {
+            "p05": 0.05,
+            "p50": 0.2,
+            "p95": 0.5
+          },
+          "O": {
+            "O3": {
+              "p05": 0.08,
+              "p50": 0.25,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.04,
+              "p95": 0.12
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.15
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.08
+            },
+            "O8": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            }
+          }
+        },
+        "eventual": {
+          "A": {
+            "p05": 0.7,
+            "p50": 0.93,
+            "p95": 0.995
+          },
+          "C": {
+            "p05": 0.4,
+            "p50": 0.75,
+            "p95": 0.94
+          },
+          "E": {
+            "p05": 0.15,
+            "p50": 0.45,
+            "p95": 0.75
+          },
+          "F": {
+            "p05": 0.05,
+            "p50": 0.25,
+            "p95": 0.6
+          },
+          "O": {
+            "O3": {
+              "p05": 0.08,
+              "p50": 0.25,
+              "p95": 0.5
+            },
+            "O4": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            },
+            "O5": {
+              "p05": 0.01,
+              "p50": 0.04,
+              "p95": 0.12
+            },
+            "O6": {
+              "p05": 0.01,
+              "p50": 0.05,
+              "p95": 0.15
+            },
+            "O7": {
+              "p05": 0.005,
+              "p50": 0.02,
+              "p95": 0.08
+            },
+            "O8": {
+              "p05": 0.03,
+              "p50": 0.1,
+              "p95": 0.25
+            }
+          }
+        }
+      },
+      "rationale": {
+        "A": "Judgment: 'sufficiently advanced capability' ≈ high-level machine intelligence able to run long-horizon autonomous operations. Anchors: ESPAI 2023 aggregate 10% by 2027 and 50% by 2047 (Grace et al. 2024); ESPAI 2024 medians closer than before; METR horizon doubling of 4–7 months. The p50 path rises from 8% at one year to 60% at ten years and 88% by 2100; the eventual value leaves room for permanent stagnation.",
+        "C": "Judgment: given such capability, deployment with meaningful autonomy and access is likely because agentic deployment is already the commercial default (METR horizons, AISI and Replit incidents). p50 ≈ 0.65–0.75 with wide bands.",
+        "E": "Judgment: given deployed autonomous capability, the probability that a dangerous exposure, misuse, malfunction or loss-of-control event occurs within the horizon. Anchors: verified precursor incidents in 2025–2026 (AISI, GTG-1002) at sub-catastrophic scale; p50 0.25–0.45 rising with horizon.",
+        "F": "Judgment: given such an event, the probability that technical and institutional safeguards fail to prevent catastrophic escalation. Anchors: control strength index inputs (weight security below SL3 in 2024, early enforcement of binding rules, uneven agent-security practice); p50 0.18–0.25.",
+        "O": "Judgment: conditional on safeguard failure, shares of outcomes O3–O8 (remainder = serious but recoverable outcomes). Disempowerment (O3) is weighted highest following the gradual-disempowerment literature and survey wording pairing extinction with permanent disempowerment; extinction (O6) p50 0.05 reflects XPT and ESPAI extinction-specific medians being far below broader 'extremely bad' medians.",
+        "dependence": "A single common latent factor with loading 0.5 induces positive correlation between capability, deployment, exposure and safeguard failure (race dynamics raise all four together). λ = 0 and λ + 0.3 are published as sensitivity runs. This is a coarse stand-in for the scenario graph; feedback loops and competing risks are not modelled."
+      },
+      "samples": 20000,
+      "seed": 20260926,
+      "version": "pdoom-model/experimental-causal@0.1.0"
+    },
+    "note": "Every prior is a documented judgment stored in model_spec.json; none is a measurement."
+  },
+  "published": "2026-09-26T22:00:00Z",
+  "release_id": "rel-2026-09-26-001",
+  "reproduction_command": "go run ./cmd/pdoomctl model run --snapshot data/snapshots/snap-2026-09-26-001 --out data/candidates/cand-2026-09-26-001 --release-id rel-2026-09-26-001 --generated-at 2026-09-26T21:45:00Z --code-commit cd74db7",
+  "reviewers": [
+    "nuc-editorial-dev",
+    "nuc-methodology-dev"
+  ],
+  "sensitivity": [
+    {
+      "delta": -0.04935,
+      "kind": "leave_one_source_out",
+      "run_id": "sens-loo-G-CAT10-2100-fc-xpt-2023-experts-ai-catastrophe-2100",
+      "target_id": "G-CAT10-2100"
+    },
+    {
+      "delta": 0.04935,
+      "kind": "leave_one_source_out",
+      "run_id": "sens-loo-G-CAT10-2100-fc-xpt-2023-superforecasters-ai-catastrophe-2100",
+      "target_id": "G-CAT10-2100"
+    },
+    {
+      "delta": -0.0725,
+      "kind": "leave_one_source_out",
+      "run_id": "sens-loo-G-EXT-2100-METACULUS-fc-metaculus-2026-dedicated-xrisk-forecasters-ai-extinction",
+      "target_id": "G-EXT-2100-METACULUS"
+    },
+    {
+      "delta": 0.0725,
+      "kind": "leave_one_source_out",
+      "run_id": "sens-loo-G-EXT-2100-METACULUS-fc-metaculus-2026-pro-forecasters-ai-extinction",
+      "target_id": "G-EXT-2100-METACULUS"
+    },
+    {
+      "delta": 0.025,
+      "kind": "leave_one_source_out",
+      "run_id": "sens-loo-G-EXT-DISEMP-UNDATED-fc-espai-2023-extinction-or-disempowerment",
+      "target_id": "G-EXT-DISEMP-UNDATED"
+    },
+    {
+      "delta": -0.025,
+      "kind": "leave_one_source_out",
+      "run_id": "sens-loo-G-EXT-DISEMP-UNDATED-fc-espai-2024-extinction-or-disempowerment",
+      "target_id": "G-EXT-DISEMP-UNDATED"
+    },
+    {
+      "delta": -0.022094,
+      "kind": "optimistic_safeguards",
+      "run_id": "sens-optimistic_safeguards-f-logit-1-0-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual"
+    },
+    {
+      "delta": 0.030474,
+      "kind": "pessimistic_safeguards",
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-2100",
+      "target_id": "est-research-P_DOOM-2100"
+    },
+    {
+      "delta": 0.025409,
+      "kind": "pessimistic_safeguards",
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-25y",
+      "target_id": "est-research-P_DOOM-25y"
+    },
+    {
+      "delta": 0.035015,
+      "kind": "pessimistic_safeguards",
+      "run_id": "sens-pessimistic_safeguards-f-logit-1-0-P_DOOM-eventual",
+      "target_id": "est-research-P_DOOM-eventual"
+    }
+  ],
+  "signature": "342d87727534b183beb4885e83eb6ec880a915b7cada290299dae50586f56b1a",
+  "source_cutoff": "2026-09-26",
+  "superseded": null,
+  "uncertainty_score": 56.3412,
+  "weights": {
+    "incident_scoring": {
+      "evidence_weights": {
+        "allegation": 0.1,
+        "corroborated_report": 0.6,
+        "independently_reproduced": 1,
+        "official_finding": 0.85,
+        "peer_reviewed_analysis": 0.9,
+        "single_source_report": 0.3
+      },
+      "recency_half_life_days": 730,
+      "relevance_weights": {
+        "direct_precursor": 1,
+        "indirect": 0.25,
+        "moderate": 0.5,
+        "none": 0,
+        "strong": 0.8,
+        "weak": 0.1
+      },
+      "severity_weights": {
+        "catastrophic": 1,
+        "major": 0.6,
+        "material": 0.3,
+        "minor": 0.1,
+        "negligible": 0,
+        "severe": 0.85
+      },
+      "squash_k": 3
+    },
+    "index_weights": {
+      "agentic_infrastructure_risk": {
+        "D2.autonomous_action_evidence": 0.2,
+        "D2.unattended_operation_hours": 0.2,
+        "D3.agent_tool_access_breadth": 0.25,
+        "D6.mcp_supply_chain_integrity": 0.2,
+        "D6.prompt_injection_resistance": 0.15
+      },
+      "capability_pressure": {
+        "D1.bio_chem_uplift": 0.1,
+        "D1.computer_use_osworld": 0.1,
+        "D1.cyber_offense_capability": 0.15,
+        "D1.swe_bench_verified": 0.1,
+        "D1.task_horizon_50pct": 0.25,
+        "D2.autonomous_action_evidence": 0.1,
+        "D2.unattended_operation_hours": 0.1,
+        "D4.frontier_compute_growth": 0.1
+      },
+      "control_strength": {
+        "D5.control_evaluation_maturity": 0.15,
+        "D5.shutdown_compliance_evidence": 0.15,
+        "D6.mcp_supply_chain_integrity": 0.1,
+        "D6.model_weight_security_level": 0.15,
+        "D6.prompt_injection_resistance": 0.1,
+        "D7.binding_frontier_rules_jurisdictions": 0.1,
+        "D7.incident_reporting_mandates": 0.1,
+        "D7.published_safety_frameworks": 0.05,
+        "D7.third_party_evaluation_capacity": 0.1
+      },
+      "evidence_pressure": {},
+      "incident_pressure": {},
+      "uncertainty": {
+        "calibration_gap": 0.4,
+        "coverage_gap": 0.1,
+        "forecast_disagreement": 0.15,
+        "judgment_share": 0.15,
+        "low_tier_share": 0.1,
+        "sensitivity_spread": 0.1
+      }
+    },
+    "single_figure_cap": 0.35,
+    "tier_multipliers": {
+      "1": 1,
+      "2": 0.9,
+      "3": 0.5,
+      "4": 0,
+      "5": 0
+    },
+    "weight_bounds": [
+      0,
+      0.35
+    ]
+  }
+}

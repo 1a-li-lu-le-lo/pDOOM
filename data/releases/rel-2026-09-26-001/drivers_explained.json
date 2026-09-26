@@ -1,0 +1,350 @@
+{
+  "as_of": "2026-09-26",
+  "items": [
+    {
+      "confidence": 0.4,
+      "counterevidence": "Real-world uplift has not been demonstrated.",
+      "direction": "raises_pressure",
+      "driver": "D1.bio_chem_uplift",
+      "driver_family": "D1",
+      "index_id": "capability_pressure",
+      "last_updated": "2026-02-03",
+      "magnitude": 5.0562,
+      "model_role": "weighted component (weight 0.10, tier 1)",
+      "sensitivity": -1.4311,
+      "source_ids": [
+        "src-iasr-2026"
+      ]
+    },
+    {
+      "confidence": 0.4,
+      "counterevidence": "Third-party tracker; step budgets and scaffolds vary.",
+      "direction": "raises_pressure",
+      "driver": "D1.computer_use_osworld",
+      "driver_family": "D1",
+      "index_id": "capability_pressure",
+      "last_updated": "2026-09-22",
+      "magnitude": 4.8371,
+      "model_role": "weighted component (weight 0.10, tier 3)",
+      "sensitivity": 1.7735,
+      "source_ids": [
+        "src-benchlm-2026-osworld-verified"
+      ]
+    },
+    {
+      "confidence": 0.5,
+      "counterevidence": "Autonomy share in the disclosure is a developer estimate; independent analysts questioned the framing.",
+      "direction": "raises_pressure",
+      "driver": "D1.cyber_offense_capability",
+      "driver_family": "D1",
+      "index_id": "capability_pressure",
+      "last_updated": "2026-02-03",
+      "magnitude": 8.427,
+      "model_role": "weighted component (weight 0.15, tier 1)",
+      "sensitivity": -1.2782,
+      "source_ids": [
+        "src-iasr-2026",
+        "src-anthropic-2025-disrupting-ai-espionage"
+      ]
+    },
+    {
+      "confidence": 0.4,
+      "counterevidence": "Benchmark contamination and scaffold variance; tier-3 source.",
+      "direction": "raises_pressure",
+      "driver": "D1.swe_bench_verified",
+      "driver_family": "D1",
+      "index_id": "capability_pressure",
+      "last_updated": "2026-09-04",
+      "magnitude": 5.4494,
+      "model_role": "weighted component (weight 0.10, tier 3)",
+      "sensitivity": 2.4223,
+      "source_ids": [
+        "src-steel-2026-swe-bench-verified-leaderboard"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "A third-party estimate puts Claude Opus 4.6 near 719 minutes (informational only); METR's own limitations note cautions against over-interpretation.",
+      "direction": "raises_pressure",
+      "driver": "D1.task_horizon_50pct",
+      "driver_family": "D1",
+      "index_id": "capability_pressure",
+      "last_updated": "2025-12-18",
+      "magnitude": 15.8989,
+      "model_role": "weighted component (weight 0.25, tier 1)",
+      "sensitivity": 0.115,
+      "source_ids": [
+        "src-metr-time-horizons-page",
+        "src-metr-2026-time-horizon-limitations"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "Both cases were quickly contained or remediated.",
+      "direction": "raises_pressure",
+      "driver": "D2.autonomous_action_evidence",
+      "driver_family": "D2",
+      "index_id": "capability_pressure",
+      "last_updated": "2026-08-04",
+      "magnitude": 6.1798,
+      "model_role": "weighted component (weight 0.10, tier 1)",
+      "sensitivity": -0.1653,
+      "source_ids": [
+        "src-aisi-2026-incident-report",
+        "src-aiid-1152-replit-agent"
+      ]
+    },
+    {
+      "confidence": 0.5,
+      "counterevidence": "50% success is not 'reliable'; the 80% horizon is much shorter.",
+      "direction": "raises_pressure",
+      "driver": "D2.unattended_operation_hours",
+      "driver_family": "D2",
+      "index_id": "capability_pressure",
+      "last_updated": "2025-12-18",
+      "magnitude": 3.8539,
+      "model_role": "weighted component (weight 0.10, tier 1)",
+      "sensitivity": -2.7855,
+      "source_ids": [
+        "src-metr-time-horizons-page"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "2024 estimate; growth may have changed with power and capital constraints.",
+      "direction": "raises_pressure",
+      "driver": "D4.frontier_compute_growth",
+      "driver_family": "D4",
+      "index_id": "capability_pressure",
+      "last_updated": "2024-05-28",
+      "magnitude": 6.6034,
+      "model_role": "weighted component (weight 0.10, tier 2)",
+      "sensitivity": 1.0118,
+      "source_ids": [
+        "src-epoch-2024-compute-growth"
+      ]
+    },
+    {
+      "confidence": 0.5,
+      "counterevidence": "Controlled, contrived settings; no deployed cases documented.",
+      "direction": "strengthens_control",
+      "driver": "D5.shutdown_compliance_evidence",
+      "driver_family": "D5",
+      "index_id": "control_strength",
+      "last_updated": "2025-06-20",
+      "magnitude": 8.0838,
+      "model_role": "weighted component (weight 0.15, tier 1)",
+      "sensitivity": 0.7671,
+      "source_ids": [
+        "src-register-2025-o3-shutdown",
+        "src-anthropic-2025-agentic-misalignment"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "Rapid vendor and standards response during 2026.",
+      "direction": "strengthens_control",
+      "driver": "D6.mcp_supply_chain_integrity",
+      "driver_family": "D6",
+      "index_id": "control_strength",
+      "last_updated": "2026-07-20",
+      "magnitude": 3.5928,
+      "model_role": "weighted component (weight 0.10, tier 1)",
+      "sensitivity": -1.5642,
+      "source_ids": [
+        "src-mcp-registry-about",
+        "src-csa-2026-mcp-security-crisis",
+        "src-nsa-2026-mcp-security"
+      ]
+    },
+    {
+      "confidence": 0.3,
+      "counterevidence": "Developers report security investments since 2024 (self-reports, not verified).",
+      "direction": "strengthens_control",
+      "driver": "D6.model_weight_security_level",
+      "driver_family": "D6",
+      "index_id": "control_strength",
+      "last_updated": "2024-05-30",
+      "magnitude": 6.4671,
+      "model_role": "weighted component (weight 0.15, tier 2)",
+      "sensitivity": -0.2887,
+      "source_ids": [
+        "src-rand-2024-securing-model-weights"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "Deterministic policy enforcement is spreading in enterprise deployments.",
+      "direction": "strengthens_control",
+      "driver": "D6.prompt_injection_resistance",
+      "driver_family": "D6",
+      "index_id": "control_strength",
+      "last_updated": "2026-06-30",
+      "magnitude": 3.5928,
+      "model_role": "weighted component (weight 0.10, tier 1)",
+      "sensitivity": -1.5642,
+      "source_ids": [
+        "src-csa-2026-mcp-tool-poisoning",
+        "src-thn-2026-microsoft-mcp-tool-descriptions",
+        "src-github-mcp-server-issue-844"
+      ]
+    },
+    {
+      "confidence": 0.7,
+      "counterevidence": "Other jurisdictions may have binding rules not captured; New York's law is not yet in force.",
+      "direction": "strengthens_control",
+      "driver": "D7.binding_frontier_rules_jurisdictions",
+      "driver_family": "D7",
+      "index_id": "control_strength",
+      "last_updated": "2026-01-22",
+      "magnitude": 4.7904,
+      "model_role": "weighted component (weight 0.10, tier 1)",
+      "sensitivity": -0.2037,
+      "source_ids": [
+        "src-eu-ai-act-gpai-guidelines",
+        "src-ca-sb53-tfaia",
+        "src-ny-raise-act-2025",
+        "src-korea-ai-basic-act"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "No global interoperable regime; US federal mandate absent.",
+      "direction": "strengthens_control",
+      "driver": "D7.incident_reporting_mandates",
+      "driver_family": "D7",
+      "index_id": "control_strength",
+      "last_updated": "2026-08-02",
+      "magnitude": 5.3892,
+      "model_role": "weighted component (weight 0.10, tier 1)",
+      "sensitivity": 0.4766,
+      "source_ids": [
+        "src-eu-ai-act-gpai-guidelines",
+        "src-ca-sb53-tfaia"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "Frameworks are voluntary and self-assessed; an affordance analysis found one framework guarantees no specific mitigation.",
+      "direction": "strengthens_control",
+      "driver": "D7.published_safety_frameworks",
+      "driver_family": "D7",
+      "index_id": "control_strength",
+      "last_updated": "2026-04-02",
+      "magnitude": 3.5928,
+      "model_role": "weighted component (weight 0.05, tier 1)",
+      "sensitivity": 1.1785,
+      "source_ids": [
+        "src-anthropic-rsp",
+        "src-openai-preparedness-v2",
+        "src-gdm-fsf-v3"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "Access depends on voluntary developer agreements.",
+      "direction": "strengthens_control",
+      "driver": "D7.third_party_evaluation_capacity",
+      "driver_family": "D7",
+      "index_id": "control_strength",
+      "last_updated": "2026-09-22",
+      "magnitude": 5.988,
+      "model_role": "weighted component (weight 0.10, tier 1)",
+      "sensitivity": 1.1569,
+      "source_ids": [
+        "src-aisi-inspect",
+        "src-ssti-2025-caisi-rename"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "Both cases were quickly contained or remediated.",
+      "direction": "raises_pressure",
+      "driver": "D2.autonomous_action_evidence",
+      "driver_family": "D2",
+      "index_id": "agentic_infrastructure_risk",
+      "last_updated": "2026-08-04",
+      "magnitude": 11,
+      "model_role": "weighted component (weight 0.20, tier 1)",
+      "sensitivity": -0.59,
+      "source_ids": [
+        "src-aisi-2026-incident-report",
+        "src-aiid-1152-replit-agent"
+      ]
+    },
+    {
+      "confidence": 0.5,
+      "counterevidence": "50% success is not 'reliable'; the 80% horizon is much shorter.",
+      "direction": "raises_pressure",
+      "driver": "D2.unattended_operation_hours",
+      "driver_family": "D2",
+      "index_id": "agentic_infrastructure_risk",
+      "last_updated": "2025-12-18",
+      "magnitude": 6.86,
+      "model_role": "weighted component (weight 0.20, tier 1)",
+      "sensitivity": -5.765,
+      "source_ids": [
+        "src-metr-time-horizons-page"
+      ]
+    },
+    {
+      "confidence": 0.5,
+      "counterevidence": "Guidance adoption is rising; many deployments are read-only.",
+      "direction": "raises_pressure",
+      "driver": "D3.agent_tool_access_breadth",
+      "driver_family": "D3",
+      "index_id": "agentic_infrastructure_risk",
+      "last_updated": "2026-06-30",
+      "magnitude": 15,
+      "model_role": "weighted component (weight 0.25, tier 1)",
+      "sensitivity": 0.88,
+      "source_ids": [
+        "src-nsa-2026-mcp-security",
+        "src-thn-2026-microsoft-mcp-tool-descriptions",
+        "src-github-mcp-server-issue-844"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "Rapid vendor and standards response during 2026.",
+      "direction": "raises_pressure",
+      "driver": "D6.mcp_supply_chain_integrity",
+      "driver_family": "D6",
+      "index_id": "agentic_infrastructure_risk",
+      "last_updated": "2026-07-20",
+      "magnitude": 14,
+      "model_role": "weighted component (weight 0.20, tier 1)",
+      "sensitivity": 3.16,
+      "source_ids": [
+        "src-mcp-registry-about",
+        "src-csa-2026-mcp-security-crisis",
+        "src-nsa-2026-mcp-security"
+      ]
+    },
+    {
+      "confidence": 0.6,
+      "counterevidence": "Deterministic policy enforcement is spreading in enterprise deployments.",
+      "direction": "raises_pressure",
+      "driver": "D6.prompt_injection_resistance",
+      "driver_family": "D6",
+      "index_id": "agentic_infrastructure_risk",
+      "last_updated": "2026-06-30",
+      "magnitude": 10.5,
+      "model_role": "weighted component (weight 0.15, tier 1)",
+      "sensitivity": 2.2306,
+      "source_ids": [
+        "src-csa-2026-mcp-tool-poisoning",
+        "src-thn-2026-microsoft-mcp-tool-descriptions",
+        "src-github-mcp-server-issue-844"
+      ]
+    }
+  ],
+  "kind": "drivers_explained",
+  "notes": [
+    "Contributions are shares of a 0–100 index, not probabilities.",
+    "Sensitivity is the change in the index when the signal is removed and the remaining weights are renormalized.",
+    "Causal attribution of probability changes to individual drivers is not available in this model version; the research-mode estimate depends on judgment-based parameters documented in the model specification."
+  ],
+  "release_id": null,
+  "schema_version": 1
+}
