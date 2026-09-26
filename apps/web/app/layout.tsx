@@ -9,6 +9,7 @@ import { Footer } from "@/components/shell/Footer";
 import { getRelease } from "@/lib/data";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.PDOOM_PUBLIC_URL ?? "http://localhost:3000"),
   title: { default: `${BRAND} — ${PUBLIC_LABEL}`, template: `%s · ${BRAND}` },
   description: `${TAGLINES[0]} ${BRAND} monitors evidence relevant to catastrophic and existential risk from advanced AI, with every number shown with its horizon, outcome, interval and sources.`,
   robots: { index: true, follow: true },
