@@ -706,3 +706,176 @@ th.num {
     display: none !important;
   }
 }
+
+/* Scenes */
+/* The Event Horizon canvas sits over the static disk and fades in once the
+   renderer has produced a frame; pointer events pass through to the hero. */
+.scene-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  z-index: var(--z-scene);
+}
+.scene-canvas[data-ready="true"] {
+  animation: scene-fade-in var(--dur-scene) var(--ease-out) forwards;
+}
+.scene-canvas[data-ready="true"][data-skipped="true"] {
+  animation-duration: var(--dur-base);
+}
+.scene-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+}
+@keyframes scene-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* SVG scenes (orrery, branching) */
+.scene-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: var(--c-bg);
+}
+.scene-svg text {
+  font-family: var(--font-body);
+  fill: var(--c-text-2);
+  pointer-events: none;
+  user-select: none;
+}
+.orrery-guide {
+  fill: none;
+  stroke: var(--c-border-strong);
+  stroke-opacity: 0.55;
+  stroke-width: 1;
+}
+.orrery-label {
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  fill: var(--c-text-2);
+}
+.orrery-id {
+  font-size: 10px;
+  fill: var(--c-text-3);
+}
+.orrery-safeguard {
+  stroke: var(--c-safeguard);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-opacity: 0.85;
+}
+/* Each orbit is a group turning about the centre; each planet counter-turns about
+   its own position so its label stays upright. Periods differ per orbit. */
+.orrery-orbit {
+  transform-origin: 500px 300px;
+  animation: orrery-spin 120s linear infinite;
+}
+.orrery-upright {
+  animation: orrery-counter 120s linear infinite;
+}
+.orrery-period-inner {
+  animation-duration: 96s;
+}
+.orrery-period-middle {
+  animation-duration: 150s;
+}
+.orrery-period-outer {
+  animation-duration: 180s;
+}
+@keyframes orrery-spin {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes orrery-counter {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+/* Branching futures: strokes grow in along their length (pathLength = 1), leaves fade in after. */
+.branch-path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: branch-grow 1.3s var(--ease-out) forwards;
+}
+.branch-fade {
+  opacity: 0;
+  animation: branch-fade 0.9s var(--ease-out) forwards;
+}
+.branch-tie {
+  fill: none;
+  stroke: var(--c-safeguard);
+  stroke-opacity: 0.55;
+  stroke-width: 1.2;
+  stroke-dasharray: 3 5;
+  stroke-linecap: round;
+}
+.branch-label {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--c-text-3);
+}
+.branch-id {
+  font-size: 10px;
+  fill: var(--c-text-3);
+}
+@keyframes branch-grow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes branch-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fully still: when the mode provider reports reduced motion, or the system asks for it. */
+.scene-static .orrery-orbit,
+.scene-static .orrery-upright,
+.scene-static .branch-path,
+.scene-static .branch-fade {
+  animation: none;
+}
+.scene-static .branch-path {
+  stroke-dashoffset: 0;
+}
+.scene-static .branch-fade {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .orrery-orbit,
+  .orrery-upright,
+  .branch-path,
+  .branch-fade,
+  .scene-canvas[data-ready="true"] {
+    animation: none;
+  }
+  .branch-path {
+    stroke-dashoffset: 0;
+  }
+  .branch-fade,
+  .scene-canvas[data-ready="true"] {
+    opacity: 1;
+  }
+}
