@@ -1,0 +1,337 @@
+{
+  "kind": "scenario_edge",
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "se-S4-S6",
+      "from_id": "S4",
+      "to_id": "S6",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "Malicious human use is the main route by which biological or chemical enablement would occur.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S5-S6",
+      "from_id": "S5",
+      "to_id": "S6",
+      "relation": "enables",
+      "confidence": "low",
+      "rationale": "Cyber compromise of laboratory or screening systems could enable biological misuse (brief's stated dependence).",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S15-S3",
+      "from_id": "S15",
+      "to_id": "S3",
+      "relation": "amplifies",
+      "confidence": "high",
+      "rationale": "Race dynamics shorten evaluation periods and weaken the controls that prevent control loss.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S15-S1",
+      "from_id": "S15",
+      "to_id": "S1",
+      "relation": "amplifies",
+      "confidence": "moderate",
+      "rationale": "Racing deploys under-evaluated systems, raising the chance that misaligned strategic behaviour goes undetected.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S15-S4",
+      "from_id": "S15",
+      "to_id": "S4",
+      "relation": "amplifies",
+      "confidence": "moderate",
+      "rationale": "Race dynamics weaken model-weight security and misuse safeguards.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S15-S14",
+      "from_id": "S15",
+      "to_id": "S14",
+      "relation": "amplifies",
+      "confidence": "high",
+      "rationale": "Competition drives internal use of AI to accelerate research.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S14-S15",
+      "from_id": "S14",
+      "to_id": "S15",
+      "relation": "amplifies",
+      "confidence": "moderate",
+      "rationale": "Faster research shortens the time available for governance to respond.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S14-S1",
+      "from_id": "S14",
+      "to_id": "S1",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "Accelerated capability growth reaches strategic-agency thresholds sooner.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S8-S9",
+      "from_id": "S8",
+      "to_id": "S9",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "Economic concentration provides the resources for durable political control.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S8-S16",
+      "from_id": "S8",
+      "to_id": "S16",
+      "relation": "amplifies",
+      "confidence": "high",
+      "rationale": "Autonomous economic capture is a fast form of gradual disempowerment.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S16-S3",
+      "from_id": "S16",
+      "to_id": "S3",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "Delegation without oversight erodes the capacity to correct systems.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S10-S15",
+      "from_id": "S10",
+      "to_id": "S15",
+      "relation": "prevents_response",
+      "confidence": "moderate",
+      "rationale": "Epistemic collapse undermines coordination on governance.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S10-S9",
+      "from_id": "S10",
+      "to_id": "S9",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "Synthetic persuasion supports authoritarian consolidation.",
+      "source_ids": [
+        "src-aiid-628-biden-robocall",
+        "src-gdm-fsf-v3"
+      ]
+    },
+    {
+      "id": "se-S10-S3",
+      "from_id": "S10",
+      "to_id": "S3",
+      "relation": "prevents_response",
+      "confidence": "low",
+      "rationale": "Loss of shared evidence delays recognition of control failures.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S3-S1",
+      "from_id": "S3",
+      "to_id": "S1",
+      "relation": "enables",
+      "confidence": "high",
+      "rationale": "Weak monitoring and shutdown let misaligned strategic action proceed.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S1-S3",
+      "from_id": "S1",
+      "to_id": "S3",
+      "relation": "amplifies",
+      "confidence": "high",
+      "rationale": "A deceptive system actively undermines control.",
+      "source_ids": [
+        "src-anthropic-2024-alignment-faking"
+      ]
+    },
+    {
+      "id": "se-S13-S3",
+      "from_id": "S13",
+      "to_id": "S3",
+      "relation": "amplifies",
+      "confidence": "moderate",
+      "rationale": "Emergent agent coordination fragments audit and cancellation.",
+      "source_ids": [
+        "src-csa-2026-aisi-evaluator-breached"
+      ]
+    },
+    {
+      "id": "se-S12-S5",
+      "from_id": "S12",
+      "to_id": "S5",
+      "relation": "amplifies",
+      "confidence": "high",
+      "rationale": "Monoculture makes infrastructure failures correlated and cascading.",
+      "source_ids": [
+        "src-csa-2026-mcp-security-crisis"
+      ]
+    },
+    {
+      "id": "se-S5-S7",
+      "from_id": "S5",
+      "to_id": "S7",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "Cyber-physical incidents can be misattributed and escalate between states.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S4-S5",
+      "from_id": "S4",
+      "to_id": "S5",
+      "relation": "enables",
+      "confidence": "high",
+      "rationale": "Malicious actors are the likely initiators of AI-driven infrastructure attacks.",
+      "source_ids": [
+        "src-anthropic-2025-disrupting-ai-espionage"
+      ]
+    },
+    {
+      "id": "se-S4-S7",
+      "from_id": "S4",
+      "to_id": "S7",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "State misuse of AI cyber capability feeds escalation.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S2-S11",
+      "from_id": "S2",
+      "to_id": "S11",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "Specification failure in industrial systems is the mechanism of ecological optimisation failure.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S2-S3",
+      "from_id": "S2",
+      "to_id": "S3",
+      "relation": "shares_prerequisite",
+      "confidence": "high",
+      "rationale": "Both require autonomy and access; autonomy and access are common prerequisites across pathways.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S1-S8",
+      "from_id": "S1",
+      "to_id": "S8",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "Strategic systems may prefer economic capture over conflict.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S9-S17",
+      "from_id": "S9",
+      "to_id": "S17",
+      "relation": "competes_with",
+      "confidence": "low",
+      "rationale": "Human lock-in and machine guardianship are alternative permanent-control endpoints.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S16-S17",
+      "from_id": "S16",
+      "to_id": "S17",
+      "relation": "enables",
+      "confidence": "low",
+      "rationale": "Extensive delegation makes permanent guardianship more likely to be accepted.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S3-S13",
+      "from_id": "S3",
+      "to_id": "S13",
+      "relation": "enables",
+      "confidence": "moderate",
+      "rationale": "Absence of cross-agent policy enforcement permits swarm behaviour.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S6-S7",
+      "from_id": "S6",
+      "to_id": "S7",
+      "relation": "amplifies",
+      "confidence": "low",
+      "rationale": "A biological incident attributed to a state could escalate conflict.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    },
+    {
+      "id": "se-S12-S3",
+      "from_id": "S12",
+      "to_id": "S3",
+      "relation": "amplifies",
+      "confidence": "moderate",
+      "rationale": "Shared vulnerabilities across agent stacks turn local exploits into broad control gaps.",
+      "source_ids": [
+        "src-nvd-cve-2025-6514"
+      ]
+    },
+    {
+      "id": "se-S18-S3",
+      "from_id": "S18",
+      "to_id": "S3",
+      "relation": "shares_prerequisite",
+      "confidence": "low",
+      "rationale": "Unknown pathways most plausibly surface where oversight is weakest.",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ]
+    }
+  ]
+}

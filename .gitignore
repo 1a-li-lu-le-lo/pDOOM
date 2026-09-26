@@ -30,3 +30,9 @@ Thumbs.db
 .idea/
 .vscode/
 *.log
+
+# locally built binaries
+/pdoom-api
+/pdoom-ingest
+/pdoomctl
+/pdoom-model

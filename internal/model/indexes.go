@@ -209,10 +209,12 @@ type UncertaintyInputs struct {
 	LowTierShare         float64 // share of tier-3 effective weight across signal indexes
 	SensitivitySpread    float64 // min(max |Δp50| / 0.2, 1) over research-mode sensitivity runs
 	UnknownDependencies  float64 // constant 0.5 in v0
+	JudgmentShare        float64 // share of signal-index weight resting on observation_kind = judgment
+	CalibrationGap       float64 // 1 − share of research-mode estimates backed by proxy calibration (1 in v0: none exists)
 }
 
 // defaultUncertaintyWeights is used when the model spec does not provide weights.
-var defaultUncertaintyWeights = map[string]float64{"coverage_gap": 0.3, "forecast_disagreement": 0.2, "low_tier_share": 0.15, "sensitivity_spread": 0.2, "unknown_dependencies": 0.15}
+var defaultUncertaintyWeights = map[string]float64{"coverage_gap": 0.10, "forecast_disagreement": 0.15, "low_tier_share": 0.10, "judgment_share": 0.15, "sensitivity_spread": 0.10, "calibration_gap": 0.40}
 
 // uncertaintyIndex computes the 0–100 uncertainty score as a weighted mean of
 // its components.
@@ -222,7 +224,7 @@ func uncertaintyIndex(spec schema.ModelSpec, in UncertaintyInputs, asOf string) 
 	if len(w) == 0 {
 		w = defaultUncertaintyWeights
 	}
-	vals := map[string]float64{"coverage_gap": in.CoverageGap, "forecast_disagreement": in.ForecastDisagreement, "low_tier_share": in.LowTierShare, "sensitivity_spread": in.SensitivitySpread, "unknown_dependencies": in.UnknownDependencies}
+	vals := map[string]float64{"coverage_gap": in.CoverageGap, "forecast_disagreement": in.ForecastDisagreement, "low_tier_share": in.LowTierShare, "sensitivity_spread": in.SensitivitySpread, "unknown_dependencies": in.UnknownDependencies, "judgment_share": in.JudgmentShare, "calibration_gap": in.CalibrationGap}
 	iv := schema.IndexValue{IndexID: schema.IndexUncertainty, Label: meta.label, Scale: meta.scale, AsOf: asOf, MethodRef: meta.method, Components: []schema.IndexComponent{}, Coverage: 1}
 	num, den := 0.0, 0.0
 	for _, k := range sortedKeys(w) {
@@ -244,7 +246,7 @@ func uncertaintyIndex(spec schema.ModelSpec, in UncertaintyInputs, asOf string) 
 	for i := range iv.Components {
 		iv.Components[i].Contribution = round4(100 * iv.Components[i].Weight * iv.Components[i].ValueNormalized / den)
 	}
-	iv.Note = "Weighted mean of coverage gap, external-forecast disagreement, low-tier evidence share, sensitivity spread and a constant unknown-dependency term. Not a probability."
+	iv.Note = "Weighted mean of coverage gap, external-forecast disagreement, low-tier evidence share, judgment share, sensitivity spread and the calibration gap (1 until proxy calibration exists). Not a probability."
 	return iv
 }
 
@@ -292,4 +294,22 @@ func editorialLevel(spec schema.ModelSpec, vars map[string]float64) (schema.Edit
 	}
 	warnings = append(warnings, "no editorial rule matched; defaulting to insufficient_evidence")
 	return "insufficient_evidence", warnings
+}
+
+// judgmentShare returns the share of effective weight across the signal indexes
+// whose observations are judgments rather than measurements.
+func judgmentShare(s *snapshot.Snapshot, ivs []schema.IndexValue) float64 {
+	j, all := 0.0, 0.0
+	for _, iv := range ivs {
+		for _, c := range iv.Components {
+			all += c.Weight
+			if o, ok := observationFor(s, c.SignalID); ok && o.ObservationKind == "judgment" {
+				j += c.Weight
+			}
+		}
+	}
+	if all == 0 {
+		return 1
+	}
+	return j / all
 }

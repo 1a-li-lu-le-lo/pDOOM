@@ -1,0 +1,1127 @@
+{
+  "kind": "intervention",
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "I01",
+      "name": "Better dangerous-capability evaluations",
+      "target_scenario_ids": [
+        "S1",
+        "S2",
+        "S4",
+        "S6",
+        "S14"
+      ],
+      "mechanism": "Measure cyber, biological, autonomy and deception capabilities before and during deployment so thresholds trigger safeguards.",
+      "evidence_summary": "Developer frameworks (Anthropic RSP, OpenAI Preparedness v2, DeepMind FSF v3) and government evaluators (UK AISI, US CAISI) run such evaluations; the 2026 International AI Safety Report documents both progress and evidence gaps.",
+      "evidence_strength": "moderate",
+      "cost": "moderate",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Evaluation awareness and sandbagging by models; benchmarks saturate or leak.",
+      "possible_backfire": "False reassurance from passed evaluations; publication of evaluation details aiding misuse.",
+      "owner_types": [
+        "laboratories",
+        "governments",
+        "third-party evaluators"
+      ],
+      "user_actions": [
+        {
+          "audience": "ai_researchers",
+          "action": "Build and replicate evaluations for strategic behaviour."
+        },
+        {
+          "audience": "policymakers",
+          "action": "Fund independent evaluation capacity."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-anthropic-rsp",
+        "src-openai-preparedness-v2",
+        "src-gdm-fsf-v3",
+        "src-aisi-inspect",
+        "src-iasr-2026"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I02",
+      "name": "Third-party audits",
+      "target_scenario_ids": [
+        "S15",
+        "S14",
+        "S1"
+      ],
+      "mechanism": "Independent parties verify safety claims, evaluations and security practices rather than relying on self-reports.",
+      "evidence_summary": "Emerging practice; SB 53 and the EU AI Act create disclosure duties that audits can verify.",
+      "evidence_strength": "weak",
+      "cost": "moderate",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Auditor capture or lack of model access.",
+      "possible_backfire": "Audit theatre substituting for substantive change.",
+      "owner_types": [
+        "laboratories",
+        "auditors",
+        "regulators"
+      ],
+      "user_actions": [
+        {
+          "audience": "laboratories",
+          "action": "Grant pre-deployment access to independent evaluators."
+        }
+      ],
+      "category": "organizational",
+      "source_ids": [
+        "src-ca-sb53-tfaia",
+        "src-eu-ai-act-gpai-guidelines"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I03",
+      "name": "Mandatory incident reporting",
+      "target_scenario_ids": [
+        "S15",
+        "S3",
+        "S4"
+      ],
+      "mechanism": "Require developers and deployers to report serious incidents so regulators and the public learn quickly.",
+      "evidence_summary": "EU AI Act obligations for general-purpose models with systemic risk (from August 2025) and California SB 53 critical-safety-incident reporting (from 2026).",
+      "evidence_strength": "moderate",
+      "cost": "low",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Under-reporting; vague thresholds.",
+      "possible_backfire": "Chilling of internal red-teaming if reports are punitive.",
+      "owner_types": [
+        "policymakers",
+        "regulators"
+      ],
+      "user_actions": [
+        {
+          "audience": "policymakers",
+          "action": "Harmonise incident definitions with the OECD framework."
+        }
+      ],
+      "category": "national",
+      "source_ids": [
+        "src-eu-ai-act-gpai-guidelines",
+        "src-ca-sb53-tfaia",
+        "src-oecd-2024-defining-ai-incidents"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I04",
+      "name": "Strong model-weight security",
+      "target_scenario_ids": [
+        "S4",
+        "S6",
+        "S15"
+      ],
+      "mechanism": "Protect weights from theft so dangerous capabilities do not diffuse to actors outside safeguards.",
+      "evidence_summary": "RAND's 2024 security levels SL1–SL5; the report found no company at SL3 at the time.",
+      "evidence_strength": "moderate",
+      "cost": "high",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Insider threat; state-level attackers.",
+      "possible_backfire": "Concentration of power in a few secured actors.",
+      "owner_types": [
+        "laboratories",
+        "governments"
+      ],
+      "user_actions": [
+        {
+          "audience": "laboratories",
+          "action": "Publish the security level achieved and audit it."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-rand-2024-securing-model-weights"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I05",
+      "name": "Compute monitoring",
+      "target_scenario_ids": [
+        "S14",
+        "S15",
+        "S4"
+      ],
+      "mechanism": "Track large training runs and compute access to give governance visibility and leverage.",
+      "evidence_summary": "Analysis of compute as a governance lever; Epoch data on 4–5× yearly growth of frontier training compute.",
+      "evidence_strength": "weak",
+      "cost": "moderate",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Algorithmic efficiency reduces the compute signal.",
+      "possible_backfire": "Surveillance overreach; incentive to hide runs.",
+      "owner_types": [
+        "governments",
+        "cloud providers"
+      ],
+      "user_actions": [
+        {
+          "audience": "policymakers",
+          "action": "Require reporting thresholds for large training runs."
+        }
+      ],
+      "category": "international",
+      "source_ids": [
+        "src-sastry-2024-computing-power-governance",
+        "src-epoch-2024-compute-growth"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I06",
+      "name": "Sandboxing",
+      "target_scenario_ids": [
+        "S1",
+        "S3",
+        "S5"
+      ],
+      "mechanism": "Isolate agents from production systems and the live internet during evaluation and risky operation.",
+      "evidence_summary": "The 2026 AISI incident showed that sandbox egress to the live internet is a real gap; NSA guidance calls for least-privilege agent processes.",
+      "evidence_strength": "moderate",
+      "cost": "moderate",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Egress misconfiguration; sandbox escapes.",
+      "possible_backfire": "False confidence in imperfect isolation.",
+      "owner_types": [
+        "laboratories",
+        "software engineers",
+        "evaluators"
+      ],
+      "user_actions": [
+        {
+          "audience": "software_engineers",
+          "action": "Default-deny egress for agent sandboxes."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-aisi-2026-incident-report",
+        "src-nsa-2026-mcp-security"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I07",
+      "name": "Least-privilege tool access",
+      "target_scenario_ids": [
+        "S3",
+        "S5",
+        "S1"
+      ],
+      "mechanism": "Grant agents only the tools, scopes and credentials a task needs.",
+      "evidence_summary": "The GitHub MCP prompt-injection demonstration and the Replit data loss both involved over-broad scopes; NSA and OWASP guidance recommend least privilege.",
+      "evidence_strength": "moderate",
+      "cost": "low",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Scope creep for convenience.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "software engineers",
+        "platform vendors"
+      ],
+      "user_actions": [
+        {
+          "audience": "software_engineers",
+          "action": "Scope tokens per task; never give agents production write access by default."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-github-mcp-server-issue-844",
+        "src-aiid-1152-replit-agent",
+        "src-nsa-2026-mcp-security",
+        "src-owasp-genai-security"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I08",
+      "name": "Deterministic agent policies",
+      "target_scenario_ids": [
+        "S2",
+        "S3",
+        "S11",
+        "S13"
+      ],
+      "mechanism": "Enforce allow/deny rules, budgets and rate limits in code outside the model so instructions in content cannot override them.",
+      "evidence_summary": "Tool-poisoning and prompt-injection incidents show that model-level instructions are insufficient; deterministic enforcement is standard security practice.",
+      "evidence_strength": "moderate",
+      "cost": "low",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Policies too coarse to be useful.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "software engineers"
+      ],
+      "user_actions": [
+        {
+          "audience": "software_engineers",
+          "action": "Put policy checks in the harness, not the prompt."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-csa-2026-mcp-tool-poisoning",
+        "src-thn-2026-microsoft-mcp-tool-descriptions"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I09",
+      "name": "Human approval for high-impact actions",
+      "target_scenario_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S8"
+      ],
+      "mechanism": "Require explicit human confirmation before irreversible or high-value actions.",
+      "evidence_summary": "Would have prevented the Replit deletion; widely recommended in agent security guidance.",
+      "evidence_strength": "moderate",
+      "cost": "low",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Approval fatigue; rubber-stamping.",
+      "possible_backfire": "Slower operations pushing users to disable it.",
+      "owner_types": [
+        "software engineers",
+        "deployers"
+      ],
+      "user_actions": [
+        {
+          "audience": "software_engineers",
+          "action": "Classify actions by impact and gate the irreversible ones."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-aiid-1152-replit-agent",
+        "src-owasp-genai-security"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I10",
+      "name": "Agent cancellation",
+      "target_scenario_ids": [
+        "S3",
+        "S13"
+      ],
+      "mechanism": "Guarantee that running agents and their delegates can be stopped and their effects rolled back.",
+      "evidence_summary": "AISI contained its incident within about an hour of discovery, showing the value of stop paths; nested delegation complicates propagation.",
+      "evidence_strength": "weak",
+      "cost": "moderate",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Cancellation not propagated to sub-agents.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "software engineers",
+        "platform vendors"
+      ],
+      "user_actions": [
+        {
+          "audience": "software_engineers",
+          "action": "Propagate cancellation tokens through every delegation."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-aisi-2026-incident-report"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I11",
+      "name": "Secure MCP registries",
+      "target_scenario_ids": [
+        "S3",
+        "S12",
+        "S13"
+      ],
+      "mechanism": "Verify server identity and metadata, monitor tool-list changes and scan server code before agents connect.",
+      "evidence_summary": "The official MCP Registry (preview since September 2025) provides namespace verification but relies on the ecosystem for code scanning; NSA guidance treats tool-list changes as security events.",
+      "evidence_strength": "weak",
+      "cost": "moderate",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Registry provides identity but not behaviour guarantees.",
+      "possible_backfire": "Centralisation risk.",
+      "owner_types": [
+        "standards bodies",
+        "platform vendors"
+      ],
+      "user_actions": [
+        {
+          "audience": "standards_bodies",
+          "action": "Add signing and provenance requirements to registry entries."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-mcp-registry-about",
+        "src-nsa-2026-mcp-security",
+        "src-csa-2026-mcp-security-crisis"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I12",
+      "name": "Signed skills and dependencies",
+      "target_scenario_ids": [
+        "S12",
+        "S3"
+      ],
+      "mechanism": "Cryptographically sign agent skills, plugins and dependencies so tampering is detectable.",
+      "evidence_summary": "Supply-chain compromise of agent tooling is documented (mcp-remote RCE; 2026 CVE wave); signing is established practice in package ecosystems.",
+      "evidence_strength": "weak",
+      "cost": "moderate",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Keys compromised; unsigned long tail.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "software engineers",
+        "standards bodies"
+      ],
+      "user_actions": [
+        {
+          "audience": "software_engineers",
+          "action": "Pin and verify every skill and server dependency."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-nvd-cve-2025-6514",
+        "src-csa-2026-mcp-security-crisis"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I13",
+      "name": "Model organisms of misalignment",
+      "target_scenario_ids": [
+        "S1"
+      ],
+      "mechanism": "Deliberately create and study misaligned behaviours in controlled models to develop detection and mitigation.",
+      "evidence_summary": "Alignment-faking (2024) and agentic-misalignment (2025) studies are the main examples.",
+      "evidence_strength": "moderate",
+      "cost": "moderate",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Organisms not representative of natural misalignment.",
+      "possible_backfire": "Information hazards if methods aid misuse.",
+      "owner_types": [
+        "ai researchers",
+        "laboratories"
+      ],
+      "user_actions": [
+        {
+          "audience": "ai_researchers",
+          "action": "Replicate and stress-test published model organisms."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-anthropic-2024-alignment-faking",
+        "src-anthropic-2025-agentic-misalignment"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I14",
+      "name": "Interpretability",
+      "target_scenario_ids": [
+        "S1",
+        "S17"
+      ],
+      "mechanism": "Understand model internals well enough to detect deception and goal divergence.",
+      "evidence_summary": "Active research area; no deployed detector for strategic deception exists.",
+      "evidence_strength": "weak",
+      "cost": "high",
+      "time_to_deploy": "3-5y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Does not scale to frontier models.",
+      "possible_backfire": "Over-trust in partial explanations.",
+      "owner_types": [
+        "ai researchers",
+        "laboratories"
+      ],
+      "user_actions": [
+        {
+          "audience": "ai_researchers",
+          "action": "Work on detection of deceptive cognition."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-iasr-2026"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I15",
+      "name": "Scalable oversight",
+      "target_scenario_ids": [
+        "S1",
+        "S2",
+        "S17"
+      ],
+      "mechanism": "Methods that let humans supervise systems more capable than themselves.",
+      "evidence_summary": "Research programme; empirical results limited to modest capability gaps.",
+      "evidence_strength": "weak",
+      "cost": "high",
+      "time_to_deploy": "3-5y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Oversight collapses at large capability gaps.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "ai researchers"
+      ],
+      "user_actions": [
+        {
+          "audience": "ai_researchers",
+          "action": "Test oversight protocols at increasing capability gaps."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-iasr-2026"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I16",
+      "name": "Control evaluations",
+      "target_scenario_ids": [
+        "S1",
+        "S3",
+        "S13"
+      ],
+      "mechanism": "Test whether deployment protocols remain safe even if the model actively tries to subvert them.",
+      "evidence_summary": "Redwood Research's control framework (2023) and lab adoption; scaling to frontier deployments is unproven.",
+      "evidence_strength": "moderate",
+      "cost": "moderate",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Red teams weaker than real models.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "laboratories",
+        "ai researchers"
+      ],
+      "user_actions": [
+        {
+          "audience": "laboratories",
+          "action": "Publish control evaluations for agentic deployments."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-greenblatt-2023-ai-control"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I17",
+      "name": "International coordination",
+      "target_scenario_ids": [
+        "S4",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "S10",
+        "S11",
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "mechanism": "Shared thresholds, reporting and verification across jurisdictions reduce race incentives.",
+      "evidence_summary": "International AI Safety Report process; binding rules so far national (EU, California, New York, Korea).",
+      "evidence_strength": "weak",
+      "cost": "high",
+      "time_to_deploy": "3-5y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Geopolitical competition blocks agreement.",
+      "possible_backfire": "Lowest-common-denominator standards.",
+      "owner_types": [
+        "governments",
+        "international bodies"
+      ],
+      "user_actions": [
+        {
+          "audience": "policymakers",
+          "action": "Support interoperable incident and evaluation standards."
+        }
+      ],
+      "category": "international",
+      "source_ids": [
+        "src-iasr-2026",
+        "src-eu-ai-act-gpai-guidelines",
+        "src-bengio-2024-science-managing-extreme-risks"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I18",
+      "name": "Whistleblower protections",
+      "target_scenario_ids": [
+        "S15",
+        "S9"
+      ],
+      "mechanism": "Protect insiders who report safety failures so problems surface before harm.",
+      "evidence_summary": "California SB 53 includes whistleblower protections for frontier developers' employees.",
+      "evidence_strength": "moderate",
+      "cost": "low",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Weak enforcement.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "policymakers",
+        "laboratories"
+      ],
+      "user_actions": [
+        {
+          "audience": "policymakers",
+          "action": "Extend protections to contractors and evaluators."
+        }
+      ],
+      "category": "national",
+      "source_ids": [
+        "src-ca-sb53-tfaia"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I19",
+      "name": "Safety cases",
+      "target_scenario_ids": [
+        "S1",
+        "S3"
+      ],
+      "mechanism": "Structured, reviewable arguments that a system is safe to deploy, tied to evidence.",
+      "evidence_summary": "Framework literature (2024); early adoption in developer frameworks.",
+      "evidence_strength": "weak",
+      "cost": "moderate",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Arguments unfalsifiable or unreviewed.",
+      "possible_backfire": "Paperwork substituting for evidence.",
+      "owner_types": [
+        "laboratories",
+        "regulators"
+      ],
+      "user_actions": [
+        {
+          "audience": "laboratories",
+          "action": "Publish safety cases for each frontier deployment."
+        }
+      ],
+      "category": "organizational",
+      "source_ids": [
+        "src-clymer-2024-safety-cases"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I20",
+      "name": "Staged deployment",
+      "target_scenario_ids": [
+        "S2",
+        "S4",
+        "S6",
+        "S14"
+      ],
+      "mechanism": "Release capabilities gradually with monitoring and rollback at each stage.",
+      "evidence_summary": "Standard practice in developer frameworks; effectiveness depends on monitoring quality.",
+      "evidence_strength": "moderate",
+      "cost": "low",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Stages skipped under competitive pressure.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "laboratories"
+      ],
+      "user_actions": [
+        {
+          "audience": "laboratories",
+          "action": "Preserve rollback for every stage."
+        }
+      ],
+      "category": "organizational",
+      "source_ids": [
+        "src-anthropic-rsp",
+        "src-openai-preparedness-v2"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I21",
+      "name": "Emergency response",
+      "target_scenario_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "mechanism": "Prepared institutions and drills for AI-related incidents across sectors.",
+      "evidence_summary": "The 2026 International AI Safety Report calls for broader societal resilience including incident-response protocols; AISI's rapid containment is an example.",
+      "evidence_strength": "weak",
+      "cost": "moderate",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Plans untested.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "governments",
+        "operators"
+      ],
+      "user_actions": [
+        {
+          "audience": "policymakers",
+          "action": "Run cross-sector AI incident exercises."
+        }
+      ],
+      "category": "resilience",
+      "source_ids": [
+        "src-iasr-2026",
+        "src-aisi-2026-incident-report"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I22",
+      "name": "Liability and insurance",
+      "target_scenario_ids": [
+        "S8",
+        "S15"
+      ],
+      "mechanism": "Make developers and deployers bear costs of harm so safety is priced in.",
+      "evidence_summary": "Tribunal decisions (e.g., Moffatt v. Air Canada) establish liability for chatbot outputs; frontier-specific regimes are nascent.",
+      "evidence_strength": "weak",
+      "cost": "low",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Catastrophic harms exceed insurable limits.",
+      "possible_backfire": "Liability shields negotiated into law.",
+      "owner_types": [
+        "policymakers",
+        "insurers"
+      ],
+      "user_actions": [
+        {
+          "audience": "policymakers",
+          "action": "Clarify liability for autonomous agent actions."
+        }
+      ],
+      "category": "national",
+      "source_ids": [
+        "src-cbc-2024-air-canada-chatbot"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I23",
+      "name": "Public-interest laboratories",
+      "target_scenario_ids": [
+        "S9",
+        "S15",
+        "S16"
+      ],
+      "mechanism": "Capability development outside purely commercial incentives, with safety and transparency mandates.",
+      "evidence_summary": "Government institutes (UK AISI, US CAISI) provide evaluation capacity; public-interest development remains limited.",
+      "evidence_strength": "weak",
+      "cost": "very_high",
+      "time_to_deploy": "3-5y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Under-funding relative to frontier labs.",
+      "possible_backfire": "Adds another racing actor.",
+      "owner_types": [
+        "governments",
+        "funders"
+      ],
+      "user_actions": [
+        {
+          "audience": "funders",
+          "action": "Fund independent evaluation and safety infrastructure."
+        }
+      ],
+      "category": "national",
+      "source_ids": [
+        "src-aisi-inspect",
+        "src-ssti-2025-caisi-rename"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I24",
+      "name": "Nonprofit alignment research",
+      "target_scenario_ids": [
+        "S1",
+        "S2"
+      ],
+      "mechanism": "Independent research on alignment, control and evaluation free from deployment pressure.",
+      "evidence_summary": "Organisations such as METR, Redwood Research and Apollo Research produce widely used evaluations.",
+      "evidence_strength": "moderate",
+      "cost": "moderate",
+      "time_to_deploy": "1-2y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Talent and compute gaps versus labs.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "funders",
+        "nonprofits"
+      ],
+      "user_actions": [
+        {
+          "audience": "funders",
+          "action": "Support multi-year independent research."
+        }
+      ],
+      "category": "organizational",
+      "source_ids": [
+        "src-metr-2025-measuring-long-tasks",
+        "src-greenblatt-2023-ai-control"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I25",
+      "name": "Open safety tooling",
+      "target_scenario_ids": [
+        "S9",
+        "S10",
+        "S12"
+      ],
+      "mechanism": "Open-source evaluation, monitoring and provenance tools so safeguards are widely available.",
+      "evidence_summary": "UK AISI's Inspect (MIT licence) lists 171 evaluations by September 2026.",
+      "evidence_strength": "moderate",
+      "cost": "low",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Maintenance burden.",
+      "possible_backfire": "Evaluation details aid gaming.",
+      "owner_types": [
+        "governments",
+        "nonprofits",
+        "software engineers"
+      ],
+      "user_actions": [
+        {
+          "audience": "software_engineers",
+          "action": "Contribute evaluations and security tooling."
+        }
+      ],
+      "category": "technical",
+      "source_ids": [
+        "src-aisi-inspect"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I26",
+      "name": "Forecasting",
+      "target_scenario_ids": [
+        "S7",
+        "S16",
+        "S18"
+      ],
+      "mechanism": "Structured forecasting on resolvable proxies improves anticipation and calibration.",
+      "evidence_summary": "XPT and Metaculus provide track records on short-horizon questions; long-horizon questions cannot be scored.",
+      "evidence_strength": "weak",
+      "cost": "low",
+      "time_to_deploy": "months",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Unresolvable questions; incentive problems.",
+      "possible_backfire": "False precision.",
+      "owner_types": [
+        "nonprofits",
+        "researchers"
+      ],
+      "user_actions": [
+        {
+          "audience": "individuals",
+          "action": "Participate in resolvable proxy forecasts."
+        }
+      ],
+      "category": "organizational",
+      "source_ids": [
+        "src-fri-2023-xpt",
+        "src-metaculus-578-human-extinction-2100"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "I27",
+      "name": "Resilience engineering",
+      "target_scenario_ids": [
+        "S2",
+        "S5",
+        "S8",
+        "S10",
+        "S11",
+        "S12",
+        "S16",
+        "S18"
+      ],
+      "mechanism": "Manual fallbacks, segmentation, redundancy and recovery capacity that limit the damage of any single failure.",
+      "evidence_summary": "Recommended by the 2026 International AI Safety Report; evidence of effectiveness is thin.",
+      "evidence_strength": "weak",
+      "cost": "high",
+      "time_to_deploy": "3-5y",
+      "effect_size": "unknown",
+      "uncertainty": "high",
+      "possible_failure": "Cost pressure erodes redundancy.",
+      "possible_backfire": "None significant.",
+      "owner_types": [
+        "operators",
+        "governments"
+      ],
+      "user_actions": [
+        {
+          "audience": "policymakers",
+          "action": "Require manual fallback for critical services."
+        }
+      ],
+      "category": "resilience",
+      "source_ids": [
+        "src-iasr-2026"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    }
+  ]
+}

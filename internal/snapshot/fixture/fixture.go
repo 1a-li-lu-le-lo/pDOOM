@@ -130,7 +130,7 @@ func New() *snapshot.Snapshot {
 			AgenticInfrastructureRisk: map[string]float64{"D2.unattended_duration": 0.34, "D3.tool_permission_scope": 0.33, "D6.mcp_registry_signing": 0.33},
 			IncidentPressure:          map[string]float64{},
 			EvidencePressure:          map[string]float64{},
-			Uncertainty:               map[string]float64{"coverage_gap": 0.3, "forecast_disagreement": 0.2, "low_tier_share": 0.15, "sensitivity_spread": 0.2, "unknown_dependencies": 0.15},
+			Uncertainty:               map[string]float64{"coverage_gap": 0.10, "forecast_disagreement": 0.15, "low_tier_share": 0.10, "judgment_share": 0.15, "sensitivity_spread": 0.10, "calibration_gap": 0.40},
 		},
 		WeightBounds:    []float64{0, 0.35},
 		TierMultipliers: map[string]float64{"1": 1, "2": 0.9, "3": 0.5, "4": 0, "5": 0},

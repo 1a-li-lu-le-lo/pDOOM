@@ -325,7 +325,7 @@
       {
         "change_points": null,
         "estimate_id": "est-research-P_DOOM-5y",
-        "new_display": "1%",
+        "new_display": "<1%",
         "new_p50": 0.005028,
         "previous_display": "",
         "previous_p50": null,
@@ -370,7 +370,7 @@
       {
         "change_points": null,
         "estimate_id": "est-research-P_DOOM-10y",
-        "new_display": "1%",
+        "new_display": "<1%",
         "new_p50": 0.008291,
         "previous_display": "",
         "previous_p50": null,
@@ -415,7 +415,7 @@
       {
         "change_points": null,
         "estimate_id": "est-research-P_DOOM-25y",
-        "new_display": "1%",
+        "new_display": "2%",
         "new_p50": 0.011594,
         "previous_display": "",
         "previous_p50": null,
@@ -491,7 +491,7 @@
       {
         "delta": null,
         "index_id": "uncertainty",
-        "new": 24.5069,
+        "new": 62.3308,
         "previous": null
       },
       {
@@ -696,7 +696,7 @@
         "source_ids": []
       },
       "status": "insufficiently_calibrated",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -738,7 +738,7 @@
         "source_ids": []
       },
       "status": "insufficiently_calibrated",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -780,7 +780,7 @@
         "source_ids": []
       },
       "status": "insufficiently_calibrated",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -822,7 +822,7 @@
         "source_ids": []
       },
       "status": "insufficiently_calibrated",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -864,7 +864,7 @@
         "source_ids": []
       },
       "status": "insufficiently_calibrated",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -906,7 +906,7 @@
         "source_ids": []
       },
       "status": "insufficiently_calibrated",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -948,7 +948,7 @@
         "source_ids": []
       },
       "status": "insufficiently_calibrated",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -960,8 +960,8 @@
       "disagreement": "extreme",
       "display": {
         "central": "4%",
-        "interval": "<1%–15%",
-        "note": "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: linear_pool 6%; log_odds_pool 3%; trimmed_mean 4%; tier_weighted 6%; recency_weighted 6%; equal_weight_by_population 6%"
+        "interval": "<1%–16%",
+        "note": "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: linear_pool 6%; log_odds_pool 4%; trimmed_mean 4%; tier_weighted 6%; recency_weighted 6%; equal_weight_by_population 6%"
       },
       "estimate_id": "est-external-G-FIX-EXT-2100",
       "forecast_origin_date": "2026-09-26",
@@ -986,7 +986,7 @@
         "p95": 0.15
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 4,
         "population_count": 4,
@@ -996,7 +996,7 @@
         ]
       },
       "status": "external_aggregate",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1007,7 +1007,7 @@
       "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
       "disagreement": "extreme",
       "display": {
-        "central": "1%",
+        "central": "<1%",
         "interval": "<1%–6%",
         "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
       },
@@ -1039,7 +1039,7 @@
         "p95": 0.062732
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1049,7 +1049,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1087,7 +1087,7 @@
         "p95": 0.021665
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1097,7 +1097,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1136,7 +1136,7 @@
         "p95": 0.01993
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1146,7 +1146,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1158,7 +1158,7 @@
       "disagreement": "extreme",
       "display": {
         "central": "<1%",
-        "interval": "<1%–1%",
+        "interval": "<1%–<1%",
         "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
       },
       "estimate_id": "est-research-O6-5y",
@@ -1184,7 +1184,7 @@
         "p95": 0.007413
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1194,7 +1194,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1232,7 +1232,7 @@
         "p95": 0.003294
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1242,7 +1242,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1253,8 +1253,8 @@
       "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
       "disagreement": "extreme",
       "display": {
-        "central": "1%",
-        "interval": "<1%–9%",
+        "central": "<1%",
+        "interval": "<1%–8%",
         "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
       },
       "estimate_id": "est-research-P_DOOM-10y",
@@ -1285,7 +1285,7 @@
         "p95": 0.086493
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1295,7 +1295,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1307,7 +1307,7 @@
       "disagreement": "extreme",
       "display": {
         "central": "<1%",
-        "interval": "<1%–3%",
+        "interval": "<1%–4%",
         "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
       },
       "estimate_id": "est-research-O3-10y",
@@ -1333,7 +1333,7 @@
         "p95": 0.032313
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1343,7 +1343,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1355,7 +1355,7 @@
       "disagreement": "extreme",
       "display": {
         "central": "<1%",
-        "interval": "<1%–3%",
+        "interval": "<1%–2%",
         "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
       },
       "estimate_id": "est-research-P_COLLAPSE-10y",
@@ -1382,7 +1382,7 @@
         "p95": 0.028993
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1392,7 +1392,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1404,7 +1404,7 @@
       "disagreement": "extreme",
       "display": {
         "central": "<1%",
-        "interval": "<1%–1%",
+        "interval": "<1%–2%",
         "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
       },
       "estimate_id": "est-research-O6-10y",
@@ -1430,7 +1430,7 @@
         "p95": 0.010937
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1440,7 +1440,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1478,7 +1478,7 @@
         "p95": 0.004776
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1488,7 +1488,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1499,8 +1499,8 @@
       "conditioning": "Conditional on the experimental causal decomposition P(A)·P(C|A)·P(E|A,C)·P(F|A,C,E)·P(O_i|A,C,E,F) with judgment-based parameters (model_spec.experimental_causal) and a single common latent factor.",
       "disagreement": "extreme",
       "display": {
-        "central": "1%",
-        "interval": "<1%–11%",
+        "central": "2%",
+        "interval": "<1%–10%",
         "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
       },
       "estimate_id": "est-research-P_DOOM-25y",
@@ -1531,7 +1531,7 @@
         "p95": 0.107759
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1541,7 +1541,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1579,7 +1579,7 @@
         "p95": 0.039803
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1589,7 +1589,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1628,7 +1628,7 @@
         "p95": 0.037172
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1638,7 +1638,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1650,7 +1650,7 @@
       "disagreement": "extreme",
       "display": {
         "central": "<1%",
-        "interval": "<1%–1%",
+        "interval": "<1%–2%",
         "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
       },
       "estimate_id": "est-research-O6-25y",
@@ -1676,7 +1676,7 @@
         "p95": 0.014211
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1686,7 +1686,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     },
     {
       "assumptions": [
@@ -1698,7 +1698,7 @@
       "disagreement": "extreme",
       "display": {
         "central": "<1%",
-        "interval": "<1%–1%",
+        "interval": "<1%–<1%",
         "note": "Research mode: not the official estimate. Parameters are documented judgments; the interval reflects parameter uncertainty under the model, not calibration."
       },
       "estimate_id": "est-research-O7-25y",
@@ -1724,7 +1724,7 @@
         "p95": 0.006019
       },
       "reason_for_change": "first computation for this snapshot",
-      "rounding_rule": "nearest_1",
+      "rounding_rule": "nearest_2",
       "source_coverage": {
         "forecast_count": 0,
         "population_count": 0,
@@ -1734,7 +1734,7 @@
         ]
       },
       "status": "research_mode",
-      "uncertainty": "low"
+      "uncertainty": "high"
     }
   ],
   "GeneratedAt": "2026-09-26T12:00:00Z",
@@ -2245,39 +2245,46 @@
       "baseline": null,
       "components": [
         {
-          "contribution": 3,
+          "contribution": 40,
+          "signal_id": "calibration_gap",
+          "tier": 1,
+          "value_normalized": 1,
+          "weight": 0.4
+        },
+        {
+          "contribution": 1,
           "signal_id": "coverage_gap",
           "tier": 1,
           "value_normalized": 0.1,
-          "weight": 0.3
+          "weight": 0.1
         },
         {
-          "contribution": 12.866,
+          "contribution": 9.6495,
           "signal_id": "forecast_disagreement",
           "tier": 1,
           "value_normalized": 0.6433,
-          "weight": 0.2
+          "weight": 0.15
+        },
+        {
+          "contribution": 11.1105,
+          "signal_id": "judgment_share",
+          "tier": 1,
+          "value_normalized": 0.7407,
+          "weight": 0.15
         },
         {
           "contribution": 0,
           "signal_id": "low_tier_share",
           "tier": 1,
           "value_normalized": 0,
-          "weight": 0.15
+          "weight": 0.1
         },
         {
-          "contribution": 1.142,
+          "contribution": 0.571,
           "signal_id": "sensitivity_spread",
           "tier": 1,
           "value_normalized": 0.0571,
-          "weight": 0.2
-        },
-        {
-          "contribution": 7.5,
-          "signal_id": "unknown_dependencies",
-          "tier": 1,
-          "value_normalized": 0.5,
-          "weight": 0.15
+          "weight": 0.1
         }
       ],
       "coverage": 1,
@@ -2285,9 +2292,9 @@
       "is_probability": false,
       "label": "Uncertainty Score",
       "method_ref": "docs/method/indexes.md#uncertainty-score",
-      "note": "Weighted mean of coverage gap, external-forecast disagreement, low-tier evidence share, sensitivity spread and a constant unknown-dependency term. Not a probability.",
+      "note": "Weighted mean of coverage gap, external-forecast disagreement, low-tier evidence share, judgment share, sensitivity spread and the calibration gap (1 until proxy calibration exists). Not a probability.",
       "scale": "0–100, higher = less is known",
-      "value": 24.5069
+      "value": 62.3308
     },
     {
       "as_of": "2026-09-26",
@@ -5007,7 +5014,7 @@
     }
   ],
   "SnapshotID": "snap-1999-01-01-001",
-  "UncertaintyLabel": "low",
-  "UncertaintyScore": 24.5069,
+  "UncertaintyLabel": "high",
+  "UncertaintyScore": 62.3308,
   "Warnings": []
 }

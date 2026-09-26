@@ -1,0 +1,182 @@
+{
+  "kind": "benchmark_result",
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "bmr-metr-th50-claude-3-7-sonnet",
+      "benchmark_id": "bm-metr-time-horizon-50",
+      "model_name": "Claude 3.7 Sonnet",
+      "model_developer": "Anthropic",
+      "date": "2025-03-19",
+      "value": 50,
+      "unit": "minutes",
+      "ci_low": null,
+      "ci_high": null,
+      "scaffold": null,
+      "confidence": "moderate",
+      "note": "Reported as around 50 minutes in the March 2025 paper.",
+      "source_ids": [
+        "src-metr-2025-measuring-long-tasks"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "eligible"
+    },
+    {
+      "id": "bmr-metr-th50-o3",
+      "benchmark_id": "bm-metr-time-horizon-50",
+      "model_name": "o3",
+      "model_developer": "OpenAI",
+      "date": "2025-04-16",
+      "value": 110,
+      "unit": "minutes",
+      "ci_low": null,
+      "ci_high": null,
+      "scaffold": null,
+      "confidence": "moderate",
+      "note": "Around 110 minutes; day-level date approximate (April 2025 update).",
+      "source_ids": [
+        "src-metr-time-horizons-page"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "eligible"
+    },
+    {
+      "id": "bmr-metr-th50-gpt-5-1-codex-max",
+      "benchmark_id": "bm-metr-time-horizon-50",
+      "model_name": "GPT-5.1-Codex-Max",
+      "model_developer": "OpenAI",
+      "date": "2025-11-20",
+      "value": 173,
+      "unit": "minutes",
+      "ci_low": null,
+      "ci_high": null,
+      "scaffold": null,
+      "confidence": "moderate",
+      "note": "2 h 53 min; day-level date approximate (late 2025).",
+      "source_ids": [
+        "src-metr-time-horizons-page"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "eligible"
+    },
+    {
+      "id": "bmr-metr-th50-claude-opus-4-5",
+      "benchmark_id": "bm-metr-time-horizon-50",
+      "model_name": "Claude Opus 4.5",
+      "model_developer": "Anthropic",
+      "date": "2025-12-18",
+      "value": 289,
+      "unit": "minutes",
+      "ci_low": 109,
+      "ci_high": 1225,
+      "scaffold": null,
+      "confidence": "moderate",
+      "note": "4 h 49 min (95% CI 1 h 49 min – 20 h 25 min); day-level date approximate (December 2025).",
+      "source_ids": [
+        "src-metr-time-horizons-page",
+        "src-metr-x-2025-opus-4-5-horizon"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "eligible"
+    },
+    {
+      "id": "bmr-metr-th50-claude-opus-4-6-third-party",
+      "benchmark_id": "bm-metr-time-horizon-50",
+      "model_name": "Claude Opus 4.6",
+      "model_developer": "Anthropic",
+      "date": "2026-03-01",
+      "value": 719,
+      "unit": "minutes",
+      "ci_low": null,
+      "ci_high": null,
+      "scaffold": null,
+      "confidence": "low",
+      "note": "Third-party estimate (EA Forum post) citing 719 minutes at 50% and 70 minutes at 80%; not a METR publication; informational only.",
+      "source_ids": [
+        "src-eaforum-2026-opus-4-6-horizon-estimate"
+      ],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "bmr-swe-bench-verified-claude-opus-5-2026-09",
+      "benchmark_id": "bm-swe-bench-verified",
+      "model_name": "Claude Opus 5",
+      "model_developer": "Anthropic",
+      "date": "2026-09-04",
+      "value": 97,
+      "unit": "percent resolved",
+      "ci_low": null,
+      "ci_high": null,
+      "scaffold": "Vals.ai run (third-party tracker)",
+      "confidence": "low",
+      "note": "Tracker-reported; audits found flawed tests at high scores; treat as near-saturation signal, not precision.",
+      "source_ids": [
+        "src-steel-2026-swe-bench-verified-leaderboard"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "eligible"
+    },
+    {
+      "id": "bmr-osworld-verified-qwen3-8-max-2026-09",
+      "benchmark_id": "bm-osworld-verified",
+      "model_name": "Qwen3.8 Max",
+      "model_developer": "Alibaba (Qwen)",
+      "date": "2026-09-22",
+      "value": 86.1,
+      "unit": "percent tasks succeeded",
+      "ci_low": null,
+      "ci_high": null,
+      "scaffold": null,
+      "confidence": "low",
+      "note": "Tracker-reported; exceeds the 72.36% human baseline of the original paper.",
+      "source_ids": [
+        "src-benchlm-2026-osworld-verified"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "eligible"
+    }
+  ]
+}

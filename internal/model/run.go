@@ -103,7 +103,8 @@ func Run(s *snapshot.Snapshot, opts RunOptions) (*Result, error) {
 			}
 		}
 	}
-	uin := UncertaintyInputs{UnknownDependencies: 0.5}
+	uin := UncertaintyInputs{UnknownDependencies: 0.5, CalibrationGap: 1}
+	uin.JudgmentShare = judgmentShare(s, []schema.IndexValue{cpi, csi, air})
 	cov := []float64{cpi.Coverage, csi.Coverage, air.Coverage}
 	uin.CoverageGap = 1 - Mean(cov)
 	if len(res.Groups) == 0 {
@@ -206,7 +207,7 @@ func buildEstimates(s *snapshot.Snapshot, res *Result, asOf string) []schema.Est
 			ForecastOriginDate: asOf, LastEvidenceDate: cutoff, Quantiles: q, Mean: &mean, Disagreement: &dis, Uncertainty: res.UncertaintyLabel,
 			ModelConfidence: "aggregation_of_named_sources", SourceCoverage: schema.SourceCoverage{ForecastCount: len(g.Forecasts), PopulationCount: g.PopulationCount(), SourceIDs: g.SourceIDs()},
 			Previous: prev(""), ReasonForChange: "first computation for this snapshot", RoundingRule: RoundingRuleName(step),
-			Display:     schema.Display{Central: RoundForDisplay(g.Preferred, step), Interval: FormatInterval(q.P05, q.P95, step), Note: "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: " + strings.Join(alt, "; ")},
+			Display:     schema.Display{Central: RoundForDisplay(g.Preferred, step), Interval: intervalOrPoint(q.P05, q.P95, step), Note: "Interval is the range of member forecasts (min–max), not a sampling interval. Alternatives: " + strings.Join(alt, "; ")},
 			Assumptions: []string{"Members share outcome set, horizon and conditioning (compatibility group " + g.ID + ").", "Central value is the unweighted median; alternative methods are published alongside.", "Original question wording is shown beside every transformed value."},
 			MethodRef:   "docs/method/aggregation.md", GroupID: &gid,
 		})
@@ -241,6 +242,14 @@ func buildEstimates(s *snapshot.Snapshot, res *Result, asOf string) []schema.Est
 		}
 	}
 	return out
+}
+
+// intervalOrPoint renders "lo–hi", or a single value when the members agree.
+func intervalOrPoint(lo, hi float64, step int) string {
+	if RoundForDisplay(lo, step) == RoundForDisplay(hi, step) {
+		return RoundForDisplay(lo, step)
+	}
+	return FormatInterval(lo, hi, step)
 }
 
 func fixOrder(q *schema.FiveQuantiles) {

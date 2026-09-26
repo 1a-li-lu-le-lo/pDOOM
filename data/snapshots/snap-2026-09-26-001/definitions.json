@@ -1,0 +1,808 @@
+{
+  "kind": "definition",
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "def-pdoom",
+      "term": "p(DOOM)",
+      "short_definition": "The probability, within a stated horizon and conditional on a stated model specification, that advanced AI leads to outcome O3 (permanent severe disempowerment), O4 (civilizational collapse), O5 (near-extinction), O6 (human extinction), O7 (biospheric catastrophe) or O8 (other irreversible loss). It is a model output, never a direct measurement, and is always shown with its decomposition.",
+      "definitions": [
+        {
+          "text": "Probability of doom: an informal term for the subjective probability that AI causes an existential catastrophe; usage varies by speaker.",
+          "source_id": null,
+          "attribution": "Common usage (see Wikipedia entry 'P(doom)')",
+          "note": "Informal usage rarely states horizon, outcome or conditioning; this observatory always does."
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "O3",
+        "O4",
+        "O5",
+        "O6",
+        "O7",
+        "O8"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-agi",
+      "term": "AGI (artificial general intelligence)",
+      "short_definition": "A system that matches or exceeds human performance across most cognitive tasks. Definitions differ on breadth, autonomy and economic framing.",
+      "definitions": [
+        {
+          "text": "Highly autonomous systems that outperform humans at most economically valuable work.",
+          "source_id": "src-openai-charter",
+          "attribution": "OpenAI Charter (2018)",
+          "note": ""
+        },
+        {
+          "text": "A levelled framework distinguishing performance depth (emerging to superhuman) and generality (narrow to general), with autonomy treated separately.",
+          "source_id": "src-morris-2023-levels-of-agi",
+          "attribution": "Morris et al., Levels of AGI (2023)",
+          "note": ""
+        },
+        {
+          "text": "Unaided machines that can accomplish every task better and more cheaply than human workers (high-level machine intelligence).",
+          "source_id": "src-grace-2024-thousands-of-ai-authors",
+          "attribution": "Grace et al., ESPAI survey wording",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "def-asi",
+        "def-frontier-model"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-asi",
+      "term": "ASI (artificial superintelligence)",
+      "short_definition": "An intellect that greatly exceeds the cognitive performance of humans in virtually all domains of interest.",
+      "definitions": [
+        {
+          "text": "Any intellect that greatly exceeds the cognitive performance of humans in virtually all domains of interest.",
+          "source_id": "src-bostrom-2014-superintelligence",
+          "attribution": "Bostrom, Superintelligence (2014)",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "def-agi"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-frontier-model",
+      "term": "Frontier model",
+      "short_definition": "A general-purpose model at or near the most capable level available at a given time.",
+      "definitions": [
+        {
+          "text": "General-purpose AI models with systemic risk: models with high-impact capabilities, presumed where cumulative training compute exceeds 10^25 floating-point operations.",
+          "source_id": "src-eu-ai-act-oj",
+          "attribution": "EU AI Act, Article 51",
+          "note": ""
+        },
+        {
+          "text": "Models covered by developers' frontier safety frameworks, defined by capability thresholds rather than a fixed compute number.",
+          "source_id": "src-anthropic-rsp",
+          "attribution": "Anthropic RSP; OpenAI Preparedness Framework; Google DeepMind FSF",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "def-agi"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-agent",
+      "term": "Agent",
+      "short_definition": "An AI system that pursues goals over multiple steps by observing, planning and acting through tools with limited human involvement.",
+      "definitions": [
+        {
+          "text": "Systems that can plan and act autonomously across multiple steps to achieve goals, increasingly with tool use.",
+          "source_id": "src-iasr-2026",
+          "attribution": "International AI Safety Report 2026 (working usage)",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "def-autonomy",
+        "def-tool-use",
+        "def-agentic-harness"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-autonomy",
+      "term": "Autonomy",
+      "short_definition": "The degree to which a system selects and executes actions without human direction or approval, measured here by unattended operation length and approval frequency.",
+      "definitions": [
+        {
+          "text": "Levels of autonomy from tool (fully human-controlled) through consultant, collaborator, expert to agent (fully autonomous).",
+          "source_id": "src-morris-2023-levels-of-agi",
+          "attribution": "Morris et al., Levels of AGI (2023)",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "def-agent"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-agentic-harness",
+      "term": "Agentic harness",
+      "short_definition": "The software around a model that turns it into an agent: prompt templates, tool routing, memory, retries, permissions, budgets and logging. Also called scaffold.",
+      "definitions": [
+        {
+          "text": "Scaffolding that provides models with tools, memory and control flow; METR reports results 'with METR's scaffold' because harness design changes measured capability.",
+          "source_id": "src-metr-2025-measuring-long-tasks",
+          "attribution": "METR (usage in evaluation reports)",
+          "note": ""
+        }
+      ],
+      "consensus": "emerging",
+      "related_ids": [
+        "def-harness-of-harnesses",
+        "def-mcp"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-harness-of-harnesses",
+      "term": "Harness of harnesses",
+      "short_definition": "Nested agent systems in which one harness delegates to other harnesses, inheriting or re-scoping authority; raises questions of policy drift, identity ambiguity, duplicate side effects and cancellation propagation.",
+      "definitions": [
+        {
+          "text": "Emerging term; closest documented practice is multi-agent orchestration through protocols such as MCP and agent-to-agent delegation.",
+          "source_id": null,
+          "attribution": "This observatory (working definition)",
+          "note": "No consensus definition exists; the term is defined operationally in research/agents."
+        }
+      ],
+      "consensus": "emerging",
+      "related_ids": [
+        "def-agentic-harness"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-mcp",
+      "term": "MCP (Model Context Protocol)",
+      "short_definition": "An open protocol that connects language-model applications to servers exposing tools, resources and prompts, so that agents can act on external systems in a standard way.",
+      "definitions": [
+        {
+          "text": "An open protocol that enables seamless integration between LLM applications and external data sources and tools.",
+          "source_id": "src-mcp-specification",
+          "attribution": "Model Context Protocol specification",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [
+        "def-tool-use",
+        "def-agentic-harness"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-tool-use",
+      "term": "Tool use",
+      "short_definition": "A model invoking external functions, APIs or systems (search, code execution, file access, payments) through structured calls.",
+      "definitions": [
+        {
+          "text": "Function calling and tool invocation as defined by MCP tools and vendor APIs.",
+          "source_id": "src-mcp-specification",
+          "attribution": "MCP specification",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [
+        "def-mcp"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-compute",
+      "term": "Compute",
+      "short_definition": "Computational resources used to train or run models, usually measured in floating-point operations; a governance lever because it is detectable, excludable and concentrated.",
+      "definitions": [
+        {
+          "text": "Computing power is detectable, excludable, quantifiable and produced via a concentrated supply chain, which makes it a lever for governance.",
+          "source_id": "src-sastry-2024-computing-power-governance",
+          "attribution": "Sastry et al. (2024)",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-capability",
+      "term": "Capability",
+      "short_definition": "What a system can do when suitably elicited, as measured by evaluations and benchmarks; a prerequisite or pressure variable in this observatory, never an outcome.",
+      "definitions": [
+        {
+          "text": "Dangerous-capability thresholds defined per domain (biological, chemical, cyber, autonomy) in developer frameworks.",
+          "source_id": "src-openai-preparedness-v2",
+          "attribution": "OpenAI Preparedness Framework v2",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-alignment",
+      "term": "Alignment",
+      "short_definition": "The degree to which a system's objectives and behaviour match what its principals intend, including under distribution shift and when unobserved.",
+      "definitions": [
+        {
+          "text": "Misalignment: systems pursuing goals that conflict with human intentions; alignment faking: appearing aligned while pursuing other goals.",
+          "source_id": "src-anthropic-2024-alignment-faking",
+          "attribution": "Greenblatt et al., Alignment faking (2024)",
+          "note": ""
+        },
+        {
+          "text": "Rogue AIs: the difficulty of controlling agents far more intelligent than humans.",
+          "source_id": "src-hendrycks-2023-overview-catastrophic-risks",
+          "attribution": "Hendrycks et al. (2023)",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "def-control"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-control",
+      "term": "Control",
+      "short_definition": "Safety that does not rely on the model being aligned: protocols that stay safe even if the model tries to subvert them.",
+      "definitions": [
+        {
+          "text": "Techniques that maintain safety despite intentional subversion by the model, evaluated with untrusted and trusted models.",
+          "source_id": "src-greenblatt-2023-ai-control",
+          "attribution": "Greenblatt et al., AI Control (2023)",
+          "note": ""
+        }
+      ],
+      "consensus": "emerging",
+      "related_ids": [
+        "def-alignment",
+        "def-containment"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-containment",
+      "term": "Containment",
+      "short_definition": "Technical and organisational isolation (sandboxes, network egress controls, credential scoping) that limits what a system can affect.",
+      "definitions": [
+        {
+          "text": "Least privilege for MCP agent processes: deny access paths that a server does not require.",
+          "source_id": "src-nsa-2026-mcp-security",
+          "attribution": "NSA MCP security guidance (2026)",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [
+        "def-control"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-evaluation",
+      "term": "Evaluation",
+      "short_definition": "A structured test of a system's capabilities or propensities under specified conditions; results depend on scaffold, elicitation and contamination.",
+      "definitions": [
+        {
+          "text": "Open framework for LLM evaluations with a published register of tasks.",
+          "source_id": "src-aisi-inspect",
+          "attribution": "UK AISI, Inspect",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-incident",
+      "term": "Incident",
+      "short_definition": "An event in which an AI system's development, use or malfunction led to harm.",
+      "definitions": [
+        {
+          "text": "An AI incident is an event, circumstance or series of events where the development, use or malfunction of one or more AI systems directly or indirectly leads to harm.",
+          "source_id": "src-oecd-2024-defining-ai-incidents",
+          "attribution": "OECD (2024)",
+          "note": ""
+        },
+        {
+          "text": "Serious incident: an incident leading to death or serious harm to health, serious and irreversible disruption of critical infrastructure, infringement of fundamental rights, or serious harm to property or the environment.",
+          "source_id": "src-eu-ai-act-oj",
+          "attribution": "EU AI Act, Article 3(49)",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [
+        "def-near-miss"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-near-miss",
+      "term": "Near miss",
+      "short_definition": "An event that could plausibly have led to harm but did not, including contained safety failures and controlled-test findings; recorded separately from realised harm.",
+      "definitions": [
+        {
+          "text": "AI hazard: an event where an AI system could plausibly lead to an incident.",
+          "source_id": "src-oecd-2024-defining-ai-incidents",
+          "attribution": "OECD (2024)",
+          "note": ""
+        }
+      ],
+      "consensus": "emerging",
+      "related_ids": [
+        "def-incident"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-catastrophe",
+      "term": "Catastrophe",
+      "short_definition": "Large-scale harm; in this observatory 'catastrophic' outcomes are O4–O8, while O1–O2 are serious harms that leave a recovery path.",
+      "definitions": [
+        {
+          "text": "Global catastrophe: death of at least 10% of the world's population within a five-year period (XPT question threshold).",
+          "source_id": "src-fri-2023-xpt",
+          "attribution": "Forecasting Research Institute, XPT",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-extinction",
+      "term": "Extinction",
+      "short_definition": "No humans survive (outcome O6).",
+      "definitions": [
+        {
+          "text": "Human extinction: no humans alive (Metaculus resolution criteria).",
+          "source_id": "src-metaculus-578-human-extinction-2100",
+          "attribution": "Metaculus question 578",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [
+        "O6"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-disempowerment",
+      "term": "Disempowerment",
+      "short_definition": "Loss of humanity's effective control over its future; permanent severe disempowerment is outcome O3.",
+      "definitions": [
+        {
+          "text": "Gradual disempowerment: incremental erosion of human influence over the economy, culture and states leading to effectively irreversible loss of influence.",
+          "source_id": "src-kulveit-2025-gradual-disempowerment",
+          "attribution": "Kulveit et al. (2025)",
+          "note": ""
+        },
+        {
+          "text": "Similarly permanent and severe disempowerment of the human species (survey wording paired with extinction).",
+          "source_id": "src-grace-2024-thousands-of-ai-authors",
+          "attribution": "ESPAI surveys",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "O3",
+        "def-lock-in"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-lock-in",
+      "term": "Lock-in",
+      "short_definition": "A state of affairs that becomes effectively irreversible, such as permanent value specification or permanent institutional control.",
+      "definitions": [
+        {
+          "text": "Existential catastrophe includes unrecoverable dystopia as well as extinction.",
+          "source_id": "src-ord-2020-precipice",
+          "attribution": "Ord, The Precipice (2020)",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "def-recoverability"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-recoverability",
+      "term": "Recoverability",
+      "short_definition": "Whether institutions and societies retain a credible path back from harm; the dividing line between O1–O2 and O3–O8.",
+      "definitions": [
+        {
+          "text": "Working definition of this observatory: an outcome is recoverable if, absent further catastrophe, human institutions could plausibly restore autonomy and welfare within generations.",
+          "source_id": null,
+          "attribution": "This observatory",
+          "note": ""
+        }
+      ],
+      "consensus": "emerging",
+      "related_ids": [
+        "def-lock-in"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-systemic-risk",
+      "term": "Systemic risk",
+      "short_definition": "Risk arising from the interaction of many systems, actors and dependencies rather than a single failure.",
+      "definitions": [
+        {
+          "text": "Systemic risk from general-purpose AI: risk specific to high-impact capabilities with significant impact on the Union market and society.",
+          "source_id": "src-eu-ai-act-oj",
+          "attribution": "EU AI Act, Article 3(65)",
+          "note": ""
+        },
+        {
+          "text": "Societal-scale risks classified by accountability and intent.",
+          "source_id": "src-critch-russell-2023-tasra",
+          "attribution": "Critch & Russell, TASRA (2023)",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-malicious-use",
+      "term": "Malicious use",
+      "short_definition": "Deliberate use of AI by humans to cause harm.",
+      "definitions": [
+        {
+          "text": "Malicious use: individuals or groups intentionally using AIs to cause harm.",
+          "source_id": "src-hendrycks-2023-overview-catastrophic-risks",
+          "attribution": "Hendrycks et al. (2023)",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [
+        "S4"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-malfunction",
+      "term": "Malfunction",
+      "short_definition": "Harm arising from a system not behaving as intended, without malicious intent.",
+      "definitions": [
+        {
+          "text": "Malfunctions, alongside malicious use and systemic risks, form the report's risk categories.",
+          "source_id": "src-iasr-2026",
+          "attribution": "International AI Safety Report 2026",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [
+        "S2"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-loss-of-control",
+      "term": "Loss of control",
+      "short_definition": "A state in which humans cannot reliably monitor, constrain, correct or shut down AI systems.",
+      "definitions": [
+        {
+          "text": "Scenarios where models may resist human shutdown or control, now covered by frontier safety framework reviews.",
+          "source_id": "src-gdm-fsf-v3",
+          "attribution": "Google DeepMind FSF v3 (2025)",
+          "note": ""
+        }
+      ],
+      "consensus": "contested",
+      "related_ids": [
+        "S3"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-epistemic-uncertainty",
+      "term": "Epistemic uncertainty",
+      "short_definition": "Uncertainty from limited knowledge that could in principle be reduced by more evidence; dominant in this observatory.",
+      "definitions": [
+        {
+          "text": "Epistemic uncertainty stems from lack of knowledge and is reducible; aleatory uncertainty is inherent randomness.",
+          "source_id": "src-der-kiureghian-2009-aleatory-epistemic",
+          "attribution": "Der Kiureghian & Ditlevsen (2009)",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [
+        "def-aleatory-uncertainty"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "def-aleatory-uncertainty",
+      "term": "Aleatory uncertainty",
+      "short_definition": "Irreducible randomness in outcomes even with complete knowledge of the process.",
+      "definitions": [
+        {
+          "text": "Aleatory uncertainty: inherent randomness that cannot be reduced by more data.",
+          "source_id": "src-der-kiureghian-2009-aleatory-epistemic",
+          "attribution": "Der Kiureghian & Ditlevsen (2009)",
+          "note": ""
+        }
+      ],
+      "consensus": "consensus",
+      "related_ids": [
+        "def-epistemic-uncertainty"
+      ],
+      "see_also_urls": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    }
+  ]
+}

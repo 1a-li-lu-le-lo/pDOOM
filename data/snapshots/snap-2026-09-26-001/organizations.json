@@ -1,0 +1,780 @@
+{
+  "kind": "organization",
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "org-metr",
+      "name": "METR",
+      "url": "https://metr.org/",
+      "mission": "Evaluate whether frontier AI systems pose catastrophic risks, with a focus on autonomous capabilities.",
+      "legal_status": "US 501(c)(3) nonprofit (as stated by the organisation)",
+      "jurisdiction": "US",
+      "focus": [
+        "evaluations",
+        "autonomy",
+        "time_horizon"
+      ],
+      "programs": [
+        "Time-horizon measurement",
+        "Pre-deployment evaluations with developers",
+        "Task standard"
+      ],
+      "open_outputs": [
+        "Measuring AI Ability to Complete Long Tasks (2025)",
+        "Time Horizon 1.1 (2026)",
+        "Public task standard"
+      ],
+      "funding_disclosure": "Publishes funder information on its website; receives philanthropic funding.",
+      "conflicts": [],
+      "evidence_of_impact": "Time-horizon metric adopted in the International AI Safety Report and widely cited.",
+      "ways_to_help": [
+        "Donate",
+        "Join as researcher or engineer",
+        "Contribute tasks"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [
+        "src-metr-2025-measuring-long-tasks",
+        "src-metr-time-horizons-page"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-epoch-ai",
+      "name": "Epoch AI",
+      "url": "https://epoch.ai/",
+      "mission": "Research the trajectory of AI through data on compute, models and benchmarks.",
+      "legal_status": "Research institute (nonprofit project)",
+      "jurisdiction": "US",
+      "focus": [
+        "compute",
+        "trends",
+        "benchmarks"
+      ],
+      "programs": [
+        "Trends dashboards",
+        "Benchmarking hub"
+      ],
+      "open_outputs": [
+        "Training compute growth analyses",
+        "Public datasets"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Data widely used by governments and researchers.",
+      "ways_to_help": [
+        "Use and cite data",
+        "Report corrections"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [
+        "src-epoch-2024-compute-growth"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-forecasting-research-institute",
+      "name": "Forecasting Research Institute",
+      "url": "https://forecastingresearch.org/",
+      "mission": "Advance the science of forecasting for high-stakes decisions.",
+      "legal_status": "US nonprofit",
+      "jurisdiction": "US",
+      "focus": [
+        "forecasting",
+        "existential_risk"
+      ],
+      "programs": [
+        "Existential Risk Persuasion Tournament",
+        "Near-term accuracy studies"
+      ],
+      "open_outputs": [
+        "XPT report (2023)",
+        "Roots of Disagreement on AI Risk"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "XPT is the reference dataset for superforecaster versus expert disagreement on AI risk.",
+      "ways_to_help": [
+        "Participate in studies",
+        "Donate"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [
+        "src-fri-2023-xpt"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-ai-impacts",
+      "name": "AI Impacts",
+      "url": "https://aiimpacts.org/",
+      "mission": "Research questions relevant to the future of AI, including expert surveys.",
+      "legal_status": "Nonprofit research project",
+      "jurisdiction": "US",
+      "focus": [
+        "expert_surveys",
+        "timelines"
+      ],
+      "programs": [
+        "Expert Survey on Progress in AI (2016, 2022, 2023, 2024)"
+      ],
+      "open_outputs": [
+        "ESPAI datasets and reports"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Largest recurring surveys of AI researchers on risk and timelines.",
+      "ways_to_help": [
+        "Cite carefully with wording",
+        "Donate"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [
+        "src-aiimpacts-2022-espai",
+        "src-aiimpacts-2024-espai"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-uk-ai-security-institute",
+      "name": "UK AI Security Institute",
+      "url": "https://www.aisi.gov.uk/",
+      "mission": "Government research body evaluating and mitigating risks from advanced AI.",
+      "legal_status": "UK government body (Department for Science, Innovation and Technology)",
+      "jurisdiction": "UK",
+      "focus": [
+        "evaluations",
+        "cyber",
+        "open_tooling"
+      ],
+      "programs": [
+        "Inspect framework",
+        "Pre-deployment testing",
+        "Incident reporting"
+      ],
+      "open_outputs": [
+        "Inspect (MIT)",
+        "Inspect Evals register",
+        "2026 incident report"
+      ],
+      "funding_disclosure": "UK Government.",
+      "conflicts": [
+        "government_policy_context"
+      ],
+      "evidence_of_impact": "Open evaluation framework adopted widely; secretariat for the International AI Safety Report.",
+      "ways_to_help": [
+        "Contribute evaluations to Inspect",
+        "Apply for roles"
+      ],
+      "inclusion_criteria_met": [
+        "public_body",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [
+        "src-aisi-inspect",
+        "src-aisi-2026-incident-report"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-cloud-security-alliance",
+      "name": "Cloud Security Alliance",
+      "url": "https://cloudsecurityalliance.org/",
+      "mission": "Define and raise awareness of best practices for secure cloud and AI computing.",
+      "legal_status": "US 501(c)(6) nonprofit (as stated)",
+      "jurisdiction": "US",
+      "focus": [
+        "security",
+        "agents",
+        "mcp"
+      ],
+      "programs": [
+        "Lab Space research notes",
+        "AI Safety Initiative"
+      ],
+      "open_outputs": [
+        "MCP security research notes (2026)"
+      ],
+      "funding_disclosure": "Membership and sponsorship; corporate members.",
+      "conflicts": [
+        "commercial_interest"
+      ],
+      "evidence_of_impact": "Timely analyses of agent-infrastructure incidents.",
+      "ways_to_help": [
+        "Join working groups"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [
+        "src-csa-2026-mcp-security-crisis"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-institute-for-ai-policy-and-strategy",
+      "name": "Institute for AI Policy and Strategy",
+      "url": "https://www.iaps.ai/",
+      "mission": "Research and policy on frontier AI, compute governance and security.",
+      "legal_status": "Nonprofit think tank",
+      "jurisdiction": "US",
+      "focus": [
+        "governance",
+        "security"
+      ],
+      "programs": [
+        "Autonomous cyber attacks analysis",
+        "Compute governance"
+      ],
+      "open_outputs": [
+        "The Emergence of Autonomous Cyber Attacks (2025)"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Policy analyses cited in governance debates.",
+      "ways_to_help": [
+        "Read and engage with research"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-ada-lovelace-institute",
+      "name": "Ada Lovelace Institute",
+      "url": "https://www.adalovelaceinstitute.org/",
+      "mission": "Ensure data and AI work for people and society.",
+      "legal_status": "UK independent research institute (Nuffield Foundation)",
+      "jurisdiction": "UK",
+      "focus": [
+        "governance",
+        "accountability"
+      ],
+      "programs": [
+        "Analysis of AI institutions including AISI"
+      ],
+      "open_outputs": [
+        "Making sense of the UK's AI Security Institute"
+      ],
+      "funding_disclosure": "Nuffield Foundation and grants; disclosed.",
+      "conflicts": [],
+      "evidence_of_impact": "Influential UK policy analysis.",
+      "ways_to_help": [
+        "Engage with consultations"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-apollo-research",
+      "name": "Apollo Research",
+      "url": "https://www.apolloresearch.ai/",
+      "mission": "Evaluate frontier models for deceptive and scheming behaviour.",
+      "legal_status": "Nonprofit research organisation",
+      "jurisdiction": "UK",
+      "focus": [
+        "evaluations",
+        "deception"
+      ],
+      "programs": [
+        "Scheming evaluations",
+        "Pre-deployment testing with developers"
+      ],
+      "open_outputs": [
+        "Published evaluation reports"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Evaluations cited in developer system cards.",
+      "ways_to_help": [
+        "Apply for roles",
+        "Donate"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-redwood-research",
+      "name": "Redwood Research",
+      "url": "https://www.redwoodresearch.org/",
+      "mission": "Research on AI control and alignment.",
+      "legal_status": "US nonprofit",
+      "jurisdiction": "US",
+      "focus": [
+        "control",
+        "alignment"
+      ],
+      "programs": [
+        "AI control evaluations"
+      ],
+      "open_outputs": [
+        "AI Control: Improving Safety Despite Intentional Subversion (2023)"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Originated the control-evaluation framework.",
+      "ways_to_help": [
+        "Collaborate on control research"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [
+        "src-greenblatt-2023-ai-control"
+      ],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-center-for-ai-safety",
+      "name": "Center for AI Safety",
+      "url": "https://www.safe.ai/",
+      "mission": "Reduce societal-scale risks from AI through research, field-building and advocacy.",
+      "legal_status": "US 501(c)(3) nonprofit",
+      "jurisdiction": "US",
+      "focus": [
+        "research",
+        "advocacy",
+        "taxonomy"
+      ],
+      "programs": [
+        "Research",
+        "Compute cluster for safety research",
+        "Policy"
+      ],
+      "open_outputs": [
+        "An Overview of Catastrophic AI Risks (2023)"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [
+        "advocacy_context"
+      ],
+      "evidence_of_impact": "Widely cited taxonomy; convened the 2023 statement on AI risk.",
+      "ways_to_help": [
+        "Donate",
+        "Research collaborations"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [
+        "src-hendrycks-2023-overview-catastrophic-risks"
+      ],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-centre-for-the-governance-of-ai",
+      "name": "Centre for the Governance of AI",
+      "url": "https://www.governance.ai/",
+      "mission": "Research how humanity can navigate the transition to advanced AI.",
+      "legal_status": "UK nonprofit",
+      "jurisdiction": "UK",
+      "focus": [
+        "governance",
+        "compute"
+      ],
+      "programs": [
+        "Research fellowships"
+      ],
+      "open_outputs": [
+        "Computing Power and the Governance of AI (2024, co-authored)"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Governance research cited by policymakers.",
+      "ways_to_help": [
+        "Fellowships",
+        "Donate"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [
+        "src-sastry-2024-computing-power-governance"
+      ],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-centre-for-long-term-resilience",
+      "name": "Centre for Long-Term Resilience",
+      "url": "https://www.longtermresilience.org/",
+      "mission": "Transform global resilience to extreme risks including AI and biosecurity.",
+      "legal_status": "UK think tank",
+      "jurisdiction": "UK",
+      "focus": [
+        "resilience",
+        "biosecurity",
+        "governance"
+      ],
+      "programs": [
+        "Policy research",
+        "Government engagement"
+      ],
+      "open_outputs": [
+        "Policy reports"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Engaged in UK resilience policy.",
+      "ways_to_help": [
+        "Engage with reports"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-cset",
+      "name": "Center for Security and Emerging Technology",
+      "url": "https://cset.georgetown.edu/",
+      "mission": "Policy research on security implications of emerging technologies.",
+      "legal_status": "University research centre (Georgetown)",
+      "jurisdiction": "US",
+      "focus": [
+        "governance",
+        "security",
+        "compute"
+      ],
+      "programs": [
+        "Data and analysis",
+        "Policy briefs"
+      ],
+      "open_outputs": [
+        "Reports and datasets"
+      ],
+      "funding_disclosure": "Philanthropic and university; disclosed.",
+      "conflicts": [],
+      "evidence_of_impact": "Widely used by US policymakers.",
+      "ways_to_help": [
+        "Use data",
+        "Engage with briefs"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-far-ai",
+      "name": "FAR.AI",
+      "url": "https://far.ai/",
+      "mission": "Incubate and accelerate research on AI safety and alignment.",
+      "legal_status": "US nonprofit",
+      "jurisdiction": "US",
+      "focus": [
+        "alignment",
+        "robustness"
+      ],
+      "programs": [
+        "Research",
+        "Events"
+      ],
+      "open_outputs": [
+        "Adversarial robustness research"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Research and convening.",
+      "ways_to_help": [
+        "Apply",
+        "Donate"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-future-of-life-institute",
+      "name": "Future of Life Institute",
+      "url": "https://futureoflife.org/",
+      "mission": "Steer transformative technology towards benefiting life and away from extreme large-scale risks.",
+      "legal_status": "US 501(c)(3) nonprofit",
+      "jurisdiction": "US",
+      "focus": [
+        "advocacy",
+        "policy",
+        "grants"
+      ],
+      "programs": [
+        "Policy advocacy",
+        "Grants",
+        "EU AI Act tracker"
+      ],
+      "open_outputs": [
+        "artificialintelligenceact.eu",
+        "Policy publications"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [
+        "advocacy_context"
+      ],
+      "evidence_of_impact": "Prominent in policy debates; positions are advocacy, not measurement.",
+      "ways_to_help": [
+        "Follow policy work"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-securebio",
+      "name": "SecureBio",
+      "url": "https://securebio.org/",
+      "mission": "Reduce biological risks including those from AI.",
+      "legal_status": "US nonprofit",
+      "jurisdiction": "US",
+      "focus": [
+        "biosecurity",
+        "evaluations"
+      ],
+      "programs": [
+        "Biosecurity evaluations",
+        "Screening research"
+      ],
+      "open_outputs": [
+        "Evaluation reports (non-operational)"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Contributes to biological-capability evaluation methodology.",
+      "ways_to_help": [
+        "Support screening initiatives"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "org-transluce",
+      "name": "Transluce",
+      "url": "https://transluce.org/",
+      "mission": "Build open, scalable technology for understanding AI systems.",
+      "legal_status": "US nonprofit",
+      "jurisdiction": "US",
+      "focus": [
+        "interpretability",
+        "open_tooling"
+      ],
+      "programs": [
+        "Investigator tools"
+      ],
+      "open_outputs": [
+        "Open tools and reports"
+      ],
+      "funding_disclosure": "Philanthropic; disclosed on website.",
+      "conflicts": [],
+      "evidence_of_impact": "Open interpretability tooling.",
+      "ways_to_help": [
+        "Use and contribute to tools"
+      ],
+      "inclusion_criteria_met": [
+        "independent_or_public_interest",
+        "public_documented_outputs",
+        "verifiable_website"
+      ],
+      "last_verified": "2026-09-26",
+      "source_ids": [],
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    }
+  ]
+}

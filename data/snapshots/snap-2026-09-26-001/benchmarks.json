@@ -1,0 +1,94 @@
+{
+  "kind": "benchmark",
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "bm-metr-time-horizon-50",
+      "name": "METR 50% task-completion time horizon",
+      "maintainer": "METR",
+      "version": "Time Horizon 1.1 (January 2026)",
+      "url": "https://metr.org/time-horizons/",
+      "tasks": "Human-baselined software and research tasks of varying length; the horizon is the human task length at which the agent succeeds 50% of the time.",
+      "contamination_risk": "moderate",
+      "saturation": "none",
+      "scaffold": "METR agent scaffolds; varies by model",
+      "model_access": "API access; some results from developer collaboration",
+      "unit": "minutes",
+      "direction": "higher_is_more_capable",
+      "limitations": "Wide confidence intervals; software-centric; METR's own limitations note (January 2026) cautions against over-interpretation.",
+      "pdoom_relevance": "strong",
+      "weight_note": "Feeds D1.task_horizon_50pct and D2.unattended_operation_hours.",
+      "source_ids": [
+        "src-metr-2025-measuring-long-tasks",
+        "src-metr-time-horizons-page",
+        "src-metr-2026-time-horizon-limitations"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "eligible"
+    },
+    {
+      "id": "bm-swe-bench-verified",
+      "name": "SWE-bench Verified",
+      "maintainer": "SWE-bench maintainers (with OpenAI for the Verified subset)",
+      "version": "Verified (500 tasks)",
+      "url": "https://www.swebench.com/",
+      "tasks": "Resolving real GitHub issues in Python repositories, human-validated subset.",
+      "contamination_risk": "high",
+      "saturation": "partial",
+      "scaffold": "Varies by submission",
+      "model_access": "Public leaderboard submissions",
+      "unit": "percent resolved",
+      "direction": "higher_is_more_capable",
+      "limitations": "Near-saturated by 2026; audits found flawed or underspecified tests at high performance levels; scaffolds differ.",
+      "pdoom_relevance": "moderate",
+      "weight_note": "Feeds D1.swe_bench_verified at reduced confidence.",
+      "source_ids": [
+        "src-swebench-official",
+        "src-steel-2026-swe-bench-verified-leaderboard"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "eligible"
+    },
+    {
+      "id": "bm-osworld-verified",
+      "name": "OSWorld-Verified",
+      "maintainer": "OSWorld maintainers",
+      "version": "Verified",
+      "url": "https://os-world.github.io/",
+      "tasks": "369 real-computer tasks across operating systems and applications; human baseline 72.36% in the original paper.",
+      "contamination_risk": "moderate",
+      "saturation": "partial",
+      "scaffold": "Varies by agent",
+      "model_access": "Public leaderboard",
+      "unit": "percent tasks succeeded",
+      "direction": "higher_is_more_capable",
+      "limitations": "Task suite fixed; step budgets and scaffolds vary; third-party trackers aggregate heterogeneous runs.",
+      "pdoom_relevance": "moderate",
+      "weight_note": "Feeds D1.computer_use_osworld.",
+      "source_ids": [
+        "src-osworld-official",
+        "src-benchlm-2026-osworld-verified"
+      ],
+      "verification": {
+        "status": "verified_search",
+        "checked_at": "2026-09-26",
+        "method": "WebSearch result snippet quoting the figure/date; page fetch blocked by egress policy",
+        "note": ""
+      },
+      "human_review_status": "pending",
+      "model_use_status": "eligible"
+    }
+  ]
+}

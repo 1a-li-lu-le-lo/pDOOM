@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 import type { Kind, Verification } from "../src/index";
 
 const SHA = "a".repeat(64);
-const SIG = "QUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVo=";
+const _SIG = "QUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVo=";
 
 const verified: Verification = {
   status: "verified_fetch",

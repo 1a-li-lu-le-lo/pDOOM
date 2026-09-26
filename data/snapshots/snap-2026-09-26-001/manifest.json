@@ -1,0 +1,84 @@
+{
+  "snapshot_id": "snap-2026-09-26-001",
+  "created_at": "2026-09-26T00:00:00Z",
+  "source_cutoff": "2026-09-26",
+  "baseline_snapshot_id": null,
+  "files": [
+    {
+      "path": "definitions.json",
+      "sha256": "b1d0c6e778615dc5e241166d583221b908ce47515442b327ea8348868de13f57",
+      "count": 29
+    },
+    {
+      "path": "sources.json",
+      "sha256": "8900522a650b4cd1fbe3903e957d9c3921977b28037bab7ccd5a7b4fd9d54472",
+      "count": 70
+    },
+    {
+      "path": "claims.json",
+      "sha256": "8dcfa0494d76c4fefe6a5e0c3ac33d45e00124a46fbb1a931a1b0705011281a0",
+      "count": 34
+    },
+    {
+      "path": "forecasts.json",
+      "sha256": "d459ede70d79bfd406f438f10dded22ed73ecf9af57712443d62cde2c4b2aad7",
+      "count": 15
+    },
+    {
+      "path": "benchmarks.json",
+      "sha256": "89afea341027fdc3d75a76c0abb04b12aa4779356e327e8e4fd6be4d90e5b703",
+      "count": 3
+    },
+    {
+      "path": "benchmark_results.json",
+      "sha256": "3fd184cc3286143b57655891018dc7549045df36bbcd3804c9bf7b6d42cc3d69",
+      "count": 7
+    },
+    {
+      "path": "incidents.json",
+      "sha256": "1d4393b509e5815cf8ddaf7b8006aa9fc3d7f5fdc91140077a210c665b9dcfe7",
+      "count": 11
+    },
+    {
+      "path": "scenarios.json",
+      "sha256": "30207546b847be70266e031946edf4d54d202fa02b3e76a616314e338804adaf",
+      "count": 18
+    },
+    {
+      "path": "scenario_edges.json",
+      "sha256": "19435d87c91d34df710a321216d174563a0ba694f2a7f8a6295b3932f003abb2",
+      "count": 30
+    },
+    {
+      "path": "drivers.json",
+      "sha256": "e3df9d29c9381d7b96ec62acf722c989c987983567b5021486f334462a65a49d",
+      "count": 10
+    },
+    {
+      "path": "driver_observations.json",
+      "sha256": "dd3070e4ee189e7e82dadefaf081fee09b6dfd9e1c51c128718be9bbe469ac18",
+      "count": 17
+    },
+    {
+      "path": "interventions.json",
+      "sha256": "9141fd407b2210b69baf7371d844892b8092d26d65adba6bf9e4779d6d426396",
+      "count": 27
+    },
+    {
+      "path": "organizations.json",
+      "sha256": "ed605ac240d269185b8a62b7561ac8c585ede8ea1db8d42b9e757b77a476f899",
+      "count": 18
+    },
+    {
+      "path": "model_spec.json",
+      "sha256": "b9620aa860f08fbcb0b25aa179658f0d8aafe0b708037ae00c4b2b39444b0eb2",
+      "count": 1
+    },
+    {
+      "path": "actions.json",
+      "sha256": "1d71457088533dd827ef37187287e3053cb0a0cb3ae0aea0608790540d965cfa",
+      "count": 57
+    }
+  ],
+  "notes": "First research-prototype snapshot. Records were authored from web-search-verified snippets (direct page fetches were blocked in the build environment) and prior knowledge; every record carries a verification object and only verified_search items with model_use_status eligible feed computations. Human review is pending for all records."
+}

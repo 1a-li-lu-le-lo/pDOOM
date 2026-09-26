@@ -1,0 +1,537 @@
+{
+  "kind": "model_spec",
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "pdoom-model-spec@0.1.0",
+      "index_weights": {
+        "capability_pressure": {
+          "D1.task_horizon_50pct": 0.25,
+          "D1.swe_bench_verified": 0.1,
+          "D1.computer_use_osworld": 0.1,
+          "D1.cyber_offense_capability": 0.15,
+          "D1.bio_chem_uplift": 0.1,
+          "D2.unattended_operation_hours": 0.1,
+          "D2.autonomous_action_evidence": 0.1,
+          "D4.frontier_compute_growth": 0.1
+        },
+        "control_strength": {
+          "D5.control_evaluation_maturity": 0.15,
+          "D5.shutdown_compliance_evidence": 0.15,
+          "D6.model_weight_security_level": 0.15,
+          "D6.mcp_supply_chain_integrity": 0.1,
+          "D6.prompt_injection_resistance": 0.1,
+          "D7.binding_frontier_rules_jurisdictions": 0.1,
+          "D7.incident_reporting_mandates": 0.1,
+          "D7.third_party_evaluation_capacity": 0.1,
+          "D7.published_safety_frameworks": 0.05
+        },
+        "incident_pressure": {},
+        "evidence_pressure": {},
+        "uncertainty": {
+          "coverage_gap": 0.1,
+          "forecast_disagreement": 0.15,
+          "low_tier_share": 0.1,
+          "judgment_share": 0.15,
+          "sensitivity_spread": 0.1,
+          "calibration_gap": 0.4
+        },
+        "agentic_infrastructure_risk": {
+          "D2.unattended_operation_hours": 0.2,
+          "D2.autonomous_action_evidence": 0.2,
+          "D3.agent_tool_access_breadth": 0.25,
+          "D6.mcp_supply_chain_integrity": 0.2,
+          "D6.prompt_injection_resistance": 0.15
+        }
+      },
+      "weight_bounds": [
+        0,
+        0.35
+      ],
+      "tier_multipliers": {
+        "1": 1,
+        "2": 0.9,
+        "3": 0.5,
+        "4": 0,
+        "5": 0
+      },
+      "incident_scoring": {
+        "severity_weights": {
+          "negligible": 0,
+          "minor": 0.1,
+          "material": 0.3,
+          "major": 0.6,
+          "severe": 0.85,
+          "catastrophic": 1
+        },
+        "relevance_weights": {
+          "none": 0,
+          "weak": 0.1,
+          "indirect": 0.25,
+          "moderate": 0.5,
+          "strong": 0.8,
+          "direct_precursor": 1
+        },
+        "evidence_weights": {
+          "allegation": 0.1,
+          "single_source_report": 0.3,
+          "corroborated_report": 0.6,
+          "official_finding": 0.85,
+          "peer_reviewed_analysis": 0.9,
+          "independently_reproduced": 1
+        },
+        "recency_half_life_days": 730,
+        "squash_k": 3
+      },
+      "editorial_rules": [
+        {
+          "level": "insufficient_evidence",
+          "when": "coverage < 0.4"
+        },
+        {
+          "level": "severe_uncertainty",
+          "when": "uncertainty >= 70"
+        },
+        {
+          "level": "high",
+          "when": "cpi >= 70 and csi < 40"
+        },
+        {
+          "level": "elevated",
+          "when": "cpi >= 55 and csi < 55"
+        },
+        {
+          "level": "guarded",
+          "when": "cpi >= 40"
+        },
+        {
+          "level": "low",
+          "when": "cpi >= 25"
+        },
+        {
+          "level": "very_low",
+          "when": "true"
+        }
+      ],
+      "rounding_rules": {
+        "extreme": 5,
+        "high": 2,
+        "moderate": 1,
+        "low": 1
+      },
+      "aggregation_methods": [
+        "unweighted_median",
+        "linear_pool",
+        "log_odds_pool",
+        "trimmed_mean",
+        "tier_weighted",
+        "recency_weighted",
+        "equal_weight_by_population"
+      ],
+      "experimental_causal": {
+        "version": "pdoom-model/experimental-causal@0.1.0",
+        "seed": 20260926,
+        "samples": 20000,
+        "common_factor_loading": 0.5,
+        "horizons": {
+          "2100": {
+            "A": {
+              "p05": 0.6,
+              "p50": 0.88,
+              "p95": 0.99
+            },
+            "C": {
+              "p05": 0.4,
+              "p50": 0.75,
+              "p95": 0.94
+            },
+            "E": {
+              "p05": 0.15,
+              "p50": 0.42,
+              "p95": 0.72
+            },
+            "F": {
+              "p05": 0.05,
+              "p50": 0.25,
+              "p95": 0.6
+            },
+            "O": {
+              "O3": {
+                "p05": 0.08,
+                "p50": 0.25,
+                "p95": 0.5
+              },
+              "O4": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              },
+              "O5": {
+                "p05": 0.01,
+                "p50": 0.04,
+                "p95": 0.12
+              },
+              "O6": {
+                "p05": 0.01,
+                "p50": 0.05,
+                "p95": 0.15
+              },
+              "O7": {
+                "p05": 0.005,
+                "p50": 0.02,
+                "p95": 0.08
+              },
+              "O8": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              }
+            }
+          },
+          "1y": {
+            "A": {
+              "p05": 0.02,
+              "p50": 0.08,
+              "p95": 0.25
+            },
+            "C": {
+              "p05": 0.35,
+              "p50": 0.65,
+              "p95": 0.9
+            },
+            "E": {
+              "p05": 0.08,
+              "p50": 0.25,
+              "p95": 0.55
+            },
+            "F": {
+              "p05": 0.04,
+              "p50": 0.18,
+              "p95": 0.45
+            },
+            "O": {
+              "O3": {
+                "p05": 0.08,
+                "p50": 0.25,
+                "p95": 0.5
+              },
+              "O4": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              },
+              "O5": {
+                "p05": 0.01,
+                "p50": 0.04,
+                "p95": 0.12
+              },
+              "O6": {
+                "p05": 0.01,
+                "p50": 0.05,
+                "p95": 0.15
+              },
+              "O7": {
+                "p05": 0.005,
+                "p50": 0.02,
+                "p95": 0.08
+              },
+              "O8": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              }
+            }
+          },
+          "3y": {
+            "A": {
+              "p05": 0.08,
+              "p50": 0.25,
+              "p95": 0.55
+            },
+            "C": {
+              "p05": 0.35,
+              "p50": 0.65,
+              "p95": 0.9
+            },
+            "E": {
+              "p05": 0.1,
+              "p50": 0.3,
+              "p95": 0.6
+            },
+            "F": {
+              "p05": 0.05,
+              "p50": 0.2,
+              "p95": 0.5
+            },
+            "O": {
+              "O3": {
+                "p05": 0.08,
+                "p50": 0.25,
+                "p95": 0.5
+              },
+              "O4": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              },
+              "O5": {
+                "p05": 0.01,
+                "p50": 0.04,
+                "p95": 0.12
+              },
+              "O6": {
+                "p05": 0.01,
+                "p50": 0.05,
+                "p95": 0.15
+              },
+              "O7": {
+                "p05": 0.005,
+                "p50": 0.02,
+                "p95": 0.08
+              },
+              "O8": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              }
+            }
+          },
+          "5y": {
+            "A": {
+              "p05": 0.15,
+              "p50": 0.4,
+              "p95": 0.75
+            },
+            "C": {
+              "p05": 0.35,
+              "p50": 0.65,
+              "p95": 0.9
+            },
+            "E": {
+              "p05": 0.1,
+              "p50": 0.3,
+              "p95": 0.6
+            },
+            "F": {
+              "p05": 0.05,
+              "p50": 0.2,
+              "p95": 0.5
+            },
+            "O": {
+              "O3": {
+                "p05": 0.08,
+                "p50": 0.25,
+                "p95": 0.5
+              },
+              "O4": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              },
+              "O5": {
+                "p05": 0.01,
+                "p50": 0.04,
+                "p95": 0.12
+              },
+              "O6": {
+                "p05": 0.01,
+                "p50": 0.05,
+                "p95": 0.15
+              },
+              "O7": {
+                "p05": 0.005,
+                "p50": 0.02,
+                "p95": 0.08
+              },
+              "O8": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              }
+            }
+          },
+          "10y": {
+            "A": {
+              "p05": 0.3,
+              "p50": 0.6,
+              "p95": 0.9
+            },
+            "C": {
+              "p05": 0.4,
+              "p50": 0.7,
+              "p95": 0.92
+            },
+            "E": {
+              "p05": 0.12,
+              "p50": 0.35,
+              "p95": 0.65
+            },
+            "F": {
+              "p05": 0.05,
+              "p50": 0.22,
+              "p95": 0.55
+            },
+            "O": {
+              "O3": {
+                "p05": 0.08,
+                "p50": 0.25,
+                "p95": 0.5
+              },
+              "O4": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              },
+              "O5": {
+                "p05": 0.01,
+                "p50": 0.04,
+                "p95": 0.12
+              },
+              "O6": {
+                "p05": 0.01,
+                "p50": 0.05,
+                "p95": 0.15
+              },
+              "O7": {
+                "p05": 0.005,
+                "p50": 0.02,
+                "p95": 0.08
+              },
+              "O8": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              }
+            }
+          },
+          "25y": {
+            "A": {
+              "p05": 0.5,
+              "p50": 0.8,
+              "p95": 0.97
+            },
+            "C": {
+              "p05": 0.4,
+              "p50": 0.72,
+              "p95": 0.93
+            },
+            "E": {
+              "p05": 0.15,
+              "p50": 0.4,
+              "p95": 0.7
+            },
+            "F": {
+              "p05": 0.05,
+              "p50": 0.25,
+              "p95": 0.6
+            },
+            "O": {
+              "O3": {
+                "p05": 0.08,
+                "p50": 0.25,
+                "p95": 0.5
+              },
+              "O4": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              },
+              "O5": {
+                "p05": 0.01,
+                "p50": 0.04,
+                "p95": 0.12
+              },
+              "O6": {
+                "p05": 0.01,
+                "p50": 0.05,
+                "p95": 0.15
+              },
+              "O7": {
+                "p05": 0.005,
+                "p50": 0.02,
+                "p95": 0.08
+              },
+              "O8": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              }
+            }
+          },
+          "eventual": {
+            "A": {
+              "p05": 0.7,
+              "p50": 0.93,
+              "p95": 0.995
+            },
+            "C": {
+              "p05": 0.4,
+              "p50": 0.75,
+              "p95": 0.94
+            },
+            "E": {
+              "p05": 0.15,
+              "p50": 0.45,
+              "p95": 0.75
+            },
+            "F": {
+              "p05": 0.05,
+              "p50": 0.25,
+              "p95": 0.6
+            },
+            "O": {
+              "O3": {
+                "p05": 0.08,
+                "p50": 0.25,
+                "p95": 0.5
+              },
+              "O4": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              },
+              "O5": {
+                "p05": 0.01,
+                "p50": 0.04,
+                "p95": 0.12
+              },
+              "O6": {
+                "p05": 0.01,
+                "p50": 0.05,
+                "p95": 0.15
+              },
+              "O7": {
+                "p05": 0.005,
+                "p50": 0.02,
+                "p95": 0.08
+              },
+              "O8": {
+                "p05": 0.03,
+                "p50": 0.1,
+                "p95": 0.25
+              }
+            }
+          }
+        },
+        "rationale": {
+          "A": "Judgment: 'sufficiently advanced capability' ≈ high-level machine intelligence able to run long-horizon autonomous operations. Anchors: ESPAI 2023 aggregate 10% by 2027 and 50% by 2047 (Grace et al. 2024); ESPAI 2024 medians closer than before; METR horizon doubling of 4–7 months. The p50 path rises from 8% at one year to 60% at ten years and 88% by 2100; the eventual value leaves room for permanent stagnation.",
+          "C": "Judgment: given such capability, deployment with meaningful autonomy and access is likely because agentic deployment is already the commercial default (METR horizons, AISI and Replit incidents). p50 ≈ 0.65–0.75 with wide bands.",
+          "E": "Judgment: given deployed autonomous capability, the probability that a dangerous exposure, misuse, malfunction or loss-of-control event occurs within the horizon. Anchors: verified precursor incidents in 2025–2026 (AISI, GTG-1002) at sub-catastrophic scale; p50 0.25–0.45 rising with horizon.",
+          "F": "Judgment: given such an event, the probability that technical and institutional safeguards fail to prevent catastrophic escalation. Anchors: control strength index inputs (weight security below SL3 in 2024, early enforcement of binding rules, uneven agent-security practice); p50 0.18–0.25.",
+          "O": "Judgment: conditional on safeguard failure, shares of outcomes O3–O8 (remainder = serious but recoverable outcomes). Disempowerment (O3) is weighted highest following the gradual-disempowerment literature and survey wording pairing extinction with permanent disempowerment; extinction (O6) p50 0.05 reflects XPT and ESPAI extinction-specific medians being far below broader 'extremely bad' medians.",
+          "dependence": "A single common latent factor with loading 0.5 induces positive correlation between capability, deployment, exposure and safeguard failure (race dynamics raise all four together). λ = 0 and λ + 0.3 are published as sensitivity runs. This is a coarse stand-in for the scenario graph; feedback loops and competing risks are not modelled."
+        },
+        "source_ids": [
+          "src-grace-2024-thousands-of-ai-authors",
+          "src-aiimpacts-2024-espai",
+          "src-fri-2023-xpt",
+          "src-metr-time-horizons-page",
+          "src-aisi-2026-incident-report",
+          "src-rand-2024-securing-model-weights",
+          "src-kulveit-2025-gradual-disempowerment",
+          "src-iasr-2026"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1308 @@
+{
+  "kind": "action",
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "act-individuals-learn-the-basics",
+      "audience": "individuals",
+      "title": "Learn the foundational concepts",
+      "description": "Read a synthesis report rather than headlines: what capabilities exist, what risks experts track and where evidence is thin.",
+      "related_intervention_ids": [
+        "I26"
+      ],
+      "resources": [
+        {
+          "title": "International AI Safety Report 2026",
+          "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
+          "source_id": "src-iasr-2026"
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-individuals-support-evidence-institutions",
+      "audience": "individuals",
+      "title": "Support evidence-based institutions",
+      "description": "Back independent evaluators, incident databases and forecasting organisations that publish their methods.",
+      "related_intervention_ids": [
+        "I24",
+        "I26"
+      ],
+      "resources": [
+        {
+          "title": "AI Incident Database",
+          "url": "https://incidentdatabase.ai/",
+          "source_id": null
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-individuals-information-hygiene",
+      "audience": "individuals",
+      "title": "Improve your information hygiene",
+      "description": "Check provenance before sharing synthetic media; prefer primary sources; expect and verify uncertainty.",
+      "related_intervention_ids": [
+        "I27"
+      ],
+      "resources": [
+        {
+          "title": "AI Incident Database",
+          "url": "https://incidentdatabase.ai/",
+          "source_id": null
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-individuals-public-consultation",
+      "audience": "individuals",
+      "title": "Take part in public consultation",
+      "description": "Respond to regulator consultations on frontier AI rules in your jurisdiction.",
+      "related_intervention_ids": [
+        "I17"
+      ],
+      "resources": [
+        {
+          "title": "EU AI Act GPAI guidelines",
+          "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+          "source_id": "src-eu-ai-act-gpai-guidelines"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-individuals-report-incidents",
+      "audience": "individuals",
+      "title": "Report verified incidents",
+      "description": "Submit documented incidents to a public incident database with sources, not screenshots.",
+      "related_intervention_ids": [
+        "I03"
+      ],
+      "resources": [
+        {
+          "title": "AI Incident Database",
+          "url": "https://incidentdatabase.ai/",
+          "source_id": null
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-individuals-avoid-amplifying-unverified",
+      "audience": "individuals",
+      "title": "Avoid amplifying unverified claims",
+      "description": "Wait for corroboration before sharing dramatic AI claims; one press release can become hundreds of articles.",
+      "related_intervention_ids": [
+        "I26"
+      ],
+      "resources": [],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-individuals-contribute-skills",
+      "audience": "individuals",
+      "title": "Contribute professional skills",
+      "description": "Security, law, statistics, communications and operations skills are all needed by safety organisations.",
+      "related_intervention_ids": [
+        "I24"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-permission-boundaries",
+      "audience": "software_engineers",
+      "title": "Build permission boundaries",
+      "description": "Separate what an agent may read, write and execute; enforce boundaries in code.",
+      "related_intervention_ids": [
+        "I07",
+        "I08"
+      ],
+      "resources": [
+        {
+          "title": "OWASP GenAI Security Project",
+          "url": "https://genai.owasp.org/",
+          "source_id": "src-owasp-genai-security"
+        },
+        {
+          "title": "NSA: MCP security design guidance",
+          "url": "https://media.defense.gov/2026/Jun/02/2003943289/-1/-1/0/CSI_MCP_SECURITY.PDF",
+          "source_id": "src-nsa-2026-mcp-security"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-least-privilege",
+      "audience": "software_engineers",
+      "title": "Implement least privilege",
+      "description": "Scope credentials per task and rotate them; never hand agents standing production access.",
+      "related_intervention_ids": [
+        "I07"
+      ],
+      "resources": [
+        {
+          "title": "NSA: MCP security design guidance",
+          "url": "https://media.defense.gov/2026/Jun/02/2003943289/-1/-1/0/CSI_MCP_SECURITY.PDF",
+          "source_id": "src-nsa-2026-mcp-security"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-cancellation",
+      "audience": "software_engineers",
+      "title": "Add cancellation",
+      "description": "Make every agent and sub-agent stoppable, with cancellation propagated through delegation.",
+      "related_intervention_ids": [
+        "I10"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-log-tool-actions",
+      "audience": "software_engineers",
+      "title": "Log tool actions",
+      "description": "Record every tool call with identity, arguments and outcome in an append-only log.",
+      "related_intervention_ids": [
+        "I08",
+        "I10"
+      ],
+      "resources": [
+        {
+          "title": "OWASP GenAI Security Project",
+          "url": "https://genai.owasp.org/",
+          "source_id": "src-owasp-genai-security"
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-secure-mcp-servers",
+      "audience": "software_engineers",
+      "title": "Secure MCP servers",
+      "description": "Pin server versions, verify namespaces, monitor tool-list changes and treat tool descriptions as untrusted input.",
+      "related_intervention_ids": [
+        "I11",
+        "I12"
+      ],
+      "resources": [
+        {
+          "title": "NSA: MCP security design guidance",
+          "url": "https://media.defense.gov/2026/Jun/02/2003943289/-1/-1/0/CSI_MCP_SECURITY.PDF",
+          "source_id": "src-nsa-2026-mcp-security"
+        },
+        {
+          "title": "The MCP Registry",
+          "url": "https://modelcontextprotocol.io/registry/about",
+          "source_id": "src-mcp-registry-about"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-sign-skills",
+      "audience": "software_engineers",
+      "title": "Sign skills and dependencies",
+      "description": "Sign and verify skills, plugins and dependencies; refuse unsigned updates.",
+      "related_intervention_ids": [
+        "I12"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-sandbox-agents",
+      "audience": "software_engineers",
+      "title": "Sandbox agents",
+      "description": "Default-deny network egress and file access for agents; allowlist explicitly.",
+      "related_intervention_ids": [
+        "I06"
+      ],
+      "resources": [
+        {
+          "title": "NSA: MCP security design guidance",
+          "url": "https://media.defense.gov/2026/Jun/02/2003943289/-1/-1/0/CSI_MCP_SECURITY.PDF",
+          "source_id": "src-nsa-2026-mcp-security"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-test-prompt-injection",
+      "audience": "software_engineers",
+      "title": "Test for prompt injection",
+      "description": "Include injected instructions in test content and assert that policies, not prompts, decide.",
+      "related_intervention_ids": [
+        "I08"
+      ],
+      "resources": [
+        {
+          "title": "OWASP GenAI Security Project",
+          "url": "https://genai.owasp.org/",
+          "source_id": "src-owasp-genai-security"
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-deterministic-policies",
+      "audience": "software_engineers",
+      "title": "Create deterministic safety policies",
+      "description": "Budgets, rate limits, allowlists and approval gates in the harness.",
+      "related_intervention_ids": [
+        "I08",
+        "I09"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-software_engineers-report-vulnerabilities",
+      "audience": "software_engineers",
+      "title": "Report vulnerabilities responsibly",
+      "description": "Use coordinated disclosure for agent and MCP vulnerabilities; never publish live exploits.",
+      "related_intervention_ids": [
+        "I12"
+      ],
+      "resources": [],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-evaluations",
+      "audience": "ai_researchers",
+      "title": "Work on evaluations",
+      "description": "Design evaluations for autonomy, deception and dangerous capabilities that resist gaming.",
+      "related_intervention_ids": [
+        "I01"
+      ],
+      "resources": [
+        {
+          "title": "Inspect evaluation framework",
+          "url": "https://inspect.aisi.org.uk/",
+          "source_id": "src-aisi-inspect"
+        },
+        {
+          "title": "METR time horizons",
+          "url": "https://metr.org/time-horizons/",
+          "source_id": "src-metr-time-horizons-page"
+        }
+      ],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-control",
+      "audience": "ai_researchers",
+      "title": "Work on control",
+      "description": "Develop and test protocols that remain safe under intentional subversion.",
+      "related_intervention_ids": [
+        "I16"
+      ],
+      "resources": [
+        {
+          "title": "AI Control paper",
+          "url": "https://arxiv.org/abs/2312.06942",
+          "source_id": "src-greenblatt-2023-ai-control"
+        }
+      ],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-interpretability",
+      "audience": "ai_researchers",
+      "title": "Work on interpretability",
+      "description": "Aim at detection of deceptive cognition in frontier-scale models.",
+      "related_intervention_ids": [
+        "I14"
+      ],
+      "resources": [],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-robustness",
+      "audience": "ai_researchers",
+      "title": "Work on robustness",
+      "description": "Adversarial robustness of safeguards and monitors.",
+      "related_intervention_ids": [
+        "I01",
+        "I16"
+      ],
+      "resources": [],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-scalable-oversight",
+      "audience": "ai_researchers",
+      "title": "Work on scalable oversight",
+      "description": "Test oversight methods at growing capability gaps.",
+      "related_intervention_ids": [
+        "I15"
+      ],
+      "resources": [],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-forecasting",
+      "audience": "ai_researchers",
+      "title": "Work on forecasting",
+      "description": "Register resolvable predictions about capabilities and evaluations.",
+      "related_intervention_ids": [
+        "I26"
+      ],
+      "resources": [
+        {
+          "title": "Metaculus",
+          "url": "https://www.metaculus.com/",
+          "source_id": null
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-red-teaming",
+      "audience": "ai_researchers",
+      "title": "Red team",
+      "description": "Stress-test agents and safeguards under realistic incentives, publishing non-operational findings.",
+      "related_intervention_ids": [
+        "I01",
+        "I13"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-monitoring",
+      "audience": "ai_researchers",
+      "title": "Work on monitoring",
+      "description": "Runtime monitors for deployed agents that detect scope violations.",
+      "related_intervention_ids": [
+        "I16",
+        "I10"
+      ],
+      "resources": [],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-alignment",
+      "audience": "ai_researchers",
+      "title": "Work on alignment",
+      "description": "Research that reduces misgeneralisation and reward hacking.",
+      "related_intervention_ids": [
+        "I13",
+        "I15"
+      ],
+      "resources": [],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-ai_researchers-model-security",
+      "audience": "ai_researchers",
+      "title": "Work on model security",
+      "description": "Weight security, exfiltration detection and secure inference.",
+      "related_intervention_ids": [
+        "I04"
+      ],
+      "resources": [
+        {
+          "title": "RAND: Securing AI Model Weights",
+          "url": "https://www.rand.org/pubs/research_reports/RRA2849-1.html",
+          "source_id": "src-rand-2024-securing-model-weights"
+        }
+      ],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-laboratories-publish-safety-cases",
+      "audience": "laboratories",
+      "title": "Publish safety cases",
+      "description": "Structured, reviewable arguments tied to evidence for each frontier deployment.",
+      "related_intervention_ids": [
+        "I19"
+      ],
+      "resources": [
+        {
+          "title": "Safety Cases paper",
+          "url": "https://arxiv.org/abs/2403.10462",
+          "source_id": "src-clymer-2024-safety-cases"
+        }
+      ],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-laboratories-external-evaluation",
+      "audience": "laboratories",
+      "title": "Use external evaluation",
+      "description": "Give independent evaluators pre-deployment access and publish results.",
+      "related_intervention_ids": [
+        "I02",
+        "I01"
+      ],
+      "resources": [
+        {
+          "title": "Inspect evaluation framework",
+          "url": "https://inspect.aisi.org.uk/",
+          "source_id": "src-aisi-inspect"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-laboratories-report-incidents",
+      "audience": "laboratories",
+      "title": "Report incidents",
+      "description": "Disclose serious incidents promptly using shared definitions.",
+      "related_intervention_ids": [
+        "I03"
+      ],
+      "resources": [
+        {
+          "title": "OECD: Defining AI incidents",
+          "url": "https://www.oecd.org/en/publications/defining-ai-incidents-and-related-terms_d1a8d965-en.html",
+          "source_id": "src-oecd-2024-defining-ai-incidents"
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-laboratories-secure-weights",
+      "audience": "laboratories",
+      "title": "Secure model weights",
+      "description": "Reach and audit a stated security level.",
+      "related_intervention_ids": [
+        "I04"
+      ],
+      "resources": [
+        {
+          "title": "RAND: Securing AI Model Weights",
+          "url": "https://www.rand.org/pubs/research_reports/RRA2849-1.html",
+          "source_id": "src-rand-2024-securing-model-weights"
+        }
+      ],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-laboratories-deployment-thresholds",
+      "audience": "laboratories",
+      "title": "Define deployment thresholds",
+      "description": "Pre-commit to capability thresholds and the safeguards they trigger.",
+      "related_intervention_ids": [
+        "I01",
+        "I20"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-laboratories-support-whistleblowers",
+      "audience": "laboratories",
+      "title": "Support whistleblowers",
+      "description": "Protect and route internal reports of safety failures.",
+      "related_intervention_ids": [
+        "I18"
+      ],
+      "resources": [
+        {
+          "title": "California SB 53",
+          "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53",
+          "source_id": "src-ca-sb53-tfaia"
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-laboratories-preserve-rollback",
+      "audience": "laboratories",
+      "title": "Preserve rollback",
+      "description": "Keep the ability to withdraw a deployment quickly.",
+      "related_intervention_ids": [
+        "I20",
+        "I10"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-laboratories-staged-releases",
+      "audience": "laboratories",
+      "title": "Conduct staged releases",
+      "description": "Release gradually with monitoring at each stage.",
+      "related_intervention_ids": [
+        "I20"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-laboratories-fund-public-interest-research",
+      "audience": "laboratories",
+      "title": "Fund public-interest research",
+      "description": "Support independent evaluation and safety research without control over results.",
+      "related_intervention_ids": [
+        "I23",
+        "I24"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-policymakers-incident-reporting",
+      "audience": "policymakers",
+      "title": "Improve incident reporting",
+      "description": "Adopt interoperable incident definitions and mandatory reporting for frontier systems.",
+      "related_intervention_ids": [
+        "I03"
+      ],
+      "resources": [
+        {
+          "title": "OECD: Defining AI incidents",
+          "url": "https://www.oecd.org/en/publications/defining-ai-incidents-and-related-terms_d1a8d965-en.html",
+          "source_id": "src-oecd-2024-defining-ai-incidents"
+        },
+        {
+          "title": "EU AI Act GPAI guidelines",
+          "url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-scope-obligations-providers-general-purpose-ai-models-under-ai-act",
+          "source_id": "src-eu-ai-act-gpai-guidelines"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-policymakers-support-standards",
+      "audience": "policymakers",
+      "title": "Support standards",
+      "description": "Fund and adopt risk-management and security standards.",
+      "related_intervention_ids": [
+        "I17"
+      ],
+      "resources": [
+        {
+          "title": "NIST AI Risk Management Framework",
+          "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          "source_id": "src-nist-ai-rmf-100-1"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-policymakers-fund-evaluation-infrastructure",
+      "audience": "policymakers",
+      "title": "Fund evaluation infrastructure",
+      "description": "Public evaluation capacity that does not depend on developers.",
+      "related_intervention_ids": [
+        "I23",
+        "I01"
+      ],
+      "resources": [
+        {
+          "title": "Inspect evaluation framework",
+          "url": "https://inspect.aisi.org.uk/",
+          "source_id": "src-aisi-inspect"
+        }
+      ],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-policymakers-technical-capacity",
+      "audience": "policymakers",
+      "title": "Build technical capacity",
+      "description": "Hire and retain technical staff in regulators.",
+      "related_intervention_ids": [
+        "I23"
+      ],
+      "resources": [],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-policymakers-coordinate-internationally",
+      "audience": "policymakers",
+      "title": "Coordinate internationally",
+      "description": "Align thresholds, reporting and evaluation standards across jurisdictions.",
+      "related_intervention_ids": [
+        "I17"
+      ],
+      "resources": [
+        {
+          "title": "International AI Safety Report 2026",
+          "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
+          "source_id": "src-iasr-2026"
+        }
+      ],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-policymakers-proportionate-liability",
+      "audience": "policymakers",
+      "title": "Create proportionate liability",
+      "description": "Clarify who bears the cost of harms from autonomous agents.",
+      "related_intervention_ids": [
+        "I22"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-policymakers-protect-disclosure",
+      "audience": "policymakers",
+      "title": "Protect research and disclosure",
+      "description": "Safe harbours for good-faith safety research and whistleblowers.",
+      "related_intervention_ids": [
+        "I18"
+      ],
+      "resources": [
+        {
+          "title": "California SB 53",
+          "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53",
+          "source_id": "src-ca-sb53-tfaia"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-funders-independent-nonprofits",
+      "audience": "funders",
+      "title": "Support independent nonprofits",
+      "description": "Multi-year funding for evaluators and researchers independent of developers.",
+      "related_intervention_ids": [
+        "I24"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-funders-open-safety-tools",
+      "audience": "funders",
+      "title": "Fund open safety tools",
+      "description": "Maintenance of open evaluation, monitoring and provenance tooling.",
+      "related_intervention_ids": [
+        "I25"
+      ],
+      "resources": [
+        {
+          "title": "Inspect evaluation framework",
+          "url": "https://inspect.aisi.org.uk/",
+          "source_id": "src-aisi-inspect"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-funders-neglected-technical-work",
+      "audience": "funders",
+      "title": "Fund neglected technical work",
+      "description": "Control evaluations, agent security and interpretability at frontier scale.",
+      "related_intervention_ids": [
+        "I14",
+        "I16"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-funders-forecasting-and-measurement",
+      "audience": "funders",
+      "title": "Fund forecasting and measurement",
+      "description": "Resolvable forecasting programmes and calibration research.",
+      "related_intervention_ids": [
+        "I26"
+      ],
+      "resources": [],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-funders-governance-capacity",
+      "audience": "funders",
+      "title": "Fund governance capacity",
+      "description": "Technical capacity in regulators and standards bodies.",
+      "related_intervention_ids": [
+        "I17",
+        "I23"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-funders-avoid-publicity-incentives",
+      "audience": "funders",
+      "title": "Avoid incentives based only on publicity",
+      "description": "Reward replication, corrections and null results, not attention.",
+      "related_intervention_ids": [
+        "I26"
+      ],
+      "resources": [],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-educators-teach-uncertainty",
+      "audience": "educators",
+      "title": "Teach uncertainty",
+      "description": "Show intervals, disagreement and what would change a number.",
+      "related_intervention_ids": [
+        "I26"
+      ],
+      "resources": [],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-educators-source-evaluation",
+      "audience": "educators",
+      "title": "Teach source evaluation",
+      "description": "Tiers of evidence, conflicts of interest and news cascades.",
+      "related_intervention_ids": [
+        "I27"
+      ],
+      "resources": [],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-educators-threat-modeling",
+      "audience": "educators",
+      "title": "Teach threat modelling",
+      "description": "How to reason about capabilities, exposure and safeguards without operational detail.",
+      "related_intervention_ids": [
+        "I08"
+      ],
+      "resources": [],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-educators-agent-security",
+      "audience": "educators",
+      "title": "Teach agent security",
+      "description": "Prompt injection, least privilege and deterministic policies.",
+      "related_intervention_ids": [
+        "I07",
+        "I08"
+      ],
+      "resources": [
+        {
+          "title": "OWASP GenAI Security Project",
+          "url": "https://genai.owasp.org/",
+          "source_id": "src-owasp-genai-security"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-educators-current-harm-vs-speculation",
+      "audience": "educators",
+      "title": "Distinguish current harm from speculative catastrophe",
+      "description": "Keep documented incidents separate from scenario reasoning.",
+      "related_intervention_ids": [
+        "I03"
+      ],
+      "resources": [
+        {
+          "title": "AI Incident Database",
+          "url": "https://incidentdatabase.ai/",
+          "source_id": null
+        }
+      ],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-nonprofits-publish-methods",
+      "audience": "nonprofits",
+      "title": "Publish methods and corrections",
+      "description": "Make methodology, data and correction logs public.",
+      "related_intervention_ids": [
+        "I26"
+      ],
+      "resources": [],
+      "effort": "low",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-auditors_red_teams-control-evaluations",
+      "audience": "auditors_red_teams",
+      "title": "Run control evaluations",
+      "description": "Test deployment protocols against intentional subversion.",
+      "related_intervention_ids": [
+        "I16",
+        "I02"
+      ],
+      "resources": [
+        {
+          "title": "AI Control paper",
+          "url": "https://arxiv.org/abs/2312.06942",
+          "source_id": "src-greenblatt-2023-ai-control"
+        }
+      ],
+      "effort": "high",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    },
+    {
+      "id": "act-standards_bodies-registry-signing",
+      "audience": "standards_bodies",
+      "title": "Standardise registry signing and provenance",
+      "description": "Signing, provenance and tool-change notification requirements for agent registries.",
+      "related_intervention_ids": [
+        "I11",
+        "I12"
+      ],
+      "resources": [
+        {
+          "title": "The MCP Registry",
+          "url": "https://modelcontextprotocol.io/registry/about",
+          "source_id": "src-mcp-registry-about"
+        }
+      ],
+      "effort": "moderate",
+      "verification": {
+        "status": "verified_prior_knowledge",
+        "checked_at": "2026-09-26",
+        "method": "prior knowledge, not re-fetched",
+        "note": "Informational only; excluded from model computations until fetched and reviewed."
+      },
+      "human_review_status": "pending",
+      "model_use_status": "informational"
+    }
+  ]
+}
