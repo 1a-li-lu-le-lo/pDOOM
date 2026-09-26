@@ -39,7 +39,7 @@ import {
   TriQuantilesSchema,
   UnitInterval,
   checkQuantilesMonotonic,
-} from "./common.js";
+} from "./common";
 import {
   ActionAudience,
   ActionEffort,
@@ -86,7 +86,7 @@ import {
   UncertaintyLabel,
   VerificationStatus,
   Horizon,
-} from "./enums.js";
+} from "./enums";
 
 // ---------------------------------------------------------------------------
 // Shared fragments

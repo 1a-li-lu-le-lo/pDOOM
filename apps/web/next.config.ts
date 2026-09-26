@@ -17,6 +17,8 @@ const csp = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Linting runs once at the workspace root (ESLint 9 flat config); `next build` skips its own pass.
+  eslint: { ignoreDuringBuilds: true },
   poweredByHeader: false,
   transpilePackages: ["@pdoom/schemas", "@pdoom/model-core", "@pdoom/sdk", "@pdoom/design-system"],
   outputFileTracingRoot: new URL("../../", import.meta.url).pathname,
