@@ -241,7 +241,7 @@ func TestEveryGetRouteServesJSONWithHeaders(t *testing.T) {
 	h := e.handler(t, nil)
 	paths := []string{"/v1/meter", "/v1/meter/history", "/v1/outcomes", "/v1/horizons", "/v1/drivers", "/v1/scenarios", "/v1/scenarios/S1",
 		"/v1/forecasts", "/v1/capabilities", "/v1/incidents", "/v1/safeguards", "/v1/sources", "/v1/sources/src-fixture-survey-2025",
-		"/v1/methodology", "/v1/releases", "/v1/releases/" + firstRel, "/v1/definitions", "/v1/organizations", "/v1/actions", "/healthz", "/readyz"}
+		"/v1/methodology", "/v1/releases", "/v1/releases/" + firstRel, "/v1/snapshot", "/v1/definitions", "/v1/organizations", "/v1/actions", "/healthz", "/readyz"}
 	for _, p := range paths {
 		rr := do(h, http.MethodGet, p, nil, nil)
 		if rr.Code != http.StatusOK {
@@ -1039,5 +1039,40 @@ func TestUnpublishedReleaseIsRefused(t *testing.T) {
 	decode(t, do(h, http.MethodGet, "/v1/meter", nil, nil), &mr)
 	if mr.Meta.ReleaseID != firstRel || !strings.Contains(e.logs.String(), "not marked published") {
 		t.Fatalf("unpublished release must not be served: %s\n%s", mr.Meta.ReleaseID, e.logs.String())
+	}
+}
+
+func TestSnapshotAndReleaseDocuments(t *testing.T) {
+	e := buildDataDir(t)
+	h := e.handler(t, nil)
+	rr := do(h, http.MethodGet, "/v1/snapshot", nil, nil)
+	if rr.Code != http.StatusOK {
+		t.Fatalf("/v1/snapshot: %d %s", rr.Code, rr.Body.String())
+	}
+	var v struct {
+		Meta     map[string]any `json:"meta"`
+		Snapshot map[string]any `json:"snapshot"`
+	}
+	decode(t, rr, &v)
+	for _, k := range []string{"manifest", "definitions", "sources", "claims", "forecasts", "benchmarks", "benchmark_results", "incidents", "scenarios", "scenario_edges", "drivers", "driver_observations", "interventions", "organizations", "actions", "model_spec"} {
+		if _, ok := v.Snapshot[k]; !ok {
+			t.Fatalf("/v1/snapshot: missing key %q", k)
+		}
+	}
+	if v.Meta["data_snapshot"] == "" {
+		t.Fatal("/v1/snapshot: meta lacks data_snapshot")
+	}
+	for _, doc := range []string{"changelog.md", "model-card.md"} {
+		rr = do(h, http.MethodGet, "/v1/releases/"+firstRel+"/"+doc, nil, nil)
+		if rr.Code != http.StatusOK || !strings.HasPrefix(rr.Header().Get("Content-Type"), "text/markdown") {
+			t.Fatalf("%s: %d %q", doc, rr.Code, rr.Header().Get("Content-Type"))
+		}
+	}
+	for _, p := range []string{"/v1/releases/" + firstRel + "/manifest.json", "/v1/releases/" + firstRel + "/../CURRENT", "/v1/releases/rel-1999-01-01-001/changelog.md"} {
+		rr = do(h, http.MethodGet, p, nil, nil)
+		// Path traversal is either cleaned by the mux (a redirect) or refused.
+		if rr.Code != http.StatusNotFound && rr.Code != http.StatusMovedPermanently {
+			t.Fatalf("%s: expected 404 or 301, got %d", p, rr.Code)
+		}
 	}
 }

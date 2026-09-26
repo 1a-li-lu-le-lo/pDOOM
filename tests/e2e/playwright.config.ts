@@ -3,6 +3,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 const PORT = Number(process.env.PDOOM_E2E_PORT ?? 3117);
 const baseURL = `http://127.0.0.1:${PORT}`;
+const chromiumPath = process.env.PDOOM_CHROMIUM ?? "/opt/pw-browsers/chromium";
 
 export default defineConfig({
   testDir: ".",
@@ -15,7 +16,8 @@ export default defineConfig({
   use: {
     baseURL,
     trace: "retain-on-failure",
-    launchOptions: { executablePath: process.env.PDOOM_CHROMIUM ?? "/opt/pw-browsers/chromium" },
+    // PDOOM_CHROMIUM overrides the browser binary; an empty value (CI) uses Playwright's own download.
+    launchOptions: chromiumPath ? { executablePath: chromiumPath } : {},
   },
   webServer: {
     command: `pnpm --filter @pdoom/web exec next start -p ${PORT}`,

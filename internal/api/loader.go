@@ -166,7 +166,7 @@ func (l *loader) load(now time.Time) (*state, error) {
 // summaryOf builds the /v1/releases row of a release.
 func summaryOf(r *schema.Release, isCurrent bool) schema.ReleaseSummary {
 	m := r.Manifest
-	return schema.ReleaseSummary{ReleaseID: m.ReleaseID, DataSnapshot: m.DataSnapshot, ModelVersions: nonNil(m.ModelVersions), Published: m.Published, Superseded: m.Superseded, IsCurrent: isCurrent}
+	return schema.ReleaseSummary{ReleaseID: m.ReleaseID, DataSnapshot: m.DataSnapshot, ModelVersions: nonNil(m.ModelVersions), Published: m.Published, Superseded: m.Superseded, IsCurrent: isCurrent, EditorialRiskLevel: m.EditorialRiskLevel, UncertaintyScore: m.UncertaintyScore}
 }
 
 // scanPublishedReleases returns every release directory under data/releases

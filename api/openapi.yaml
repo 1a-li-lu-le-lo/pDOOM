@@ -414,6 +414,42 @@ paths:
                 $ref: "#/components/schemas/ReleaseResponse"
         "404":
           $ref: "#/components/responses/NotFound"
+  /v1/releases/{id}/{doc}:
+    get:
+      tags: [releases]
+      summary: Changelog or model card of a published release (Markdown)
+      operationId: getReleaseDocument
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string, pattern: "^rel-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3}$" }
+        - name: doc
+          in: path
+          required: true
+          schema: { type: string, enum: [changelog.md, model-card.md] }
+      responses:
+        "200":
+          description: The document.
+          content:
+            text/markdown:
+              schema: { type: string }
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v1/snapshot:
+    get:
+      tags: [data]
+      summary: The sealed data snapshot behind the current release, entity file by entity file
+      operationId: getSnapshot
+      responses:
+        "200":
+          description: The snapshot. Large; cacheable by ETag.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SnapshotResponse"
+        "503":
+          $ref: "#/components/responses/Unavailable"
   /v1/definitions:
     get:
       tags: [data]
@@ -1026,6 +1062,15 @@ components:
         results:
           type: array
           items: { $ref: "#/components/schemas/Entity" }
+    SnapshotResponse:
+      type: object
+      required: [meta, snapshot]
+      properties:
+        meta: { $ref: "#/components/schemas/Meta" }
+        snapshot:
+          type: object
+          description: Keys mirror the snapshot directory (manifest, definitions, sources, claims, forecasts, benchmarks, benchmark_results, incidents, scenarios, scenario_edges, drivers, driver_observations, interventions, organizations, actions, model_spec).
+          additionalProperties: true
     IncidentsResponse:
       type: object
       required: [meta, incidents]

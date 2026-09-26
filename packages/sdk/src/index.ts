@@ -402,6 +402,9 @@ export function createFileDataSource(opts: FileDataSourceOptions = {}): PDoomDat
 // ---------------------------------------------------------------------------
 
 export function createHttpDataSource(opts: { baseUrl: string; fetchImpl?: typeof fetch }): PDoomDataSource {
+  // Talks to cmd/pdoom-api. Route shapes follow api/openapi.yaml: every data
+  // response wraps its payload beside a `meta` object; the SDK unwraps it so
+  // callers see the same objects the file source returns.
   const base = opts.baseUrl.replace(/\/$/, "");
   const f = opts.fetchImpl ?? fetch;
   const get = async <T>(path: string): Promise<T> => {
@@ -409,40 +412,66 @@ export function createHttpDataSource(opts: { baseUrl: string; fetchImpl?: typeof
     if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
     return (await res.json()) as T;
   };
-  const snapshot = () => get<Snapshot>("/v1/snapshot");
+  const getText = async (path: string): Promise<string | undefined> => {
+    const res = await f(`${base}${path}`, { headers: { accept: "text/markdown" } });
+    if (!res.ok) return undefined;
+    return res.text();
+  };
+  let snapshotCache: { id: string; snap: Snapshot } | null = null;
+  const releaseById = async (id: string): Promise<Release> => {
+    if (!/^rel-\d{4}-\d{2}-\d{2}-\d{3}$/.test(id)) throw new Error(`invalid release id: ${id}`);
+    const body = await get<{ release: Omit<Release, "documents">; is_current: boolean }>(`/v1/releases/${encodeURIComponent(id)}`);
+    const changelog = (await getText(`/v1/releases/${encodeURIComponent(id)}/changelog.md`).catch(() => undefined)) ?? "";
+    const modelCard = (await getText(`/v1/releases/${encodeURIComponent(id)}/model-card.md`).catch(() => undefined)) ?? "";
+    return { ...body.release, documents: { changelog, model_card: modelCard } };
+  };
+  const currentId = async () => (await get<{ current: string }>("/v1/releases")).current;
+  const snapshot = async (): Promise<Snapshot> => {
+    const body = await get<{ meta: { data_snapshot: string }; snapshot: Snapshot }>("/v1/snapshot");
+    if (snapshotCache && snapshotCache.id === body.meta.data_snapshot) return snapshotCache.snap;
+    snapshotCache = { id: body.meta.data_snapshot, snap: body.snapshot };
+    return body.snapshot;
+  };
   return {
-    getRelease: () => get<Release>("/v1/releases/current"),
-    getReleaseById: (id) => get<Release>(`/v1/releases/${encodeURIComponent(id)}`),
-    listReleases: () => get<ReleaseSummary[]>("/v1/releases"),
+    getRelease: async () => releaseById(await currentId()),
+    getReleaseById: releaseById,
+    listReleases: async () => (await get<{ releases: ReleaseSummary[] }>("/v1/releases")).releases,
     getSnapshot: snapshot,
-    getDefinitions: () => get<Definition[]>("/v1/definitions"),
-    getSources: (filter = {}) => {
+    getDefinitions: async () => (await get<{ definitions: Definition[] }>("/v1/definitions")).definitions,
+    getSources: async (filter = {}) => {
       const qs = new URLSearchParams();
       for (const [k, v] of Object.entries(filter)) if (v !== undefined) qs.set(k, String(v));
-      return get<{ items: Source[]; total: number }>(`/v1/sources?${qs.toString()}`);
+      const body = await get<{ total: number; sources: Source[] }>(`/v1/sources${qs.size ? `?${qs.toString()}` : ""}`);
+      return { items: body.sources, total: body.total };
     },
-    getSource: (id) => get<Source>(`/v1/sources/${encodeURIComponent(id)}`).catch(() => undefined),
+    getSource: (id) =>
+      get<{ source: Source }>(`/v1/sources/${encodeURIComponent(id)}`)
+        .then((b) => b.source)
+        .catch(() => undefined),
     getClaims: async () => (await snapshot()).claims,
-    getForecasts: () => get<Forecast[]>("/v1/forecasts"),
+    getForecasts: async () => (await get<{ forecasts: Forecast[] }>("/v1/forecasts")).forecasts,
     getBenchmarks: async () => (await get<{ benchmarks: Benchmark[] }>("/v1/capabilities")).benchmarks,
     getBenchmarkResults: async () => (await get<{ results: BenchmarkResult[] }>("/v1/capabilities")).results,
-    getIncidents: () => get<Incident[]>("/v1/incidents"),
-    getScenarios: () => get<Scenario[]>("/v1/scenarios"),
-    getScenario: (id) => get<Scenario>(`/v1/scenarios/${encodeURIComponent(id)}`).catch(() => undefined),
-    getScenarioEdges: async () => (await snapshot()).scenario_edges,
-    getDrivers: () => get<Driver[]>("/v1/drivers"),
-    getDriverObservations: async () => (await snapshot()).driver_observations,
-    getInterventions: () => get<Intervention[]>("/v1/safeguards"),
-    getOrganizations: () => get<Organization[]>("/v1/organizations"),
-    getActions: () => get<Action[]>("/v1/actions"),
+    getIncidents: async () => (await get<{ incidents: Incident[] }>("/v1/incidents")).incidents,
+    getScenarios: async () => (await get<{ scenarios: Scenario[] }>("/v1/scenarios")).scenarios,
+    getScenario: (id) =>
+      get<{ scenario: Scenario }>(`/v1/scenarios/${encodeURIComponent(id)}`)
+        .then((b) => b.scenario)
+        .catch(() => undefined),
+    getScenarioEdges: async () => (await get<{ edges: ScenarioEdge[] }>("/v1/scenarios")).edges,
+    getDrivers: async () => (await get<{ drivers: Driver[] }>("/v1/drivers")).drivers,
+    getDriverObservations: async () => (await get<{ observations: DriverObservation[] }>("/v1/drivers")).observations,
+    getInterventions: async () => (await get<{ interventions: Intervention[] }>("/v1/safeguards")).interventions,
+    getOrganizations: async () => (await get<{ organizations: Organization[] }>("/v1/organizations")).organizations,
+    getActions: async () => (await get<{ actions: Action[] }>("/v1/actions")).actions,
     getModelSpec: async () => (await snapshot()).model_spec,
-    getMethodology: () => get<MethodologyDoc[]>("/v1/methodology"),
+    getMethodology: async () => (await get<{ documents: MethodologyDoc[] }>("/v1/methodology")).documents,
     getMethodologyDoc: async (slug) => {
-      const doc = (await get<MethodologyDoc[]>("/v1/methodology")).find((d) => d.slug === slug);
+      if (!/^[a-z0-9-]+$/.test(slug)) return undefined;
+      const doc = (await get<{ documents: MethodologyDoc[] }>("/v1/methodology")).documents.find((d) => d.slug === slug);
       if (!doc) return undefined;
-      const res = await f(`${base}/v1/methodology/${encodeURIComponent(slug)}`);
-      if (!res.ok) return undefined;
-      return { doc, markdown: await res.text() };
+      const markdown = await getText(`/v1/methodology/${encodeURIComponent(slug)}`);
+      return markdown === undefined ? undefined : { doc, markdown };
     },
   };
 }

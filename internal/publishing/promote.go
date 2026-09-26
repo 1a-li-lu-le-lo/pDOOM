@@ -242,7 +242,7 @@ func ListReleases(paths config.Paths) ([]schema.ReleaseSummary, error) {
 		if err != nil {
 			return nil, fmt.Errorf("%s: %w", id, err)
 		}
-		out = append(out, schema.ReleaseSummary{ReleaseID: id, DataSnapshot: r.Manifest.DataSnapshot, ModelVersions: r.Manifest.ModelVersions, Published: r.Manifest.Published, Superseded: r.Manifest.Superseded, IsCurrent: id == cur})
+		out = append(out, schema.ReleaseSummary{ReleaseID: id, DataSnapshot: r.Manifest.DataSnapshot, ModelVersions: r.Manifest.ModelVersions, Published: r.Manifest.Published, Superseded: r.Manifest.Superseded, IsCurrent: id == cur, EditorialRiskLevel: r.Manifest.EditorialRiskLevel, UncertaintyScore: r.Manifest.UncertaintyScore})
 	}
 	return out, nil
 }

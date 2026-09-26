@@ -213,6 +213,8 @@ func (s *server) routeTable() []route {
 		get("/v1/methodology/{slug}", releaseNone, s.handleMethodologyDoc),
 		get("/v1/releases", releaseOptional, s.handleReleases),
 		get("/v1/releases/{id}", releaseOptional, s.handleRelease),
+		get("/v1/releases/{id}/{doc}", releaseOptional, s.handleReleaseDocument),
+		get("/v1/snapshot", releaseRequired, s.handleSnapshot),
 		get("/v1/definitions", releaseRequired, s.handleDefinitions),
 		get("/v1/organizations", releaseRequired, s.handleOrganizations),
 		get("/v1/actions", releaseRequired, s.handleActions),

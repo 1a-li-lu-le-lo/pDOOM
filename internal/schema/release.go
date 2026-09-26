@@ -342,12 +342,14 @@ func (r *Release) IndexByID(id IndexID) *IndexValue {
 
 // ReleaseSummary is one row of `pdoomctl release list`.
 type ReleaseSummary struct {
-	ReleaseID     string      `json:"release_id"`
-	DataSnapshot  string      `json:"data_snapshot"`
-	ModelVersions []string    `json:"model_versions"`
-	Published     *string     `json:"published"`
-	Superseded    *Superseded `json:"superseded"`
-	IsCurrent     bool        `json:"is_current"`
+	ReleaseID          string             `json:"release_id"`
+	DataSnapshot       string             `json:"data_snapshot"`
+	ModelVersions      []string           `json:"model_versions"`
+	Published          *string            `json:"published"`
+	Superseded         *Superseded        `json:"superseded"`
+	IsCurrent          bool               `json:"is_current"`
+	EditorialRiskLevel EditorialRiskLevel `json:"editorial_risk_level"`
+	UncertaintyScore   *float64           `json:"uncertainty_score"`
 }
 
 // UserScenarioParams are the Scenario Lab inputs: a horizon and ten integer

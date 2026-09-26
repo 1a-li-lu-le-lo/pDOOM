@@ -406,6 +406,8 @@ export const ReleaseSummarySchema = z.strictObject({
   published: DateTimeString.nullable(),
   superseded: SupersededSchema.nullable(),
   is_current: z.boolean(),
+  editorial_risk_level: EditorialRiskLevel,
+  uncertainty_score: IndexScore.nullable(),
 });
 export type ReleaseSummary = z.infer<typeof ReleaseSummarySchema>;
 
