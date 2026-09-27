@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BRAND, BRAND_EXPANDED, OUTCOMES, PUBLIC_LABEL } from "@pdoom/schemas";
+import { roundingStep } from "@pdoom/model-core";
 import {
   getDataSource,
   getRelease,
@@ -81,8 +82,15 @@ function Table({
 // Member forecasts are quoted as their sources state them; computed aggregates follow the release rounding rule (pct).
 const asRecorded = (p: number) => `${Math.round(p * 1000) / 10}%`;
 // Sensitivity deltas are shown in whole points, as on the meter page.
-const wholePoints = (d: number) =>
-  Math.round(d * 100) === 0 ? "under 1" : `${d > 0 ? "+" : ""}${Math.round(d * 100)}`;
+/** Strip a trailing full stop so a sentence can continue after a quoted note. */
+const trimDot = (t: string) => t.replace(/[.\s]+$/, "");
+
+// The change column is the difference of the two displayed values, so a row's arithmetic always adds up.
+const changeAt = (baseline: number, value: number, step: number) => {
+  const r = (p: number) => Math.round((p * 100) / step) * step;
+  const d = r(value) - r(baseline);
+  return d === 0 ? "none at this rounding" : `${d > 0 ? "+" : ""}${d}`;
+};
 
 export default async function TextPage() {
   const [rel, snap, releases, method] = await Promise.all([
@@ -142,6 +150,14 @@ export default async function TextPage() {
   const sensRounded = (s: SensitivityRun, p: number) =>
     pct(
       p,
+      rel.estimates.find((e) =>
+        s.target_kind === "aggregation_group"
+          ? e.group_id === s.target_id
+          : e.estimate_id === s.target_id,
+      )?.uncertainty ?? "high",
+    );
+  const sensStep = (s: SensitivityRun) =>
+    roundingStep(
       rel.estimates.find((e) =>
         s.target_kind === "aggregation_group"
           ? e.group_id === s.target_id
@@ -529,9 +545,9 @@ export default async function TextPage() {
                 {f.sample_size ? ` (n=${f.sample_size})` : ""}):{" "}
                 {f.median !== null ? `${asRecorded(f.median)} (as the source states it)` : "—"} — “
                 {f.question_wording_original}” — {outcomeSetLabel(f.outcome_set)},{" "}
-                {f.horizon === "custom" ? f.horizon_note : horizonLabel(f.horizon)}
-                {f.horizon !== "custom" && f.horizon_note ? ` (${f.horizon_note})` : ""};{" "}
-                {f.conditions}.
+                {f.horizon === "custom" ? trimDot(f.horizon_note ?? "") : horizonLabel(f.horizon)}
+                {f.horizon !== "custom" && f.horizon_note ? ` (${trimDot(f.horizon_note)})` : ""};{" "}
+                {trimDot(f.conditions)}.
                 {f.selection_effects ? ` Selection effects: ${f.selection_effects}` : ""}
                 {f.framing_effects ? ` Framing effects: ${f.framing_effects}` : ""}
                 {f.transformation_note ? ` ${f.transformation_note}` : ""}
@@ -969,7 +985,7 @@ export default async function TextPage() {
                 <td>{s.parameter_change}</td>
                 <td className="num">{sensRounded(s, s.baseline_value)}</td>
                 <td className="num">{sensRounded(s, s.value)}</td>
-                <td className="num">{wholePoints(s.delta)}</td>
+                <td className="num">{changeAt(s.baseline_value, s.value, sensStep(s))}</td>
               </tr>
             ))}
           </tbody>
@@ -1004,7 +1020,7 @@ export default async function TextPage() {
                       <td>{s.parameter_change}</td>
                       <td className="num">{sensRounded(s, s.baseline_value)}</td>
                       <td className="num">{sensRounded(s, s.value)}</td>
-                      <td className="num">{wholePoints(s.delta)}</td>
+                      <td className="num">{changeAt(s.baseline_value, s.value, sensStep(s))}</td>
                       <td>{s.note}</td>
                     </tr>
                   ))}
@@ -1077,7 +1093,7 @@ export default async function TextPage() {
         </Table>
         <p>
           Reproduction command: <code>{rel.manifest.reproduction_command}</code>. Manifest hash{" "}
-          {rel.manifest.signature}. Approvals:{" "}
+          <code style={{ overflowWrap: "anywhere" }}>{rel.manifest.signature}</code>. Approvals:{" "}
           {rel.approvals.map((a) => `${a.reviewer_id} (${fmtDate(a.signed_at)})`).join(", ")}.
         </p>
 

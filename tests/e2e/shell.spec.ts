@@ -71,3 +71,14 @@ test.describe("console hygiene", () => {
     });
   }
 });
+
+test.describe("no horizontal page scroll on phones", () => {
+  test.skip(({ isMobile }) => !isMobile, "phone project only");
+  for (const route of ["/", "/meter", "/futures", "/futures/S1", "/forecasts", "/evidence", "/capabilities", "/agents", "/incidents", "/safeguards", "/act", "/method/model", "/lab", "/changelog", "/releases/rel-2026-09-26-001", "/compare", "/text"]) {
+    test(`${route} fits the viewport width`, async ({ page }) => {
+      await page.goto(route, { waitUntil: "networkidle" });
+      const [scrollWidth, clientWidth] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+      expect(scrollWidth, `${route} scrolls sideways`).toBeLessThanOrEqual(clientWidth);
+    });
+  }
+});

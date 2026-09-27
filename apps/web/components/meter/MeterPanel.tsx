@@ -42,8 +42,7 @@ export function MeterPanel({ rel, horizon }: { rel: Release; horizon: string }) 
 
       <div className="grid grid-2">
         {h.external
-          .filter((e) => e.horizon === horizon || horizon === "2100" || horizon === "eventual" ? e.horizon === horizon : false)
-          .slice(0, 2)
+          .filter((e) => e.horizon === horizon)
           .map((e) => (
             <EstimateCard key={e.estimate_id} e={e} compact />
           ))}

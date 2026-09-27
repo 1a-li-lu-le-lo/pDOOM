@@ -10,7 +10,7 @@ import { BarList } from "@/components/charts/BarList";
 import { LineWithBand } from "@/components/charts/LineWithBand";
 import { ShareLink } from "@/components/share/ShareLink";
 import { DEFAULT_HORIZON, getRelease, getSnapshot, headline, indexById, isValidHorizon, researchEstimate } from "@/lib/data";
-import { INDEX_SHORT, fmtDate, horizonLabel, outcomeSetLabel, pct, titleCase } from "@/lib/format";
+import { INDEX_SHORT, fmtDate, horizonLabel, outcomeSetLabel, pct, tidyInterval, titleCase } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Meter",
@@ -19,6 +19,13 @@ export const metadata: Metadata = {
 
 // Computed values follow the release's rounding rule for the matching estimate (high uncertainty when unknown).
 const roundedAs = (rel: Awaited<ReturnType<typeof getRelease>>, groupId: string | null, p: number) => pct(p, rel.estimates.find((e) => e.group_id === groupId)?.uncertainty ?? "high");
+// The change column is the difference of the two displayed values, so a row's arithmetic always adds up.
+const changeAs = (rel: Awaited<ReturnType<typeof getRelease>>, groupId: string | null, baseline: number, value: number) => {
+  const step = roundingStep(rel.estimates.find((e) => e.group_id === groupId)?.uncertainty ?? "high");
+  const r = (p: number) => Math.round((p * 100) / step) * step;
+  const d = r(value) - r(baseline);
+  return d === 0 ? "none at this rounding" : `${d > 0 ? "+" : ""}${d}`;
+};
 
 export default async function MeterPage({ searchParams }: { searchParams: Promise<{ horizon?: string }> }) {
   const sp = await searchParams;
@@ -81,7 +88,7 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
               label: `${g.group_id} · ${outcomeSetLabel(g.outcome_set)} · ${horizonLabel(g.horizon)}`,
               value: g.value,
               display: roundedAs(rel, g.group_id, g.value),
-              note: `${titleCase(g.method)}, ${g.n} ${g.n === 1 ? "forecast" : "forecasts"} from ${g.population_count} ${g.population_count === 1 ? "population" : "populations"}`,
+              note: `${titleCase(g.method)}, ${g.n} ${g.n === 1 ? "forecast" : "forecasts"} from ${g.population_count} ${g.population_count === 1 ? "population" : "populations"} · member range ${tidyInterval(rel.estimates.find((e) => e.group_id === g.group_id)?.display.interval ?? "")} · ${rel.estimates.find((e) => e.group_id === g.group_id)?.disagreement ?? "unknown"} disagreement · ${g.conditioning}`,
               href: `/forecasts#${g.group_id}`,
             }))}
           />
@@ -122,7 +129,7 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
                     <td>{s.parameter_change}</td>
                     <td className="num">{roundedAs(rel, s.target_kind === "aggregation_group" ? s.target_id : null, s.baseline_value)}</td>
                     <td className="num">{roundedAs(rel, s.target_kind === "aggregation_group" ? s.target_id : null, s.value)}</td>
-                    <td className="num">{Math.round(s.delta * 100) === 0 ? "under 1" : `${s.delta > 0 ? "+" : ""}${Math.round(s.delta * 100)}`}</td>
+                    <td className="num">{changeAs(rel, s.target_kind === "aggregation_group" ? s.target_id : null, s.baseline_value, s.value)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -138,7 +145,7 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
               <BarList
                 title="Uncertainty components"
                 description="Weighted components of the uncertainty score. The calibration gap is fixed at its maximum until a calibration process exists."
-                items={unc.components.map((c) => ({ label: titleCase(c.signal_id), value: c.contribution, display: c.contribution.toFixed(1), note: `weight ${c.weight}, value ${c.value_normalized.toFixed(2)}` }))}
+                items={unc.components.map((c) => ({ label: titleCase(c.signal_id), value: c.contribution, display: c.contribution.toFixed(1), note: `weight ${c.weight} × value ${c.value_normalized.toFixed(2)} × 100 = ${(c.weight * c.value_normalized * 100).toFixed(1)} points` }))}
                 max={Math.max(1, ...unc.components.map((c) => c.contribution))}
               />
             </>

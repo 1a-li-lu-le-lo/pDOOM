@@ -33,7 +33,14 @@ export function LineWithBand({ points, title, description, max, colorVar = "var(
   const estWidth = (s: string) => s.length * AXIS_FONT * 0.55;
   const slot = (W - padL - padR) / Math.max(1, n - 1);
   const widest = Math.max(0, ...labels.flat().map(estWidth));
-  const stagger = n > 2 && widest > slot * 0.9;
+  const extent = (i: number) => {
+    const w = Math.max(0, ...(labels[i] ?? []).map(estWidth));
+    const x = padL + (i * (W - padL - padR)) / Math.max(1, n - 1);
+    const a = n > 1 && i === 0 ? 0 : n > 1 && i === n - 1 ? 1 : 0.5;
+    return [x - w * a, x + w * (1 - a)];
+  };
+  const touching = labels.some((_, i) => i < n - 1 && extent(i)[1]! + 8 > extent(i + 1)[0]!);
+  const stagger = n > 2 && (widest > slot * 0.9 || touching);
   const maxLines = Math.max(1, ...labels.map((l) => l.length));
   const rowH = maxLines * LINE_H;
   const padB = 8 + (stagger ? 2 : 1) * rowH;

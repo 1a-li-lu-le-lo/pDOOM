@@ -46,6 +46,7 @@ export function Timeline({ points, title, description, unit, log }: { points: Ti
   };
   return (
     <figure>
+      <div className="chart-scroll" tabIndex={0} role="group" aria-label={`${title} (scrolls sideways on narrow screens)`}>
       <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}: ${pts.length} measurements from ${pts[0]!.date} to ${pts[pts.length - 1]!.date}`}>
         <g className="grid">
           {ticks.map((t) => (
@@ -76,6 +77,7 @@ export function Timeline({ points, title, description, unit, log }: { points: Ti
           {useLog ? " (log scale)" : ""}
         </text>
       </svg>
+      </div>
       <figcaption>
         {description}
         {useLog ? " The vertical axis is logarithmic." : ""}

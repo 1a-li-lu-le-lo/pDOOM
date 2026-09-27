@@ -19,10 +19,17 @@ export default async function ForecastsPage() {
   const src = new Map(snap.sources.map((s) => [s.id, s]));
   const groups = [...new Set(rel.aggregations.map((a) => a.group_id))];
   const forecastsByGroup = (g: string) => snap.forecasts.filter((f) => f.group_id === g);
-  const ungrouped = snap.forecasts.filter((f) => !f.group_id || !groups.includes(f.group_id));
   const dots = snap.forecasts
     .filter((f) => f.median !== null || f.mean !== null)
-    .map((f) => ({ label: f.forecaster_or_survey, value: (f.median ?? f.mean)!, group: `${outcomeSetLabel(f.outcome_set)} · ${horizonLabel(f.horizon)}${f.horizon === "custom" && f.horizon_end_year ? ` (${f.horizon_end_year})` : ""}`, colorVar: f.population === "superforecasters" ? "var(--c-safeguard)" : f.population === "prediction_market" ? "var(--c-uncertainty)" : "var(--c-evidence)" }));
+    .map((f) => ({
+      id: f.id,
+      label: f.forecaster_or_survey,
+      value: (f.median ?? f.mean)!,
+      // One row per compatibility group; a forecast shown alone gets its own row, so dots on a row always answer the same question.
+      group: `${outcomeSetLabel(f.outcome_set)} (${f.group_id && groups.includes(f.group_id) ? `group ${f.group_id}` : "shown alone"}) · ${horizonLabel(f.horizon)}${f.horizon === "custom" && f.horizon_end_year ? ` (${f.horizon_end_year})` : ""}`,
+      colorVar: f.population === "superforecasters" ? "var(--c-safeguard)" : f.population === "public_forecasters" || f.population === "prediction_market" ? "var(--c-uncertainty)" : "var(--c-evidence)",
+    }));
+  const ungrouped = snap.forecasts.filter((f) => !f.group_id || !groups.includes(f.group_id));
   return (
     <div className="page">
       <div className="container stack">
@@ -35,7 +42,7 @@ export default async function ForecastsPage() {
         <DistributionDots
           dots={dots}
           title="All forecasts with a central value"
-          description="One dot per forecast, one row per outcome set and horizon. Dots on different rows are answers to different questions and must not be compared directly. Blue dots are superforecaster populations, amber dots are prediction markets."
+          description="One dot per forecast, one row per compatibility group (same outcome set, horizon and conditioning); a forecast that no other forecast matches has a row of its own. Dots on different rows answer different questions and must not be compared directly. Blue dots are superforecaster populations, amber dots are public forecasting platforms and markets, white dots are expert surveys and individual experts."
         />
 
         {groups.map((g) => {

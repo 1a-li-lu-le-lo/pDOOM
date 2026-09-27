@@ -33,6 +33,8 @@ const RECOVER_LABEL: Record<string, string> = {
 export default async function FuturesPage() {
   const snap = await getSnapshot();
   const scenarios = [...snap.scenarios].sort((a, b) => Number(a.id.slice(1)) - Number(b.id.slice(1)));
+  // Same rule as the pathway page and /safeguards: a safeguard targets a pathway if either side says so.
+  const safeguardsOf = (id: string, ids: readonly string[]) => snap.interventions.filter((i) => ids.includes(i.id) || i.target_scenario_ids.includes(id)).length;
   const groups = ["none", "low", "moderate", "high", "unknown"];
   const outcomes = ["O3", "O4", "O5", "O6", "O7", "O8"];
   const flows = groups.flatMap((g) => outcomes.map((o) => ({ from: g, to: o, value: scenarios.filter((s) => s.recoverability === g && s.outcome_set.includes(o as never)).length }))).filter((f) => f.value > 0);
@@ -86,7 +88,7 @@ export default async function FuturesPage() {
                     <p className="muted">{s.description}</p>
                     <p className="cite">Outcomes: {outcomeSetLabel(s.outcome_set)}</p>
                     <p className="cite">
-                      {plural(s.intervention_ids.length, "safeguard")} {s.intervention_ids.length === 1 ? "targets" : "target"} this pathway · {plural(s.early_indicators.length, "early indicator")}
+                      {plural(safeguardsOf(s.id, s.intervention_ids), "safeguard")} {safeguardsOf(s.id, s.intervention_ids) === 1 ? "targets" : "target"} this pathway · {plural(s.early_indicators.length, "early indicator")}
                     </p>
                   </article>
                 ))}

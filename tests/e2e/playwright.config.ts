@@ -9,8 +9,11 @@ export default defineConfig({
   testDir: ".",
   testMatch: /.*\.spec\.ts/,
   timeout: 60_000,
-  expect: { timeout: 10_000 },
+  expect: { timeout: 15_000 },
   fullyParallel: true,
+  // Three browser projects plus a WebGL scene on a software renderer: bound the parallelism so
+  // assertions do not time out under contention.
+  workers: process.env.CI ? 2 : 4,
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : "list",
   use: {

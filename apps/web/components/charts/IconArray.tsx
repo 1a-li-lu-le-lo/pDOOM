@@ -1,4 +1,6 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
+import { useId } from "react";
+
 /**
  * Icon array: N cells, of which round(p·N) are filled. The most honest way to
  * show a small probability is to show how many of N futures it touches; the
@@ -7,8 +9,8 @@
  * cells are a pattern fill and filled cells are drawn as whole rows plus one
  * partial row, so a thousand-cell grid is a handful of elements.
  */
-export function IconArray({ p, cells = 1000, label, colorVar = "var(--c-risk)", low, high, lowBelowOnePoint = false }: { p: number; cells?: number; label: string; colorVar?: string; low?: number; high?: number; /** The release shows the lower bound as below one point; say so instead of a hard zero. */ lowBelowOnePoint?: boolean }) {
-  const n = Math.max(0, Math.min(cells, Math.round(p * cells)));
+export function IconArray({ p, cells = 1000, label, colorVar = "var(--c-risk)", low, high, lowBelowOnePoint = false, belowOnePoint = false }: { p: number; /** The release shows the median as below one point; draw nothing and say so. */ belowOnePoint?: boolean; cells?: number; label: string; colorVar?: string; low?: number; high?: number; /** The release shows the lower bound as below one point; say so instead of a hard zero. */ lowBelowOnePoint?: boolean }) {
+  const n = belowOnePoint ? 0 : Math.max(0, Math.min(cells, Math.round(p * cells)));
   const onePoint = cells / 100;
   const nLow = low === undefined ? null : Math.round(low * cells);
   const lowText = lowBelowOnePoint ? `fewer than ${onePoint.toLocaleString("en-US")}` : nLow === null ? null : nLow.toLocaleString("en-US");
@@ -20,8 +22,9 @@ export function IconArray({ p, cells = 1000, label, colorVar = "var(--c-risk)", 
   const step = size + gap;
   const W = cols * step;
   const H = rows * step;
-  const id = `ia-${cells}-${Math.round(p * 1e6)}`;
-  const summary = `${label}: ${n.toLocaleString("en-US")} of ${cells.toLocaleString("en-US")} cells filled${lowText !== null && nHigh !== null ? `; plausible range ${lowText} to ${nHigh.toLocaleString("en-US")}` : ""}.`;
+  const id = `ia-${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
+  const filledText = belowOnePoint ? `fewer than ${onePoint.toLocaleString("en-US")}` : n.toLocaleString("en-US");
+  const summary = `${label}: ${filledText} of ${cells.toLocaleString("en-US")} cells filled${lowText !== null && nHigh !== null ? `; plausible range ${lowText} to ${nHigh.toLocaleString("en-US")}` : ""}.`;
   /** Rectangles covering cells [from, to) in reading order. */
   const span = (from: number, to: number, fill: string, opacity: number) => {
     const out: React.ReactNode[] = [];
@@ -71,7 +74,7 @@ export function IconArray({ p, cells = 1000, label, colorVar = "var(--c-risk)", 
             <tbody>
               <tr>
                 <td className="num">{cells.toLocaleString("en-US")}</td>
-                <td className="num">{n.toLocaleString("en-US")}</td>
+                <td className="num">{filledText}</td>
                 <td className="num">{lowText ?? "—"}</td>
                 <td className="num">{nHigh === null ? "—" : nHigh.toLocaleString("en-US")}</td>
               </tr>

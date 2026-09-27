@@ -100,7 +100,7 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
               return (
                 <div key={e.estimate_id} className="stack" style={{ gap: "var(--s-1)" }}>
                   <div className="eyebrow">{horizonLabel(e.horizon)}</div>
-                  <IconArray p={belowOnePoint(e.quantiles!.p50, ep50) ? 0 : ep50} high={roundAt(e.quantiles!.p95, es)} cells={100} label={`Research-mode p(DOOM), ${horizonLabel(e.horizon)}`} colorVar="var(--c-disagreement)" />
+                  <IconArray p={ep50} belowOnePoint={belowOnePoint(e.quantiles!.p50, ep50)} high={roundAt(e.quantiles!.p95, es)} cells={100} label={`Research-mode p(DOOM), ${horizonLabel(e.horizon)}`} colorVar="var(--c-disagreement)" />
                   <div className="cite">median {e.display.central} · interval {tidyInterval(e.display.interval)}</div>
                 </div>
               );

@@ -1051,3 +1051,34 @@ th.num {
     min-width: 560px;
   }
 }
+
+.strip-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+  color: var(--c-text-3);
+  font-variant-numeric: tabular-nums;
+}
+.text-mode {
+  overflow-wrap: anywhere;
+}
+
+/* Long identifiers (hashes, commands, ids) wrap instead of widening the page. */
+code,
+.kv dd,
+.estimate-meta span {
+  overflow-wrap: anywhere;
+}
+code {
+  white-space: pre-wrap;
+}
+
+/* Grid children may shrink below their content width, so a wide table scrolls inside its card
+   instead of widening the page. */
+.grid > * {
+  min-width: 0;
+}
+.prose,
+.card {
+  overflow-wrap: anywhere;
+}

@@ -16,9 +16,9 @@ export interface Flow {
  * rendered SVG with a flows table as the accessible form.
  */
 export function FlowDiagram({ left, right, flows, title, description, unit = "scenarios" }: { left: FlowNode[]; right: FlowNode[]; flows: Flow[]; title: string; description: string; unit?: string }) {
-  const W = 760;
+  const W = 900;
   const H = Math.max(280, Math.max(left.length, right.length) * 44 + 40);
-  const colW = 170;
+  const colW = 240;
   const gap = 14;
   const padY = 20;
   const total = (id: string, side: "from" | "to") => flows.filter((f) => f[side] === id).reduce((s, f) => s + f.value, 0);
