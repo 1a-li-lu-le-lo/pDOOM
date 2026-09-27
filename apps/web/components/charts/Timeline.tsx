@@ -34,6 +34,13 @@ export function Timeline({ points, title, description, unit, log }: { points: Ti
   const fmtV = (v: number) => (v >= 100 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(0) : v.toFixed(1));
   const ticks = useLog ? Array.from({ length: Math.ceil(ymax) - Math.floor(ymin) + 1 }, (_, i) => 10 ** (Math.floor(ymin) + i)).filter((t) => t >= vmin && t <= vmax * 1.3) : [0, 0.25, 0.5, 0.75, 1].map((f) => vmin + (vmax - vmin) * f);
   const years = [...new Set(pts.map((p) => p.date.slice(0, 4)))];
+  // Centre each year label on that year's own points and keep it inside the plot area,
+  // so short or single-point series still show a date on the axis.
+  const yearX = (y: string) => {
+    const xsOfYear = pts.filter((p) => p.date.startsWith(y)).map((p) => xs(p.date));
+    const mid = xsOfYear.reduce((a, b) => a + b, 0) / xsOfYear.length;
+    return Math.min(W - 14, Math.max(padL, mid));
+  };
   return (
     <figure>
       <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}: ${pts.length} measurements from ${pts[0]!.date} to ${pts[pts.length - 1]!.date}`}>
@@ -48,7 +55,7 @@ export function Timeline({ points, title, description, unit, log }: { points: Ti
           </text>
         ))}
         {years.map((y) => (
-          <text key={y} x={xs(`${y}-07-01`)} y={H - 8} textAnchor="middle">
+          <text key={y} x={yearX(y)} y={H - 8} textAnchor="middle">
             {y}
           </text>
         ))}

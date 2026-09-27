@@ -29,10 +29,10 @@ export default async function SourcePage({ params }: { params: Promise<{ sourceI
   const scenarios = snap.scenarios.filter((x) => x.source_ids.includes(s.id));
   const observations = snap.driver_observations.filter((o) => o.source_ids.includes(s.id));
   const usedBy = [
-    ...forecasts.map((f) => ({ href: "/forecasts", label: `Forecast: ${f.forecaster_or_survey}` })),
-    ...incidents.map((i) => ({ href: "/incidents", label: `Incident: ${i.title}` })),
-    ...scenarios.map((x) => ({ href: `/futures/${x.id}`, label: `Scenario ${x.id}: ${x.name}` })),
-    ...observations.map((o) => ({ href: "/capabilities", label: `Driver observation ${o.signal_id}` })),
+    ...forecasts.map((f) => ({ key: f.id, href: f.group_id ? `/forecasts#${f.group_id}` : "/forecasts", label: `Forecast: ${f.forecaster_or_survey}` })),
+    ...incidents.map((i) => ({ key: i.id, href: "/incidents", label: `Incident: ${i.title}` })),
+    ...scenarios.map((x) => ({ key: x.id, href: `/futures/${x.id}`, label: `Scenario ${x.id}: ${x.name}` })),
+    ...observations.map((o) => ({ key: o.id, href: "/capabilities", label: `Driver observation ${o.signal_id}` })),
   ];
   return (
     <div className="page">
@@ -113,7 +113,7 @@ export default async function SourcePage({ params }: { params: Promise<{ sourceI
         <section className="stack">
           <h2>Claims extracted from this source ({claims.length})</h2>
           {claims.length ? (
-            <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Atomic claims">
               <table>
                 <caption>Atomic claims</caption>
                 <thead>
@@ -149,7 +149,7 @@ export default async function SourcePage({ params }: { params: Promise<{ sourceI
             <h2>Where this source is used</h2>
             <ul>
               {usedBy.map((u) => (
-                <li key={u.label}>
+                <li key={u.key}>
                   <Link href={u.href}>{u.label}</Link>
                 </li>
               ))}

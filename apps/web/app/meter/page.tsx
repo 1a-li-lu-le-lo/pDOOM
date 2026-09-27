@@ -80,7 +80,7 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
               label: `${g.group_id} · ${outcomeSetLabel(g.outcome_set)} · ${horizonLabel(g.horizon)}`,
               value: g.value,
               display: roundedAs(rel, g.group_id, g.value),
-              note: `${titleCase(g.method)}, ${g.n} forecasts from ${g.population_count} populations`,
+              note: `${titleCase(g.method)}, ${g.n} ${g.n === 1 ? "forecast" : "forecasts"} from ${g.population_count} ${g.population_count === 1 ? "population" : "populations"}`,
               href: `/forecasts#${g.group_id}`,
             }))}
           />
@@ -100,7 +100,7 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
           <p>
             Leave-one-out and parameter runs, ranked by the size of their effect. A large effect from removing one source means the aggregate depends on that source.
           </p>
-          <div className="table-wrap table-wide" tabIndex={0} role="region" aria-label="Scrollable table">
+          <div className="table-wrap table-wide" tabIndex={0} role="region" aria-label="Sensitivity runs">
             <table>
               <caption>Top sensitivity runs in this release</caption>
               <thead>

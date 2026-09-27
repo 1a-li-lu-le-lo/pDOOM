@@ -12,21 +12,55 @@ const COLOR: Record<string, string> = {
   attention: "var(--c-insufficient)",
 };
 
-/** A 0–100 index. The label says what the scale means; it is never a probability. */
-export function IndexGauge({ index }: { index: IndexValue }) {
+export interface IndexGaugeProps {
+  index: IndexValue;
+  /** Full index name; defaults to the release's `label`. */
+  title?: string;
+  /** Caption text; defaults to the scale reminder and coverage. */
+  description?: string;
+}
+
+/**
+ * A 0–100 index. The label says what the scale means; it is never a probability.
+ * Rendered as a figure with a caption and an accessible data table (build-spec §6).
+ */
+export function IndexGauge({ index, title = index.label, description }: IndexGaugeProps) {
   const v = index.value;
+  const shown = v === null ? "not computed" : String(Math.round(v));
+  const coverage = `${Math.round(index.coverage * 100)}%`;
+  const caption = description ?? (v === null ? "not computed" : `index, not a probability · coverage ${coverage}`);
   return (
-    <div className="gauge" style={{ color: v === null ? "var(--c-insufficient)" : COLOR[index.index_id] }}>
+    <figure className="gauge" style={{ margin: 0, color: v === null ? "var(--c-insufficient)" : COLOR[index.index_id] }}>
       <div className="label">{INDEX_SHORT[index.index_id]}</div>
-      <div className="num" aria-label={`${index.label}: ${v === null ? "not computed" : Math.round(v)} out of 100`}>
-        {v === null ? "—" : Math.round(v)}
-      </div>
+      <div className="num">{v === null ? "—" : Math.round(v)}</div>
       <div className="bar" aria-hidden="true">
         <span style={{ width: `${v ?? 0}%` }} />
       </div>
-      <div className="muted" style={{ fontSize: "var(--fs-xs)", color: "var(--c-text-3)" }}>
-        {v === null ? "not computed" : `index, not a probability · coverage ${Math.round(index.coverage * 100)}%`}
-      </div>
-    </div>
+      <figcaption className="muted" style={{ fontSize: "var(--fs-xs)", color: "var(--c-text-3)" }}>
+        {caption}
+        <details>
+          <summary>Data table</summary>
+          <table>
+            <caption>{title}</caption>
+            <thead>
+              <tr>
+                <th>Index</th>
+                <th>Value</th>
+                <th>Scale</th>
+                <th>Coverage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{title}</td>
+                <td className="num">{shown}</td>
+                <td>{index.scale}</td>
+                <td className="num">{coverage}</td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+      </figcaption>
+    </figure>
   );
 }

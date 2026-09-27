@@ -21,10 +21,12 @@ import {
 } from "../grammar";
 import { mulberry32 } from "../seeded";
 
-const X_ROOT = 120;
-const X_TRUNK = 270;
-const X_GROUP = 470;
-const X_LEAF = 720;
+// The stage crops the 1000x600 viewBox with "slice"; on narrow phone stages
+// only x in [200, 800] stays visible, so the whole tree is laid out inside it.
+const X_ROOT = 200;
+const X_TRUNK = 300;
+const X_GROUP = 480;
+const X_LEAF = 690;
 const CY = 300;
 const Y_TOP = 70;
 const Y_BOTTOM = 530;

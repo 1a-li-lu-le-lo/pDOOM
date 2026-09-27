@@ -20,22 +20,25 @@ export default async function MethodPage() {
     <div className="page">
       <div className="container stack">
         <PageHeader title="Method" lede="Nothing here is a black box. Every number traces to a snapshot, a model specification and a signed release. These documents are the contract." textAnchor="method" />
-        <div className="grid grid-3">
-          {sorted.map((d) => (
-            <article key={d.slug} className="card">
+        <section className="stack" aria-labelledby="method-documents">
+          <h2 id="method-documents">Methodology documents</h2>
+          <div className="grid grid-3">
+            {sorted.map((d) => (
+              <article key={d.slug} className="card">
+                <h3 style={{ margin: 0 }}>
+                  <Link href={`/method/${d.slug}`}>{d.title}</Link>
+                </h3>
+                <p className="cite">{d.path}</p>
+              </article>
+            ))}
+            <article className="card">
               <h3 style={{ margin: 0 }}>
-                <Link href={`/method/${d.slug}`}>{d.title}</Link>
+                <Link href="/method/definitions">Definitions</Link>
               </h3>
-              <p className="cite">{d.path}</p>
+              <p className="cite">{snap.definitions.length} terms with sourced definitions</p>
             </article>
-          ))}
-          <article className="card">
-            <h3 style={{ margin: 0 }}>
-              <Link href="/method/definitions">Definitions</Link>
-            </h3>
-            <p className="cite">{snap.definitions.length} terms with sourced definitions</p>
-          </article>
-        </div>
+          </div>
+        </section>
         <section className="card stack">
           <h2 style={{ marginTop: 0 }}>Model specification in force</h2>
           <dl className="kv">

@@ -19,7 +19,7 @@ export default async function ChangelogPage() {
     <div className="page">
       <div className="container stack">
         <PageHeader title="Changelog" lede="A number that moves without an explanation is a rumour. Every release lists what changed, why, and who signed it." textAnchor="history" />
-        <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
+        <div className="table-wrap" tabIndex={0} role="region" aria-label="Releases">
           <table>
             <caption>Releases, newest first</caption>
             <thead>
@@ -59,7 +59,7 @@ export default async function ChangelogPage() {
           </ul>
           <h3>Estimate changes against {rel.manifest.previous_release_id ?? "no previous release"}</h3>
           {changes.length ? (
-            <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Estimate changes">
               <table>
                 <caption>Estimates whose median moved</caption>
                 <thead>

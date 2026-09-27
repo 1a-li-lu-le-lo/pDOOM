@@ -1,5 +1,6 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
 import type { ReactNode } from "react";
+import { roundForDisplay, roundingStep } from "@pdoom/model-core";
 
 export interface QuantileStripProps {
   p05: number;
@@ -9,6 +10,10 @@ export interface QuantileStripProps {
   p95: number;
   /** Upper bound of the axis (probability). Defaults to a round value above p95. */
   max?: number;
+  /** Display rounding step in percentage points (build-spec §0.8); pass `roundingStep(uncertainty)`. */
+  step?: number;
+  /** What the outer band is: a model interval (default) or, for external aggregates, the min–max range of member forecasts. */
+  rangeLabel?: string;
   label: string;
   description: string;
   colorVar?: string;
@@ -26,16 +31,19 @@ function niceMax(p95: number): number {
  * Ring thickness (band width) is the visual grammar for the confidence interval
  * everywhere on the site. Server-rendered SVG with an accessible table.
  */
-export function QuantileStrip({ p05, p25, p50, p75, p95, max, label, description, colorVar = "var(--c-evidence)", compact = false, children }: QuantileStripProps) {
+export function QuantileStrip({ p05, p25, p50, p75, p95, max, label, description, colorVar = "var(--c-evidence)", compact = false, children, step = roundingStep("high"), rangeLabel = "5th to 95th percentile" }: QuantileStripProps) {
   const top = max ?? niceMax(p95);
   const W = 600;
   const H = compact ? 34 : 56;
   const x = (p: number) => Math.min(W, Math.max(0, (p / top) * W));
-  const pctLabel = (p: number) => `${Math.round(p * 1000) / 10}%`;
+  const pctLabel = (p: number) => roundForDisplay(p, step);
+  // Axis ticks are geometry, not estimates; only whole-point ticks get a label so no decimal is ever shown.
+  const isWholePoint = (t: number) => Math.abs(t * 100 - Math.round(t * 100)) < 1e-9;
+  const tickLabel = (t: number) => roundForDisplay(t, 1);
   const ticks = [0, top / 4, top / 2, (3 * top) / 4, top];
   return (
     <figure className="quantile-strip">
-      <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${label}: median ${pctLabel(p50)}, 5th to 95th percentile ${pctLabel(p05)} to ${pctLabel(p95)}`} preserveAspectRatio="none" style={{ height: H }}>
+      <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${label}: median ${pctLabel(p50)}, ${rangeLabel} ${pctLabel(p05)} to ${pctLabel(p95)}`} preserveAspectRatio="none" style={{ height: H }}>
         <g className="grid">
           {ticks.map((t) => (
             <line key={t} x1={x(t)} x2={x(t)} y1={0} y2={compact ? H : H - 16} />
@@ -45,9 +53,9 @@ export function QuantileStrip({ p05, p25, p50, p75, p95, max, label, description
         <rect x={x(p25)} y={compact ? 10 : 10} width={Math.max(2, x(p75) - x(p25))} height={compact ? 14 : 20} fill={colorVar} opacity={0.65} rx={3} />
         <rect x={x(p50) - 1.5} y={compact ? 6 : 4} width={3} height={compact ? 22 : 32} fill={colorVar} />
         {!compact &&
-          ticks.map((t) => (
+          ticks.filter(isWholePoint).map((t) => (
             <text key={`t${t}`} x={x(t)} y={H - 2} textAnchor={t === 0 ? "start" : t === top ? "end" : "middle"}>
-              {pctLabel(t)}
+              {tickLabel(t)}
             </text>
           ))}
       </svg>

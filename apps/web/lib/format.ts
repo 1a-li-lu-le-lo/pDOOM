@@ -1,5 +1,6 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
-import { HORIZONS, OUTCOMES, type EstimateStatusValue, type IndexIdValue, type UncertaintyLabelValue } from "@pdoom/schemas";
+import type { EstimateStatusValue, IndexIdValue, UncertaintyLabelValue } from "@pdoom/schemas";
+import { HORIZONS, OUTCOMES } from "@pdoom/schemas/constants";
 import { roundForDisplay, roundingStep } from "@pdoom/model-core";
 
 export function horizonLabel(key: string): string {
@@ -47,8 +48,21 @@ export function fmtDate(d: string | null | undefined): string {
   return d.length > 10 ? d.slice(0, 10) : d;
 }
 
+/** Display labels for enum values whose plain title-casing reads wrong (acronyms, missing conjunctions). */
+const ENUM_LABEL: Record<string, string> = {
+  ai_researchers: "AI researchers",
+  auditors_red_teams: "Auditors and red teams",
+  mcp: "MCP",
+  software_engineers: "Software engineers",
+};
+
 export function titleCase(s: string): string {
-  return s.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+  const known = ENUM_LABEL[s];
+  if (known) return known;
+  return s
+    .replace(/_/g, " ")
+    .replace(/^\w/, (c) => c.toUpperCase())
+    .replace(/\b(ai|mcp)\b/gi, (m) => m.toUpperCase());
 }
 
 export function badgeClass(kind: "safeguard" | "uncertainty" | "risk" | "disagreement" | "resilience" | "insufficient" | "evidence"): string {

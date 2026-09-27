@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { BRAND, BRAND_EXPANDED, OUTCOMES, PUBLIC_LABEL } from "@pdoom/schemas";
 import { getDataSource, getRelease, getSnapshot, headline, indexById, researchEstimate } from "@/lib/data";
-import { STATUS_LABEL, fmtDate, horizonLabel, outcomeSetLabel, tidyInterval, titleCase } from "@/lib/format";
+import { STATUS_LABEL, fmtDate, horizonLabel, outcomeSetLabel, pct, tidyInterval, titleCase } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Plain text", description: `${BRAND} in plain text: every substantive fact of the observatory without graphics or scripts.` };
 
@@ -42,7 +42,8 @@ function H2({ id, children }: { id: string; children: ReactNode }) {
   );
 }
 
-const pct = (p: number) => `${Math.round(p * 1000) / 10}%`;
+// Member forecasts are quoted as their sources state them; computed aggregates follow the release rounding rule (pct).
+const asRecorded = (p: number) => `${Math.round(p * 1000) / 10}%`;
 
 export default async function TextPage() {
   const [rel, snap, releases, method] = await Promise.all([getRelease(), getSnapshot(), getDataSource().listReleases(), getDataSource().getMethodology()]);
@@ -68,6 +69,17 @@ export default async function TextPage() {
   const down = rel.drivers_explained.items.filter((d) => d.direction === "strengthens_control").sort((a, b) => b.magnitude - a.magnitude).slice(0, 5);
   const groups = [...new Set(rel.aggregations.map((a) => a.group_id))];
   const agentSignals = snap.driver_observations.filter((o) => ["D2", "D3", "D6"].includes(o.family));
+  const latestObs = (signalId: string) => snap.driver_observations.filter((o) => o.signal_id === signalId).sort((a, b) => b.as_of.localeCompare(a.as_of))[0];
+  const signalIndexes = [
+    ["capability_pressure", snap.model_spec.index_weights.capability_pressure],
+    ["control_strength", snap.model_spec.index_weights.control_strength],
+    ["agentic_infrastructure_risk", snap.model_spec.index_weights.agentic_infrastructure_risk],
+  ] as const;
+  const signalWeights = (signalId: string) =>
+    signalIndexes
+      .filter(([, w]) => w[signalId] !== undefined)
+      .map(([id, w]) => `${titleCase(id)} ${w[signalId]!.toFixed(2)}`)
+      .join("; ");
   const air = indexById(rel, "agentic_infrastructure_risk");
   const ipi = indexById(rel, "incident_pressure");
 
@@ -75,6 +87,9 @@ export default async function TextPage() {
     <div className="page">
       <div className="container text-mode">
         <p className="eyebrow">{PUBLIC_LABEL} · plain-text mode</p>
+        <nav className="breadcrumbs" aria-label="Breadcrumb">
+          <Link href="/">{BRAND}</Link> / Plain text
+        </nav>
         <h1>{BRAND} in plain text</h1>
         <p className="lede">
           {BRAND_EXPANDED}. This page contains every substantive fact on the site without graphics, scripts or hidden interactions. It is server-rendered, printable and linkable. Release {rel.manifest.release_id}, data through {fmtDate(rel.manifest.source_cutoff)}, published {fmtDate(rel.manifest.published)}. <Link href="/">Switch to the immersive version</Link>.
@@ -119,7 +134,7 @@ export default async function TextPage() {
           ) : null}
           {h.external.map((e) => (
             <li key={e.estimate_id}>
-              <strong>{STATUS_LABEL[e.status]}</strong> ({e.group_id}), {outcomeSetLabel(e.outcome_set)}, {horizonLabel(e.horizon)}: median {e.display.central}, member range {tidyInterval(e.display.interval)}, {e.disagreement} disagreement, {e.source_coverage.forecast_count} forecasts from {e.source_coverage.population_count} populations.
+              <strong>{STATUS_LABEL[e.status]}</strong> ({e.group_id}), {outcomeSetLabel(e.outcome_set)}, {horizonLabel(e.horizon)}: median {e.display.central}, member range {tidyInterval(e.display.interval)}, {e.disagreement} disagreement, {e.source_coverage.forecast_count} {e.source_coverage.forecast_count === 1 ? "forecast" : "forecasts"} from {e.source_coverage.population_count} {e.source_coverage.population_count === 1 ? "population" : "populations"}.
               {cite(e.source_coverage.source_ids)}
             </li>
           ))}
@@ -154,7 +169,7 @@ export default async function TextPage() {
 
         <H2 id="horizon">3. Selected horizon</H2>
         <p>
-          The default horizon is {horizonLabel(horizon)} from the forecast origin date ({fmtDate(rel.manifest.generated_at)}). Estimates exist for 1, 3, 5, 10 and 25 years, by 2100, and eventually. Eventual probabilities have no endpoint and are never comparable with dated ones. No date for any catastrophe is implied anywhere on this site.
+          The default horizon is {horizonLabel(horizon)} from the forecast origin date ({fmtDate(research?.forecast_origin_date ?? official?.forecast_origin_date)}). Estimates exist for 1, 3, 5, 10 and 25 years, by 2100, and eventually. Eventual probabilities have no endpoint and are never comparable with dated ones. No date for any catastrophe is implied anywhere on this site.
         </p>
         <table>
           <caption>Research-mode p(DOOM) by horizon (not the official estimate)</caption>
@@ -284,6 +299,7 @@ export default async function TextPage() {
           const aggs = rel.aggregations.filter((a) => a.group_id === g);
           const members = snap.forecasts.filter((f) => f.group_id === g);
           const first = aggs[0];
+          const groupUnc = rel.estimates.find((e) => e.group_id === g)?.uncertainty ?? "high";
           return (
             <div key={g}>
               <h3>
@@ -296,7 +312,7 @@ export default async function TextPage() {
                     <th>Forecast</th>
                     <th>Population</th>
                     <th>Date</th>
-                    <th className="num">Median</th>
+                    <th className="num">Median (as the source states it)</th>
                     <th>Question wording</th>
                   </tr>
                 </thead>
@@ -312,7 +328,7 @@ export default async function TextPage() {
                         {f.sample_size ? ` (n=${f.sample_size})` : ""}
                       </td>
                       <td>{f.date}</td>
-                      <td className="num">{f.median !== null ? pct(f.median) : f.mean !== null ? `${pct(f.mean)} (mean)` : "—"}</td>
+                      <td className="num">{f.median !== null ? asRecorded(f.median) : f.mean !== null ? `${asRecorded(f.mean)} (mean)` : "—"}</td>
                       <td>
                         {f.paraphrase ? "(paraphrase) " : ""}
                         {f.question_wording_original}
@@ -326,7 +342,7 @@ export default async function TextPage() {
                 <thead>
                   <tr>
                     <th>Method</th>
-                    <th className="num">Value</th>
+                    <th className="num">Value (rounded as the release displays it)</th>
                     <th>Preferred</th>
                   </tr>
                 </thead>
@@ -334,7 +350,7 @@ export default async function TextPage() {
                   {aggs.map((a) => (
                     <tr key={a.aggregation_id}>
                       <td>{titleCase(a.method)}</td>
-                      <td className="num">{pct(a.value)}</td>
+                      <td className="num">{pct(a.value, groupUnc)}</td>
                       <td>{a.preferred ? "yes" : ""}</td>
                     </tr>
                   ))}
@@ -349,7 +365,7 @@ export default async function TextPage() {
             .filter((f) => !f.group_id)
             .map((f) => (
               <li key={f.id}>
-                {f.forecaster_or_survey} ({f.date}, {titleCase(f.population)}): {f.median !== null ? pct(f.median) : "—"} — “{f.question_wording_original}” — {outcomeSetLabel(f.outcome_set)}, {f.horizon === "custom" ? f.horizon_note : horizonLabel(f.horizon)}; {f.conditions}.{f.transformation_note ? ` ${f.transformation_note}` : ""}
+                {f.forecaster_or_survey} ({f.date}, {titleCase(f.population)}): {f.median !== null ? `${asRecorded(f.median)} (as the source states it)` : "—"} — “{f.question_wording_original}” — {outcomeSetLabel(f.outcome_set)}, {f.horizon === "custom" ? f.horizon_note : horizonLabel(f.horizon)}; {f.conditions}.{f.transformation_note ? ` ${f.transformation_note}` : ""}
                 {cite([f.source_id])}
               </li>
             ))}
@@ -399,6 +415,54 @@ export default async function TextPage() {
           </div>
         ))}
         <p>Benchmark progress is a prerequisite or pressure variable, never an outcome; it is not converted into a probability.</p>
+        <h3>Driver signals</h3>
+        <p>
+          Every tracked signal across the {snap.drivers.length} driver families, its latest observation, how the raw value is normalised to 0–1, and the weight it carries in each index that uses it. Signals without a weight inform the narrative only.
+        </p>
+        <table>
+          <caption>Driver signals, latest observations, normalisation and index weights</caption>
+          <thead>
+            <tr>
+              <th>Signal</th>
+              <th>Latest observation</th>
+              <th className="num">Normalised (0–1)</th>
+              <th className="num">Confidence</th>
+              <th>Kind</th>
+              <th>Weight by index</th>
+              <th>Normalisation</th>
+            </tr>
+          </thead>
+          <tbody>
+            {snap.drivers.flatMap((d) =>
+              d.signals.map((sig) => {
+                const obs = latestObs(sig.signal_id);
+                return (
+                  <tr key={sig.signal_id}>
+                    <td>
+                      <strong>{sig.name}</strong> ({sig.signal_id}, {d.name}, {sig.direction.replace(/_/g, " ")})
+                    </td>
+                    <td>
+                      {obs ? (
+                        <>
+                          {obs.raw_value !== null ? `${obs.raw_value} ${obs.raw_unit ?? ""}` : "judgment"} as of {fmtDate(obs.as_of)}. {obs.rationale}
+                          {obs.counterevidence ? ` Counterevidence: ${obs.counterevidence}` : ""}
+                          {cite(obs.source_ids)}
+                        </>
+                      ) : (
+                        "no observation"
+                      )}
+                    </td>
+                    <td className="num">{obs ? obs.value_normalized.toFixed(2) : "—"}</td>
+                    <td className="num">{obs ? obs.confidence.toFixed(1) : "—"}</td>
+                    <td>{obs ? titleCase(obs.observation_kind) : "—"}</td>
+                    <td>{signalWeights(sig.signal_id) || "—"}</td>
+                    <td>{sig.normalization}</td>
+                  </tr>
+                );
+              }),
+            )}
+          </tbody>
+        </table>
 
         <H2 id="agents">11. Agentic infrastructure</H2>
         <p>
@@ -454,6 +518,35 @@ export default async function TextPage() {
                 <td>
                   <strong>{i.title}</strong>. {i.summary}
                   {cite(i.source_ids)}
+                  <dl className="kv">
+                    <dt>Causes</dt>
+                    <dd>{i.cause.map(titleCase).join(", ") || "—"}</dd>
+                    <dt>Harm</dt>
+                    <dd>{i.harm.map(titleCase).join(", ") || "—"}</dd>
+                    <dt>Systems involved</dt>
+                    <dd>{i.systems_involved.join(", ") || "—"}</dd>
+                    <dt>Novelty</dt>
+                    <dd>{titleCase(i.novelty)}</dd>
+                    <dt>Jurisdiction</dt>
+                    <dd>{i.jurisdiction ?? "—"}</dd>
+                    {i.exposure_note ? (
+                      <>
+                        <dt>Exposure</dt>
+                        <dd>{i.exposure_note}</dd>
+                      </>
+                    ) : null}
+                    <dt>Registries</dt>
+                    <dd>
+                      {Object.entries(i.external_ids)
+                        .filter(([, v]) => v)
+                        .map(([k, v]) => `${k.toUpperCase()}: ${v}`)
+                        .join(" · ") || "none"}
+                    </dd>
+                    <dt>Status</dt>
+                    <dd>
+                      Verification {titleCase(i.verification.status)}; human review {titleCase(i.human_review_status)}; model use {titleCase(i.model_use_status)}
+                    </dd>
+                  </dl>
                 </td>
                 <td>{i.severity}</td>
                 <td>{titleCase(i.pdoom_relevance)}</td>
@@ -465,9 +558,9 @@ export default async function TextPage() {
         </table>
 
         <H2 id="scenarios">13. Scenario map</H2>
-        <p>Eighteen category-level pathways. No pathway probability is assigned in this release; overlaps are recorded as edges and never summed.</p>
+        <p>{snap.scenarios.length} category-level pathways. No pathway probability is assigned in this release; overlaps are recorded as edges and never summed.</p>
         <table>
-          <caption>Scenarios S1–S18</caption>
+          <caption>Scenarios ({snap.scenarios.length})</caption>
           <thead>
             <tr>
               <th>Id</th>
@@ -484,6 +577,40 @@ export default async function TextPage() {
                 <td>
                   <Link href={`/futures/${s.id}`}>{s.name}</Link>. {s.description}
                   {cite(s.source_ids)}
+                  <dl className="kv">
+                    <dt>Status</dt>
+                    <dd>
+                      {s.uncertainty} uncertainty; probability source {s.probability_source.replace(/_/g, " ")}; human review {titleCase(s.human_review_status)}
+                    </dd>
+                    <dt>Exposure</dt>
+                    <dd>{s.exposure}</dd>
+                    <dt>Time horizon</dt>
+                    <dd>{s.time_horizon_note}</dd>
+                    <dt>Evidence</dt>
+                    <dd>{s.evidence_summary}</dd>
+                    {s.content_safety_note ? (
+                      <>
+                        <dt>Content note</dt>
+                        <dd>{s.content_safety_note}</dd>
+                      </>
+                    ) : null}
+                    <dt>Prerequisites</dt>
+                    <dd>{s.prerequisites.join("; ") || "—"}</dd>
+                    <dt>Capability thresholds</dt>
+                    <dd>{s.capability_thresholds.join("; ") || "—"}</dd>
+                    <dt>Counterindicators</dt>
+                    <dd>{s.counterindicators.join("; ") || "—"}</dd>
+                    <dt>Control failures</dt>
+                    <dd>{s.control_failures.join("; ") || "—"}</dd>
+                    <dt>Human contributions</dt>
+                    <dd>{s.human_contributions.join("; ") || "—"}</dd>
+                    <dt>AI contributions</dt>
+                    <dd>{s.ai_contributions.join("; ") || "—"}</dd>
+                    <dt>Open questions</dt>
+                    <dd>{s.open_questions.join("; ") || "—"}</dd>
+                    <dt>Depends on</dt>
+                    <dd>{s.dependencies.join(", ") || "—"}</dd>
+                  </dl>
                 </td>
                 <td>{s.outcome_set.join(", ")}</td>
                 <td>{s.recoverability}</td>
@@ -492,11 +619,19 @@ export default async function TextPage() {
             ))}
           </tbody>
         </table>
-        <p>Dependencies ({snap.scenario_edges.length} edges): {snap.scenario_edges.map((e) => `${e.from_id} ${e.relation.replace(/_/g, " ")} ${e.to_id} (${e.confidence})`).join("; ")}.</p>
+        <p>Dependencies ({snap.scenario_edges.length} edges):</p>
+        <ul>
+          {snap.scenario_edges.map((e) => (
+            <li key={e.id}>
+              {e.from_id} {e.relation.replace(/_/g, " ")} {e.to_id} ({e.confidence} confidence): {e.rationale}
+              {cite(e.source_ids)}
+            </li>
+          ))}
+        </ul>
 
         <H2 id="safeguards">14. Safeguards</H2>
         <table>
-          <caption>Interventions I01–I27 (effect sizes are qualitative only)</caption>
+          <caption>Interventions ({snap.interventions.length}; effect sizes are qualitative only)</caption>
           <thead>
             <tr>
               <th>Id</th>
@@ -515,6 +650,24 @@ export default async function TextPage() {
                 <td>
                   <strong>{i.name}</strong>. {i.mechanism} {i.evidence_summary}
                   {cite(i.source_ids)}
+                  <dl className="kv">
+                    <dt>Effect size</dt>
+                    <dd>
+                      {titleCase(i.effect_size)} (qualitative); {i.uncertainty} uncertainty
+                    </dd>
+                    <dt>Could fail if</dt>
+                    <dd>{i.possible_failure}</dd>
+                    <dt>Could backfire if</dt>
+                    <dd>{i.possible_backfire}</dd>
+                    <dt>Owners</dt>
+                    <dd>{i.owner_types.map(titleCase).join(", ") || "—"}</dd>
+                    {i.user_actions.length ? (
+                      <>
+                        <dt>What audiences can do</dt>
+                        <dd>{i.user_actions.map((a) => `${titleCase(a.audience)}: ${a.action}`).join(" ")}</dd>
+                      </>
+                    ) : null}
+                  </dl>
                 </td>
                 <td>{i.category}</td>
                 <td>{i.evidence_strength}</td>

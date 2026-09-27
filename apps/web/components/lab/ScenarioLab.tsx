@@ -1,9 +1,10 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
 "use client";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { HORIZON_KEYS, USER_SCENARIO_SLIDER_KEYS, type ExperimentalCausalSpec, type UserScenarioParams, type UserScenarioResult, type UserScenarioSliderKey } from "@pdoom/schemas";
+import type { ExperimentalCausalSpec, UserScenarioParams, UserScenarioResult, UserScenarioSliderKey } from "@pdoom/schemas";
+import { HORIZON_KEYS, USER_SCENARIO_SLIDER_KEYS } from "@pdoom/schemas/constants";
 import { evaluateUserScenario, formatInterval, roundForDisplay, roundingStep } from "@pdoom/model-core";
 import { QuantileStrip } from "../charts/QuantileStrip";
 import { ShareLink } from "../share/ShareLink";
@@ -60,8 +61,11 @@ function toQuery(p: UserScenarioParams): string {
  * reproducible from its link, which is what makes it worth sharing.
  */
 export function ScenarioLab({ spec, baseline, releaseId }: { spec: ExperimentalCausalSpec; baseline: Baseline; releaseId: string }) {
-  const router = useRouter();
   const sp = useSearchParams();
+  // The spec is immutable per version, so a re-delivered prop object with the
+  // same version must not re-run the simulation.
+  const [stableSpec, setStableSpec] = useState(spec);
+  if (stableSpec.version !== spec.version) setStableSpec(spec);
   const horizons = HORIZON_KEYS.filter((h) => h in spec.horizons);
   const [params, setParams] = useState<UserScenarioParams>(() => readParams(new URLSearchParams(sp.toString()), horizons));
   const [samples, setSamples] = useState(Math.min(spec.samples, 5000));
@@ -72,18 +76,19 @@ export function ScenarioLab({ spec, baseline, releaseId }: { spec: ExperimentalC
     setBusy(true);
     const id = window.setTimeout(() => {
       try {
-        setResult(evaluateUserScenario(spec, params, samples));
+        setResult(evaluateUserScenario(stableSpec, params, samples));
       } finally {
         setBusy(false);
       }
     }, 30);
     return () => window.clearTimeout(id);
-  }, [spec, params, samples]);
+  }, [stableSpec, params, samples]);
 
+  // Native replaceState keeps useSearchParams in sync without a server round trip.
   useEffect(() => {
     const q = toQuery(params);
-    if (q !== sp.toString()) router.replace(`/lab?${q}`, { scroll: false });
-  }, [params, router, sp]);
+    if (q !== sp.toString()) window.history.replaceState(null, "", `/lab?${q}`);
+  }, [params, sp]);
 
   const set = useCallback((k: UserScenarioSliderKey, v: number) => setParams((p) => ({ ...p, [k]: v })), []);
   const reset = () => setParams((p) => ({ ...readParams(new URLSearchParams(), horizons), horizon: p.horizon }));
@@ -147,7 +152,7 @@ export function ScenarioLab({ spec, baseline, releaseId }: { spec: ExperimentalC
         </div>
       </div>
 
-      <div className="lab-result stack" aria-live="polite" aria-busy={busy}>
+      <div className="lab-result stack">
         <div className="card stack">
           <div className="row">
             <span className="badge badge-uncertainty">Your scenario</span>
@@ -158,12 +163,14 @@ export function ScenarioLab({ spec, baseline, releaseId }: { spec: ExperimentalC
           <p className="lede" style={{ margin: 0 }}>
             Under your selected assumptions, not the p(DOOM) official model, the median estimate is
           </p>
-          <div className="lab-value" style={{ color: "var(--c-uncertainty)" }}>
-            {doom ? roundForDisplay(doom.p50, step) : "…"}
-          </div>
-          <div className="interval">
-            {doom ? `plausible interval ${formatInterval(doom.p05, doom.p95, step)} · p(DOOM), O3–O8 combined, ${horizonLabel(params.horizon)}` : "computing"}
-            {deltaText ? ` · ${deltaText}` : ""}
+          <div className="stack" aria-live="polite" aria-busy={busy}>
+            <div className="lab-value" style={{ color: "var(--c-uncertainty)" }}>
+              {doom ? roundForDisplay(doom.p50, step) : "…"}
+            </div>
+            <div className="interval">
+              {doom ? `plausible interval ${formatInterval(doom.p05, doom.p95, step)} · p(DOOM), O3–O8 combined, ${horizonLabel(params.horizon)}` : "computing"}
+              {deltaText ? ` · ${deltaText}` : ""}
+            </div>
           </div>
           {doom ? <QuantileStrip p05={doom.p05} p25={doom.p25} p50={doom.p50} p75={doom.p75} p95={doom.p95} label={`Your scenario, ${horizonLabel(params.horizon)}`} description="Distribution of the combined outcome under your assumptions. The band is the p05–p95 interval, the darker band p25–p75, the tick the median." colorVar="var(--c-uncertainty)" compact /> : null}
           {base ? (
@@ -185,7 +192,7 @@ export function ScenarioLab({ spec, baseline, releaseId }: { spec: ExperimentalC
         {result ? (
           <div className="card stack">
             <div className="eyebrow">Decomposition under your assumptions</div>
-            <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Outcome medians and intervals for your scenario">
               <table>
                 <caption>Outcome medians and intervals for your scenario</caption>
                 <thead>
@@ -211,7 +218,7 @@ export function ScenarioLab({ spec, baseline, releaseId }: { spec: ExperimentalC
               </table>
             </div>
             <div className="eyebrow">Factor summary (p05 / p50 / p95)</div>
-            <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Latent factors after your shifts">
               <table>
                 <caption>Latent factors after your shifts</caption>
                 <thead>

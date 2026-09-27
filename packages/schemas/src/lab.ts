@@ -7,6 +7,7 @@
  * releases; they only enter the review queue.
  */
 import { z } from "zod";
+import { USER_SCENARIO_LABEL, USER_SCENARIO_MAX_SAMPLES, USER_SCENARIO_OUTCOME_KEYS, USER_SCENARIO_SLIDER_KEYS } from "./constants";
 import { DateTimeString, NonEmptyString, SummaryStatsSchema, TriQuantilesSchema } from "./common";
 import {
   CassandraSeverity,
@@ -20,21 +21,10 @@ import {
 // UserScenarioParams
 // ---------------------------------------------------------------------------
 
-export const USER_SCENARIO_SLIDER_KEYS = [
-  "capability_timeline",
-  "autonomy_growth",
-  "access_level",
-  "safety_progress",
-  "governance_strength",
-  "model_security",
-  "open_weight_diffusion",
-  "international_coordination",
-  "incident_frequency",
-  "resilience",
-] as const;
+export { USER_SCENARIO_SLIDER_KEYS } from "./constants";
 export type UserScenarioSliderKey = (typeof USER_SCENARIO_SLIDER_KEYS)[number];
 
-export const USER_SCENARIO_MAX_SAMPLES = 50000;
+export { USER_SCENARIO_MAX_SAMPLES } from "./constants";
 
 /** Integer slider position from -2 (much lower than baseline) to +2 (much higher). */
 export const SliderValueSchema = z.int().min(-2).max(2).describe("Integer slider, -2..2");
@@ -63,18 +53,9 @@ export type UserScenarioParams = z.infer<typeof UserScenarioParamsSchema>;
 // UserScenarioResult
 // ---------------------------------------------------------------------------
 
-export const USER_SCENARIO_LABEL = "user_scenario" as const;
+export { USER_SCENARIO_LABEL } from "./constants";
 
-export const USER_SCENARIO_OUTCOME_KEYS = [
-  "O3",
-  "O4",
-  "O5",
-  "O6",
-  "O7",
-  "O8",
-  "P_DOOM",
-  "P_COLLAPSE",
-] as const;
+export { USER_SCENARIO_OUTCOME_KEYS } from "./constants";
 export type UserScenarioOutcomeKey = (typeof USER_SCENARIO_OUTCOME_KEYS)[number];
 
 export const UserScenarioOutcomeKey = z.enum(USER_SCENARIO_OUTCOME_KEYS);

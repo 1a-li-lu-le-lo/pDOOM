@@ -39,6 +39,7 @@ export default async function SafeguardsPage() {
         </div>
         {csi ? (
           <Waterfall
+            colorVar="var(--c-safeguard)"
             title="Control Strength Index contributions"
             description="Weighted, tier-adjusted contributions of each control, security, governance and evaluation signal in index points."
             items={csi.components.map((c) => ({ label: c.signal_id, value: c.contribution, direction: c.contribution >= 0 ? "raises" : "lowers", note: `weight ${c.weight}, normalised ${c.value_normalized.toFixed(2)}, tier ${c.tier}` }))}

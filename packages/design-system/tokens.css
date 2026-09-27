@@ -131,6 +131,23 @@
   --c-disagreement-soft: rgba(204, 121, 167, 0.16);
 }
 
+/* Light theme + colour-vision-safe palette: the same Okabe–Ito hue families,
+   darkened so they stay legible as text and borders on light surfaces
+   (each at or above 5:1 against --c-bg, --c-surface and --c-surface-2).
+   Higher specificity than either single-attribute block, so order is not load-bearing. */
+:root[data-theme="light"][data-palette="cvd"] {
+  --c-risk: #a84800;
+  --c-risk-soft: rgba(168, 72, 0, 0.12);
+  --c-resilience: #00734f;
+  --c-resilience-soft: rgba(0, 115, 79, 0.12);
+  --c-safeguard: #0b6c9e;
+  --c-safeguard-soft: rgba(11, 108, 158, 0.12);
+  --c-uncertainty: #7a5300;
+  --c-uncertainty-soft: rgba(122, 83, 0, 0.12);
+  --c-disagreement: #9a3f83;
+  --c-disagreement-soft: rgba(154, 63, 131, 0.12);
+}
+
 @media (prefers-contrast: more) {
   :root {
     --c-text-2: #d7dae4;

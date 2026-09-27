@@ -22,6 +22,9 @@ describe("renderMarkdown", () => {
     expect(r.html).not.toContain("<script>");
     expect(r.html).toContain("&lt;script&gt;");
     expect(r.html).not.toContain("javascript:");
+    const pr = renderMarkdown("[x](//evil.example/path) [y](/\\\\evil.example) [z](/method)");
+    expect(pr.html).not.toContain("evil.example");
+    expect(pr.html).toContain('href="/method"');
     expect(r.html).toContain('href="https://example.org"');
   });
 

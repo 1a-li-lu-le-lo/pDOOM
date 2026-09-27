@@ -17,7 +17,7 @@ import type {
   UserScenarioParams,
   UserScenarioResult,
 } from "@pdoom/schemas";
-import { USER_SCENARIO_SLIDER_KEYS } from "@pdoom/schemas";
+import { USER_SCENARIO_SLIDER_KEYS } from "@pdoom/schemas/constants";
 
 export * from "./rounding";
 

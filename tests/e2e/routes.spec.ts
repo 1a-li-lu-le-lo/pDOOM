@@ -8,6 +8,7 @@ for (const route of ROUTES) {
     const res = await page.goto(route);
     expect(res?.status()).toBe(200);
     await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.getByRole("navigation", { name: "Breadcrumb" })).toHaveCount(1);
     if (route === "/text") await expect(page.locator("main a[href='/']").first()).toBeVisible();
     else await expect(page.locator("main a[href^='/text']").first()).toBeVisible();
     await expect(page.locator("header .brand")).toContainText("p(DOOM)");
@@ -19,6 +20,7 @@ for (const route of ROUTES) {
 test("every probability shown on the meter travels with its status and horizon", async ({ page }) => {
   await page.goto("/meter");
   const cards = page.locator("article.estimate-card");
+  await expect(cards.first()).toBeVisible();
   expect(await cards.count()).toBeGreaterThan(0);
   for (const card of await cards.all()) {
     await expect(card.locator(".badge").first()).toBeVisible();

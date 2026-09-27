@@ -7,6 +7,12 @@ import { BRAND, PUBLIC_LABEL, TAGLINES } from "@pdoom/schemas";
 import { DEFAULT_HORIZON, getRelease, headline, indexById, researchEstimate } from "@/lib/data";
 import { horizonLabel, tidyInterval } from "@/lib/format";
 
+// Metadata route handlers are prerendered at build time unless they set their
+// own segment config (the root layout's force-dynamic does not reach them), so
+// without this the card would keep the build-time release id, interval and
+// uncertainty score after a promotion or rollback until the next rebuild.
+export const dynamic = "force-dynamic";
+
 export const alt = `${BRAND} — ${PUBLIC_LABEL}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

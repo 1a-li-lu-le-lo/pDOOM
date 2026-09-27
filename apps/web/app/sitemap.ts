@@ -2,6 +2,9 @@
 import type { MetadataRoute } from "next";
 import { getDataSource, getRelease, getSnapshot } from "@/lib/data";
 
+// Metadata routes are prerendered at build time unless they opt out; the sitemap must follow the current release.
+export const dynamic = "force-dynamic";
+
 const base = process.env.PDOOM_PUBLIC_URL ?? "http://localhost:3000";
 const STATIC = ["", "/meter", "/futures", "/evidence", "/capabilities", "/agents", "/incidents", "/forecasts", "/safeguards", "/act", "/method", "/method/definitions", "/lab", "/changelog", "/compare", "/text"];
 

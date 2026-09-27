@@ -63,7 +63,7 @@ export function FlowDiagram({ left, right, flows, title, description, unit = "sc
         {ribbons.map((r) => (
           <path key={`${r.from}-${r.to}`} d={r.d} fill={r.color} fillOpacity={0.28} stroke={r.color} strokeOpacity={0.5} strokeWidth={0.5}>
             <title>
-              {name(left, r.from)} → {name(right, r.to)}: {r.value} {unit}
+              {name(left, r.from)} → {name(right, r.to)}: {r.value} {r.value === 1 ? unit.replace(/s$/, "") : unit}
             </title>
           </path>
         ))}

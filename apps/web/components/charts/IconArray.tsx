@@ -54,6 +54,28 @@ export function IconArray({ p, cells = 1000, label, colorVar = "var(--c-risk)", 
       </svg>
       <figcaption>
         {summary} Filled cells are the median; the faint cells extend to the upper end of the plausible interval.
+        <details>
+          <summary>Data table</summary>
+          <table>
+            <caption>{label}</caption>
+            <thead>
+              <tr>
+                <th>Cells</th>
+                <th className="num">Filled (median)</th>
+                <th className="num">Lower end</th>
+                <th className="num">Upper end</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="num">{cells.toLocaleString("en-US")}</td>
+                <td className="num">{n.toLocaleString("en-US")}</td>
+                <td className="num">{nLow === null ? "—" : nLow.toLocaleString("en-US")}</td>
+                <td className="num">{nHigh === null ? "—" : nHigh.toLocaleString("en-US")}</td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
       </figcaption>
     </figure>
   );

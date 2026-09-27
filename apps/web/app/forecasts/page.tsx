@@ -54,7 +54,7 @@ export default async function ForecastsPage() {
                 {outcomeSetLabel(pref.outcome_set)}
               </h2>
               <p className="muted">{pref.conditioning}</p>
-              <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
+              <div className="table-wrap" tabIndex={0} role="region" aria-label={`Aggregation methods for ${g}`}>
                 <table>
                   <caption>Aggregation methods for {g}; the preferred method is marked</caption>
                   <thead>

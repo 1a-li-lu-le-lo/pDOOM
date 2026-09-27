@@ -37,7 +37,11 @@ export default async function ReleasePage({ params }: { params: Promise<{ releas
           <div className="row">
             <span className="badge badge-uncertainty">{titleCase(m.editorial_risk_level)}</span>
             <span className="badge">uncertainty {m.uncertainty_score === null ? "—" : Math.round(m.uncertainty_score)}</span>
-            {m.approval ? <span className="badge">{m.approval.received_approvals} of {m.approval.required_approvals} approvals</span> : null}
+            {m.approval ? (
+              <span className="badge">
+                {m.approval.received_approvals} {m.approval.received_approvals === 1 ? "approval" : "approvals"} · {m.approval.required_approvals} required
+              </span>
+            ) : null}
             {m.approval?.heightened_review ? <span className="badge badge-risk">heightened review</span> : null}
           </div>
         </PageHeader>
@@ -87,7 +91,7 @@ export default async function ReleasePage({ params }: { params: Promise<{ releas
             )}
             {m.approval?.heightened_review_ack ? <p className="cite">Heightened review acknowledged: {m.approval.heightened_review_ack}</p> : null}
             <h2>Files</h2>
-            <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Release files">
               <table>
                 <caption>Release files with SHA-256 digests</caption>
                 <thead>

@@ -2,9 +2,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { ScenarioEdge } from "@pdoom/schemas";
 import { PageHeader } from "@/components/shell/PageHeader";
 import { getSnapshot } from "@/lib/data";
 import { outcomeLabel, outcomeSetLabel, titleCase } from "@/lib/format";
+
+/** Verb phrase for a directed relation, read as "<source> <phrase> <target>". */
+const RELATION_PHRASE: Record<ScenarioEdge["relation"], string> = {
+  enables: "enables",
+  amplifies: "amplifies",
+  prevents_response: "prevents response to",
+  shares_prerequisite: "shares a prerequisite with",
+  competes_with: "competes with",
+};
 
 export async function generateStaticParams() {
   const snap = await getSnapshot();
@@ -110,14 +120,14 @@ export default async function ScenarioPage({ params }: { params: Promise<{ scena
           <h2 style={{ marginTop: 0 }}>Relations</h2>
           {inn.length ? (
             <>
-              <h3>Enabled or amplified by</h3>
+              <h3>Relations from other pathways</h3>
               <ul>
                 {inn.map((e) => (
                   <li key={e.id}>
                     <Link href={`/futures/${e.from_id}`}>
                       {e.from_id} {name(e.from_id)}
                     </Link>{" "}
-                    <em>{titleCase(e.relation)}</em> this pathway ({e.confidence} confidence): {e.rationale}
+                    <em>{RELATION_PHRASE[e.relation]}</em> this pathway ({e.confidence} confidence): {e.rationale}
                   </li>
                 ))}
               </ul>
@@ -125,11 +135,11 @@ export default async function ScenarioPage({ params }: { params: Promise<{ scena
           ) : null}
           {out.length ? (
             <>
-              <h3>Leads to</h3>
+              <h3>Relations to other pathways</h3>
               <ul>
                 {out.map((e) => (
                   <li key={e.id}>
-                    <em>{titleCase(e.relation)}</em>{" "}
+                    <em>{titleCase(RELATION_PHRASE[e.relation])}</em>{" "}
                     <Link href={`/futures/${e.to_id}`}>
                       {e.to_id} {name(e.to_id)}
                     </Link>{" "}

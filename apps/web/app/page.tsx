@@ -1,6 +1,6 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
 import Link from "next/link";
-import { TAGLINES } from "@pdoom/schemas";
+import { BRAND, TAGLINES } from "@pdoom/schemas";
 import { HomeStage, type StageData } from "@/components/scenes/HomeStage";
 import { MeterPanel } from "@/components/meter/MeterPanel";
 import { ModeSwitcher } from "@/components/mode/ModeSwitcher";
@@ -36,6 +36,9 @@ export default async function Home() {
         <HomeStage data={stage} />
         <div className="container hero-content">
           <div>
+            <nav className="breadcrumbs" aria-label="Breadcrumb">
+              <Link href="/">{BRAND}</Link>
+            </nav>
             <div className="scene-label">Conceptual risk visualization · not a simulation of AI risk</div>
             <h1 className="hero-title">{TAGLINES[0]}</h1>
             <p className="hero-sub">

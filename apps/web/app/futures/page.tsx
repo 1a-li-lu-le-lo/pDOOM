@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   description: "Category-level pathway scenarios and the relations between them, each with prerequisites, early indicators, counterindicators and the safeguards that target it.",
 };
 
+/** Count-aware label so single items never read as "1 pathways". */
+const plural = (n: number, singular: string, pluralForm = `${singular}s`) => `${n} ${n === 1 ? singular : pluralForm}`;
+
 const RECOVER_COLOR: Record<string, string> = {
   high: "var(--c-resilience)",
   moderate: "var(--c-resilience)",
@@ -38,7 +41,7 @@ export default async function FuturesPage() {
       <div className="container stack">
         <PageHeader
           title="Branching futures"
-          lede="Eighteen category-level pathways, described by their prerequisites and what would be visible early, never by operational detail. Arrows show which pathways enable, amplify or substitute for others."
+          lede={`${scenarios.length} category-level pathways, described by their prerequisites and what would be visible early, never by operational detail. Arrows show which pathways enable, amplify or substitute for others.`}
           textAnchor="scenarios"
         />
         <NodeGraph
@@ -65,7 +68,7 @@ export default async function FuturesPage() {
                   {RECOVER_LABEL[g]}
                 </span>
                 <span className="muted" style={{ fontSize: "var(--fs-md)", fontWeight: 400 }}>
-                  {items.length} pathways
+                  {plural(items.length, "pathway")}
                 </span>
               </h2>
               <div className="grid grid-3">
@@ -83,7 +86,7 @@ export default async function FuturesPage() {
                     <p className="muted">{s.description}</p>
                     <p className="cite">Outcomes: {outcomeSetLabel(s.outcome_set)}</p>
                     <p className="cite">
-                      {s.intervention_ids.length} safeguards target this pathway · {s.early_indicators.length} early indicators
+                      {plural(s.intervention_ids.length, "safeguard")} {s.intervention_ids.length === 1 ? "targets" : "target"} this pathway · {plural(s.early_indicators.length, "early indicator")}
                     </p>
                   </article>
                 ))}

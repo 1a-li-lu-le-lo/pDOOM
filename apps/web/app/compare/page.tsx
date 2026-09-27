@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { HORIZONS } from "@pdoom/schemas";
-import { oneIn } from "@pdoom/model-core";
+import { oneIn, roundingStep } from "@pdoom/model-core";
 import { PageHeader } from "@/components/shell/PageHeader";
 import { IconArray } from "@/components/charts/IconArray";
 import { EstimateCard } from "@/components/meter/EstimateCard";
@@ -23,6 +23,18 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
   const candidates = [...h.research.filter((e) => e.outcome_set.length === 6 && e.horizon === horizon), ...h.external.filter((e) => e.horizon === horizon)];
   const chosen = candidates.find((e) => e.estimate_id === sp.estimate) ?? candidates[0];
   const q = chosen?.quantiles ?? null;
+  // Build-spec §0.8: counts and odds derive from the display-rounded value, never from the raw quantile,
+  // so the comparator is exactly as precise as the release card beside it.
+  const step = chosen ? roundingStep(chosen.uncertainty) : 1;
+  const rounded = (p: number) => (Math.round((p * 100) / step) * step) / 100;
+  const r = q ? { p05: rounded(q.p05), p50: rounded(q.p50), p95: rounded(q.p95) } : null;
+  const CELLS = 1000;
+  const ONE_POINT = CELLS / 100;
+  /** True when the release itself shows the below-one-point guard: a positive value that rounds to zero at this step. */
+  const belowOnePoint = (raw: number, rp: number) => raw > 0 && rp * CELLS < ONE_POINT;
+  const countOf = (raw: number, rp: number) => (belowOnePoint(raw, rp) ? `fewer than ${ONE_POINT.toLocaleString("en-US")}` : `about ${Math.round(rp * CELLS).toLocaleString("en-US")}`);
+  const oddsOf = (raw: number, rp: number) => (belowOnePoint(raw, rp) ? `rarer than 1 in ${(CELLS / ONE_POINT).toLocaleString("en-US")}` : `roughly ${oneIn(rp)}`);
+  const complementOf = (raw: number, rp: number) => (belowOnePoint(raw, rp) ? `more than ${(CELLS - ONE_POINT).toLocaleString("en-US")}` : `about ${(CELLS - Math.round(rp * CELLS)).toLocaleString("en-US")}`);
   const allHorizons = HORIZONS.map((hz) => researchEstimate(rel, "P_DOOM", hz.key)).filter((e): e is NonNullable<typeof e> => !!e && !!e.quantiles);
   return (
     <div className="page">
@@ -49,27 +61,27 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
             ))}
           </nav>
         ) : null}
-        {chosen && q ? (
+        {chosen && q && r ? (
           <>
             <div className="grid grid-2">
               <EstimateCard e={chosen} />
               <div className="card stack">
                 <div className="eyebrow">The same number three ways</div>
                 <p>
-                  <strong>As a grid.</strong> Of one thousand futures consistent with this estimate's assumptions, the median run has about {Math.round(q.p50 * 1000).toLocaleString("en-US")} ending in {outcomeSetLabel(chosen.outcome_set)} ({horizonLabel(chosen.horizon).toLowerCase()}). The plausible range is {Math.round(q.p05 * 1000).toLocaleString("en-US")} to {Math.round(q.p95 * 1000).toLocaleString("en-US")}.
+                  <strong>As a grid.</strong> Of one thousand futures consistent with this estimate's assumptions, {countOf(q.p50, r.p50)} end in {outcomeSetLabel(chosen.outcome_set)} ({horizonLabel(chosen.horizon).toLowerCase()}) at the median. The plausible range is {countOf(q.p05, r.p05)} to {countOf(q.p95, r.p95)}.
                 </p>
                 <p>
-                  <strong>As odds.</strong> Roughly {oneIn(q.p50)} at the median; between {oneIn(q.p95)} and {oneIn(q.p05)} across the interval.
+                  <strong>As odds.</strong> At the median, {oddsOf(q.p50, r.p50)}; across the interval, between {oddsOf(q.p95, r.p95)} and {oddsOf(q.p05, r.p05)}.
                 </p>
                 <p>
-                  <strong>As a complement.</strong> The same estimate says that in about {Math.round((1 - q.p50) * 1000).toLocaleString("en-US")} of one thousand futures none of these outcomes occurs within the horizon. Both readings are the same statement.
+                  <strong>As a complement.</strong> The same estimate says that in {complementOf(q.p50, r.p50)} of one thousand futures none of these outcomes occurs within the horizon. Both readings are the same statement.
                 </p>
                 <p className="cite">
                   No comparison with everyday risks is offered: those have base rates measured from events that happened, and this does not. See <Link href="/method/calibration">calibration</Link>.
                 </p>
               </div>
             </div>
-            <IconArray p={q.p50} low={q.p05} high={q.p95} label={`${outcomeSetLabel(chosen.outcome_set)}, ${horizonLabel(chosen.horizon)}, ${chosen.status === "research_mode" ? "research-mode model" : "external aggregate"}`} colorVar={chosen.status === "research_mode" ? "var(--c-disagreement)" : "var(--c-evidence)"} />
+            <IconArray p={r.p50} low={r.p05} high={r.p95} cells={CELLS} label={`${outcomeSetLabel(chosen.outcome_set)}, ${horizonLabel(chosen.horizon)}, ${chosen.status === "research_mode" ? "research-mode model" : "external aggregate"}`} colorVar={chosen.status === "research_mode" ? "var(--c-disagreement)" : "var(--c-evidence)"} />
           </>
         ) : (
           <p className="muted">No estimate with a published interval exists for this horizon.</p>

@@ -1006,6 +1006,9 @@ th.num {
   --c-border: rgba(245, 245, 247, 0.12);
   --c-border-strong: rgba(245, 245, 247, 0.28);
   --border: 1px solid var(--c-border);
+  /* focus ring and links must contrast with the forced-dark hero surfaces */
+  --c-focus: #8fd8ff;
+  --c-link: #9cc9ff;
   background: var(--c-bg);
   color: var(--c-text);
   color-scheme: dark;

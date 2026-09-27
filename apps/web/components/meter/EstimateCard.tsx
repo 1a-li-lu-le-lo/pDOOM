@@ -1,5 +1,6 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
 import type { Estimate } from "@pdoom/schemas";
+import { roundingStep } from "@pdoom/model-core";
 import { QuantileStrip } from "../charts/QuantileStrip";
 import { STATUS_LABEL, badgeClass, fmtDate, horizonLabel, outcomeSetLabel, tidyInterval, uncertaintyBadge } from "@/lib/format";
 
@@ -10,6 +11,8 @@ const STATUS_COLOR: Record<string, string> = {
   official: "var(--c-evidence)",
   user_scenario: "var(--c-uncertainty)",
 };
+
+const plural = (n: number, word: string): string => (n === 1 ? word : `${word}s`);
 
 /**
  * Every probability on the site is rendered through this card so that the
@@ -31,9 +34,13 @@ export function EstimateCard({ e, compact = false, hideStrip = false }: { e: Est
       <div className="value" style={{ color: STATUS_COLOR[e.status], fontSize: withheld ? "var(--fs-xl)" : undefined }}>
         {e.display.central}
       </div>
-      {q && !withheld ? <div className="interval">plausible interval {tidyInterval(e.display.interval)} · rounded to {e.rounding_rule.replace("nearest_", "nearest ")} points</div> : null}
+      {q && !withheld ? (
+        <div className="interval">
+          {e.status === "external_aggregate" ? "member range" : "plausible interval"} {tidyInterval(e.display.interval)} · rounded to {e.rounding_rule.replace("nearest_", "nearest ")} points
+        </div>
+      ) : null}
       {q && !withheld && !hideStrip ? (
-        <QuantileStrip p05={q.p05} p25={q.p25} p50={q.p50} p75={q.p75} p95={q.p95} label={`${outcomeSetLabel(e.outcome_set)}, ${horizonLabel(e.horizon)}`} description={e.display.note} colorVar={STATUS_COLOR[e.status]} compact={compact} />
+        <QuantileStrip p05={q.p05} p25={q.p25} p50={q.p50} p75={q.p75} p95={q.p95} step={roundingStep(e.uncertainty)} rangeLabel={e.status === "external_aggregate" ? "member range (lowest to highest forecast)" : "5th to 95th percentile"} label={`${outcomeSetLabel(e.outcome_set)}, ${horizonLabel(e.horizon)}`} description={e.display.note} colorVar={STATUS_COLOR[e.status]} compact={compact} />
       ) : (
         <p className="muted" style={{ fontSize: "var(--fs-sm)" }}>{e.display.note}</p>
       )}
@@ -41,7 +48,11 @@ export function EstimateCard({ e, compact = false, hideStrip = false }: { e: Est
         <span>model {e.producer}</span>
         <span>origin {fmtDate(e.forecast_origin_date)}</span>
         <span>evidence through {fmtDate(e.last_evidence_date)}</span>
-        {e.source_coverage.forecast_count ? <span>{e.source_coverage.forecast_count} forecasts, {e.source_coverage.population_count} populations</span> : null}
+        {e.source_coverage.forecast_count ? (
+          <span>
+            {e.source_coverage.forecast_count} {plural(e.source_coverage.forecast_count, "forecast")}, {e.source_coverage.population_count} {plural(e.source_coverage.population_count, "population")}
+          </span>
+        ) : null}
       </div>
       {!compact ? (
         <details>

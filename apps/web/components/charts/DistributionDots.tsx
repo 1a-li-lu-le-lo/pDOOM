@@ -1,5 +1,9 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
+import { roundForDisplay } from "@pdoom/model-core";
+
 export interface Dot {
+  /** Stable unique id (e.g. the forecast id); used as the React key when provided. */
+  id?: string;
   label: string;
   value: number;
   group: string;
@@ -16,7 +20,23 @@ export function DistributionDots({ dots, title, description, max }: { dots: Dot[
   const padL = 190;
   const H = groups.length * rowH + 30;
   const x = (v: number) => padL + (Math.min(top, v) / top) * (W - padL - 16);
-  const fmt = (v: number) => (v * 100 < 1 && v > 0 ? `${Math.round(v * 1000) / 10}%` : `${Math.round(v * 100)}%`);
+  // Axis ticks are whole points; dot values are member forecasts quoted as their sources state them.
+  const fmt = (v: number) => roundForDisplay(v, 1);
+  const asRecorded = (v: number) => `${Math.round(v * 1000) / 10}%`;
+  const key = (d: Dot) => d.id ?? `${d.group} · ${d.label}`;
+  // Group labels are "<outcome set> · <horizon>". The horizon is always shown in full on its own
+  // line so rows across horizons stay distinguishable; only the outcome part is shortened.
+  const MAX_CHARS = 30;
+  const clip = (s: string) => {
+    if (s.length <= MAX_CHARS) return s;
+    const cut = s.slice(0, MAX_CHARS - 1);
+    const atWord = cut.replace(/\s+\S*$/, "");
+    return (atWord.length > 0 ? atWord : cut) + "…";
+  };
+  const splitLabel = (g: string): [string, string | null] => {
+    const i = g.lastIndexOf(" · ");
+    return i === -1 ? [g, null] : [g.slice(0, i), g.slice(i + 3)];
+  };
   return (
     <figure>
       <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}, ${dots.length} forecasts across ${groups.length} groups`}>
@@ -30,21 +50,30 @@ export function DistributionDots({ dots, title, description, max }: { dots: Dot[
             {fmt(f * top)}
           </text>
         ))}
-        {groups.map((g, gi) => (
-          <g key={g}>
-            <text x={0} y={gi * rowH + 19}>
-              {g.length > 30 ? g.slice(0, 29) + "…" : g}
-            </text>
-            <line x1={padL} x2={W - 16} y1={gi * rowH + 15} y2={gi * rowH + 15} stroke="var(--c-border)" />
-            {dots
-              .filter((d) => d.group === g)
-              .map((d) => (
-                <circle key={d.label} cx={x(d.value)} cy={gi * rowH + 15} r={6} fill={d.colorVar ?? "var(--c-evidence)"} opacity={0.85}>
-                  <title>{`${d.label}: ${fmt(d.value)}`}</title>
-                </circle>
-              ))}
-          </g>
-        ))}
+        {groups.map((g, gi) => {
+          const [outcome, horizon] = splitLabel(g);
+          return (
+            <g key={g}>
+              <text x={0} y={horizon ? gi * rowH + 12 : gi * rowH + 19}>
+                <title>{g}</title>
+                <tspan x={0}>{clip(outcome)}</tspan>
+                {horizon ? (
+                  <tspan x={0} dy={12}>
+                    {horizon}
+                  </tspan>
+                ) : null}
+              </text>
+              <line x1={padL} x2={W - 16} y1={gi * rowH + 15} y2={gi * rowH + 15} stroke="var(--c-border)" />
+              {dots
+                .filter((d) => d.group === g)
+                .map((d) => (
+                  <circle key={key(d)} cx={x(d.value)} cy={gi * rowH + 15} r={6} fill={d.colorVar ?? "var(--c-evidence)"} opacity={0.85}>
+                    <title>{`${d.label}: ${asRecorded(d.value)} (as the source states it)`}</title>
+                  </circle>
+                ))}
+            </g>
+          );
+        })}
       </svg>
       <figcaption>
         {description}
@@ -61,10 +90,10 @@ export function DistributionDots({ dots, title, description, max }: { dots: Dot[
             </thead>
             <tbody>
               {dots.map((d) => (
-                <tr key={d.label}>
+                <tr key={key(d)}>
                   <td>{d.group}</td>
                   <td>{d.label}</td>
-                  <td className="num">{fmt(d.value)}</td>
+                  <td className="num">{asRecorded(d.value)}</td>
                 </tr>
               ))}
             </tbody>

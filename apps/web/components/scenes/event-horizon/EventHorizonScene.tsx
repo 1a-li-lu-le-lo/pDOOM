@@ -144,7 +144,7 @@ export function EventHorizonScene({ data }: { data: StageData }) {
   const [inView, setInView] = useState(true);
   const [hidden, setHidden] = useState(false);
   const [quality, setQuality] = useState<Quality>(FULL_QUALITY);
-  const [palette] = useState(readPalette);
+  const [palette, setPalette] = useState(readPalette);
   const model = useMemo(
     () => deriveModel(data, quality.particleScale, quality.halo),
     [data, quality.particleScale, quality.halo],
@@ -162,6 +162,16 @@ export function EventHorizonScene({ data }: { data: StageData }) {
     setReduced(mq.matches);
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  // Palette: the display settings flip data-palette / data-theme on <html> at
+  // runtime, so re-read the --scene-* tokens whenever those attributes change.
+  useEffect(() => {
+    if (typeof MutationObserver === "undefined") return;
+    const root = document.documentElement;
+    const mo = new MutationObserver(() => setPalette(readPalette()));
+    mo.observe(root, { attributes: true, attributeFilter: ["data-palette", "data-theme"] });
+    return () => mo.disconnect();
   }, []);
 
   // (b) pause when the document is hidden.

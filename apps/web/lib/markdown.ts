@@ -38,6 +38,9 @@ export function slugify(s: string): string {
 function safeHref(href: string): string | null {
   const h = href.trim();
   if (/^(https?:|mailto:)/i.test(h)) return h;
+  // Protocol-relative (`//host`) and backslash (`/\host`, `\\host`) forms resolve
+  // to another origin in browsers; they are not relative links.
+  if (/^[/\\]{2}/.test(h)) return null;
   if (/^[./#a-z0-9_-]/i.test(h) && !/^[a-z]+:/i.test(h)) {
     // Relative links to other method docs: `calibration.md` → `/method/calibration`
     const m = h.match(/^(?:\.\/)?([a-z0-9-]+)\.md(#.*)?$/i);
@@ -81,6 +84,8 @@ export function renderMarkdown(md: string): Rendered {
   const headings: Heading[] = [];
   const ids = new Map<string, number>();
   let title = "";
+  let tables = 0;
+  let tableHeading = "";
   let i = 0;
   const para: string[] = [];
   const flushPara = () => {
@@ -139,8 +144,17 @@ export function renderMarkdown(md: string): Rendered {
         rows.push(tableRow(lines[i] ?? ""));
         i++;
       }
+      // Caption from the nearest preceding heading (else the header cells); the
+      // scroll region is named by the caption so several tables stay distinguishable.
+      const last = headings[headings.length - 1];
+      const cols = head.join(", ");
+      // A second table under the same heading is told apart by its header cells.
+      const captionText = last ? (tableHeading === last.id ? `${last.text}: ${cols}` : last.text) : cols;
+      tableHeading = last?.id ?? "";
+      tables += 1;
+      const captionId = `${last ? last.id : "table"}-table-${tables}`;
       out.push(
-        `<div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table"><table><thead><tr>${head.map((c) => `<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${rows
+        `<div class="table-wrap" tabindex="0" role="region" aria-labelledby="${captionId}"><table><caption id="${captionId}">${inline(captionText)}</caption><thead><tr>${head.map((c) => `<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${rows
           .map((r) => `<tr>${r.map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`)
           .join("")}</tbody></table></div>`,
       );

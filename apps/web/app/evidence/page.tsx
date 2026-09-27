@@ -19,13 +19,18 @@ const TIER_LABEL: Record<number, string> = {
   5: "Tier 5 · excluded from the model",
 };
 
-export default async function EvidencePage({ searchParams }: { searchParams: Promise<{ tier?: string; topic?: string; q?: string; status?: string }> }) {
+/** Next delivers a repeated query key as an array; the filters only ever mean one value, so take the first. */
+const one = (v: string | string[] | undefined): string | undefined => (Array.isArray(v) ? v[0] : v);
+
+export default async function EvidencePage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
   const snap = await getSnapshot();
-  const tier = sp.tier && /^[1-5]$/.test(sp.tier) ? Number(sp.tier) : undefined;
-  const topic = sp.topic?.slice(0, 40);
-  const q = sp.q?.trim().toLowerCase().slice(0, 80);
-  const status = sp.status?.slice(0, 40);
+  const rawTier = one(sp.tier);
+  const tier = rawTier && /^[1-5]$/.test(rawTier) ? Number(rawTier) : undefined;
+  const topic = one(sp.topic)?.slice(0, 40);
+  const rawQ = one(sp.q)?.trim().slice(0, 80);
+  const q = rawQ?.toLowerCase();
+  const status = one(sp.status)?.slice(0, 40);
   const topics = [...new Set(snap.sources.flatMap((s) => s.topic))].sort();
   const all = snap.sources;
   const items = all
@@ -51,7 +56,7 @@ export default async function EvidencePage({ searchParams }: { searchParams: Pro
         <form className="filters card" method="get" action="/evidence" aria-label="Filter sources">
           <label>
             Search
-            <input type="search" name="q" defaultValue={sp.q ?? ""} placeholder="title, publisher, author" />
+            <input type="search" name="q" defaultValue={rawQ ?? ""} placeholder="title, publisher, author" />
           </label>
           <label>
             Tier
@@ -86,7 +91,7 @@ export default async function EvidencePage({ searchParams }: { searchParams: Pro
           {items.length} of {all.length} sources
           {items.length === 0 ? " match these filters. Nothing is hidden: clear a filter to widen the ledger." : ""}
         </p>
-        <div className="table-wrap table-wide" tabIndex={0} role="region" aria-label="Scrollable table">
+        <div className="table-wrap table-wide" tabIndex={0} role="region" aria-label="Source ledger">
           <table>
             <caption>Source ledger (filtered)</caption>
             <thead>

@@ -12,16 +12,23 @@ export const metadata: Metadata = {
   description: "Verified AI incidents and near misses described at category level, with severity, relevance, evidence level and the registries that record them.",
 };
 
-export default async function IncidentsPage({ searchParams }: { searchParams: Promise<{ severity?: string; relevance?: string }> }) {
-  const sp = await searchParams;
+/** Next delivers a repeated query key as an array; the filters only ever mean one value, so take the first. */
+const one = (v: string | string[] | undefined): string | undefined => (Array.isArray(v) ? v[0] : v);
+
+export default async function IncidentsPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const raw = await searchParams;
+  const sp = { severity: one(raw.severity), relevance: one(raw.relevance) };
   const [rel, snap] = await Promise.all([getRelease(), getSnapshot()]);
   const ipi = indexById(rel, "incident_pressure");
-  const items = [...snap.incidents]
-    .filter((i) => (sp.severity ? i.severity === sp.severity : true))
-    .filter((i) => (sp.relevance ? i.pdoom_relevance === sp.relevance : true))
-    .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
   const severities = [...new Set(snap.incidents.map((i) => i.severity))];
   const relevances = [...new Set(snap.incidents.map((i) => i.pdoom_relevance))];
+  // Only filter on values that exist in the snapshot, so the selects and the list always agree.
+  const severity = sp.severity && severities.includes(sp.severity as (typeof severities)[number]) ? sp.severity : undefined;
+  const relevance = sp.relevance && relevances.includes(sp.relevance as (typeof relevances)[number]) ? sp.relevance : undefined;
+  const items = [...snap.incidents]
+    .filter((i) => (severity ? i.severity === severity : true))
+    .filter((i) => (relevance ? i.pdoom_relevance === relevance : true))
+    .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
   const src = new Map(snap.sources.map((s) => [s.id, s]));
   return (
     <div className="page">
@@ -49,7 +56,7 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
         <form className="filters card" method="get" action="/incidents" aria-label="Filter incidents">
           <label>
             Severity
-            <select name="severity" defaultValue={sp.severity ?? ""}>
+            <select name="severity" defaultValue={severity ?? ""}>
               <option value="">All</option>
               {severities.map((s) => (
                 <option key={s} value={s}>
@@ -60,7 +67,7 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
           </label>
           <label>
             Relevance
-            <select name="relevance" defaultValue={sp.relevance ?? ""}>
+            <select name="relevance" defaultValue={relevance ?? ""}>
               <option value="">All</option>
               {relevances.map((s) => (
                 <option key={s} value={s}>
@@ -78,6 +85,7 @@ export default async function IncidentsPage({ searchParams }: { searchParams: Pr
         </form>
         <p className="muted" aria-live="polite">
           {items.length} of {snap.incidents.length} incidents
+          {items.length === 0 ? " match these filters. Nothing is hidden: clear a filter to widen the list." : ""}
         </p>
         <div className="stack">
           {items.map((i) => (

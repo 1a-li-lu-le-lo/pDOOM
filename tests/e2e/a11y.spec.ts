@@ -31,6 +31,7 @@ test.describe("accessibility", () => {
     for (let i = 0; i < n; i++) {
       const fig = figures.nth(i);
       await expect(fig.locator("figcaption")).toHaveCount(1);
+      await expect(fig.locator("details table").first()).toBeAttached();
     }
     expect(await page.locator("figure svg[role='img'][aria-label]").count()).toBeGreaterThan(0);
   });

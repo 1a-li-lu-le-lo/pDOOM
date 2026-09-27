@@ -29,7 +29,31 @@ export function BarList({ items, max, title, description, unit = "" }: { items: 
           </li>
         ))}
       </ul>
-      <figcaption>{description}</figcaption>
+      <figcaption>
+        {description}
+        <details>
+          <summary>Data table</summary>
+          <table>
+            <caption>{title}</caption>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th className="num">Value</th>
+                <th>Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              {items.map((it) => (
+                <tr key={`${it.label}-row`}>
+                  <td>{it.label}</td>
+                  <td className="num">{it.display ?? `${it.value}${unit}`}</td>
+                  <td className="cite">{it.note ?? ""}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </details>
+      </figcaption>
     </figure>
   );
 }
