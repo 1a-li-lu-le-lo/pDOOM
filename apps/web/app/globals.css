@@ -990,3 +990,45 @@ th.num {
     animation: none;
   }
 }
+
+/* The hero stage is the one deliberately dark surface in the light theme:
+   the scene grammar (dark horizon, bright evidence) only reads on dark. */
+:root[data-theme="light"] .hero {
+  --c-bg: #07070b;
+  --c-bg-elevated: #121219;
+  --c-surface: #15151d;
+  --c-surface-2: #1f1f29;
+  --c-text: #f5f5f7;
+  --c-text-2: #c9c9d4;
+  --c-text-3: #8b90a0;
+  --c-text-inverse: #07070b;
+  --c-evidence: #f5f5f7;
+  --c-border: rgba(245, 245, 247, 0.12);
+  --c-border-strong: rgba(245, 245, 247, 0.28);
+  --border: 1px solid var(--c-border);
+  background: var(--c-bg);
+  color: var(--c-text);
+  color-scheme: dark;
+}
+:root[data-theme="light"] .hero .btn {
+  border-color: var(--c-border-strong);
+}
+:root[data-theme="light"] .hero .mode-switcher {
+  border-color: var(--c-border-strong);
+}
+.hero-title {
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Scene colour tokens: the WebGL stage stays dark in every theme; the
+   colour-vision-safe palette still reaches it. */
+:root {
+  --scene-bg: #07070b;
+  --scene-evidence: #f5f5f7;
+  --scene-safeguard: #5fd6ea;
+  --scene-uncertainty: #e8b45a;
+}
+:root[data-palette="cvd"] {
+  --scene-safeguard: #56b4e9;
+  --scene-uncertainty: #e69f00;
+}

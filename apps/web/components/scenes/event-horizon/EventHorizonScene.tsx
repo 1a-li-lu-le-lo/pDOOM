@@ -51,7 +51,11 @@ interface Quality {
 const FULL_QUALITY: Quality = { dpr: FULL_DPR, particleScale: 1, halo: true };
 const LOW_QUALITY: Quality = { dpr: LOW_DPR, particleScale: LOW_PARTICLE_SCALE, halo: false };
 
-/** Colour tokens from the document so theme and palette switches reach the canvas. */
+/**
+ * Scene colour tokens (--scene-*) from the document. The stage is dark in every
+ * theme by design; the palette switch (colour-vision safe) still reaches the
+ * canvas through these tokens.
+ */
 function readPalette(): Palette {
   if (typeof document === "undefined") return FALLBACK_PALETTE;
   try {
@@ -61,10 +65,10 @@ function readPalette(): Palette {
       return /^#[0-9a-f]{6}$/i.test(v) ? v : fallback;
     };
     return {
-      bg: pick("--c-bg", FALLBACK_PALETTE.bg),
-      evidence: pick("--c-evidence", FALLBACK_PALETTE.evidence),
-      safeguard: pick("--c-safeguard", FALLBACK_PALETTE.safeguard),
-      uncertainty: pick("--c-uncertainty", FALLBACK_PALETTE.uncertainty),
+      bg: pick("--scene-bg", FALLBACK_PALETTE.bg),
+      evidence: pick("--scene-evidence", FALLBACK_PALETTE.evidence),
+      safeguard: pick("--scene-safeguard", FALLBACK_PALETTE.safeguard),
+      uncertainty: pick("--scene-uncertainty", FALLBACK_PALETTE.uncertainty),
     };
   } catch {
     return FALLBACK_PALETTE;
