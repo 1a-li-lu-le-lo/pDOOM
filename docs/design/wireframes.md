@@ -7,7 +7,9 @@ continues below. The wireframes describe the order of information; every box is 
 the current release unless marked static.
 
 Shared chrome on every route: a skip link, the sticky header (wordmark + public label,
-primary navigation, compact mode switcher with Event Horizon / Observatory / Plain text), and
+then a single-row primary navigation that scrolls on phones; the mode switcher sits beside the
+wordmark with all five modes, two of which are hidden on narrow screens and offered again in
+the hero's full switcher), and
 the footer (release id, data cutoff, publication date, method/changelog/text/content-safety
 links, the fixed sentence that no official probability is published).
 

@@ -13,7 +13,7 @@ fetch for data and no skeleton. The exceptions:
 | --- | --- |
 | Home hero | `HomeStage` renders the static SVG disk (`StaticDisk`) before any scene; immersive scenes load with `next/dynamic` (`ssr: false`, `loading: () => null`) over it |
 | `/lab` | The client component is wrapped in `<Suspense fallback="Loading the Scenario Lab…">`; while a run computes, the result region has `aria-busy` and the value shows "…" with the caption "computing" |
-| Method documents | Rendered on the server from `docs/method/*.md`; no loading state |
+| Method documents | Rendered on the server from `docs/method/*.md`; the shared route skeleton shows while the release is read |
 
 ## 2. No release
 
@@ -111,8 +111,8 @@ switch to black on white.
 
 ## Not yet implemented
 
-- An explicit empty-state sentence on `/evidence` when filters match no source (today the
-  filtered table is simply empty).
+- A dedicated loading state for method documents; the shared route skeleton (`app/loading.tsx`)
+  covers them today.
 - Visible loading and error states for the immersive scenes: today a scene fades in when ready and
   disappears silently on failure, leaving the static disk.
 - A dedicated "release superseded since you opened this page" notice; the SDK reload is

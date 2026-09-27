@@ -73,6 +73,7 @@ the promoted release through `@pdoom/sdk`; no component fetches, stores or compu
 
 | Component | Props | Renders | Accessibility |
 | --- | --- | --- | --- |
+| `shell/DisplaySettings` (client) | — | Theme (system/dark/light) and palette (default/colour-vision safe) selects in the footer; stored in `localStorage`, applied to `<html data-theme data-palette>` before first paint by an inline script in the root layout | Labelled form; native selects; no cookie |
 | `HomeStage` (client) | `data: StageData` | Chooses the scene for the mode; static disk before hydration, in Observatory/Text modes, under reduced motion or without WebGL; dynamic-imports the scenes | Static disk wrappers are `aria-hidden`; scene wrappers carry `aria-label` "Conceptual risk visualization — not a simulation of AI risk" |
 | `StaticDisk` | `intervalWidth?`, `brightness?`, `particles?`, `safeguards?`, `seed?` | Server-renderable SVG accretion disk following [`motion-semantics.md`](motion-semantics.md) §1 | `role="img"` with a full-sentence `aria-label` describing the grammar and the disclaimer |
 | `event-horizon/EventHorizonScene` (client) | `data` | React Three Fiber canvas over the static disk: horizon, accretion band (thickness = interval width), particle field (count = sources), safeguard arcs, faint research-curve points; quality manager, pause when hidden or out of view, skippable intro, reduced-motion still frame, error boundary | Wrapper `aria-hidden`; no text or numbers in the canvas; `pointer-events: none` |

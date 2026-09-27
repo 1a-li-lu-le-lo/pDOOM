@@ -60,7 +60,9 @@ Horizon canvas is `aria-hidden` and carries no text; the Orrery and Branching SV
   DOM order for sighted keyboard users on wide screens; the DOM order is correct.
 - **Form validation on `/evidence`** relies on the server ignoring invalid values; there is no
   inline error text.
-- **Theme and palette switches** (`data-theme`, `data-palette`) have no UI yet.
+- **Theme and palette switches** live in the footer (`DisplaySettings`), apply before first paint
+  through an inline script, and are stored only in this browser; the choice is not yet
+  reachable from the header.
 - **Scenes have no user-facing controls** beyond the mode switcher; pausing, quality and the
   intro skip are automatic (hidden tab, out of view, any input, reduced motion).
 
