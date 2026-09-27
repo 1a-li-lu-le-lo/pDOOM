@@ -182,6 +182,8 @@ export type DerivedOutcomeSetKey = keyof typeof DERIVED_OUTCOME_SETS;
 export interface HorizonDefinition {
   key: HorizonKey;
   label: string;
+  /** Short axis label for narrow charts; the full label always appears in tables and accessible names. */
+  short: string;
   /** Years after `forecast_origin_date`; null for calendar-year and open-ended horizons. */
   years: number | null;
   kind: "duration" | "calendar_year" | "open_ended";
@@ -189,13 +191,14 @@ export interface HorizonDefinition {
 }
 
 export const HORIZONS: readonly HorizonDefinition[] = [
-  { key: "1y", label: "Within 1 year", years: 1, kind: "duration", note: "" },
-  { key: "3y", label: "Within 3 years", years: 3, kind: "duration", note: "" },
-  { key: "5y", label: "Within 5 years", years: 5, kind: "duration", note: "" },
-  { key: "10y", label: "Within 10 years", years: 10, kind: "duration", note: "" },
-  { key: "25y", label: "Within 25 years", years: 25, kind: "duration", note: "" },
+  { key: "1y", short: "1 yr", label: "Within 1 year", years: 1, kind: "duration", note: "" },
+  { key: "3y", short: "3 yrs", label: "Within 3 years", years: 3, kind: "duration", note: "" },
+  { key: "5y", short: "5 yrs", label: "Within 5 years", years: 5, kind: "duration", note: "" },
+  { key: "10y", short: "10 yrs", label: "Within 10 years", years: 10, kind: "duration", note: "" },
+  { key: "25y", short: "25 yrs", label: "Within 25 years", years: 25, kind: "duration", note: "" },
   {
     key: "2100",
+    short: "By 2100",
     label: "By 2100",
     years: null,
     kind: "calendar_year",
@@ -203,6 +206,7 @@ export const HORIZONS: readonly HorizonDefinition[] = [
   },
   {
     key: "eventual",
+    short: "Open-ended",
     label: "Eventually (no fixed date)",
     years: null,
     kind: "open_ended",

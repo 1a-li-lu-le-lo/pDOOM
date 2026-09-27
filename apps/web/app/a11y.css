@@ -16,6 +16,13 @@
   min-height: 24px;
   line-height: 24px;
 }
+/* A list item's outside marker aligns with the first line box of its content; an inline-block's
+   baseline is its last line, so a wrapped link would put the bullet beside its second line.
+   Block display keeps the marker on the first line and the 24px target via line-height. */
+.cite li > a,
+.card ul.cite li > a {
+  display: block;
+}
 td a,
 th a {
   display: inline-block;

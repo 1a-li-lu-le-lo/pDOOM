@@ -28,17 +28,19 @@ export default async function CapabilitiesPage() {
         />
         <div className="grid grid-2">
           <div>{cpi ? <IndexGauge index={cpi} /> : null}</div>
-          <div className="card">
-            <p className="muted" style={{ margin: 0 }}>
-              {cpi?.note}
-            </p>
-          </div>
+          {cpi?.note ? (
+            <div className="card">
+              <p className="muted" style={{ margin: 0 }}>
+                {cpi.note}
+              </p>
+            </div>
+          ) : null}
         </div>
         {cpi ? (
           <Waterfall
             title="Capability Pressure Index contributions"
             description="Each bar is one signal's weighted, tier-adjusted contribution in index points. The order is the model specification's order; the sum is the index."
-            items={cpi.components.map((c) => ({ label: c.signal_id, value: c.contribution, direction: c.contribution >= 0 ? "raises" : "lowers", note: `weight ${c.weight}, normalised ${c.value_normalized.toFixed(2)}, tier ${c.tier}` }))}
+            items={cpi.components.map((c) => ({ label: c.signal_id, value: c.contribution, direction: c.contribution >= 0 ? "raises" : "lowers", note: `weight ${c.weight}, component value ${c.value_normalized.toFixed(2)} (as entered into this index; control signals are inverted for risk indexes), tier ${c.tier}` }))}
           />
         ) : null}
         {snap.benchmarks.map((b) => {

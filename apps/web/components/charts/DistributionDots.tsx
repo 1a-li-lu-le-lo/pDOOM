@@ -39,6 +39,7 @@ export function DistributionDots({ dots, title, description, max }: { dots: Dot[
   };
   return (
     <figure>
+      <div className="chart-scroll" tabIndex={0} role="group" aria-label={`${title} (scrolls sideways on narrow screens)`}>
       <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}, ${dots.length} forecasts across ${groups.length} groups`}>
         <g className="grid">
           {[0, 0.25, 0.5, 0.75, 1].map((f) => (
@@ -75,6 +76,7 @@ export function DistributionDots({ dots, title, description, max }: { dots: Dot[
           );
         })}
       </svg>
+      </div>
       <figcaption>
         {description}
         <details>

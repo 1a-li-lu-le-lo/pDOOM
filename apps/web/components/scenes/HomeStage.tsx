@@ -63,14 +63,14 @@ export function HomeStage({ data }: { data: StageData }) {
   if (mode === "orrery") {
     return (
       <div className="hero-stage" data-scene="orrery">
-        <StageBoundary fallback={staticFallback}><Orrery data={data} reducedMotion={reducedMotion} /></StageBoundary>
+        <StageBoundary key="orrery" fallback={staticFallback}><Orrery data={data} reducedMotion={reducedMotion} /></StageBoundary>
       </div>
     );
   }
   if (mode === "branching") {
     return (
       <div className="hero-stage" data-scene="branching">
-        <StageBoundary fallback={staticFallback}><Branching data={data} reducedMotion={reducedMotion} /></StageBoundary>
+        <StageBoundary key="branching" fallback={staticFallback}><Branching data={data} reducedMotion={reducedMotion} /></StageBoundary>
       </div>
     );
   }
@@ -84,7 +84,7 @@ export function HomeStage({ data }: { data: StageData }) {
   return (
     <div className="hero-stage" data-scene="event-horizon">
       {staticFallback}
-      {webgl ? <StageBoundary fallback={null}><EventHorizon data={data} /></StageBoundary> : null}
+      {webgl ? <StageBoundary key="event-horizon" fallback={null}><EventHorizon data={data} /></StageBoundary> : null}
     </div>
   );
 }

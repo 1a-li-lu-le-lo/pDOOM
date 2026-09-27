@@ -1,7 +1,8 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
 import type { Metadata } from "next";
 import Link from "next/link";
-import { HORIZONS } from "@pdoom/schemas";
+import { HORIZONS } from "@pdoom/schemas/constants";
+import { roundingStep } from "@pdoom/model-core";
 import { PageHeader } from "@/components/shell/PageHeader";
 import { MeterPanel } from "@/components/meter/MeterPanel";
 import { EstimateCard } from "@/components/meter/EstimateCard";
@@ -28,7 +29,7 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
   const unc = indexById(rel, "uncertainty");
   const curve = HORIZONS.map((hz) => researchEstimate(rel, "P_DOOM", hz.key))
     .filter((e): e is NonNullable<typeof e> => !!e && !!e.quantiles)
-    .map((e) => ({ x: horizonLabel(e.horizon), low: e.quantiles!.p05, mid: e.quantiles!.p50, high: e.quantiles!.p95 }));
+    .map((e) => ({ x: horizonLabel(e.horizon), short: HORIZONS.find((hz) => hz.key === e.horizon)?.short, low: e.quantiles!.p05, mid: e.quantiles!.p50, high: e.quantiles!.p95, step: roundingStep(e.uncertainty) }));
   const groups = rel.aggregations.filter((a) => a.preferred);
   const sens = [...rel.sensitivity].sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta)).slice(0, 8);
   const spec = snap.model_spec;

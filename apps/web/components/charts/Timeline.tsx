@@ -31,7 +31,10 @@ export function Timeline({ points, title, description, unit, log }: { points: Ti
   const ymax = fy(vmax) + (useLog ? 0.1 : (vmax - vmin) * 0.1);
   const xs = (d: string) => padL + ((Date.parse(d) - t0) / (t1 - t0)) * (W - padL - 14);
   const ys = (v: number) => H - padB - ((fy(v) - ymin) / Math.max(1e-9, ymax - ymin)) * (H - padB - 12);
+  // Axis ticks are rounded for legibility; recorded values are shown verbatim so the
+  // table and tooltips match the snapshot and /text.
   const fmtV = (v: number) => (v >= 100 ? Math.round(v).toLocaleString("en-US") : v >= 10 ? v.toFixed(0) : v.toFixed(1));
+  const fmtExact = (v: number) => String(v);
   const ticks = useLog ? Array.from({ length: Math.ceil(ymax) - Math.floor(ymin) + 1 }, (_, i) => 10 ** (Math.floor(ymin) + i)).filter((t) => t >= vmin && t <= vmax * 1.3) : [0, 0.25, 0.5, 0.75, 1].map((f) => vmin + (vmax - vmin) * f);
   const years = [...new Set(pts.map((p) => p.date.slice(0, 4)))];
   // Centre each year label on that year's own points and keep it inside the plot area,
@@ -64,9 +67,7 @@ export function Timeline({ points, title, description, unit, log }: { points: Ti
           <g key={`${p.date}-${p.label}`}>
             {p.low != null && p.high != null ? <line x1={xs(p.date)} x2={xs(p.date)} y1={ys(p.high)} y2={ys(p.low)} stroke="var(--c-risk)" strokeOpacity={0.5} /> : null}
             <circle cx={xs(p.date)} cy={ys(p.value)} r={4.5} fill="var(--c-risk)" stroke="var(--c-bg)" strokeWidth={1.5}>
-              <title>
-                {p.label}: {fmtV(p.value)} {unit} ({p.date})
-              </title>
+              <title>{`${p.label}: ${fmtExact(p.value)} ${unit} (${p.date})`}</title>
             </circle>
           </g>
         ))}
@@ -96,8 +97,8 @@ export function Timeline({ points, title, description, unit, log }: { points: Ti
                 <tr key={`${p.date}-${p.label}-r`}>
                   <td>{p.date}</td>
                   <td>{p.label}</td>
-                  <td className="num">{fmtV(p.value)}</td>
-                  <td>{p.low != null && p.high != null ? `${fmtV(p.low)}–${fmtV(p.high)}` : "—"}</td>
+                  <td className="num">{fmtExact(p.value)}</td>
+                  <td>{p.low != null && p.high != null ? `${fmtExact(p.low)}–${fmtExact(p.high)}` : "—"}</td>
                   <td className="cite">{p.note ?? ""}</td>
                 </tr>
               ))}

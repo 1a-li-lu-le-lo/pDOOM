@@ -261,9 +261,10 @@
 .hero-content {
   position: relative;
   z-index: var(--z-content);
-  padding: var(--s-8) 0 var(--s-6);
+  padding: var(--s-8) var(--gutter) var(--s-6);
   display: grid;
   gap: var(--s-5);
+  min-width: 0;
 }
 .hero-title {
   font-size: var(--fs-hero);
@@ -438,6 +439,10 @@
     position: relative;
     height: 320px;
     inset: auto;
+  }
+  .hero .mode-switcher {
+    flex-wrap: wrap;
+    max-width: 100%;
   }
 }
 .static-disk {
@@ -1034,4 +1039,15 @@ th.num {
 :root[data-palette="cvd"] {
   --scene-safeguard: #56b4e9;
   --scene-uncertainty: #e69f00;
+}
+
+/* Wide charts keep a readable minimum width on phones and scroll sideways inside their figure. */
+.chart-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 720px) {
+  .chart-scroll > svg.chart {
+    min-width: 560px;
+  }
 }

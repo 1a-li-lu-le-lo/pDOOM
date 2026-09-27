@@ -54,3 +54,20 @@ test.describe("shell", () => {
     expect(header!.height).toBeLessThan(170);
   });
 });
+
+test.describe("console hygiene", () => {
+  test.skip(({ isMobile }) => !!isMobile, "desktop is enough for console checks");
+  for (const route of ["/", "/meter", "/futures", "/capabilities", "/forecasts", "/compare", "/lab", "/text"]) {
+    test(`${route} logs no errors or hydration warnings`, async ({ page }) => {
+      const problems: string[] = [];
+      page.on("pageerror", (e) => problems.push(`pageerror: ${e.message}`));
+      page.on("console", (m) => {
+        if (m.type() === "error") problems.push(`console.error: ${m.text()}`);
+        if (m.type() === "warning" && /hydrat|did not match|Minified React error/i.test(m.text())) problems.push(`console.warning: ${m.text()}`);
+      });
+      await page.goto(route, { waitUntil: "networkidle" });
+      await page.waitForTimeout(500);
+      expect(problems).toEqual([]);
+    });
+  }
+});

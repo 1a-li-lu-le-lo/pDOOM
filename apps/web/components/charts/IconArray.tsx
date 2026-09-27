@@ -7,9 +7,11 @@
  * cells are a pattern fill and filled cells are drawn as whole rows plus one
  * partial row, so a thousand-cell grid is a handful of elements.
  */
-export function IconArray({ p, cells = 1000, label, colorVar = "var(--c-risk)", low, high }: { p: number; cells?: number; label: string; colorVar?: string; low?: number; high?: number }) {
+export function IconArray({ p, cells = 1000, label, colorVar = "var(--c-risk)", low, high, lowBelowOnePoint = false }: { p: number; cells?: number; label: string; colorVar?: string; low?: number; high?: number; /** The release shows the lower bound as below one point; say so instead of a hard zero. */ lowBelowOnePoint?: boolean }) {
   const n = Math.max(0, Math.min(cells, Math.round(p * cells)));
+  const onePoint = cells / 100;
   const nLow = low === undefined ? null : Math.round(low * cells);
+  const lowText = lowBelowOnePoint ? `fewer than ${onePoint.toLocaleString("en-US")}` : nLow === null ? null : nLow.toLocaleString("en-US");
   const nHigh = high === undefined ? null : Math.min(cells, Math.round(high * cells));
   const cols = cells >= 1000 ? 50 : cells >= 100 ? 20 : 10;
   const rows = Math.ceil(cells / cols);
@@ -19,7 +21,7 @@ export function IconArray({ p, cells = 1000, label, colorVar = "var(--c-risk)", 
   const W = cols * step;
   const H = rows * step;
   const id = `ia-${cells}-${Math.round(p * 1e6)}`;
-  const summary = `${label}: ${n.toLocaleString("en-US")} of ${cells.toLocaleString("en-US")} cells filled${nLow !== null && nHigh !== null ? `; plausible range ${nLow.toLocaleString("en-US")} to ${nHigh.toLocaleString("en-US")}` : ""}.`;
+  const summary = `${label}: ${n.toLocaleString("en-US")} of ${cells.toLocaleString("en-US")} cells filled${lowText !== null && nHigh !== null ? `; plausible range ${lowText} to ${nHigh.toLocaleString("en-US")}` : ""}.`;
   /** Rectangles covering cells [from, to) in reading order. */
   const span = (from: number, to: number, fill: string, opacity: number) => {
     const out: React.ReactNode[] = [];
@@ -70,7 +72,7 @@ export function IconArray({ p, cells = 1000, label, colorVar = "var(--c-risk)", 
               <tr>
                 <td className="num">{cells.toLocaleString("en-US")}</td>
                 <td className="num">{n.toLocaleString("en-US")}</td>
-                <td className="num">{nLow === null ? "—" : nLow.toLocaleString("en-US")}</td>
+                <td className="num">{lowText ?? "—"}</td>
                 <td className="num">{nHigh === null ? "—" : nHigh.toLocaleString("en-US")}</td>
               </tr>
             </tbody>

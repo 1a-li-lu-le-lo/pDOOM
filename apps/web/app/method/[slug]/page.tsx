@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   if (slug === "definitions") return { title: "Definitions", description: "Every term used on the site, with sourced definitions and the working definition adopted here." };
   const doc = await getDataSource().getMethodologyDoc(slug);
-  return { title: doc?.doc.title ?? "Method", description: doc ? `Methodology document ${doc.doc.path}` : undefined };
+  return { title: doc?.doc.title ?? "Method", description: doc ? `Methodology document docs/method/${doc.doc.slug}.md` : undefined };
 }
 
 export default async function MethodDocPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -30,7 +30,7 @@ export default async function MethodDocPage({ params }: { params: Promise<{ slug
     <div className="page">
       <div className="container">
         <PageHeader crumbs={[{ href: "/method", label: "Method" }]} title={r.title || doc.doc.title} textAnchor="method">
-          <p className="cite">{doc.doc.path}</p>
+          <p className="cite">{`docs/method/${doc.doc.slug}.md`}</p>
         </PageHeader>
         <div className="doc-layout">
           {toc.length > 1 ? (

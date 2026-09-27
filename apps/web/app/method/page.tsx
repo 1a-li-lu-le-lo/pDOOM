@@ -28,7 +28,7 @@ export default async function MethodPage() {
                 <h3 style={{ margin: 0 }}>
                   <Link href={`/method/${d.slug}`}>{d.title}</Link>
                 </h3>
-                <p className="cite">{d.path}</p>
+                <p className="cite">{`docs/method/${d.slug}.md`}</p>
               </article>
             ))}
             <article className="card">

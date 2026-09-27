@@ -59,12 +59,11 @@ export function FlowDiagram({ left, right, flows, title, description, unit = "sc
   const name = (nodes: FlowNode[], id: string) => nodes.find((n) => n.id === id)?.label ?? id;
   return (
     <figure>
+      <div className="chart-scroll" tabIndex={0} role="group" aria-label={`${title} (scrolls sideways on narrow screens)`}>
       <svg className="chart flow-diagram" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}: ${flows.length} flows between ${left.length} groups and ${right.length} outcomes; the table lists every flow`}>
         {ribbons.map((r) => (
           <path key={`${r.from}-${r.to}`} d={r.d} fill={r.color} fillOpacity={0.28} stroke={r.color} strokeOpacity={0.5} strokeWidth={0.5}>
-            <title>
-              {name(left, r.from)} → {name(right, r.to)}: {r.value} {r.value === 1 ? unit.replace(/s$/, "") : unit}
-            </title>
+            <title>{`${name(left, r.from)} → ${name(right, r.to)}: ${r.value} ${r.value === 1 ? unit.replace(/s$/, "") : unit}`}</title>
           </path>
         ))}
         {left.map((n) => {
@@ -90,6 +89,7 @@ export function FlowDiagram({ left, right, flows, title, description, unit = "sc
           );
         })}
       </svg>
+      </div>
       <figcaption>
         {description}
         <details>

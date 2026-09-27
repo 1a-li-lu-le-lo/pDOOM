@@ -29,17 +29,19 @@ export default async function AgentsPage() {
         />
         <div className="grid grid-2">
           <div>{air ? <IndexGauge index={air} /> : null}</div>
-          <div className="card">
-            <p className="muted" style={{ margin: 0 }}>
-              {air?.note}
-            </p>
-          </div>
+          {air?.note ? (
+            <div className="card">
+              <p className="muted" style={{ margin: 0 }}>
+                {air.note}
+              </p>
+            </div>
+          ) : null}
         </div>
         {air ? (
           <Waterfall
             title="Agentic Infrastructure Risk Index contributions"
             description="Weighted, tier-adjusted contributions of each autonomy and supply-chain signal in index points."
-            items={air.components.map((c) => ({ label: c.signal_id, value: c.contribution, direction: c.contribution >= 0 ? "raises" : "lowers", note: `weight ${c.weight}, normalised ${c.value_normalized.toFixed(2)}, tier ${c.tier}` }))}
+            items={air.components.map((c) => ({ label: c.signal_id, value: c.contribution, direction: c.contribution >= 0 ? "raises" : "lowers", note: `weight ${c.weight}, component value ${c.value_normalized.toFixed(2)} (as entered into this index; control signals are inverted for risk indexes), tier ${c.tier}` }))}
           />
         ) : null}
         <section className="stack">

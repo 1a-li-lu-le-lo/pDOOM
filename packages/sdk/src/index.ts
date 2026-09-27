@@ -289,8 +289,8 @@ export function createFileDataSource(opts: FileDataSourceOptions = {}): PDoomDat
       .filter((f) => f.endsWith(".md"))
       .sort()
       .map((f) => {
-        const path = join(dir, f);
-        return { slug: f.replace(/\.md$/, ""), path, title: titleOf(read(path), f) };
+        // `path` is repository-relative, as the API reports it; the file is read from docsDir.
+        return { slug: f.replace(/\.md$/, ""), path: `docs/method/${f}`, title: titleOf(read(join(dir, f)), f) };
       });
   };
 
@@ -392,7 +392,7 @@ export function createFileDataSource(opts: FileDataSourceOptions = {}): PDoomDat
       if (!/^[a-z0-9-]+$/.test(slug)) return undefined;
       const doc = listMethod().find((d) => d.slug === slug);
       if (!doc) return undefined;
-      return { doc, markdown: read(doc.path) };
+      return { doc, markdown: read(join(docsDir, "method", `${slug}.md`)) };
     },
   };
 }

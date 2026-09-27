@@ -26,7 +26,8 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
   // Build-spec §0.8: counts and odds derive from the display-rounded value, never from the raw quantile,
   // so the comparator is exactly as precise as the release card beside it.
   const step = chosen ? roundingStep(chosen.uncertainty) : 1;
-  const rounded = (p: number) => (Math.round((p * 100) / step) * step) / 100;
+  const roundAt = (p: number, s: number) => (Math.round((p * 100) / s) * s) / 100;
+  const rounded = (p: number) => roundAt(p, step);
   const r = q ? { p05: rounded(q.p05), p50: rounded(q.p50), p95: rounded(q.p95) } : null;
   const CELLS = 1000;
   const ONE_POINT = CELLS / 100;
@@ -81,7 +82,8 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
                 </p>
               </div>
             </div>
-            <IconArray p={r.p50} low={r.p05} high={r.p95} cells={CELLS} label={`${outcomeSetLabel(chosen.outcome_set)}, ${horizonLabel(chosen.horizon)}, ${chosen.status === "research_mode" ? "research-mode model" : "external aggregate"}`} colorVar={chosen.status === "research_mode" ? "var(--c-disagreement)" : "var(--c-evidence)"} />
+            {/* A positive lower bound the release shows as below one point is not passed as a hard zero; the prose above carries the "fewer than" reading. */}
+            <IconArray p={r.p50} low={belowOnePoint(q.p05, r.p05) ? undefined : r.p05} lowBelowOnePoint={belowOnePoint(q.p05, r.p05)} high={r.p95} cells={CELLS} label={`${outcomeSetLabel(chosen.outcome_set)}, ${horizonLabel(chosen.horizon)}, ${chosen.status === "research_mode" ? "research-mode model" : "external aggregate"}`} colorVar={chosen.status === "research_mode" ? "var(--c-disagreement)" : "var(--c-evidence)"} />
           </>
         ) : (
           <p className="muted">No estimate with a published interval exists for this horizon.</p>
@@ -90,13 +92,19 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
           <h2 style={{ marginTop: 0 }}>How the horizon changes the picture</h2>
           <p className="muted">Research-mode medians per horizon, each as cells of one hundred. Longer horizons include everything shorter ones do, plus more time for anything to happen.</p>
           <div className="grid grid-4">
-            {allHorizons.map((e) => (
-              <div key={e.estimate_id} className="stack" style={{ gap: "var(--s-1)" }}>
-                <div className="eyebrow">{horizonLabel(e.horizon)}</div>
-                <IconArray p={e.quantiles!.p50} high={e.quantiles!.p95} cells={100} label={`Research-mode p(DOOM), ${horizonLabel(e.horizon)}`} colorVar="var(--c-disagreement)" />
-                <div className="cite">median {e.display.central} · interval {tidyInterval(e.display.interval)}</div>
-              </div>
-            ))}
+            {allHorizons.map((e) => {
+              // Same §0.8 rule as the comparator above: cells follow the release rounding for this estimate's
+              // uncertainty label, and a median the release shows as below one point draws no filled cell.
+              const es = roundingStep(e.uncertainty);
+              const ep50 = roundAt(e.quantiles!.p50, es);
+              return (
+                <div key={e.estimate_id} className="stack" style={{ gap: "var(--s-1)" }}>
+                  <div className="eyebrow">{horizonLabel(e.horizon)}</div>
+                  <IconArray p={belowOnePoint(e.quantiles!.p50, ep50) ? 0 : ep50} high={roundAt(e.quantiles!.p95, es)} cells={100} label={`Research-mode p(DOOM), ${horizonLabel(e.horizon)}`} colorVar="var(--c-disagreement)" />
+                  <div className="cite">median {e.display.central} · interval {tidyInterval(e.display.interval)}</div>
+                </div>
+              );
+            })}
           </div>
         </section>
         <div className="row no-print">

@@ -12,6 +12,9 @@ const COLOR: Record<string, string> = {
   attention: "var(--c-insufficient)",
 };
 
+/** Numeric table cells: right-aligned tabular figures without the gauge's `.num` display styling. */
+const NUM_CELL = { textAlign: "right", fontVariantNumeric: "tabular-nums" } as const;
+
 export interface IndexGaugeProps {
   index: IndexValue;
   /** Full index name; defaults to the release's `label`. */
@@ -40,25 +43,29 @@ export function IndexGauge({ index, title = index.label, description }: IndexGau
         {caption}
         <details>
           <summary>Data table</summary>
-          <table>
-            <caption>{title}</caption>
-            <thead>
-              <tr>
-                <th>Index</th>
-                <th>Value</th>
-                <th>Scale</th>
-                <th>Coverage</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{title}</td>
-                <td className="num">{shown}</td>
-                <td>{index.scale}</td>
-                <td className="num">{coverage}</td>
-              </tr>
-            </tbody>
-          </table>
+          {/* Wrapped so the table scrolls inside the card instead of spilling out; cells avoid
+              the `num` class so they do not inherit the gauge's display-value styling. */}
+          <div className="table-wrap" style={{ marginTop: "var(--s-1)" }}>
+            <table style={{ tableLayout: "fixed", fontSize: "var(--fs-xs)", overflowWrap: "anywhere" }}>
+              <caption>{title}</caption>
+              <thead>
+                <tr>
+                  <th>Index</th>
+                  <th>Value</th>
+                  <th>Scale</th>
+                  <th>Coverage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{title}</td>
+                  <td style={NUM_CELL}>{shown}</td>
+                  <td>{index.scale}</td>
+                  <td style={NUM_CELL}>{coverage}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </details>
       </figcaption>
     </figure>
