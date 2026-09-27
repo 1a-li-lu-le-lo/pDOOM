@@ -6,7 +6,7 @@ import { fmtDate, titleCase } from "@/lib/format";
 /** The observations behind one or more driver families, with their normalisation stated. */
 export function SignalTable({ drivers, observations, weights }: { drivers: Driver[]; observations: DriverObservation[]; weights?: Record<string, number> }) {
   return (
-    <div className="table-wrap">
+    <div className="table-wrap table-wide" tabIndex={0} role="region" aria-label="Scrollable table">
       <table>
         <caption>Signals, their latest observation and how each raw value is normalised to 0–1</caption>
         <thead>

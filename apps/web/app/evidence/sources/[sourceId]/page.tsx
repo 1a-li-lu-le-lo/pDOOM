@@ -113,7 +113,7 @@ export default async function SourcePage({ params }: { params: Promise<{ sourceI
         <section className="stack">
           <h2>Claims extracted from this source ({claims.length})</h2>
           {claims.length ? (
-            <div className="table-wrap">
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
               <table>
                 <caption>Atomic claims</caption>
                 <thead>

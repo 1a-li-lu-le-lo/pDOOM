@@ -1,6 +1,7 @@
 // Copyright NU Cybernetics. p(DOOM) — research prototype.
 import Link from "next/link";
 import { AUTHOR, BRAND, BRAND_EXPANDED } from "@pdoom/schemas";
+import { DisplaySettings } from "./DisplaySettings";
 
 export function Footer({ releaseId, dataCutoff, published }: { releaseId?: string; dataCutoff?: string; published?: string | null }) {
   return (
@@ -26,6 +27,10 @@ export function Footer({ releaseId, dataCutoff, published }: { releaseId?: strin
           <Link href="/method/content-safety">Content safety</Link>
           <br />
           No official probability is published in this release line. Indexes are not probabilities. Nothing here predicts a date.
+        </div>
+        <div>
+          <DisplaySettings />
+          <span className="cite">Settings stay in this browser. No cookies, no analytics.</span>
         </div>
       </div>
     </footer>

@@ -12,12 +12,13 @@ export function LineWithBand({ points, title, description, max, colorVar = "var(
   const H = 220;
   const padL = 44;
   const padB = 28;
-  const top = max ?? Math.max(0.01, ...points.map((p) => p.high)) * 1.1;
+  const raw = Math.max(0.01, ...points.map((p) => p.high)) * 1.1;
+  const top = max ?? ([0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.5, 1].find((c) => c >= raw) ?? 1);
   const xs = (i: number) => padL + (i * (W - padL - 12)) / Math.max(1, points.length - 1);
   const ys = (v: number) => H - padB - (Math.min(top, v) / top) * (H - padB - 10);
   const path = (key: "low" | "mid" | "high") => points.map((p, i) => `${i === 0 ? "M" : "L"}${xs(i).toFixed(1)},${ys(p[key]).toFixed(1)}`).join(" ");
   const band = `${path("high")} ${[...points].reverse().map((p, j) => `L${xs(points.length - 1 - j).toFixed(1)},${ys(p.low).toFixed(1)}`).join(" ")} Z`;
-  const fmt = (v: number) => `${Math.round(v * 1000) / 10}%`;
+  const fmt = (v: number) => (v * 100 < 1 && v > 0 ? `${Math.round(v * 1000) / 10}%` : `${Math.round(v * 100)}%`);
   return (
     <figure>
       <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}: median from ${fmt(points[0]?.mid ?? 0)} to ${fmt(points[points.length - 1]?.mid ?? 0)}`}>

@@ -19,7 +19,7 @@ export function FlowDiagram({ left, right, flows, title, description, unit = "sc
   const W = 760;
   const H = Math.max(280, Math.max(left.length, right.length) * 44 + 40);
   const colW = 170;
-  const gap = 10;
+  const gap = 14;
   const padY = 20;
   const total = (id: string, side: "from" | "to") => flows.filter((f) => f[side] === id).reduce((s, f) => s + f.value, 0);
   const layout = (nodes: FlowNode[], side: "from" | "to") => {
@@ -28,7 +28,7 @@ export function FlowDiagram({ left, right, flows, title, description, unit = "sc
     let y = padY;
     return new Map(
       nodes.map((n) => {
-        const h = Math.max(6, (total(n.id, side) / sum) * avail);
+        const h = Math.max(14, (total(n.id, side) / sum) * avail);
         const box = { y, h, used: 0 };
         y += h + gap;
         return [n.id, box];

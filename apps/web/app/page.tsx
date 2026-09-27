@@ -3,6 +3,7 @@ import Link from "next/link";
 import { TAGLINES } from "@pdoom/schemas";
 import { HomeStage, type StageData } from "@/components/scenes/HomeStage";
 import { MeterPanel } from "@/components/meter/MeterPanel";
+import { ModeSwitcher } from "@/components/mode/ModeSwitcher";
 import { DEFAULT_HORIZON, getRelease, getSnapshot, headline, indexById, researchEstimate } from "@/lib/data";
 import { horizonLabel } from "@/lib/format";
 
@@ -17,7 +18,7 @@ export default async function Home() {
     brightness: epi?.value ?? 50,
     particles: Math.min(400, snap.sources.length * 2),
     safeguards: Math.min(12, snap.interventions.length),
-    seed: 20260926,
+    seed: snap.model_spec.experimental_causal.seed,
     headlineText: h.official[0]?.display.central ?? "",
     intervalText: featured?.display.interval ?? "",
     horizonLabel: horizonLabel(DEFAULT_HORIZON),
@@ -43,6 +44,10 @@ export default async function Home() {
             <div className="row">
               <Link className="btn btn-primary" href="/meter">Inspect the assumptions</Link>
               <Link className="btn" href="/text">Read the plain-text version</Link>
+            </div>
+            <div className="hero-modes">
+              <span className="eyebrow">See it as</span>
+              <ModeSwitcher />
             </div>
           </div>
         </div>

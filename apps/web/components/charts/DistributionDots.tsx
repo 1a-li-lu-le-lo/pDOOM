@@ -9,13 +9,14 @@ export interface Dot {
 /** One row per group; each forecast is a dot on a shared probability axis. */
 export function DistributionDots({ dots, title, description, max }: { dots: Dot[]; title: string; description: string; max?: number }) {
   const groups = [...new Set(dots.map((d) => d.group))];
-  const top = max ?? Math.min(1, Math.max(0.01, ...dots.map((d) => d.value)) * 1.2);
+  const raw = Math.min(1, Math.max(0.01, ...dots.map((d) => d.value)) * 1.2);
+  const top = max ?? ([0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.5, 1].find((c) => c >= raw) ?? 1);
   const W = 640;
   const rowH = 30;
   const padL = 190;
   const H = groups.length * rowH + 30;
   const x = (v: number) => padL + (Math.min(top, v) / top) * (W - padL - 16);
-  const fmt = (v: number) => `${Math.round(v * 1000) / 10}%`;
+  const fmt = (v: number) => (v * 100 < 1 && v > 0 ? `${Math.round(v * 1000) / 10}%` : `${Math.round(v * 100)}%`);
   return (
     <figure>
       <svg className="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}, ${dots.length} forecasts across ${groups.length} groups`}>

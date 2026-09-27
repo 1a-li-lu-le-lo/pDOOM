@@ -35,7 +35,7 @@ test.describe("immersive scenes", () => {
     await page.goto("/");
     const before = await page.locator(".meter").innerText();
     for (const name of ["Observatory", "Event Horizon"]) {
-      await page.getByRole("group", { name: "Presentation mode" }).getByRole("button", { name }).click();
+      await page.locator("header").getByRole("group", { name: "Presentation mode" }).getByRole("button", { name }).click();
       await page.waitForTimeout(300);
       expect(await page.locator(".meter").innerText()).toBe(before);
     }

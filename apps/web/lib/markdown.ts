@@ -140,7 +140,7 @@ export function renderMarkdown(md: string): Rendered {
         i++;
       }
       out.push(
-        `<div class="table-wrap"><table><thead><tr>${head.map((c) => `<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${rows
+        `<div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table"><table><thead><tr>${head.map((c) => `<th>${inline(c)}</th>`).join("")}</tr></thead><tbody>${rows
           .map((r) => `<tr>${r.map((c) => `<td>${inline(c)}</td>`).join("")}</tr>`)
           .join("")}</tbody></table></div>`,
       );

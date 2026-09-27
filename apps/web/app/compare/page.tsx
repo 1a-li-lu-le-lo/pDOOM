@@ -56,13 +56,13 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
               <div className="card stack">
                 <div className="eyebrow">The same number three ways</div>
                 <p>
-                  <strong>As a grid.</strong> Of one thousand futures consistent with this estimate's assumptions, the median run has about {Math.round(q.p50 * 1000).toLocaleString("en-US")} ending in {outcomeSetLabel(chosen.outcome_set).toLowerCase()} within {horizonLabel(chosen.horizon).toLowerCase()}. The plausible range is {Math.round(q.p05 * 1000).toLocaleString("en-US")} to {Math.round(q.p95 * 1000).toLocaleString("en-US")}.
+                  <strong>As a grid.</strong> Of one thousand futures consistent with this estimate's assumptions, the median run has about {Math.round(q.p50 * 1000).toLocaleString("en-US")} ending in {outcomeSetLabel(chosen.outcome_set)} ({horizonLabel(chosen.horizon).toLowerCase()}). The plausible range is {Math.round(q.p05 * 1000).toLocaleString("en-US")} to {Math.round(q.p95 * 1000).toLocaleString("en-US")}.
                 </p>
                 <p>
                   <strong>As odds.</strong> Roughly {oneIn(q.p50)} at the median; between {oneIn(q.p95)} and {oneIn(q.p05)} across the interval.
                 </p>
                 <p>
-                  <strong>As a complement.</strong> The same estimate says that in about {oneIn(1 - q.p50) === "1 in 1" ? "nearly all" : `${Math.round((1 - q.p50) * 1000).toLocaleString("en-US")} of one thousand`} futures, none of these outcomes occurs within the horizon. Both readings are the same statement.
+                  <strong>As a complement.</strong> The same estimate says that in about {Math.round((1 - q.p50) * 1000).toLocaleString("en-US")} of one thousand futures none of these outcomes occurs within the horizon. Both readings are the same statement.
                 </p>
                 <p className="cite">
                   No comparison with everyday risks is offered: those have base rates measured from events that happened, and this does not. See <Link href="/method/calibration">calibration</Link>.

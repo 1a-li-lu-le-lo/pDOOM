@@ -34,7 +34,16 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     /* no release: the footer says so */
   }
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Applies the locally stored theme and palette before first paint; no network, no cookie. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var r=document.documentElement,t=localStorage.getItem('pdoom.theme'),p=localStorage.getItem('pdoom.palette');if(t==='dark'||t==='light')r.dataset.theme=t;if(p==='cvd')r.dataset.palette=p;}catch(e){}",
+          }}
+        />
+      </head>
       <body>
         <a className="skip-link" href="#main">
           Skip to content

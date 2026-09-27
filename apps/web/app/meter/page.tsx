@@ -100,7 +100,7 @@ export default async function MeterPage({ searchParams }: { searchParams: Promis
           <p>
             Leave-one-out and parameter runs, ranked by the size of their effect. A large effect from removing one source means the aggregate depends on that source.
           </p>
-          <div className="table-wrap">
+          <div className="table-wrap table-wide" tabIndex={0} role="region" aria-label="Scrollable table">
             <table>
               <caption>Top sensitivity runs in this release</caption>
               <thead>

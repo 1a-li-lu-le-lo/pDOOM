@@ -185,7 +185,7 @@ export function ScenarioLab({ spec, baseline, releaseId }: { spec: ExperimentalC
         {result ? (
           <div className="card stack">
             <div className="eyebrow">Decomposition under your assumptions</div>
-            <div className="table-wrap">
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
               <table>
                 <caption>Outcome medians and intervals for your scenario</caption>
                 <thead>
@@ -211,7 +211,7 @@ export function ScenarioLab({ spec, baseline, releaseId }: { spec: ExperimentalC
               </table>
             </div>
             <div className="eyebrow">Factor summary (p05 / p50 / p95)</div>
-            <div className="table-wrap">
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
               <table>
                 <caption>Latent factors after your shifts</caption>
                 <thead>

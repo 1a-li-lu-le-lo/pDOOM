@@ -4,7 +4,7 @@ import { expect, test } from "@playwright/test";
 test.describe("presentation modes", () => {
   test("the mode switcher is in the first viewport and remembers the choice locally", async ({ page }) => {
     await page.goto("/");
-    const switcher = page.getByRole("group", { name: "Presentation mode" });
+    const switcher = page.locator("header").getByRole("group", { name: "Presentation mode" });
     await expect(switcher).toBeInViewport();
     await switcher.getByRole("button", { name: "Observatory" }).click();
     await expect(switcher.getByRole("button", { name: "Observatory" })).toHaveAttribute("aria-pressed", "true");
@@ -17,7 +17,7 @@ test.describe("presentation modes", () => {
 
   test("the plain-text link in the switcher leads to /text", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("group", { name: "Presentation mode" }).getByRole("link", { name: "Plain text" }).click();
+    await page.locator("header").getByRole("group", { name: "Presentation mode" }).getByRole("link", { name: "Plain text" }).click();
     await expect(page).toHaveURL(/\/text$/);
     await expect(page.locator("h1")).toContainText(/plain text/i);
   });

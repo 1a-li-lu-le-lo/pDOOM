@@ -87,7 +87,7 @@ export default async function ReleasePage({ params }: { params: Promise<{ releas
             )}
             {m.approval?.heightened_review_ack ? <p className="cite">Heightened review acknowledged: {m.approval.heightened_review_ack}</p> : null}
             <h2>Files</h2>
-            <div className="table-wrap">
+            <div className="table-wrap" tabIndex={0} role="region" aria-label="Scrollable table">
               <table>
                 <caption>Release files with SHA-256 digests</caption>
                 <thead>

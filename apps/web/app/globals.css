@@ -880,3 +880,113 @@ th.num {
     opacity: 1;
   }
 }
+
+/* Header rows, scrollable nav, hero modes, settings, skeletons */
+.site-header .container {
+  display: grid;
+  gap: var(--s-2);
+  min-height: 0;
+}
+.site-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+.site-nav {
+  margin-left: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
+}
+.site-nav::-webkit-scrollbar {
+  display: none;
+}
+.site-nav a {
+  white-space: nowrap;
+}
+@media (max-width: 720px) {
+  .mode-switcher-compact .mode-optional {
+    display: none;
+  }
+  .brand small {
+    display: none;
+  }
+}
+.hero-modes {
+  display: grid;
+  gap: var(--s-2);
+  justify-items: start;
+}
+.display-settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-bottom: var(--s-2);
+}
+.display-settings label {
+  display: grid;
+  gap: 2px;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.display-settings select {
+  font: inherit;
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+  background: var(--c-bg-elevated);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-sm);
+  padding: var(--s-1) var(--s-2);
+  min-height: 32px;
+}
+.table-wrap table {
+  width: 100%;
+  min-width: 0;
+}
+.table-wrap.table-wide table {
+  min-width: 760px;
+}
+.table-wrap td.num,
+.table-wrap th.num {
+  white-space: nowrap;
+}
+.slider-row .cite {
+  white-space: nowrap;
+  font-size: var(--fs-xs);
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--c-surface) 0, var(--c-surface-2) 40px, var(--c-surface) 80px);
+  background-size: 400px 100%;
+  border-radius: var(--r-sm);
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+.skeleton-title {
+  height: 40px;
+  width: min(420px, 60vw);
+  margin-top: var(--s-4);
+}
+.skeleton-line {
+  height: 16px;
+  width: min(640px, 90vw);
+}
+.skeleton-line.short {
+  width: min(360px, 60vw);
+}
+@keyframes skeleton-shimmer {
+  from {
+    background-position: -200px 0;
+  }
+  to {
+    background-position: 200px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}

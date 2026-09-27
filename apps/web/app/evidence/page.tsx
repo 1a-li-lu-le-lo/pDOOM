@@ -84,8 +84,9 @@ export default async function EvidencePage({ searchParams }: { searchParams: Pro
         </form>
         <p className="muted" aria-live="polite">
           {items.length} of {all.length} sources
+          {items.length === 0 ? " match these filters. Nothing is hidden: clear a filter to widen the ledger." : ""}
         </p>
-        <div className="table-wrap">
+        <div className="table-wrap table-wide" tabIndex={0} role="region" aria-label="Scrollable table">
           <table>
             <caption>Source ledger (filtered)</caption>
             <thead>
